@@ -223,7 +223,7 @@ def main(argv, arc):
 
     #HERE WE FIND A WAY TO DO THE SPARQL QUERY AND GET THE TEXT
     add_labels(g,story)
-    story.serialize(f"./story_{method}.json",format='json-ld')
+    story.serialize(f"./story_{method}.ttl")
     #AND HERE WE TRY TO PUT EVERYTHING INTO ONE JSON
     print(f"\n{method} based story has been generated succesfully! Check ./story_{method}.ttl ")
 

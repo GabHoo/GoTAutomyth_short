@@ -1,0 +1,55 @@
+@prefix HERO: <http://hero_ontology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+
+HERO:Event_01 a HERO:OrdinaryWorld,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Ordinary World presentation" ;
+    HERO:hasHouse HERO:House_Tyrell ;
+    HERO:hasOccupation HERO:ruler ;
+    HERO:hasTitle HERO:fictional_king ;
+    HERO:journeyStage "1" ;
+    sem:hasActor HERO:Petyr_Baelish ;
+    sem:hasPlace HERO:Great_Sept_of_Baelor ;
+    sem:hasTime HERO:villainBirthday .
+
+HERO:Event_04 a HERO:MeetingTheMentor,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Meeting the Mentor" ;
+    HERO:journeyStage "4" ;
+    HERO:meetsMentor HERO:Rickon_Stark ;
+    HERO:powerLearned HERO:fireResistance ;
+    sem:hasActor HERO:Petyr_Baelish ;
+    sem:hasPlace HERO:Red_Keep ;
+    sem:hasTime HERO:easter .
+
+HERO:Great_Sept_of_Baelor rdfs:label "Great Sept of Baelor" .
+
+HERO:House_Tyrell rdfs:label "House Tyrell" .
+
+HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" .
+
+HERO:Red_Keep rdfs:label "Red Keep" .
+
+HERO:Rickon_Stark rdfs:label "Rickon Stark" .
+
+HERO:easter rdfs:label "easter" .
+
+HERO:fictional_king rdfs:label "fictional king" .
+
+HERO:fireResistance rdfs:label "fireResistance" .
+
+HERO:ruler rdfs:label "ruler" .
+
+HERO:villainBirthday rdfs:label "villain's Birthday" .
+
+HERO:Petyr_Baelish rdfs:label "Petyr Baelish" .
+
+sem:Core rdfs:label "Core" .
+
+sem:Event rdfs:label "Event" .
+
