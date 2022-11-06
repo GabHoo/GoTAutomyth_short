@@ -7,13 +7,13 @@ HERO:Event_01 a HERO:OrdinaryWorld,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Ordinary World presentation" ;
-    HERO:hasHouse HERO:House_Baratheon ;
+    HERO:hasHouse HERO:House_Stark ;
     HERO:hasOccupation HERO:soldier ;
-    HERO:hasTitle HERO:queen_consort ;
+    HERO:hasTitle HERO:queen ;
     HERO:journeyStage "1" ;
-    sem:hasActor HERO:Jon_Snow ;
+    sem:hasActor HERO:Arya_Stark ;
     sem:hasPlace HERO:Great_Sept_of_Baelor ;
-    sem:hasTime HERO:easter .
+    sem:hasTime HERO:afternoon .
 
 HERO:Event_04 a HERO:MeetingTheMentor,
         sem:Core,
@@ -21,31 +21,33 @@ HERO:Event_04 a HERO:MeetingTheMentor,
         rdfs:Resource ;
     rdfs:label "Meeting the Mentor" ;
     HERO:journeyStage "4" ;
-    HERO:meetsMentor HERO:Rickard_Stark ;
+    HERO:meetsMentor HERO:Bran_Stark ;
     HERO:powerLearned HERO:pausingTime ;
-    sem:hasActor HERO:Jon_Snow ;
-    sem:hasPlace HERO:Kings_Landing ;
-    sem:hasTime HERO:easter .
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:Red_Keep ;
+    sem:hasTime HERO:heroBirthday .
+
+HERO:Bran_Stark rdfs:label "Bran Stark" .
 
 HERO:Great_Sept_of_Baelor rdfs:label "Great Sept of Baelor" .
 
-HERO:House_Baratheon rdfs:label "House Baratheon" .
-
-HERO:Kings_Landing rdfs:label "Kings Landing" .
+HERO:House_Stark rdfs:label "House Stark" .
 
 HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" .
 
-HERO:Rickard_Stark rdfs:label "Rickard Stark" .
+HERO:Red_Keep rdfs:label "Red Keep" .
+
+HERO:afternoon rdfs:label "afternoon" .
+
+HERO:heroBirthday rdfs:label "hero's Birthday" .
 
 HERO:pausingTime rdfs:label "pausingTime" .
 
-HERO:queen_consort rdfs:label "queen consort" .
+HERO:queen rdfs:label "queen" .
 
 HERO:soldier rdfs:label "soldier" .
 
-HERO:Jon_Snow rdfs:label "Jon Snow" .
-
-HERO:easter rdfs:label "easter" .
+HERO:Arya_Stark rdfs:label "Arya Stark" .
 
 sem:Core rdfs:label "Core" .
 

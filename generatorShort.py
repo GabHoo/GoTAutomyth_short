@@ -8,6 +8,7 @@ import pandas as pd
 from string import Template
 import networkx as nx
 import networkx.algorithms.community as nxcom
+import SPARQLWrapper
 
 from scipy import rand
 
@@ -121,10 +122,31 @@ def instantiate_ordinary_world(g, fixed):
                                       HERO:$hero HERO:family ?house .
                                       HERO:$hero HERO:title ?title}""")
 
-    qres = g.query(ordinary_world_template.substitute({'hero': fixed["Hero"].split("/")[-1]}))
+    qres = g.query(ordinary_world_template.substitute({'hero': fixed["Hero"].split("/")[-1]}),initNs={'HERO':'http://hero_ontology/'})
     fixed["Occupation"] = random.choice([row.occupation for row in qres])
     fixed["House"] = random.choice([row.house for row in qres])
     fixed["Title"] = random.choice([row.title for row in qres])
+
+def textGeneration(story):
+    text = story.query("""SELECT ?Event_04 WHERE { ns2:Event_04 ns1:hasActor ?Hero.
+        ?Hero  rdfs:label ?HeroName.
+        ns2:Event_04 ns2:meetsMentor ?mentor.
+        ?mentor rdfs:label ?MentorLabel.
+        ns2:Event_04 ns2:powerLearned ?power.
+        ?power rdfs:label ?HeroPowerLabel.
+
+
+        ns2:Event_04 ns1:hasTime ?Time4.
+        ?Time4 rdfs:label ?TimeLabel4.
+        ns2:Event_04 ns1:hasPlace ?Loc4.
+        ?Loc4 rdfs:label ?LocLabel4
+
+
+        BIND(CONCAT('At ',?TimeLabel4, ' in ', ?LocLabel4, ',', ?HeroName, ' met ', ?MentorLabel,' . ',' From ', ?MentorLabel,' ', ?HeroName ,' learnt the power of ', ?HeroPowerLabel ) AS ?Event_04).
+    }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+    return text
+
+
 
 def main(argv, arc):
     if arc!=2 or argv[1] not in ["community","relation","random"] :
@@ -223,9 +245,16 @@ def main(argv, arc):
 
     #HERE WE FIND A WAY TO DO THE SPARQL QUERY AND GET THE TEXT
     add_labels(g,story)
-    story.serialize(f"./story_{method}.ttl")
+    print("____________________________---\n")
+    for s,p,o in story.triples((HERO.Event_04, None , None)):
+        print(s,p,o)
+    #story.serialize(f"./story_a_{method}.ttl")
     #AND HERE WE TRY TO PUT EVERYTHING INTO ONE JSON
-    print(f"\n{method} based story has been generated succesfully! Check ./story_{method}.ttl ")
+    #print(f"\n{method} based story has been generated succesfully! Check ./story_{method}.ttl ")
+    #text=textGeneration(story)
+    #for i in text:
+        #print(i)
+
 
 
 if __name__ == '__main__':
