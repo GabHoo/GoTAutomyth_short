@@ -8,7 +8,7 @@ import pandas as pd
 from string import Template
 import networkx as nx
 import networkx.algorithms.community as nxcom
-import SPARQLWrapper
+#import SPARQLWrapper
 
 from scipy import rand
 
@@ -31,13 +31,13 @@ def random_pick(ist_class):
     
     #THis is because Mentor for example is a subclass of actor. Since there are no instance directly for mentor we look for its super class (Actor) and pick instance of it.
     while( not list_e):
-        print("EMPTY LIST for", class_node)
+        #print("EMPTY LIST for", class_node)
         class_node = g.value(predicate = RDFS.subClassOf, subject=class_node, any=False)
-        print("new super class ", class_node)
+        #print("new super class ", class_node)
         for e in g.subjects(RDF.type, class_node):
             list_e.append(e)
 
-    print("\nclass is ",class_node," list is of possible is : ",list_e)
+    #print("\nclass is ",class_node," list is of possible is : ",list_e)
     return(random.choice(list_e)) 
 
 def add_labels(g,story): #This methods add to our output story graph all the labels of the instances involved in the story. They are necessary for the visualization!
@@ -46,12 +46,34 @@ def add_labels(g,story): #This methods add to our output story graph all the lab
     for s,p,o in story.triples((None,RDF.type,sem.Event)): 
         
         event_inst.append(s)
-    p
+    #p
+    for e in event_inst:
+        for s, o, p in story.triples((e, None, None)):
+                g.remove((None, None,RDFS.Resource ))
+                g.remove((None,None, sem.Core))
+                g.remove((None, None, sem.Authority))
+
     for e in event_inst:
         for s,o,p in story.triples((e, None, None)):
-            
-            story+=g.triples((p,RDFS.label,None))
+            story += g.triples((p, RDF.type, None))
+            story += g.triples((p,RDFS.label,None))
+
+
+
     print("Adding necessary labels of every intence")
+
+def domain_range(g,story) :
+    #sem = Namespace("http://semanticweb.cs.vu.nl/2009/11/sem/")
+    #d = Graph()
+    #d.parse("./ontology_short.ttl")
+    event_inst = []
+
+
+    for s,p,o in g.triples((None,None,None)):
+    #    story += g.triples((None,RDFS.domain,None))
+        story += g.triples((None, RDFS.range, None))
+    print('domain-range')
+
 
 main_characters = {"Jon_Snow": "Q3183235",
                    "Daenerys_Targaryen": "Q2708078",
@@ -127,7 +149,33 @@ def instantiate_ordinary_world(g, fixed):
     fixed["House"] = random.choice([row.house for row in qres])
     fixed["Title"] = random.choice([row.title for row in qres])
 
-def textGeneration(story):
+def textGeneration_Event1(story):
+    text = story.query("""SELECT ?Event_04 WHERE {
+        ns2:Event_01 ns1:hasActor ?Hero.
+        ?Hero  rdfs:label ?HeroName.
+        ns2:Event_01 ns2:hasOccupation ?Job.
+        ?Job   rdfs:label ?HeroJob.
+        ns2:Event_01 ns2:hasTitle ?Title.
+        ?Title rdfs:label ?TitleLabel.
+        ns2:Event_01 ns2:hasHouse ?Family.
+        ?Family rdfs:label ?FamilyLabel.
+    
+        ns2:Event_01 ns1:hasTime ?Time1.
+        ?Time1 rdfs:label ?TimeLabel1.
+        ns2:Event_01 ns1:hasPlace ?Loc1.
+        ?Loc1 rdfs:label ?LocLabel1.
+    
+    
+        BIND(CONCAT('It was ',?TimeLabel1, ' in ', ?LocLabel1, '. ', ?HeroName, ' was a  ' ,?TitleLabel,' from the ', ?FamilyLabel ,  ' and worked as a ',?HeroJob ) AS ?Event_01).
+       ns2:Event_02 ns1:hasActor ?Hero.
+        ?Hero  rdfs:label ?HeroName.""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+    return text
+
+
+
+
+
+def textGeneration_Event4(story):
     text = story.query("""SELECT ?Event_04 WHERE { ns2:Event_04 ns1:hasActor ?Hero.
         ?Hero  rdfs:label ?HeroName.
         ns2:Event_04 ns2:meetsMentor ?mentor.
@@ -245,18 +293,20 @@ def main(argv, arc):
 
     #HERE WE FIND A WAY TO DO THE SPARQL QUERY AND GET THE TEXT
     add_labels(g,story)
+    domain_range(g,story)
     print("____________________________---\n")
     for s,p,o in story.triples((HERO.Event_04, None , None)):
         print(s,p,o)
-    #story.serialize(f"./story_a_{method}.ttl")
+    story.serialize(f"./story_a_{method}.ttl")
     #AND HERE WE TRY TO PUT EVERYTHING INTO ONE JSON
     #print(f"\n{method} based story has been generated succesfully! Check ./story_{method}.ttl ")
-    #text=textGeneration(story)
-    #for i in text:
-        #print(i)
+    text=textGeneration_Event4(story)
+    for i in text:
+        print(i)
 
 
 
 if __name__ == '__main__':
     main(sys.argv, len(sys.argv))
+    #main('community',2)
 

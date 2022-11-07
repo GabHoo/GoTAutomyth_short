@@ -1,6 +1,8 @@
 @prefix HERO: <http://hero_ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 HERO:Event_01 a HERO:OrdinaryWorld,
         sem:Core,
@@ -8,12 +10,12 @@ HERO:Event_01 a HERO:OrdinaryWorld,
         rdfs:Resource ;
     rdfs:label "Ordinary World presentation" ;
     HERO:hasHouse HERO:House_Stark ;
-    HERO:hasOccupation HERO:soldier ;
-    HERO:hasTitle HERO:queen ;
+    HERO:hasOccupation HERO:hunter ;
+    HERO:hasTitle HERO:fictional_princess ;
     HERO:journeyStage "1" ;
-    sem:hasActor HERO:Arya_Stark ;
-    sem:hasPlace HERO:Great_Sept_of_Baelor ;
-    sem:hasTime HERO:afternoon .
+    sem:hasActor HERO:Robert_Baratheon ;
+    sem:hasPlace HERO:Forest ;
+    sem:hasTime HERO:easter .
 
 HERO:Event_04 a HERO:MeetingTheMentor,
         sem:Core,
@@ -21,35 +23,66 @@ HERO:Event_04 a HERO:MeetingTheMentor,
         rdfs:Resource ;
     rdfs:label "Meeting the Mentor" ;
     HERO:journeyStage "4" ;
-    HERO:meetsMentor HERO:Bran_Stark ;
-    HERO:powerLearned HERO:pausingTime ;
-    sem:hasActor HERO:Arya_Stark ;
-    sem:hasPlace HERO:Red_Keep ;
-    sem:hasTime HERO:heroBirthday .
+    HERO:meetsMentor HERO:Mace_Tyrell ;
+    HERO:powerLearned HERO:mindReading ;
+    sem:hasActor HERO:Robert_Baratheon ;
+    sem:hasPlace HERO:Winterfell ;
+    sem:hasTime HERO:afternoon .
 
-HERO:Bran_Stark rdfs:label "Bran Stark" .
+HERO:cause_of_death rdfs:range xsd:string .
 
-HERO:Great_Sept_of_Baelor rdfs:label "Great Sept of Baelor" .
+HERO:hasHouse rdfs:range HERO:House .
 
-HERO:House_Stark rdfs:label "House Stark" .
+HERO:hasOccupation rdfs:range HERO:Occupation .
+
+HERO:hasTitle rdfs:range HERO:Title .
+
+HERO:meetsMentor rdfs:range HERO:Mentor .
+
+HERO:powerLearned rdfs:range HERO:HeroPower .
+
+sem:hasActor rdfs:range HERO:Hero .
+
+sem:hasPlace rdfs:range sem:Place .
+
+sem:hasTime rdfs:range sem:Time .
+
+HERO:Forest a sem:Place ;
+    rdfs:label "Forest" .
+
+HERO:House_Stark a HERO:House ;
+    rdfs:label "House Stark" .
+
+HERO:Mace_Tyrell a sem:Actor ;
+    rdfs:label "Mace Tyrell" .
 
 HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" .
 
-HERO:Red_Keep rdfs:label "Red Keep" .
+HERO:Winterfell a sem:Place ;
+    rdfs:label "Winterfell" .
 
-HERO:afternoon rdfs:label "afternoon" .
+HERO:afternoon a sem:Time ;
+    rdfs:label "afternoon" .
 
-HERO:heroBirthday rdfs:label "hero's Birthday" .
+HERO:easter a sem:Time ;
+    rdfs:label "Easter" .
 
-HERO:pausingTime rdfs:label "pausingTime" .
+HERO:fictional_princess a HERO:Title ;
+    rdfs:label "Princess" .
 
-HERO:queen rdfs:label "queen" .
+HERO:hunter a HERO:Occupation ;
+    rdfs:label "hunter" .
 
-HERO:soldier rdfs:label "soldier" .
+HERO:mindReading a HERO:Power ;
+    rdfs:label "mind Reading" .
 
-HERO:Arya_Stark rdfs:label "Arya Stark" .
+HERO:Robert_Baratheon a HERO:Main_Character,
+        sem:Actor ;
+    rdfs:label "Robert Baratheon" .
 
-sem:Core rdfs:label "Core" .
+sem:Core a owl:Class ;
+    rdfs:label "Core" .
 
-sem:Event rdfs:label "Event" .
+sem:Event a owl:Class ;
+    rdfs:label "Event" .
 

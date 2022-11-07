@@ -547,8 +547,6 @@ HERO:freedom a HERO:ThreatTarget.
 HERO:freedom rdfs:label "freedom".
 HERO:happiness a HERO:ThreatTarget.
 HERO:happiness rdfs:label "happiness".
-HERO:grandmother a HERO:ThreatTarget.
-HERO:grandmother rdfs:label "grandmother".
 HERO:jewel a HERO:ThreatTarget.
 HERO:jewel rdfs:label "jewel".
 HERO:treasure a HERO:ThreatTarget.
