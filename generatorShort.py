@@ -8,7 +8,7 @@ import pandas as pd
 from string import Template
 import networkx as nx
 import networkx.algorithms.community as nxcom
-import SPARQLWrapper
+
 
 from scipy import rand
 
@@ -128,23 +128,27 @@ def instantiate_ordinary_world(g, fixed):
     fixed["Title"] = random.choice([row.title for row in qres])
 
 def textGeneration(story):
-    text = story.query("""SELECT ?Event_04 WHERE { ns2:Event_04 ns1:hasActor ?Hero.
-        ?Hero  rdfs:label ?HeroName.
-        ns2:Event_04 ns2:meetsMentor ?mentor.
-        ?mentor rdfs:label ?MentorLabel.
-        ns2:Event_04 ns2:powerLearned ?power.
-        ?power rdfs:label ?HeroPowerLabel.
+    texts=[]
+    text1 = story.query("""
+    SELECT ?Event_01 WHERE 
+    {ns2:Event_01 ns1:hasActor ?Hero.
+    ?Hero  rdfs:label ?HeroName.
+    ns2:Event_01 ns2:hasOccupation ?Job.
+    ?Job   rdfs:label ?HeroJob.
+    ns2:Event_01 ns2:hasTitle ?Title.
+    ?Title rdfs:label ?TitleLabel.
+    ns2:Event_01 ns2:hasHouse ?Family.
+    ?Family rdfs:label ?FamilyLabel.
 
+    ns2:Event_01 ns1:hasTime ?Time1.
+    ?Time1 rdfs:label ?TimeLabel1.
+    ns2:Event_01 ns1:hasPlace ?Loc1.
+    ?Loc1 rdfs:label ?LocLabel1.
 
-        ns2:Event_04 ns1:hasTime ?Time4.
-        ?Time4 rdfs:label ?TimeLabel4.
-        ns2:Event_04 ns1:hasPlace ?Loc4.
-        ?Loc4 rdfs:label ?LocLabel4
-
-
-        BIND(CONCAT('At ',?TimeLabel4, ' in ', ?LocLabel4, ',', ?HeroName, ' met ', ?MentorLabel,' . ',' From ', ?MentorLabel,' ', ?HeroName ,' learnt the power of ', ?HeroPowerLabel ) AS ?Event_04).
+    BIND(CONCAT('Once upon a time, in ',?LocLabel1 ,' there was a ',?HeroJob,' whose name was ', ?HeroName,'. ', ?HeroName, ' was a ', ?TitleLabel,' from the ', ?FamilyLabel,'. It was ',?TimeLabel1,' when this story begins.' ) AS ?Event_01).
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
-    return text
+    texts.append(text1)
+    return (text1)
 
 
 
@@ -246,14 +250,19 @@ def main(argv, arc):
     #HERE WE FIND A WAY TO DO THE SPARQL QUERY AND GET THE TEXT
     add_labels(g,story)
     print("____________________________---\n")
-    for s,p,o in story.triples((HERO.Event_04, None , None)):
-        print(s,p,o)
+    triples=""
+    for s,p,o in story.triples((HERO.Event_01, None , None)):
+        triples+=((str(s).split('/')[-1]+" - "+str(p).split("/")[-1]+" - "+str(o).split("/")[-1]+" | "))
+
+
+    print(triples)
     #story.serialize(f"./story_a_{method}.ttl")
     #AND HERE WE TRY TO PUT EVERYTHING INTO ONE JSON
     #print(f"\n{method} based story has been generated succesfully! Check ./story_{method}.ttl ")
-    #text=textGeneration(story)
-    #for i in text:
-        #print(i)
+    text=textGeneration(story)
+    print(type(text),str(text))
+    for i in text:
+        print(i)
 
 
 
