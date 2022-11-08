@@ -8,6 +8,8 @@ import pandas as pd
 from string import Template
 import networkx as nx
 import networkx.algorithms.community as nxcom
+import re
+import json
 #import SPARQLWrapper
 
 from scipy import rand
@@ -58,21 +60,17 @@ def add_labels(g,story): #This methods add to our output story graph all the lab
             story += g.triples((p, RDF.type, None))
             story += g.triples((p,RDFS.label,None))
 
+    return story
 
 
-    print("Adding necessary labels of every intence")
+    #print("Adding necessary labels of every intence")
 
 def domain_range(g,story) :
-    #sem = Namespace("http://semanticweb.cs.vu.nl/2009/11/sem/")
-    #d = Graph()
-    #d.parse("./ontology_short.ttl")
-    event_inst = []
-
-
     for s,p,o in g.triples((None,None,None)):
     #    story += g.triples((None,RDFS.domain,None))
         story += g.triples((None, RDFS.range, None))
-    print('domain-range')
+    return story
+    #print('domain-range')
 
 
 main_characters = {"Jon_Snow": "Q3183235",
@@ -149,31 +147,32 @@ def instantiate_ordinary_world(g, fixed):
     fixed["House"] = random.choice([row.house for row in qres])
     fixed["Title"] = random.choice([row.title for row in qres])
 
+
+
+
+
 def textGeneration_Event1(story):
-    text = story.query("""SELECT ?Event_04 WHERE {
-        ns2:Event_01 ns1:hasActor ?Hero.
-        ?Hero  rdfs:label ?HeroName.
-        ns2:Event_01 ns2:hasOccupation ?Job.
-        ?Job   rdfs:label ?HeroJob.
-        ns2:Event_01 ns2:hasTitle ?Title.
-        ?Title rdfs:label ?TitleLabel.
-        ns2:Event_01 ns2:hasHouse ?Family.
-        ?Family rdfs:label ?FamilyLabel.
-    
-        ns2:Event_01 ns1:hasTime ?Time1.
-        ?Time1 rdfs:label ?TimeLabel1.
-        ns2:Event_01 ns1:hasPlace ?Loc1.
-        ?Loc1 rdfs:label ?LocLabel1.
-    
-    
-        BIND(CONCAT('It was ',?TimeLabel1, ' in ', ?LocLabel1, '. ', ?HeroName, ' was a  ' ,?TitleLabel,' from the ', ?FamilyLabel ,  ' and worked as a ',?HeroJob ) AS ?Event_01).
-       ns2:Event_02 ns1:hasActor ?Hero.
-        ?Hero  rdfs:label ?HeroName.""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
-    return text
+    texts = []
+    text1 = story.query("""
+    SELECT ?Event_01 WHERE 
+    {ns2:Event_01 ns1:hasActor ?Hero.
+    ?Hero  rdfs:label ?HeroName.
+    ns2:Event_01 ns2:hasOccupation ?Job.
+    ?Job   rdfs:label ?HeroJob.
+    ns2:Event_01 ns2:hasTitle ?Title.
+    ?Title rdfs:label ?TitleLabel.
+    ns2:Event_01 ns2:hasHouse ?Family.
+    ?Family rdfs:label ?FamilyLabel.
 
+    ns2:Event_01 ns1:hasTime ?Time1.
+    ?Time1 rdfs:label ?TimeLabel1.
+    ns2:Event_01 ns1:hasPlace ?Loc1.
+    ?Loc1 rdfs:label ?LocLabel1.
 
-
-
+    BIND(CONCAT('Once upon a time, in ',?LocLabel1 ,' there was a ',?HeroJob,' whose name was ', ?HeroName,'. ', ?HeroName, ' was a ', ?TitleLabel,' from the ', ?FamilyLabel,'. It was ',?TimeLabel1,' when this story begins.' ) AS ?Event_01).
+    }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+    texts.append(text1)
+    return (text1)
 
 def textGeneration_Event4(story):
     text = story.query("""SELECT ?Event_04 WHERE { ns2:Event_04 ns1:hasActor ?Hero.
@@ -256,14 +255,14 @@ def main(argv, arc):
         fixed["HeroAlly"]=random_pick("http://hero_ontology/HeroAlly")
         fixed["VillainAlly"]=random_pick("http://hero_ontology/VillainAlly")
 
-    print("list of subevents is:", subEvents)
+    #print("list of subevents is:", subEvents)
     for i in subEvents:
-        print("Considering event", i)
+        #print("Considering event", i)
         # NOW we are considering one subevent at a time
 
         # FIRST ADD THE ALREADY EXISTING INSTANCE TO THE STORY AND ITS TRIPLES(EVENT_N)
         instance_i = g.value(predicate=RDF.type, object=i, any=False)
-        print("found istance of ", i, ": ", instance_i)
+        #print("found istance of ", i, ": ", instance_i)
         story += g.triples((instance_i, None, None))
 
         # THAN WE INSTANCIATE AND ADD TO STORY those that are common to every event
@@ -278,31 +277,87 @@ def main(argv, arc):
 
         # THIS IS TO INSTANCIATE AND ADD TO STORY THE TRIPLES SPECIFIC OF THAT EVENT i
         for s, p, o in g.triples((None, RDFS.domain, i)):  # takiing all the specific event properties
-            print("       considering", s)
+            #print("       considering", s)
             allranges = []  # THIS IS THO HANDLE MULTIPLE RANGES, SEE THRETENEDELEMENT (CALL TO ADVENTURE) EXAMPLE TO UNDERSTAND
             for s1, p1, o1 in g.triples((s, RDFS.range, None)):
-                print("       range: ", o1)
+                #print("       range: ", o1)
                 allranges.append(o1)
             rand_range = (random.choice(allranges))
             range_str = rand_range.split('/')[-1]  # pick one from the possible ranges
             if (range_str in fixed):
-                print(range_str, "is in fixed dic")
+                #print(range_str, "is in fixed dic")
                 story.add((instance_i, s, fixed[range_str]))
             else:
                 story.add((instance_i, s, random_pick(rand_range)))
 
     #HERE WE FIND A WAY TO DO THE SPARQL QUERY AND GET THE TEXT
-    add_labels(g,story)
-    domain_range(g,story)
+    story = add_labels(g,story)
+    story = domain_range(g,story)
     print("____________________________---\n")
-    for s,p,o in story.triples((HERO.Event_04, None , None)):
-        print(s,p,o)
-    story.serialize(f"./story_a_{method}.ttl")
+    text1 = textGeneration_Event1(story)
+    text2 = textGeneration_Event4(story)
+    print(type(text1))
+    text1_list = []
+    text2_list = []
+    for i in text1:
+        text1_list.append(i)
+
+    for i in text2:
+        text2_list.append(i)
+    #print((text1_list[0]))
+    #text1_list[0] = re.sub('rdflib.term.Literal', '', str(text1_list[0]))
+    #text2_list[0] = re.sub('rdflib.term.Literal', '', str(text2_list[0]))
+
+    #triples_clean = re.sub('XMLSchema#', '', triples_clean)
+    #print(text1_list)
+    #print(text2_list)
+    triples_clean = ""
+
+
+        #story += g.triples((None, RDFS.range, None))
+    story = story.serialize(f"./story_a_{method}.ttl")
+    for s, p, o in story.triples((HERO.Event_04, None, None)):
+        story.remove((None, None, RDFS.Resource))
+        story.remove((None, None, sem.Core))
+        story.remove((None, RDFS.label, None))
+        #story.remove((HERO.Event_04, None, None))
+
+        #story += g.triples((p, RDF.type, None))
+
+    for s, p, o in story.triples((None, None, None)):
+        triples_clean += ((str(s).split('/')[-1] + " - " + str(p).split("/")[-1] + " - " + str(o).split("/")[-1] + " | "))
+        triples_clean = re.sub('22-rdf-syntax-ns#', '',triples_clean)
+        triples_clean = re.sub('rdf-schema##', '', triples_clean)
+        triples_clean = re.sub('owl#', '', triples_clean)
+        triples_clean = re.sub('rdf-schema#', '', triples_clean)
+        triples_clean = re.sub('XMLSchema#', '', triples_clean)
+
+
+    #print(triples_clean)
+    #print(type(triples_clean))
+    triples_list = [triples_clean]
+    #print(triples_list)
+
+    dict = {}
+    dict['Event_1'] = text1_list
+    dict['Event_4'] = text2_list
+    dict['Knowledge Graph'] = triples_list
+
+    #print(dict)
+    json_object = json.dumps(dict, indent="")
+    print(json_object)
+
+
+
+
+
+
+    #for s,p,o in story.triples((HERO.Event_04, None , None)):
+    #    print(s,p,o)
+    #story = story.serialize(f"./story_a_{method}.ttl")
     #AND HERE WE TRY TO PUT EVERYTHING INTO ONE JSON
     #print(f"\n{method} based story has been generated succesfully! Check ./story_{method}.ttl ")
-    text=textGeneration_Event4(story)
-    for i in text:
-        print(i)
+
 
 
 
