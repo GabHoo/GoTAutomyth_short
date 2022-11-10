@@ -1,0 +1,1002 @@
+{
+"1": {
+"Event_11": [
+[
+"Once upon a time, in Karhold there was a official whose name was Jon Snow. Jon Snow was a Lord from the House Lannister. It was sunrise when this story begins."
+]
+],
+"Event_12": [
+[
+"It was sunrise in Karhold. Jon Snow was a  Lord from the House Lannister and worked as a official"
+]
+],
+"Event_13": [
+[
+"Karhold was the place where the Jon Snow,Lord of House Lannisterused to live. Jon Snow was also known around Karhold as a great official . It was sunrise when this story takes place."
+]
+],
+"Knowledge Graph": [
+"King - type - Actor | Event - label - Event | Event - type - Class | Cersei_Lannister - label - Cersei Lannister | Core - label - Core | King - label - King | hasHouse - range - House | Cersei_Lannister - type - Female | Event_01 - hasActor - Cersei_Lannister | Event_01 - journeyStage - 1 | the_first_day_of_Spring - label - the first day of Spring | King - type - Title | House_Stark - type - House | hasPlace - range - Place | hasOccupation - range - Occupation | squire - type - Occupation | Deepwood_Motte - type - Place | the_first_day_of_Spring - type - Time | squire - label - squire | hasActor - range - Hero | Event_01 - hasOccupation - squire | House_Stark - label - House Stark | Event_01 - hasTitle - King | Core - type - Class | hasTitle - range - Title | Event_01 - hasTime - the_first_day_of_Spring | Event_01 - type - Event | Event_01 - hasHouse - House_Stark | Deepwood_Motte - label - Deepwood Motte | Event_01 - type - OrdinaryWorld | King - type - Male | hasTime - range - Time | Cersei_Lannister - type - Main_Character | Event_01 - label - Ordinary World presentation | cause_of_death - range - string | Cersei_Lannister - type - Actor | Event_01 - hasPlace - Deepwood_Motte | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"2": {
+"Event_11": [
+[
+"Once upon a time, in Crossroads Inn there was a warrior whose name was Cersei Lannister. Cersei Lannister was a Lady from the House Stark. It was the first day of Spring when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the first day of Spring in Crossroads Inn. Cersei Lannister was a  Lady from the House Stark and worked as a warrior"
+]
+],
+"Event_13": [
+[
+"Crossroads Inn was the place where the Cersei Lannister,Lady of House Starkused to live. Cersei Lannister was also known around Crossroads Inn as a great warrior . It was the first day of Spring when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event - type - Class | Core - label - Core | Event_01 - hasTitle - queen_consort | hasHouse - range - House | Event_01 - hasPlace - The_Eyrie | Arya_Stark - type - Main_Character | Event_01 - journeyStage - 1 | Event_01 - hasOccupation - rebel | Arya_Stark - type - Actor | the_first_day_of_Spring - label - the first day of Spring | hasPlace - range - Place | queen_consort - type - Actor | hasOccupation - range - Occupation | the_first_day_of_Spring - type - Time | Event_01 - hasHouse - House_Martell | The_Eyrie - type - Place | Event_01 - hasActor - Arya_Stark | hasActor - range - Hero | rebel - type - Occupation | Arya_Stark - type - Female | The_Eyrie - label - The Eyrie | Core - type - Class | hasTitle - range - Title | queen_consort - type - Title | queen_consort - type - Female | Arya_Stark - label - Arya Stark | House_Martell - label - House Martell | Event_01 - hasTime - the_first_day_of_Spring | Event_01 - type - Event | rebel - label - rebel | hasTime - range - Time | Event_01 - type - OrdinaryWorld | queen_consort - label - Queen  | cause_of_death - range - string | Event_01 - label - Ordinary World presentation | House_Martell - type - House | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"5": {
+"Event_11": [
+[
+"Once upon a time, in Karhold there was a murderer whose name was Robert Baratheon. Robert Baratheon was a King from the House Targaryen. It was sunrise when this story begins."
+]
+],
+"Event_12": [
+[
+"It was sunrise in Karhold. Robert Baratheon was a  King from the House Targaryen and worked as a murderer"
+]
+],
+"Event_13": [
+[
+"Karhold was the place where the Robert Baratheon,King of House Targaryenused to live. Robert Baratheon was also known around Karhold as a great murderer . It was sunrise when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Torrhen_Square - type - Place | Bran_Stark - label - Bran Stark | Event - label - Event | Event - type - Class | the_Autumnal_Equinox - label - the Autumnal Equinox | Core - label - Core | Event_01 - hasTime - the_Autumnal_Equinox | House_Baratheon - label - House Baratheon | hasHouse - range - House | Event_01 - hasHouse - House_Baratheon | Event_01 - hasActor - Bran_Stark | Event_01 - journeyStage - 1 | fictional_princess - type - Actor | procurer - label - procurer | hasPlace - range - Place | hasOccupation - range - Occupation | the_Autumnal_Equinox - type - Time | hasActor - range - Hero | Event_01 - hasPlace - Torrhen_Square | Bran_Stark - type - Male | fictional_princess - type - Title | fictional_princess - type - Female | Core - type - Class | hasTitle - range - Title | Bran_Stark - type - Main_Character | House_Baratheon - type - House | procurer - type - Occupation | Event_01 - hasOccupation - procurer | Bran_Stark - type - Actor | Torrhen_Square - label - Torrhen's Square | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | fictional_princess - label - Princess | Event_01 - label - Ordinary World presentation | Event_01 - hasTitle - fictional_princess | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"8": {
+"Event_11": [
+[
+"Once upon a time, in Karhold there was a official whose name was Bran Stark. Bran Stark was a King from the House Stark. It was Christmas when this story begins."
+]
+],
+"Event_12": [
+[
+"It was Christmas in Karhold. Bran Stark was a  King from the House Stark and worked as a official"
+]
+],
+"Event_13": [
+[
+"Karhold was the place where the Bran Stark,King of House Starkused to live. Bran Stark was also known around Karhold as a great official . It was Christmas when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Riverlands - type - Place | Event - label - Event | Event_01 - hasTime - the_Winter_Solstice | Event - type - Class | Cersei_Lannister - label - Cersei Lannister | soldier - label - soldier | Core - label - Core | House_Tyrell - type - House | the_Winter_Solstice - label - the Winter Solstice | hasHouse - range - House | Cersei_Lannister - type - Female | Event_01 - hasActor - Cersei_Lannister | House_Tyrell - label - House Tyrell | soldier - type - Occupation | Lord - type - Male | Event_01 - journeyStage - 1 | hasPlace - range - Place | hasOccupation - range - Occupation | Lord - type - Actor | the_Winter_Solstice - type - Time | Event_01 - hasTitle - Lord | Riverlands - label - Riverlands | Event_01 - hasHouse - House_Tyrell | hasActor - range - Hero | Core - type - Class | hasTitle - range - Title | Lord - label - Lord | Lord - type - Title | hasTime - range - Time | Event_01 - type - Event | Event_01 - hasPlace - Riverlands | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Cersei_Lannister - type - Main_Character | Event_01 - label - Ordinary World presentation | Cersei_Lannister - type - Actor | Event_01 - hasOccupation - soldier | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"9": {
+"Event_11": [
+[
+"Once upon a time, in Seagard there was a revolutionary whose name was Margaery Tyrell. Margaery Tyrell was a Princess from the House Arryn. It was sunrise when this story begins."
+]
+],
+"Event_12": [
+[
+"It was sunrise in Seagard. Margaery Tyrell was a  Princess from the House Arryn and worked as a revolutionary"
+]
+],
+"Event_13": [
+[
+"Seagard was the place where the Margaery Tyrell,Princess of House Arrynused to live. Margaery Tyrell was also known around Seagard as a great revolutionary . It was sunrise when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Torrhen_Square - type - Place | King - type - Actor | Event - label - Event | Event - type - Class | Daenerys_Targaryen - label - Daenerys Targaryen | the_Autumnal_Equinox - label - the Autumnal Equinox | assassin - label - assassin | Core - label - Core | Daenerys_Targaryen - type - Main_Character | King - label - King | Event_01 - hasTime - the_Autumnal_Equinox | House_Baratheon - label - House Baratheon | Daenerys_Targaryen - type - Actor | hasHouse - range - House | Event_01 - hasHouse - House_Baratheon | Event_01 - journeyStage - 1 | King - type - Title | hasPlace - range - Place | hasOccupation - range - Occupation | assassin - type - Occupation | Daenerys_Targaryen - type - Female | the_Autumnal_Equinox - type - Time | hasActor - range - Hero | Event_01 - hasPlace - Torrhen_Square | Event_01 - hasTitle - King | Core - type - Class | hasTitle - range - Title | House_Baratheon - type - House | Torrhen_Square - label - Torrhen's Square | King - type - Male | Event_01 - type - Event | hasTime - range - Time | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Event_01 - label - Ordinary World presentation | Event_01 - hasOccupation - assassin | Event_01 - hasActor - Daenerys_Targaryen | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"11": {
+"Event_11": [
+[
+"Once upon a time, in Raventree Hall there was a spy whose name was Bran Stark. Bran Stark was a King from the House Baratheon. It was the Autumnal Equinox when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the Autumnal Equinox in Raventree Hall. Bran Stark was a  King from the House Baratheon and worked as a spy"
+]
+],
+"Event_13": [
+[
+"Raventree Hall was the place where the Bran Stark,King of House Baratheonused to live. Bran Stark was also known around Raventree Hall as a great spy . It was the Autumnal Equinox when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event - type - Class | the_Autumnal_Equinox - label - the Autumnal Equinox | Core - label - Core | Lady - type - Actor | Event_01 - hasTime - the_Autumnal_Equinox | Event_01 - hasPlace - The_Twins | hasHouse - range - House | The_Twins - label - The Twins | Lady - label - Lady | Event_01 - journeyStage - 1 | hasPlace - range - Place | hasOccupation - range - Occupation | Lady - type - Title | Robert_Baratheon - type - Male | Lady - type - Female | squire - type - Occupation | Robert_Baratheon - label - Robert Baratheon | the_Autumnal_Equinox - type - Time | Event_01 - hasHouse - House_Martell | squire - label - squire | The_Twins - type - Place | hasActor - range - Hero | Robert_Baratheon - type - Main_Character | Event_01 - hasOccupation - squire | Robert_Baratheon - type - Actor | Core - type - Class | hasTitle - range - Title | House_Martell - label - House Martell | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Event_01 - hasActor - Robert_Baratheon | Event_01 - hasTitle - Lady | Event_01 - label - Ordinary World presentation | House_Martell - type - House | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"13": {
+"Event_11": [
+[
+"Once upon a time, in Karhold there was a procurer whose name was Petyr Baelish. Petyr Baelish was a King from the House Stark. It was sunrise when this story begins."
+]
+],
+"Event_12": [
+[
+"It was sunrise in Karhold. Petyr Baelish was a  King from the House Stark and worked as a procurer"
+]
+],
+"Event_13": [
+[
+"Karhold was the place where the Petyr Baelish,King of House Starkused to live. Petyr Baelish was also known around Karhold as a great procurer . It was sunrise when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event_01 - hasOccupation - bureaucrat | Event - type - Class | Core - label - Core | Event_01 - hasHouse - House_Targaryen | Event_01 - hasTime - christmas | hasHouse - range - House | Event_01 - hasPlace - Bear_Island | Lord - type - Male | Event_01 - journeyStage - 1 | hasPlace - range - Place | christmas - label - Christmas | hasOccupation - range - Occupation | House_Targaryen - type - House | Lord - type - Actor | Event_01 - hasTitle - Lord | Bear_Island - label - Bear Island | bureaucrat - label - bureaucrat | House_Targaryen - label - House Targaryen | Bear_Island - type - Place | hasActor - range - Hero | Core - type - Class | hasTitle - range - Title | Tyrion_Lannister - type - Male | Lord - label - Lord | Tyrion_Lannister - label - Tyrion Lannister | Tyrion_Lannister - type - Main_Character | Lord - type - Title | christmas - type - Time | Event_01 - type - Event | hasTime - range - Time | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Tyrion_Lannister - type - Actor | Event_01 - label - Ordinary World presentation | bureaucrat - type - Occupation | Event_01 - hasActor - Tyrion_Lannister | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"15": {
+"Event_11": [
+[
+"Once upon a time, in Castle Black there was a rebel whose name was Jon Snow. Jon Snow was a King from the House Martell. It was the first day of Spring when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the first day of Spring in Castle Black. Jon Snow was a  King from the House Martell and worked as a rebel"
+]
+],
+"Event_13": [
+[
+"Castle Black was the place where the Jon Snow,King of House Martellused to live. Jon Snow was also known around Castle Black as a great rebel . It was the first day of Spring when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event - type - Class | the_Autumnal_Equinox - label - the Autumnal Equinox | soldier - label - soldier | Core - label - Core | Event_01 - hasHouse - House_Targaryen | Event_01 - hasTime - the_Autumnal_Equinox | hasHouse - range - House | Event_01 - hasPlace - The_Eyrie | Event_01 - hasOccupation - soldier | soldier - type - Occupation | Lord - type - Male | Event_01 - journeyStage - 1 | hasPlace - range - Place | hasOccupation - range - Occupation | House_Targaryen - type - House | Lord - type - Actor | Event_01 - hasTitle - Lord | the_Autumnal_Equinox - type - Time | The_Eyrie - type - Place | House_Targaryen - label - House Targaryen | hasActor - range - Hero | The_Eyrie - label - The Eyrie | Core - type - Class | hasTitle - range - Title | Tyrion_Lannister - type - Male | Lord - label - Lord | Tyrion_Lannister - label - Tyrion Lannister | Tyrion_Lannister - type - Main_Character | Lord - type - Title | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Tyrion_Lannister - type - Actor | Event_01 - label - Ordinary World presentation | Event_01 - hasActor - Tyrion_Lannister | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"17": {
+"Event_11": [
+[
+"Once upon a time, in Seagard there was a bureaucrat whose name was Daenerys Targaryen. Daenerys Targaryen was a Lady from the House Greyjoy. It was the Autumnal Equinox when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the Autumnal Equinox in Seagard. Daenerys Targaryen was a  Lady from the House Greyjoy and worked as a bureaucrat"
+]
+],
+"Event_13": [
+[
+"Seagard was the place where the Daenerys Targaryen,Lady of House Greyjoyused to live. Daenerys Targaryen was also known around Seagard as a great bureaucrat . It was the Autumnal Equinox when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Riverlands - type - Place | Event - label - Event | Event_01 - hasTime - the_Winter_Solstice | Event - type - Class | King - type - Actor | Core - label - Core | Margaery_Tyrell - type - Main_Character | King - label - King | Margaery_Tyrell - type - Actor | the_Winter_Solstice - label - the Winter Solstice | hasHouse - range - House | Event_01 - hasHouse - House_Tully | House_Tully - label - House Tully | Event_01 - hasOccupation - military_leader | Event_01 - journeyStage - 1 | King - type - Title | hasPlace - range - Place | Event_01 - hasActor - Margaery_Tyrell | hasOccupation - range - Occupation | Margaery_Tyrell - type - Female | the_Winter_Solstice - type - Time | Riverlands - label - Riverlands | hasActor - range - Hero | military_leader - type - Occupation | Event_01 - hasTitle - King | Core - type - Class | hasTitle - range - Title | military_leader - label - military leader | House_Tully - type - House | Margaery_Tyrell - label - Margaery Tyrell | King - type - Male | Event_01 - type - Event | Event_01 - hasPlace - Riverlands | hasTime - range - Time | Event_01 - type - OrdinaryWorld | cause_of_death - range - string | Event_01 - label - Ordinary World presentation | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"18": {
+"Event_11": [
+[
+"Once upon a time, in The Eyrie there was a military leader whose name was Jon Snow. Jon Snow was a Lord from the House Tyrell. It was sunrise when this story begins."
+]
+],
+"Event_12": [
+[
+"It was sunrise in The Eyrie. Jon Snow was a  Lord from the House Tyrell and worked as a military leader"
+]
+],
+"Event_13": [
+[
+"The Eyrie was the place where the Jon Snow,Lord of House Tyrellused to live. Jon Snow was also known around The Eyrie as a great military leader . It was sunrise when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Winterfell - label - Winterfell | Event - label - Event | Event_01 - hasPlace - Winterfell | Event_01 - hasTime - the_Winter_Solstice | Event - type - Class | Daenerys_Targaryen - label - Daenerys Targaryen | Core - label - Core | Winterfell - type - Place | Daenerys_Targaryen - type - Main_Character | House_Baratheon - label - House Baratheon | Daenerys_Targaryen - type - Actor | Event_01 - hasOccupation - regent | the_Winter_Solstice - label - the Winter Solstice | hasHouse - range - House | Event_01 - hasHouse - House_Baratheon | Lord - type - Male | Event_01 - journeyStage - 1 | hasPlace - range - Place | hasOccupation - range - Occupation | Lord - type - Actor | Daenerys_Targaryen - type - Female | the_Winter_Solstice - type - Time | Event_01 - hasTitle - Lord | regent - type - Occupation | hasActor - range - Hero | Core - type - Class | hasTitle - range - Title | Lord - label - Lord | House_Baratheon - type - House | Lord - type - Title | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Event_01 - label - Ordinary World presentation | Event_01 - hasActor - Daenerys_Targaryen | regent - label - regent | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"20": {
+"Event_11": [
+[
+"Once upon a time, in White Harbor there was a prophet whose name was Tyrion Lannister. Tyrion Lannister was a King from the House Tyrell. It was sunrise when this story begins."
+]
+],
+"Event_12": [
+[
+"It was sunrise in White Harbor. Tyrion Lannister was a  King from the House Tyrell and worked as a prophet"
+]
+],
+"Event_13": [
+[
+"White Harbor was the place where the Tyrion Lannister,King of House Tyrellused to live. Tyrion Lannister was also known around White Harbor as a great prophet . It was sunrise when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event_01 - hasPlace - White_Harbor | Event - label - Event | Event_01 - hasTime - the_Winter_Solstice | Event - type - Class | Core - label - Core | White_Harbor - label - White Harbor | Margaery_Tyrell - type - Main_Character | White_Harbor - type - Place | Margaery_Tyrell - type - Actor | the_Winter_Solstice - label - the Winter Solstice | hasHouse - range - House | Lord - type - Male | Event_01 - journeyStage - 1 | hasPlace - range - Place | Event_01 - hasActor - Margaery_Tyrell | hasOccupation - range - Occupation | Lord - type - Actor | Margaery_Tyrell - type - Female | the_Winter_Solstice - type - Time | squire - type - Occupation | Event_01 - hasTitle - Lord | Event_01 - hasHouse - House_Arryn | squire - label - squire | hasActor - range - Hero | Event_01 - hasOccupation - squire | House_Arryn - type - House | Core - type - Class | hasTitle - range - Title | Lord - label - Lord | Margaery_Tyrell - label - Margaery Tyrell | Lord - type - Title | House_Arryn - label - House Arryn | Event_01 - type - Event | hasTime - range - Time | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Event_01 - label - Ordinary World presentation | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"21": {
+"Event_11": [
+[
+"Once upon a time, in Deepwood Motte there was a murderer whose name was Petyr Baelish. Petyr Baelish was a Lord from the House Lannister. It was Christmas when this story begins."
+]
+],
+"Event_12": [
+[
+"It was Christmas in Deepwood Motte. Petyr Baelish was a  Lord from the House Lannister and worked as a murderer"
+]
+],
+"Event_13": [
+[
+"Deepwood Motte was the place where the Petyr Baelish,Lord of House Lannisterused to live. Petyr Baelish was also known around Deepwood Motte as a great murderer . It was Christmas when this story takes place."
+]
+],
+"Knowledge Graph": [
+"warrior - type - Occupation | Event - label - Event | Event - type - Class | Cersei_Lannister - label - Cersei Lannister | Core - label - Core | warrior - label - warrior | Raventree_Hall - type - Place | hasHouse - range - House | Cersei_Lannister - type - Female | Event_01 - hasActor - Cersei_Lannister | Event_01 - hasOccupation - warrior | Event_01 - journeyStage - 1 | fictional_princess - type - Actor | hasPlace - range - Place | hasOccupation - range - Occupation | Event_01 - hasTime - sunrise | Event_01 - hasHouse - House_Arryn | hasActor - range - Hero | fictional_princess - type - Title | fictional_princess - type - Female | House_Arryn - type - House | Core - type - Class | sunrise - label - sunrise | hasTitle - range - Title | House_Arryn - label - House Arryn | Event_01 - type - Event | Raventree_Hall - label - Raventree Hall | hasTime - range - Time | Event_01 - type - OrdinaryWorld | cause_of_death - range - string | Cersei_Lannister - type - Main_Character | Event_01 - label - Ordinary World presentation | fictional_princess - label - Princess | Cersei_Lannister - type - Actor | Event_01 - hasPlace - Raventree_Hall | Event_01 - hasTitle - fictional_princess | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | sunrise - type - Time | "
+]
+},
+"22": {
+"Event_11": [
+[
+"Once upon a time, in The Dreadfort there was a advisor whose name was Bran Stark. Bran Stark was a Lord from the House Greyjoy. It was the Autumnal Equinox when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the Autumnal Equinox in The Dreadfort. Bran Stark was a  Lord from the House Greyjoy and worked as a advisor"
+]
+],
+"Event_13": [
+[
+"The Dreadfort was the place where the Bran Stark,Lord of House Greyjoyused to live. Bran Stark was also known around The Dreadfort as a great advisor . It was the Autumnal Equinox when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Jon_Snow - type - Actor | Event - label - Event | Event_01 - hasTime - the_Winter_Solstice | Event - type - Class | Moat_Cailin - label - Moat Cailin | Core - label - Core | official - label - official | Lady - type - Actor | Event_01 - hasActor - Jon_Snow | the_Winter_Solstice - label - the Winter Solstice | hasHouse - range - House | Lady - label - Lady | Event_01 - hasHouse - House_Tully | House_Tully - label - House Tully | Event_01 - journeyStage - 1 | hasPlace - range - Place | hasOccupation - range - Occupation | Lady - type - Title | Jon_Snow - label - Jon Snow | Moat_Cailin - type - Place | the_Winter_Solstice - type - Time | Event_01 - hasOccupation - official | Lady - type - Female | Jon_Snow - type - Main_Character | official - type - Occupation | hasActor - range - Hero | Core - type - Class | hasTitle - range - Title | House_Tully - type - House | Jon_Snow - type - Male | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Event_01 - hasTitle - Lady | Event_01 - label - Ordinary World presentation | Event_01 - hasPlace - Moat_Cailin | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"23": {
+"Event_11": [
+[
+"Once upon a time, in White Harbor there was a revolutionary whose name was Robert Baratheon. Robert Baratheon was a Lord from the House Targaryen. It was Easter day when this story begins."
+]
+],
+"Event_12": [
+[
+"It was Easter day in White Harbor. Robert Baratheon was a  Lord from the House Targaryen and worked as a revolutionary"
+]
+],
+"Event_13": [
+[
+"White Harbor was the place where the Robert Baratheon,Lord of House Targaryenused to live. Robert Baratheon was also known around White Harbor as a great revolutionary . It was Easter day when this story takes place."
+]
+],
+"Knowledge Graph": [
+"revolutionary - label - revolutionary | Event - label - Event | Event_01 - hasTime - the_Winter_Solstice | Event_01 - hasOccupation - revolutionary | Event - type - Class | Cersei_Lannister - label - Cersei Lannister | Core - label - Core | Kings_Landing - type - Place | the_Winter_Solstice - label - the Winter Solstice | hasHouse - range - House | Cersei_Lannister - type - Female | Event_01 - hasActor - Cersei_Lannister | Event_01 - hasPlace - Kings_Landing | Lord - type - Male | Event_01 - journeyStage - 1 | hasPlace - range - Place | hasOccupation - range - Occupation | Lord - type - Actor | the_Winter_Solstice - type - Time | Event_01 - hasTitle - Lord | Event_01 - hasHouse - House_Arryn | hasActor - range - Hero | Kings_Landing - label - Kings Landing | revolutionary - type - Occupation | House_Arryn - type - House | Core - type - Class | hasTitle - range - Title | Lord - label - Lord | Lord - type - Title | House_Arryn - label - House Arryn | Event_01 - type - Event | hasTime - range - Time | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Cersei_Lannister - type - Main_Character | Event_01 - label - Ordinary World presentation | Cersei_Lannister - type - Actor | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"24": {
+"Event_11": [
+[
+"Once upon a time, in Karhold there was a spy whose name was Robert Baratheon. Robert Baratheon was a Lord from the House Lannister. It was the first day of Spring when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the first day of Spring in Karhold. Robert Baratheon was a  Lord from the House Lannister and worked as a spy"
+]
+],
+"Event_13": [
+[
+"Karhold was the place where the Robert Baratheon,Lord of House Lannisterused to live. Robert Baratheon was also known around Karhold as a great spy . It was the first day of Spring when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event - type - Class | Core - label - Core | Margaery_Tyrell - type - Main_Character | Event_01 - hasOccupation - spy | Event_01 - hasTitle - fictional_princess | easter - type - Time | Margaery_Tyrell - type - Actor | hasHouse - range - House | Event_01 - hasTime - easter | Event_01 - journeyStage - 1 | fictional_princess - type - Actor | hasPlace - range - Place | Event_01 - hasActor - Margaery_Tyrell | hasOccupation - range - Occupation | The_Dreadfort - label - The Dreadfort | Margaery_Tyrell - type - Female | Event_01 - hasHouse - House_Arryn | Event_01 - hasPlace - The_Dreadfort | hasActor - range - Hero | fictional_princess - type - Title | fictional_princess - type - Female | House_Arryn - type - House | Core - type - Class | spy - label - spy | hasTitle - range - Title | Margaery_Tyrell - label - Margaery Tyrell | The_Dreadfort - type - Place | House_Arryn - label - House Arryn | Event_01 - type - Event | spy - type - Occupation | hasTime - range - Time | Event_01 - type - OrdinaryWorld | cause_of_death - range - string | fictional_princess - label - Princess | Event_01 - label - Ordinary World presentation | easter - label - Easter day | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"27": {
+"Event_11": [
+[
+"Once upon a time, in Saltpans there was a hunter whose name was Daenerys Targaryen. Daenerys Targaryen was a Princess from the House Greyjoy. It was Easter day when this story begins."
+]
+],
+"Event_12": [
+[
+"It was Easter day in Saltpans. Daenerys Targaryen was a  Princess from the House Greyjoy and worked as a hunter"
+]
+],
+"Event_13": [
+[
+"Saltpans was the place where the Daenerys Targaryen,Princess of House Greyjoyused to live. Daenerys Targaryen was also known around Saltpans as a great hunter . It was Easter day when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event - type - Class | Core - label - Core | Margaery_Tyrell - type - Main_Character | Event_01 - hasTitle - queen_consort | Margaery_Tyrell - type - Actor | hasHouse - range - House | the_Summer_Solstice - label - the Summer Solstice | Event_01 - journeyStage - 1 | hasPlace - range - Place | Event_01 - hasActor - Margaery_Tyrell | queen_consort - type - Actor | hasOccupation - range - Occupation | The_Dreadfort - label - The Dreadfort | Margaery_Tyrell - type - Female | the_Summer_Solstice - type - Time | Event_01 - hasTime - the_Summer_Solstice | Event_01 - hasHouse - House_Arryn | Event_01 - hasPlace - The_Dreadfort | hasActor - range - Hero | House_Arryn - type - House | advisor - type - Occupation | Core - type - Class | hasTitle - range - Title | advisor - label - advisor | queen_consort - type - Title | queen_consort - type - Female | Event_01 - hasOccupation - advisor | Margaery_Tyrell - label - Margaery Tyrell | The_Dreadfort - type - Place | House_Arryn - label - House Arryn | Event_01 - type - Event | hasTime - range - Time | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | queen_consort - label - Queen  | Event_01 - label - Ordinary World presentation | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"30": {
+"Event_11": [
+[
+"Once upon a time, in Kings Landing there was a revolutionary whose name was Cersei Lannister. Cersei Lannister was a Lady from the House Baratheon. It was the first day of Spring when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the first day of Spring in Kings Landing. Cersei Lannister was a  Lady from the House Baratheon and worked as a revolutionary"
+]
+],
+"Event_13": [
+[
+"Kings Landing was the place where the Cersei Lannister,Lady of House Baratheonused to live. Cersei Lannister was also known around Kings Landing as a great revolutionary . It was the first day of Spring when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event - type - Class | Core - label - Core | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | Event_01 - hasOccupation - spy | Castle_Black - label - Castle Black | Event_01 - hasPlace - Castle_Black | hasHouse - range - House | Arya_Stark - type - Main_Character | Event_01 - journeyStage - 1 | Arya_Stark - type - Actor | the_first_day_of_Spring - label - the first day of Spring | hasPlace - range - Place | fictional_king - type - Male | hasOccupation - range - Occupation | the_first_day_of_Spring - type - Time | fictional_king - type - Actor | Event_01 - hasActor - Arya_Stark | hasActor - range - Hero | Arya_Stark - type - Female | spy - label - spy | Core - type - Class | fictional_king - label - King | hasTitle - range - Title | Arya_Stark - label - Arya Stark | Event_01 - hasTitle - fictional_king | Event_01 - hasHouse - House_Greyjoy | Event_01 - hasTime - the_first_day_of_Spring | Event_01 - type - Event | spy - type - Occupation | hasTime - range - Time | Event_01 - type - OrdinaryWorld | cause_of_death - range - string | fictional_king - type - Title | Event_01 - label - Ordinary World presentation | Castle_Black - type - Place | House_Greyjoy - label - House Greyjoy | House_Greyjoy - type - House | "
+]
+},
+"31": {
+"Event_11": [
+[
+"Once upon a time, in Crossroads Inn there was a revolutionary whose name was Cersei Lannister. Cersei Lannister was a Princess from the House Tully. It was the Summer Solstice when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the Summer Solstice in Crossroads Inn. Cersei Lannister was a  Princess from the House Tully and worked as a revolutionary"
+]
+],
+"Event_13": [
+[
+"Crossroads Inn was the place where the Cersei Lannister,Princess of House Tullyused to live. Cersei Lannister was also known around Crossroads Inn as a great revolutionary . It was the Summer Solstice when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Bran_Stark - label - Bran Stark | Event - label - Event | Event_01 - hasTime - the_Winter_Solstice | Event - type - Class | Core - label - Core | Event_01 - hasHouse - House_Targaryen | vigilante - type - Occupation | Event_01 - hasOccupation - vigilante | the_Winter_Solstice - label - the Winter Solstice | hasHouse - range - House | Event_01 - hasPlace - Bear_Island | Event_01 - hasActor - Bran_Stark | Event_01 - journeyStage - 1 | fictional_princess - type - Actor | hasPlace - range - Place | hasOccupation - range - Occupation | House_Targaryen - type - House | the_Winter_Solstice - type - Time | Bear_Island - label - Bear Island | House_Targaryen - label - House Targaryen | Bear_Island - type - Place | hasActor - range - Hero | Bran_Stark - type - Male | fictional_princess - type - Title | fictional_princess - type - Female | Core - type - Class | hasTitle - range - Title | Bran_Stark - type - Main_Character | vigilante - label - vigilante | Bran_Stark - type - Actor | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | fictional_princess - label - Princess | Event_01 - label - Ordinary World presentation | Event_01 - hasTitle - fictional_princess | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"34": {
+"Event_11": [
+[
+"Once upon a time, in White Harbor there was a rebel whose name was Daenerys Targaryen. Daenerys Targaryen was a Queen  from the House Lannister. It was the first day of Spring when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the first day of Spring in White Harbor. Daenerys Targaryen was a  Queen  from the House Lannister and worked as a rebel"
+]
+],
+"Event_13": [
+[
+"White Harbor was the place where the Daenerys Targaryen,Queen  of House Lannisterused to live. Daenerys Targaryen was also known around White Harbor as a great rebel . It was the first day of Spring when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event - type - Class | Daenerys_Targaryen - label - Daenerys Targaryen | Core - label - Core | Daenerys_Targaryen - type - Main_Character | House_Baratheon - label - House Baratheon | Event_01 - hasTitle - queen_consort | Daenerys_Targaryen - type - Actor | Event_01 - hasOccupation - hunter | hasHouse - range - House | Event_01 - hasHouse - House_Baratheon | Event_01 - journeyStage - 1 | hasPlace - range - Place | queen_consort - type - Actor | hasOccupation - range - Occupation | Event_01 - hasTime - sunrise | Daenerys_Targaryen - type - Female | The_Trident - label - The Trident | hasActor - range - Hero | Core - type - Class | sunrise - label - sunrise | hasTitle - range - Title | queen_consort - type - Title | queen_consort - type - Female | The_Trident - type - Place | House_Baratheon - type - House | Event_01 - hasPlace - The_Trident | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | queen_consort - label - Queen  | hunter - type - Occupation | Event_01 - label - Ordinary World presentation | Event_01 - hasActor - Daenerys_Targaryen | hunter - label - hunter | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | sunrise - type - Time | "
+]
+},
+"35": {
+"Event_11": [
+[
+"Once upon a time, in Raventree Hall there was a soldier whose name was Margaery Tyrell. Margaery Tyrell was a Princess from the House Targaryen. It was the first day of Spring when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the first day of Spring in Raventree Hall. Margaery Tyrell was a  Princess from the House Targaryen and worked as a soldier"
+]
+],
+"Event_13": [
+[
+"Raventree Hall was the place where the Margaery Tyrell,Princess of House Targaryenused to live. Margaery Tyrell was also known around Raventree Hall as a great soldier . It was the first day of Spring when this story takes place."
+]
+],
+"Knowledge Graph": [
+"revolutionary - label - revolutionary | Event - label - Event | Event_01 - hasOccupation - revolutionary | Event - type - Class | Core - label - Core | Margaery_Tyrell - type - Main_Character | Castle_Black - label - Castle Black | Event_01 - hasPlace - Castle_Black | Margaery_Tyrell - type - Actor | hasHouse - range - House | Lord - type - Male | Event_01 - journeyStage - 1 | the_first_day_of_Spring - label - the first day of Spring | hasPlace - range - Place | Event_01 - hasActor - Margaery_Tyrell | hasOccupation - range - Occupation | Event_01 - hasHouse - House_Lannister | Lord - type - Actor | Margaery_Tyrell - type - Female | the_first_day_of_Spring - type - Time | Event_01 - hasTitle - Lord | hasActor - range - Hero | revolutionary - type - Occupation | Core - type - Class | hasTitle - range - Title | Lord - label - Lord | Margaery_Tyrell - label - Margaery Tyrell | House_Lannister - label - House Lannister | House_Lannister - type - House | Lord - type - Title | Event_01 - hasTime - the_first_day_of_Spring | Event_01 - type - Event | hasTime - range - Time | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Event_01 - label - Ordinary World presentation | Castle_Black - type - Place | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"36": {
+"Event_11": [
+[
+"Once upon a time, in Torrhen's Square there was a official whose name was Arya Stark. Arya Stark was a Queen  from the House Tyrell. It was sunrise when this story begins."
+]
+],
+"Event_12": [
+[
+"It was sunrise in Torrhen's Square. Arya Stark was a  Queen  from the House Tyrell and worked as a official"
+]
+],
+"Event_13": [
+[
+"Torrhen's Square was the place where the Arya Stark,Queen  of House Tyrellused to live. Arya Stark was also known around Torrhen's Square as a great official . It was sunrise when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Bran_Stark - label - Bran Stark | Event - label - Event | Event - type - Class | Core - label - Core | Event_01 - hasTitle - fictional_princess | easter - type - Time | hasHouse - range - House | Event_01 - hasActor - Bran_Stark | Event_01 - hasTime - easter | Event_01 - journeyStage - 1 | fictional_princess - type - Actor | procurer - label - procurer | hasPlace - range - Place | hasOccupation - range - Occupation | Deepwood_Motte - type - Place | Event_01 - hasHouse - House_Martell | hasActor - range - Hero | Bran_Stark - type - Male | fictional_princess - type - Title | fictional_princess - type - Female | Core - type - Class | hasTitle - range - Title | Bran_Stark - type - Main_Character | procurer - type - Occupation | Event_01 - hasOccupation - procurer | Bran_Stark - type - Actor | House_Martell - label - House Martell | hasTime - range - Time | Event_01 - type - Event | Deepwood_Motte - label - Deepwood Motte | Event_01 - type - OrdinaryWorld | cause_of_death - range - string | fictional_princess - label - Princess | Event_01 - label - Ordinary World presentation | House_Martell - type - House | Event_01 - hasPlace - Deepwood_Motte | easter - label - Easter day | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"40": {
+"Event_11": [
+[
+"Once upon a time, in Red Keep there was a vigilante whose name was Bran Stark. Bran Stark was a King from the House Tully. It was the Summer Solstice when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the Summer Solstice in Red Keep. Bran Stark was a  King from the House Tully and worked as a vigilante"
+]
+],
+"Event_13": [
+[
+"Red Keep was the place where the Bran Stark,King of House Tullyused to live. Bran Stark was also known around Red Keep as a great vigilante . It was the Summer Solstice when this story takes place."
+]
+],
+"Knowledge Graph": [
+"King - type - Actor | Event - label - Event | Event_01 - hasTime - the_Winter_Solstice | Event - type - Class | Core - label - Core | official - label - official | King - label - King | the_Winter_Solstice - label - the Winter Solstice | hasHouse - range - House | Arya_Stark - type - Main_Character | Event_01 - journeyStage - 1 | Arya_Stark - type - Actor | The_Whispering_Wood - type - Place | King - type - Title | The_Whispering_Wood - label - The Whispering Wood | hasPlace - range - Place | hasOccupation - range - Occupation | Event_01 - hasHouse - House_Lannister | the_Winter_Solstice - type - Time | Event_01 - hasOccupation - official | official - type - Occupation | Event_01 - hasActor - Arya_Stark | hasActor - range - Hero | Event_01 - hasTitle - King | Arya_Stark - type - Female | Core - type - Class | hasTitle - range - Title | Arya_Stark - label - Arya Stark | House_Lannister - label - House Lannister | Event_01 - hasPlace - The_Whispering_Wood | House_Lannister - type - House | King - type - Male | Event_01 - type - Event | hasTime - range - Time | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Event_01 - label - Ordinary World presentation | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"41": {
+"Event_11": [
+[
+"Once upon a time, in The Trident there was a murderer whose name was Robert Baratheon. Robert Baratheon was a King from the House Tyrell. It was Christmas when this story begins."
+]
+],
+"Event_12": [
+[
+"It was Christmas in The Trident. Robert Baratheon was a  King from the House Tyrell and worked as a murderer"
+]
+],
+"Event_13": [
+[
+"The Trident was the place where the Robert Baratheon,King of House Tyrellused to live. Robert Baratheon was also known around The Trident as a great murderer . It was Christmas when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event - type - Class | assassin - label - assassin | Core - label - Core | Margaery_Tyrell - type - Main_Character | Event_01 - hasTime - christmas | Lady - type - Actor | The_Iron_Island - type - Place | Margaery_Tyrell - type - Actor | hasHouse - range - House | Event_01 - hasPlace - The_Iron_Island | Lady - label - Lady | The_Iron_Island - label - The Iron Island | Event_01 - journeyStage - 1 | House_Stark - type - House | hasPlace - range - Place | Event_01 - hasActor - Margaery_Tyrell | christmas - label - Christmas | hasOccupation - range - Occupation | assassin - type - Occupation | Lady - type - Title | Lady - type - Female | Margaery_Tyrell - type - Female | hasActor - range - Hero | House_Stark - label - House Stark | Core - type - Class | hasTitle - range - Title | Margaery_Tyrell - label - Margaery Tyrell | christmas - type - Time | Event_01 - type - Event | Event_01 - hasHouse - House_Stark | hasTime - range - Time | Event_01 - type - OrdinaryWorld | cause_of_death - range - string | Event_01 - hasTitle - Lady | Event_01 - label - Ordinary World presentation | Event_01 - hasOccupation - assassin | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"42": {
+"Event_11": [
+[
+"Once upon a time, in Deepwood Motte there was a procurer whose name was Daenerys Targaryen. Daenerys Targaryen was a Princess from the House Lannister. It was Christmas when this story begins."
+]
+],
+"Event_12": [
+[
+"It was Christmas in Deepwood Motte. Daenerys Targaryen was a  Princess from the House Lannister and worked as a procurer"
+]
+],
+"Event_13": [
+[
+"Deepwood Motte was the place where the Daenerys Targaryen,Princess of House Lannisterused to live. Daenerys Targaryen was also known around Deepwood Motte as a great procurer . It was Christmas when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event - type - Class | Moat_Cailin - label - Moat Cailin | Core - label - Core | House_Tyrell - type - House | hasHouse - range - House | House_Tyrell - label - House Tyrell | the_Summer_Solstice - label - the Summer Solstice | Lord - type - Male | Event_01 - journeyStage - 1 | hasPlace - range - Place | hasOccupation - range - Occupation | Lord - type - Actor | Moat_Cailin - type - Place | the_Summer_Solstice - type - Time | squire - type - Occupation | Event_01 - hasTime - the_Summer_Solstice | Event_01 - hasTitle - Lord | squire - label - squire | Event_01 - hasHouse - House_Tyrell | hasActor - range - Hero | Event_01 - hasOccupation - squire | Core - type - Class | hasTitle - range - Title | Tyrion_Lannister - type - Male | Lord - label - Lord | Tyrion_Lannister - label - Tyrion Lannister | Tyrion_Lannister - type - Main_Character | Lord - type - Title | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Tyrion_Lannister - type - Actor | Event_01 - label - Ordinary World presentation | Event_01 - hasPlace - Moat_Cailin | Event_01 - hasActor - Tyrion_Lannister | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"43": {
+"Event_11": [
+[
+"Once upon a time, in Moat Cailin there was a bureaucrat whose name was Robert Baratheon. Robert Baratheon was a King from the House Targaryen. It was sunrise when this story begins."
+]
+],
+"Event_12": [
+[
+"It was sunrise in Moat Cailin. Robert Baratheon was a  King from the House Targaryen and worked as a bureaucrat"
+]
+],
+"Event_13": [
+[
+"Moat Cailin was the place where the Robert Baratheon,King of House Targaryenused to live. Robert Baratheon was also known around Moat Cailin as a great bureaucrat . It was sunrise when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Torrhen_Square - type - Place | revolutionary - label - revolutionary | Event - label - Event | Event_01 - hasOccupation - revolutionary | Event - type - Class | Event_01 - hasTime - theMiddleOftheNight | Core - label - Core | Margaery_Tyrell - type - Main_Character | theMiddleOftheNight - label - the Middle Of the Night | Margaery_Tyrell - type - Actor | hasHouse - range - House | Event_01 - journeyStage - 1 | fictional_princess - type - Actor | hasPlace - range - Place | Event_01 - hasActor - Margaery_Tyrell | hasOccupation - range - Occupation | Margaery_Tyrell - type - Female | Event_01 - hasHouse - House_Arryn | hasActor - range - Hero | Event_01 - hasPlace - Torrhen_Square | revolutionary - type - Occupation | fictional_princess - type - Title | fictional_princess - type - Female | House_Arryn - type - House | Core - type - Class | hasTitle - range - Title | Margaery_Tyrell - label - Margaery Tyrell | Torrhen_Square - label - Torrhen's Square | House_Arryn - label - House Arryn | Event_01 - type - Event | hasTime - range - Time | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | fictional_princess - label - Princess | Event_01 - label - Ordinary World presentation | theMiddleOftheNight - type - Time | Event_01 - hasTitle - fictional_princess | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"44": {
+"Event_11": [
+[
+"Once upon a time, in The Trident there was a prophet whose name was Daenerys Targaryen. Daenerys Targaryen was a Lady from the House Stark. It was the first day of Spring when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the first day of Spring in The Trident. Daenerys Targaryen was a  Lady from the House Stark and worked as a prophet"
+]
+],
+"Event_13": [
+[
+"The Trident was the place where the Daenerys Targaryen,Lady of House Starkused to live. Daenerys Targaryen was also known around The Trident as a great prophet . It was the first day of Spring when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event_01 - hasPlace - Red_Keep | Event - label - Event | Event_01 - hasTime - the_Winter_Solstice | Event - type - Class | Core - label - Core | Event_01 - hasHouse - House_Targaryen | official - label - official | Event_01 - hasTitle - queen_consort | the_Winter_Solstice - label - the Winter Solstice | hasHouse - range - House | Arya_Stark - type - Main_Character | Event_01 - journeyStage - 1 | Red_Keep - label - Red Keep | Arya_Stark - type - Actor | hasPlace - range - Place | queen_consort - type - Actor | hasOccupation - range - Occupation | House_Targaryen - type - House | the_Winter_Solstice - type - Time | Event_01 - hasOccupation - official | official - type - Occupation | House_Targaryen - label - House Targaryen | Event_01 - hasActor - Arya_Stark | hasActor - range - Hero | Arya_Stark - type - Female | Core - type - Class | hasTitle - range - Title | queen_consort - type - Title | queen_consort - type - Female | Arya_Stark - label - Arya Stark | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | queen_consort - label - Queen  | Event_01 - label - Ordinary World presentation | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | Red_Keep - type - Place | "
+]
+},
+"47": {
+"Event_11": [
+[
+"Once upon a time, in Winterfell there was a procurer whose name was Daenerys Targaryen. Daenerys Targaryen was a Lady from the House Arryn. It was Christmas when this story begins."
+]
+],
+"Event_12": [
+[
+"It was Christmas in Winterfell. Daenerys Targaryen was a  Lady from the House Arryn and worked as a procurer"
+]
+],
+"Event_13": [
+[
+"Winterfell was the place where the Daenerys Targaryen,Lady of House Arrynused to live. Daenerys Targaryen was also known around Winterfell as a great procurer . It was Christmas when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event_01 - hasTime - the_Winter_Solstice | Event - type - Class | Daenerys_Targaryen - label - Daenerys Targaryen | Core - label - Core | official - label - official | Daenerys_Targaryen - type - Main_Character | Lady - type - Actor | Daenerys_Targaryen - type - Actor | the_Winter_Solstice - label - the Winter Solstice | hasHouse - range - House | Event_01 - hasPlace - Bear_Island | Lady - label - Lady | Event_01 - hasHouse - House_Tully | House_Tully - label - House Tully | Event_01 - journeyStage - 1 | hasPlace - range - Place | hasOccupation - range - Occupation | Lady - type - Title | Lady - type - Female | Daenerys_Targaryen - type - Female | the_Winter_Solstice - type - Time | Event_01 - hasOccupation - official | official - type - Occupation | Bear_Island - label - Bear Island | Bear_Island - type - Place | hasActor - range - Hero | Core - type - Class | hasTitle - range - Title | House_Tully - type - House | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Event_01 - hasTitle - Lady | Event_01 - label - Ordinary World presentation | Event_01 - hasActor - Daenerys_Targaryen | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"49": {
+"Event_11": [
+[
+"Once upon a time, in The Whispering Wood there was a revolutionary whose name was Tyrion Lannister. Tyrion Lannister was a King from the House Baratheon. It was the first day of Spring when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the first day of Spring in The Whispering Wood. Tyrion Lannister was a  King from the House Baratheon and worked as a revolutionary"
+]
+],
+"Event_13": [
+[
+"The Whispering Wood was the place where the Tyrion Lannister,King of House Baratheonused to live. Tyrion Lannister was also known around The Whispering Wood as a great revolutionary . It was the first day of Spring when this story takes place."
+]
+],
+"Knowledge Graph": [
+"revolutionary - label - revolutionary | Event_01 - hasPlace - Red_Keep | Event - label - Event | Event_01 - hasOccupation - revolutionary | Event - type - Class | Cersei_Lannister - label - Cersei Lannister | Core - label - Core | Event_01 - hasTime - christmas | hasHouse - range - House | Cersei_Lannister - type - Female | Event_01 - hasActor - Cersei_Lannister | Event_01 - hasHouse - House_Tully | House_Tully - label - House Tully | Event_01 - journeyStage - 1 | Red_Keep - label - Red Keep | hasPlace - range - Place | christmas - label - Christmas | fictional_king - type - Male | hasOccupation - range - Occupation | fictional_king - type - Actor | hasActor - range - Hero | revolutionary - type - Occupation | Core - type - Class | fictional_king - label - King | hasTitle - range - Title | House_Tully - type - House | Event_01 - hasTitle - fictional_king | christmas - type - Time | Event_01 - type - Event | hasTime - range - Time | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | fictional_king - type - Title | Cersei_Lannister - type - Main_Character | Event_01 - label - Ordinary World presentation | Cersei_Lannister - type - Actor | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | Red_Keep - type - Place | "
+]
+},
+"51": {
+"Event_11": [
+[
+"Once upon a time, in The Ruby Ford there was a squire whose name was Daenerys Targaryen. Daenerys Targaryen was a Queen  from the House Tully. It was the Summer Solstice when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the Summer Solstice in The Ruby Ford. Daenerys Targaryen was a  Queen  from the House Tully and worked as a squire"
+]
+],
+"Event_13": [
+[
+"The Ruby Ford was the place where the Daenerys Targaryen,Queen  of House Tullyused to live. Daenerys Targaryen was also known around The Ruby Ford as a great squire . It was the Summer Solstice when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event_01 - hasTime - the_Winter_Solstice | Event - type - Class | Core - label - Core | House_Tyrell - type - House | vigilante - type - Occupation | Event_01 - hasOccupation - vigilante | the_Winter_Solstice - label - the Winter Solstice | hasHouse - range - House | House_Tyrell - label - House Tyrell | Event_01 - journeyStage - 1 | fictional_princess - type - Actor | hasPlace - range - Place | hasOccupation - range - Occupation | the_Winter_Solstice - type - Time | Event_01 - hasHouse - House_Tyrell | The_Trident - label - The Trident | hasActor - range - Hero | fictional_princess - type - Title | fictional_princess - type - Female | Core - type - Class | hasTitle - range - Title | Tyrion_Lannister - type - Male | The_Trident - type - Place | Tyrion_Lannister - label - Tyrion Lannister | vigilante - label - vigilante | Event_01 - hasPlace - The_Trident | Tyrion_Lannister - type - Main_Character | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Tyrion_Lannister - type - Actor | fictional_princess - label - Princess | Event_01 - label - Ordinary World presentation | Event_01 - hasTitle - fictional_princess | Event_01 - hasActor - Tyrion_Lannister | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"53": {
+"Event_11": [
+[
+"Once upon a time, in Kings Landing there was a warrior whose name was Robert Baratheon. Robert Baratheon was a King from the House Arryn. It was the first day of Spring when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the first day of Spring in Kings Landing. Robert Baratheon was a  King from the House Arryn and worked as a warrior"
+]
+],
+"Event_13": [
+[
+"Kings Landing was the place where the Robert Baratheon,King of House Arrynused to live. Robert Baratheon was also known around Kings Landing as a great warrior . It was the first day of Spring when this story takes place."
+]
+],
+"Knowledge Graph": [
+"King - type - Actor | Event - label - Event | Event - type - Class | Core - label - Core | Event_01 - hasHouse - House_Targaryen | King - label - King | hasHouse - range - House | Arya_Stark - type - Main_Character | Event_01 - journeyStage - 1 | procurer - label - procurer | Arya_Stark - type - Actor | King - type - Title | hasPlace - range - Place | hasOccupation - range - Occupation | House_Targaryen - type - House | Event_01 - hasTime - sunrise | House_Targaryen - label - House Targaryen | Event_01 - hasActor - Arya_Stark | Event_01 - hasPlace - The_Ruby_Ford | hasActor - range - Hero | Event_01 - hasTitle - King | Arya_Stark - type - Female | Core - type - Class | The_Ruby_Ford - type - Place | sunrise - label - sunrise | hasTitle - range - Title | Arya_Stark - label - Arya Stark | procurer - type - Occupation | Event_01 - hasOccupation - procurer | King - type - Male | Event_01 - type - Event | hasTime - range - Time | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Event_01 - label - Ordinary World presentation | The_Ruby_Ford - label - The Ruby Ford | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | sunrise - type - Time | "
+]
+},
+"54": {
+"Event_11": [
+[
+"Once upon a time, in Bear Island there was a assassin whose name was Margaery Tyrell. Margaery Tyrell was a Lady from the House Stark. It was the first day of Spring when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the first day of Spring in Bear Island. Margaery Tyrell was a  Lady from the House Stark and worked as a assassin"
+]
+],
+"Event_13": [
+[
+"Bear Island was the place where the Margaery Tyrell,Lady of House Starkused to live. Margaery Tyrell was also known around Bear Island as a great assassin . It was the first day of Spring when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event - type - Class | Kings_Landing - type - Place | the_Autumnal_Equinox - label - the Autumnal Equinox | Core - label - Core | Event_01 - hasTime - the_Autumnal_Equinox | hasHouse - range - House | Event_01 - hasPlace - Kings_Landing | Event_01 - journeyStage - 1 | fictional_princess - type - Actor | hasPlace - range - Place | hasOccupation - range - Occupation | Event_01 - hasHouse - House_Lannister | the_Autumnal_Equinox - type - Time | hasActor - range - Hero | Kings_Landing - label - Kings Landing | fictional_princess - type - Title | fictional_princess - type - Female | advisor - type - Occupation | Core - type - Class | hasTitle - range - Title | Tyrion_Lannister - type - Male | advisor - label - advisor | Event_01 - hasOccupation - advisor | Tyrion_Lannister - label - Tyrion Lannister | House_Lannister - label - House Lannister | Tyrion_Lannister - type - Main_Character | House_Lannister - type - House | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Tyrion_Lannister - type - Actor | fictional_princess - label - Princess | Event_01 - label - Ordinary World presentation | Event_01 - hasTitle - fictional_princess | Event_01 - hasActor - Tyrion_Lannister | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"55": {
+"Event_11": [
+[
+"Once upon a time, in Raventree Hall there was a procurer whose name was Robert Baratheon. Robert Baratheon was a Lord from the House Arryn. It was Christmas when this story begins."
+]
+],
+"Event_12": [
+[
+"It was Christmas in Raventree Hall. Robert Baratheon was a  Lord from the House Arryn and worked as a procurer"
+]
+],
+"Event_13": [
+[
+"Raventree Hall was the place where the Robert Baratheon,Lord of House Arrynused to live. Robert Baratheon was also known around Raventree Hall as a great procurer . It was Christmas when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event_01 - hasTime - the_Winter_Solstice | Event - type - Class | Core - label - Core | the_Winter_Solstice - label - the Winter Solstice | hasHouse - range - House | Event_01 - journeyStage - 1 | fictional_princess - type - Actor | hasPlace - range - Place | hasOccupation - range - Occupation | squire - type - Occupation | the_Winter_Solstice - type - Time | Event_01 - hasHouse - House_Martell | squire - label - squire | hasActor - range - Hero | Event_01 - hasOccupation - squire | fictional_princess - type - Title | fictional_princess - type - Female | Core - type - Class | hasTitle - range - Title | Tyrion_Lannister - type - Male | Oldstones - type - Place | Tyrion_Lannister - label - Tyrion Lannister | Tyrion_Lannister - type - Main_Character | House_Martell - label - House Martell | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Tyrion_Lannister - type - Actor | fictional_princess - label - Princess | Event_01 - label - Ordinary World presentation | Event_01 - hasPlace - Oldstones | House_Martell - type - House | Oldstones - label - Oldstones | Event_01 - hasTitle - fictional_princess | Event_01 - hasActor - Tyrion_Lannister | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"56": {
+"Event_11": [
+[
+"Once upon a time, in Bear Island there was a revolutionary whose name was Margaery Tyrell. Margaery Tyrell was a Princess from the House Greyjoy. It was the first day of Spring when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the first day of Spring in Bear Island. Margaery Tyrell was a  Princess from the House Greyjoy and worked as a revolutionary"
+]
+],
+"Event_13": [
+[
+"Bear Island was the place where the Margaery Tyrell,Princess of House Greyjoyused to live. Margaery Tyrell was also known around Bear Island as a great revolutionary . It was the first day of Spring when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Bran_Stark - label - Bran Stark | Event - label - Event | Event - type - Class | Event_01 - hasTime - theMiddleOftheNight | Core - label - Core | theMiddleOftheNight - label - the Middle Of the Night | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | theMiddleOftheNight - type - Time | Event_01 - hasOccupation - hunter | hasHouse - range - House | Event_01 - hasPlace - Bear_Island | Event_01 - hasActor - Bran_Stark | Event_01 - journeyStage - 1 | fictional_princess - type - Actor | hasPlace - range - Place | hasOccupation - range - Occupation | Bear_Island - label - Bear Island | Bear_Island - type - Place | hasActor - range - Hero | Bran_Stark - type - Male | fictional_princess - type - Title | fictional_princess - type - Female | Core - type - Class | hasTitle - range - Title | Bran_Stark - type - Main_Character | Bran_Stark - type - Actor | Event_01 - hasHouse - House_Greyjoy | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | hunter - type - Occupation | fictional_princess - label - Princess | Event_01 - label - Ordinary World presentation | House_Greyjoy - label - House Greyjoy | Event_01 - hasTitle - fictional_princess | hunter - label - hunter | House_Greyjoy - type - House | "
+]
+},
+"58": {
+"Event_11": [
+[
+"Once upon a time, in Kings Landing there was a vigilante whose name was Arya Stark. Arya Stark was a Princess from the House Martell. It was the Autumnal Equinox when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the Autumnal Equinox in Kings Landing. Arya Stark was a  Princess from the House Martell and worked as a vigilante"
+]
+],
+"Event_13": [
+[
+"Kings Landing was the place where the Arya Stark,Princess of House Martellused to live. Arya Stark was also known around Kings Landing as a great vigilante . It was the Autumnal Equinox when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event - type - Class | Cersei_Lannister - label - Cersei Lannister | soldier - label - soldier | Core - label - Core | House_Tyrell - type - House | easter - type - Time | hasHouse - range - House | Event_01 - hasPlace - The_Eyrie | Event_01 - hasActor - Cersei_Lannister | Cersei_Lannister - type - Female | House_Tyrell - label - House Tyrell | soldier - type - Occupation | Event_01 - hasTime - easter | Event_01 - journeyStage - 1 | hasPlace - range - Place | fictional_king - type - Male | hasOccupation - range - Occupation | The_Eyrie - type - Place | Event_01 - hasHouse - House_Tyrell | fictional_king - type - Actor | hasActor - range - Hero | The_Eyrie - label - The Eyrie | Core - type - Class | fictional_king - label - King | hasTitle - range - Title | Event_01 - hasTitle - fictional_king | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | fictional_king - type - Title | Cersei_Lannister - type - Main_Character | Event_01 - label - Ordinary World presentation | Cersei_Lannister - type - Actor | easter - label - Easter day | Event_01 - hasOccupation - soldier | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"59": {
+"Event_11": [
+[
+"Once upon a time, in The Whispering Wood there was a advisor whose name was Daenerys Targaryen. Daenerys Targaryen was a Princess from the House Arryn. It was the Middle Of the Night when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the Middle Of the Night in The Whispering Wood. Daenerys Targaryen was a  Princess from the House Arryn and worked as a advisor"
+]
+],
+"Event_13": [
+[
+"The Whispering Wood was the place where the Daenerys Targaryen,Princess of House Arrynused to live. Daenerys Targaryen was also known around The Whispering Wood as a great advisor . It was the Middle Of the Night when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event - type - Class | Event_01 - hasTime - theMiddleOftheNight | Core - label - Core | House_Tyrell - type - House | theMiddleOftheNight - label - the Middle Of the Night | hasHouse - range - House | House_Tyrell - label - House Tyrell | Event_01 - journeyStage - 1 | Event_01 - hasOccupation - rebel | The_Whispering_Wood - type - Place | hasPlace - range - Place | The_Whispering_Wood - label - The Whispering Wood | fictional_king - type - Male | hasOccupation - range - Occupation | Event_01 - hasHouse - House_Tyrell | fictional_king - type - Actor | hasActor - range - Hero | rebel - type - Occupation | Core - type - Class | fictional_king - label - King | hasTitle - range - Title | Tyrion_Lannister - type - Male | Tyrion_Lannister - label - Tyrion Lannister | Event_01 - hasTitle - fictional_king | Tyrion_Lannister - type - Main_Character | Event_01 - hasPlace - The_Whispering_Wood | hasTime - range - Time | Event_01 - type - Event | rebel - label - rebel | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Tyrion_Lannister - type - Actor | fictional_king - type - Title | Event_01 - label - Ordinary World presentation | theMiddleOftheNight - type - Time | Event_01 - hasActor - Tyrion_Lannister | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"60": {
+"Event_11": [
+[
+"Once upon a time, in Oldstones there was a warrior whose name was Robert Baratheon. Robert Baratheon was a King from the House Arryn. It was the Autumnal Equinox when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the Autumnal Equinox in Oldstones. Robert Baratheon was a  King from the House Arryn and worked as a warrior"
+]
+],
+"Event_13": [
+[
+"Oldstones was the place where the Robert Baratheon,King of House Arrynused to live. Robert Baratheon was also known around Oldstones as a great warrior . It was the Autumnal Equinox when this story takes place."
+]
+],
+"Knowledge Graph": [
+"King - type - Actor | Event - label - Event | Event - type - Class | the_Autumnal_Equinox - label - the Autumnal Equinox | Core - label - Core | King - label - King | Event_01 - hasTime - the_Autumnal_Equinox | House_Baratheon - label - House Baratheon | vigilante - type - Occupation | Event_01 - hasOccupation - vigilante | hasHouse - range - House | Event_01 - hasHouse - House_Baratheon | Event_01 - journeyStage - 1 | King - type - Title | The_Whispering_Wood - type - Place | hasPlace - range - Place | The_Whispering_Wood - label - The Whispering Wood | hasOccupation - range - Occupation | the_Autumnal_Equinox - type - Time | hasActor - range - Hero | Event_01 - hasTitle - King | Core - type - Class | hasTitle - range - Title | Tyrion_Lannister - type - Male | House_Baratheon - type - House | Tyrion_Lannister - label - Tyrion Lannister | vigilante - label - vigilante | Tyrion_Lannister - type - Main_Character | Event_01 - hasPlace - The_Whispering_Wood | King - type - Male | Event_01 - type - Event | hasTime - range - Time | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Tyrion_Lannister - type - Actor | Event_01 - label - Ordinary World presentation | Event_01 - hasActor - Tyrion_Lannister | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"62": {
+"Event_11": [
+[
+"Once upon a time, in The Eyrie there was a vigilante whose name was Jon Snow. Jon Snow was a King from the House Arryn. It was sunrise when this story begins."
+]
+],
+"Event_12": [
+[
+"It was sunrise in The Eyrie. Jon Snow was a  King from the House Arryn and worked as a vigilante"
+]
+],
+"Event_13": [
+[
+"The Eyrie was the place where the Jon Snow,King of House Arrynused to live. Jon Snow was also known around The Eyrie as a great vigilante . It was sunrise when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Jon_Snow - type - Actor | King - type - Actor | Event - label - Event | Event - type - Class | Core - label - Core | King - label - King | easter - type - Time | Event_01 - hasActor - Jon_Snow | House_Greyjoy - type - House | hasHouse - range - House | Event_01 - hasTime - easter | Event_01 - journeyStage - 1 | King - type - Title | hasPlace - range - Place | hasOccupation - range - Occupation | Jon_Snow - type - Main_Character | Jon_Snow - label - Jon Snow | The_Trident - label - The Trident | hasActor - range - Hero | Event_01 - hasTitle - King | advisor - type - Occupation | Core - type - Class | hasTitle - range - Title | advisor - label - advisor | The_Trident - type - Place | Event_01 - hasOccupation - advisor | Event_01 - hasPlace - The_Trident | Jon_Snow - type - Male | Event_01 - hasHouse - House_Greyjoy | King - type - Male | Event_01 - type - Event | hasTime - range - Time | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Event_01 - label - Ordinary World presentation | House_Greyjoy - label - House Greyjoy | easter - label - Easter day | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"63": {
+"Event_11": [
+[
+"Once upon a time, in Red Keep there was a prophet whose name was Tyrion Lannister. Tyrion Lannister was a King from the House Tully. It was the first day of Spring when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the first day of Spring in Red Keep. Tyrion Lannister was a  King from the House Tully and worked as a prophet"
+]
+],
+"Event_13": [
+[
+"Red Keep was the place where the Tyrion Lannister,King of House Tullyused to live. Tyrion Lannister was also known around Red Keep as a great prophet . It was the first day of Spring when this story takes place."
+]
+],
+"Knowledge Graph": [
+"King - type - Actor | Event - label - Event | Event - type - Class | the_Autumnal_Equinox - label - the Autumnal Equinox | Core - label - Core | House_Tyrell - type - House | King - label - King | Event_01 - hasTime - the_Autumnal_Equinox | hasHouse - range - House | Event_01 - hasPlace - Bear_Island | House_Tyrell - label - House Tyrell | Event_01 - journeyStage - 1 | King - type - Title | Petyr_Baelish - label - Petyr Baelish | hasPlace - range - Place | hasOccupation - range - Occupation | the_Autumnal_Equinox - type - Time | Bear_Island - label - Bear Island | Event_01 - hasHouse - House_Tyrell | Bear_Island - type - Place | hasActor - range - Hero | Petyr_Baelish - type - Male | Event_01 - hasTitle - King | Core - type - Class | hasTitle - range - Title | Event_01 - label - Ordinary World presentation | murderer - label - murderer | Petyr_Baelish - type - Main_Character | Petyr_Baelish - type - Actor | Event_01 - hasOccupation - murderer | Event_01 - hasActor - Petyr_Baelish | King - type - Male | Event_01 - type - Event | hasTime - range - Time | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | murderer - type - Occupation | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"65": {
+"Event_11": [
+[
+"Once upon a time, in White Harbor there was a assassin whose name was Tyrion Lannister. Tyrion Lannister was a King from the House Greyjoy. It was Easter day when this story begins."
+]
+],
+"Event_12": [
+[
+"It was Easter day in White Harbor. Tyrion Lannister was a  King from the House Greyjoy and worked as a assassin"
+]
+],
+"Event_13": [
+[
+"White Harbor was the place where the Tyrion Lannister,King of House Greyjoyused to live. Tyrion Lannister was also known around White Harbor as a great assassin . It was Easter day when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Bran_Stark - label - Bran Stark | Event - label - Event | Event - type - Class | Event_01 - hasTime - theMiddleOftheNight | Core - label - Core | theMiddleOftheNight - label - the Middle Of the Night | Event_01 - hasPlace - The_Twins | hasHouse - range - House | The_Twins - label - The Twins | Event_01 - hasActor - Bran_Stark | Lord - type - Male | Event_01 - journeyStage - 1 | procurer - label - procurer | hasPlace - range - Place | hasOccupation - range - Occupation | Lord - type - Actor | Event_01 - hasTitle - Lord | Event_01 - hasHouse - House_Martell | The_Twins - type - Place | hasActor - range - Hero | Bran_Stark - type - Male | Core - type - Class | hasTitle - range - Title | Bran_Stark - type - Main_Character | Lord - label - Lord | procurer - type - Occupation | Event_01 - hasOccupation - procurer | Bran_Stark - type - Actor | House_Martell - label - House Martell | Lord - type - Title | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Event_01 - label - Ordinary World presentation | House_Martell - type - House | theMiddleOftheNight - type - Time | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"68": {
+"Event_11": [
+[
+"Once upon a time, in Oldstones there was a military leader whose name was Tyrion Lannister. Tyrion Lannister was a King from the House Baratheon. It was the Summer Solstice when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the Summer Solstice in Oldstones. Tyrion Lannister was a  King from the House Baratheon and worked as a military leader"
+]
+],
+"Event_13": [
+[
+"Oldstones was the place where the Tyrion Lannister,King of House Baratheonused to live. Tyrion Lannister was also known around Oldstones as a great military leader . It was the Summer Solstice when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event - type - Class | Daenerys_Targaryen - label - Daenerys Targaryen | Core - label - Core | Daenerys_Targaryen - type - Main_Character | House_Baratheon - label - House Baratheon | Daenerys_Targaryen - type - Actor | hasHouse - range - House | Event_01 - hasHouse - House_Baratheon | Event_01 - journeyStage - 1 | procurer - label - procurer | The_Whispering_Wood - type - Place | hasPlace - range - Place | The_Whispering_Wood - label - The Whispering Wood | fictional_king - type - Male | hasOccupation - range - Occupation | Event_01 - hasTime - sunrise | Daenerys_Targaryen - type - Female | fictional_king - type - Actor | hasActor - range - Hero | Core - type - Class | fictional_king - label - King | sunrise - label - sunrise | hasTitle - range - Title | House_Baratheon - type - House | procurer - type - Occupation | Event_01 - hasOccupation - procurer | Event_01 - hasTitle - fictional_king | Event_01 - hasPlace - The_Whispering_Wood | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | fictional_king - type - Title | Event_01 - label - Ordinary World presentation | Event_01 - hasActor - Daenerys_Targaryen | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | sunrise - type - Time | "
+]
+},
+"74": {
+"Event_11": [
+[
+"Once upon a time, in Great Sept of Baelor there was a official whose name was Jon Snow. Jon Snow was a King from the House Stark. It was Christmas when this story begins."
+]
+],
+"Event_12": [
+[
+"It was Christmas in Great Sept of Baelor. Jon Snow was a  King from the House Stark and worked as a official"
+]
+],
+"Event_13": [
+[
+"Great Sept of Baelor was the place where the Jon Snow,King of House Starkused to live. Jon Snow was also known around Great Sept of Baelor as a great official . It was Christmas when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event - type - Class | Daenerys_Targaryen - label - Daenerys Targaryen | Event_01 - hasTime - theMiddleOftheNight | Core - label - Core | Daenerys_Targaryen - type - Main_Character | theMiddleOftheNight - label - the Middle Of the Night | Daenerys_Targaryen - type - Actor | hasHouse - range - House | Lord - type - Male | Event_01 - journeyStage - 1 | hasPlace - range - Place | Event_01 - hasOccupation - prophet | hasOccupation - range - Occupation | Event_01 - hasHouse - House_Lannister | Lord - type - Actor | Daenerys_Targaryen - type - Female | Oldstones - label - Oldstones | prophet - label - prophet | Event_01 - hasTitle - Lord | hasActor - range - Hero | Core - type - Class | hasTitle - range - Title | Oldstones - type - Place | Lord - label - Lord | House_Lannister - label - House Lannister | House_Lannister - type - House | Lord - type - Title | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | prophet - type - Occupation | Event_01 - label - Ordinary World presentation | Event_01 - hasPlace - Oldstones | theMiddleOftheNight - type - Time | Event_01 - hasActor - Daenerys_Targaryen | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"76": {
+"Event_11": [
+[
+"Once upon a time, in The Twins there was a advisor whose name was Daenerys Targaryen. Daenerys Targaryen was a Princess from the House Martell. It was sunrise when this story begins."
+]
+],
+"Event_12": [
+[
+"It was sunrise in The Twins. Daenerys Targaryen was a  Princess from the House Martell and worked as a advisor"
+]
+],
+"Event_13": [
+[
+"The Twins was the place where the Daenerys Targaryen,Princess of House Martellused to live. Daenerys Targaryen was also known around The Twins as a great advisor . It was sunrise when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event - type - Class | Cersei_Lannister - label - Cersei Lannister | Core - label - Core | Lady - type - Actor | Event_01 - hasOccupation - hunter | hasHouse - range - House | Cersei_Lannister - type - Female | Event_01 - hasActor - Cersei_Lannister | Karhold - type - Place | Lady - label - Lady | Event_01 - journeyStage - 1 | the_first_day_of_Spring - label - the first day of Spring | hasPlace - range - Place | hasOccupation - range - Occupation | Lady - type - Title | Lady - type - Female | the_first_day_of_Spring - type - Time | Event_01 - hasHouse - House_Martell | Karhold - label - Karhold | hasActor - range - Hero | Event_01 - hasPlace - Karhold | Core - type - Class | hasTitle - range - Title | Cersei_Lannister - type - Actor | House_Martell - label - House Martell | Event_01 - hasTime - the_first_day_of_Spring | Event_01 - type - Event | hasTime - range - Time | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | hunter - type - Occupation | Event_01 - hasTitle - Lady | Event_01 - label - Ordinary World presentation | Cersei_Lannister - type - Main_Character | House_Martell - type - House | hunter - label - hunter | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"80": {
+"Event_11": [
+[
+"Once upon a time, in Deepwood Motte there was a hunter whose name was Tyrion Lannister. Tyrion Lannister was a King from the House Tully. It was the Summer Solstice when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the Summer Solstice in Deepwood Motte. Tyrion Lannister was a  King from the House Tully and worked as a hunter"
+]
+],
+"Event_13": [
+[
+"Deepwood Motte was the place where the Tyrion Lannister,King of House Tullyused to live. Tyrion Lannister was also known around Deepwood Motte as a great hunter . It was the Summer Solstice when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event_01 - hasTime - the_Winter_Solstice | Event - type - Class | Daenerys_Targaryen - label - Daenerys Targaryen | Moat_Cailin - label - Moat Cailin | Core - label - Core | Daenerys_Targaryen - type - Main_Character | Daenerys_Targaryen - type - Actor | the_Winter_Solstice - label - the Winter Solstice | hasHouse - range - House | Event_01 - journeyStage - 1 | procurer - label - procurer | hasPlace - range - Place | fictional_king - type - Male | hasOccupation - range - Occupation | Daenerys_Targaryen - type - Female | Moat_Cailin - type - Place | the_Winter_Solstice - type - Time | Event_01 - hasHouse - House_Arryn | fictional_king - type - Actor | hasActor - range - Hero | House_Arryn - type - House | Core - type - Class | fictional_king - label - King | hasTitle - range - Title | procurer - type - Occupation | Event_01 - hasOccupation - procurer | Event_01 - hasTitle - fictional_king | House_Arryn - label - House Arryn | Event_01 - type - Event | hasTime - range - Time | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | fictional_king - type - Title | Event_01 - label - Ordinary World presentation | Event_01 - hasPlace - Moat_Cailin | Event_01 - hasActor - Daenerys_Targaryen | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"82": {
+"Event_11": [
+[
+"Once upon a time, in Bear Island there was a warrior whose name was Margaery Tyrell. Margaery Tyrell was a Princess from the House Stark. It was the Winter Solstice when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the Winter Solstice in Bear Island. Margaery Tyrell was a  Princess from the House Stark and worked as a warrior"
+]
+],
+"Event_13": [
+[
+"Bear Island was the place where the Margaery Tyrell,Princess of House Starkused to live. Margaery Tyrell was also known around Bear Island as a great warrior . It was the Winter Solstice when this story takes place."
+]
+],
+"Knowledge Graph": [
+"King - type - Actor | Event - label - Event | Event - type - Class | Daenerys_Targaryen - label - Daenerys Targaryen | Core - label - Core | Daenerys_Targaryen - type - Main_Character | King - label - King | Castle_Black - label - Castle Black | Event_01 - hasPlace - Castle_Black | Daenerys_Targaryen - type - Actor | vigilante - type - Occupation | Event_01 - hasOccupation - vigilante | hasHouse - range - House | the_Summer_Solstice - label - the Summer Solstice | Event_01 - journeyStage - 1 | King - type - Title | House_Stark - type - House | hasPlace - range - Place | hasOccupation - range - Occupation | Daenerys_Targaryen - type - Female | the_Summer_Solstice - type - Time | Event_01 - hasTime - the_Summer_Solstice | hasActor - range - Hero | House_Stark - label - House Stark | Event_01 - hasTitle - King | Core - type - Class | hasTitle - range - Title | vigilante - label - vigilante | King - type - Male | Event_01 - type - Event | Event_01 - hasHouse - House_Stark | hasTime - range - Time | Event_01 - type - OrdinaryWorld | cause_of_death - range - string | Event_01 - label - Ordinary World presentation | Castle_Black - type - Place | Event_01 - hasActor - Daenerys_Targaryen | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"83": {
+"Event_11": [
+[
+"Once upon a time, in Raventree Hall there was a warrior whose name was Cersei Lannister. Cersei Lannister was a Lady from the House Lannister. It was Christmas when this story begins."
+]
+],
+"Event_12": [
+[
+"It was Christmas in Raventree Hall. Cersei Lannister was a  Lady from the House Lannister and worked as a warrior"
+]
+],
+"Event_13": [
+[
+"Raventree Hall was the place where the Cersei Lannister,Lady of House Lannisterused to live. Cersei Lannister was also known around Raventree Hall as a great warrior . It was Christmas when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event_01 - hasOccupation - bureaucrat | Event - type - Class | the_Autumnal_Equinox - label - the Autumnal Equinox | Core - label - Core | Event_01 - hasTime - the_Autumnal_Equinox | The_Iron_Island - type - Place | hasHouse - range - House | Event_01 - hasPlace - The_Iron_Island | Arya_Stark - type - Main_Character | The_Iron_Island - label - The Iron Island | Event_01 - journeyStage - 1 | Arya_Stark - type - Actor | hasPlace - range - Place | fictional_king - type - Male | hasOccupation - range - Occupation | the_Autumnal_Equinox - type - Time | Event_01 - hasHouse - House_Martell | bureaucrat - label - bureaucrat | fictional_king - type - Actor | Event_01 - hasActor - Arya_Stark | hasActor - range - Hero | Arya_Stark - type - Female | Core - type - Class | fictional_king - label - King | hasTitle - range - Title | Arya_Stark - label - Arya Stark | Event_01 - hasTitle - fictional_king | House_Martell - label - House Martell | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | fictional_king - type - Title | Event_01 - label - Ordinary World presentation | bureaucrat - type - Occupation | House_Martell - type - House | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"85": {
+"Event_11": [
+[
+"Once upon a time, in Bear Island there was a military leader whose name was Cersei Lannister. Cersei Lannister was a Princess from the House Arryn. It was the Summer Solstice when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the Summer Solstice in Bear Island. Cersei Lannister was a  Princess from the House Arryn and worked as a military leader"
+]
+],
+"Event_13": [
+[
+"Bear Island was the place where the Cersei Lannister,Princess of House Arrynused to live. Cersei Lannister was also known around Bear Island as a great military leader . It was the Summer Solstice when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Jon_Snow - type - Actor | Event - label - Event | Event_01 - hasTime - the_Winter_Solstice | Event_01 - hasOccupation - bureaucrat | Event - type - Class | Core - label - Core | Event_01 - hasActor - Jon_Snow | the_Winter_Solstice - label - the Winter Solstice | hasHouse - range - House | Lord - type - Male | Event_01 - journeyStage - 1 | Event_01 - hasPlace - Oldstones | hasPlace - range - Place | hasOccupation - range - Occupation | Jon_Snow - type - Main_Character | Jon_Snow - label - Jon Snow | Lord - type - Actor | the_Winter_Solstice - type - Time | Event_01 - hasTitle - Lord | Event_01 - hasHouse - House_Martell | bureaucrat - label - bureaucrat | hasActor - range - Hero | Core - type - Class | hasTitle - range - Title | Oldstones - type - Place | Lord - label - Lord | Jon_Snow - type - Male | House_Martell - label - House Martell | Lord - type - Title | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Event_01 - label - Ordinary World presentation | bureaucrat - type - Occupation | House_Martell - type - House | Oldstones - label - Oldstones | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"86": {
+"Event_11": [
+[
+"Once upon a time, in Kings Landing there was a murderer whose name was Cersei Lannister. Cersei Lannister was a Queen  from the House Greyjoy. It was Christmas when this story begins."
+]
+],
+"Event_12": [
+[
+"It was Christmas in Kings Landing. Cersei Lannister was a  Queen  from the House Greyjoy and worked as a murderer"
+]
+],
+"Event_13": [
+[
+"Kings Landing was the place where the Cersei Lannister,Queen  of House Greyjoyused to live. Cersei Lannister was also known around Kings Landing as a great murderer . It was Christmas when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Event - label - Event | Event - type - Class | soldier - label - soldier | Event_01 - hasTime - theMiddleOftheNight | Core - label - Core | theMiddleOftheNight - label - the Middle Of the Night | Lady - type - Actor | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | theMiddleOftheNight - type - Time | hasHouse - range - House | Saltpans - type - Place | Lady - label - Lady | soldier - type - Occupation | Event_01 - journeyStage - 1 | Petyr_Baelish - label - Petyr Baelish | hasPlace - range - Place | hasOccupation - range - Occupation | Lady - type - Title | Lady - type - Female | hasActor - range - Hero | Petyr_Baelish - type - Male | Core - type - Class | hasTitle - range - Title | Petyr_Baelish - type - Main_Character | Petyr_Baelish - type - Actor | Event_01 - hasActor - Petyr_Baelish | Event_01 - hasHouse - House_Greyjoy | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Event_01 - hasTitle - Lady | Event_01 - label - Ordinary World presentation | Event_01 - hasPlace - Saltpans | House_Greyjoy - label - House Greyjoy | Saltpans - label - Saltpans | Event_01 - hasOccupation - soldier | House_Greyjoy - type - House | "
+]
+},
+"88": {
+"Event_11": [
+[
+"Once upon a time, in Great Sept of Baelor there was a spy whose name was Bran Stark. Bran Stark was a King from the House Tully. It was the Autumnal Equinox when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the Autumnal Equinox in Great Sept of Baelor. Bran Stark was a  King from the House Tully and worked as a spy"
+]
+],
+"Event_13": [
+[
+"Great Sept of Baelor was the place where the Bran Stark,King of House Tullyused to live. Bran Stark was also known around Great Sept of Baelor as a great spy . It was the Autumnal Equinox when this story takes place."
+]
+],
+"Knowledge Graph": [
+"King - type - Actor | Event - label - Event | Event_01 - hasTime - the_Winter_Solstice | Event - type - Class | Daenerys_Targaryen - label - Daenerys Targaryen | warrior - type - Occupation | Core - label - Core | Daenerys_Targaryen - type - Main_Character | King - label - King | Event_01 - hasPlace - Great_Sept_of_Baelor | warrior - label - warrior | Daenerys_Targaryen - type - Actor | the_Winter_Solstice - label - the Winter Solstice | hasHouse - range - House | Event_01 - hasOccupation - warrior | Event_01 - journeyStage - 1 | King - type - Title | hasPlace - range - Place | Great_Sept_of_Baelor - type - Place | hasOccupation - range - Occupation | Event_01 - hasHouse - House_Lannister | Daenerys_Targaryen - type - Female | the_Winter_Solstice - type - Time | hasActor - range - Hero | Event_01 - hasTitle - King | Core - type - Class | hasTitle - range - Title | House_Lannister - label - House Lannister | House_Lannister - type - House | King - type - Male | Event_01 - type - Event | hasTime - range - Time | Great_Sept_of_Baelor - label - Great Sept of Baelor | Event_01 - type - OrdinaryWorld | cause_of_death - range - string | Event_01 - label - Ordinary World presentation | Event_01 - hasActor - Daenerys_Targaryen | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"89": {
+"Event_11": [
+[
+"Once upon a time, in The Ruby Ford there was a warrior whose name was Jon Snow. Jon Snow was a King from the House Tully. It was the first day of Spring when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the first day of Spring in The Ruby Ford. Jon Snow was a  King from the House Tully and worked as a warrior"
+]
+],
+"Event_13": [
+[
+"The Ruby Ford was the place where the Jon Snow,King of House Tullyused to live. Jon Snow was also known around The Ruby Ford as a great warrior . It was the first day of Spring when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Winterfell - label - Winterfell | Bran_Stark - label - Bran Stark | Event - label - Event | Event_01 - hasPlace - Winterfell | Event - type - Class | Winterfell - type - Place | Core - label - Core | easter - type - Time | hasHouse - range - House | Event_01 - hasActor - Bran_Stark | Event_01 - hasTime - easter | Event_01 - journeyStage - 1 | hasPlace - range - Place | fictional_king - type - Male | hasOccupation - range - Occupation | Event_01 - hasHouse - House_Martell | fictional_king - type - Actor | hasActor - range - Hero | Bran_Stark - type - Male | advisor - type - Occupation | Core - type - Class | fictional_king - label - King | hasTitle - range - Title | Bran_Stark - type - Main_Character | advisor - label - advisor | Event_01 - hasOccupation - advisor | Event_01 - hasTitle - fictional_king | Bran_Stark - type - Actor | House_Martell - label - House Martell | hasTime - range - Time | Event_01 - type - Event | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | fictional_king - type - Title | Event_01 - label - Ordinary World presentation | House_Martell - type - House | easter - label - Easter day | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+},
+"91": {
+"Event_11": [
+[
+"Once upon a time, in White Harbor there was a rebel whose name was Jon Snow. Jon Snow was a King from the House Tully. It was the Winter Solstice when this story begins."
+]
+],
+"Event_12": [
+[
+"It was the Winter Solstice in White Harbor. Jon Snow was a  King from the House Tully and worked as a rebel"
+]
+],
+"Event_13": [
+[
+"White Harbor was the place where the Jon Snow,King of House Tullyused to live. Jon Snow was also known around White Harbor as a great rebel . It was the Winter Solstice when this story takes place."
+]
+],
+"Knowledge Graph": [
+"Jon_Snow - type - Actor | Event - label - Event | Event_01 - hasTime - the_Winter_Solstice | Event - type - Class | soldier - label - soldier | Core - label - Core | Lady - type - Actor | Event_01 - hasActor - Jon_Snow | the_Winter_Solstice - label - the Winter Solstice | hasHouse - range - House | Lady - label - Lady | soldier - type - Occupation | Event_01 - journeyStage - 1 | The_Whispering_Wood - type - Place | House_Stark - type - House | The_Whispering_Wood - label - The Whispering Wood | hasPlace - range - Place | hasOccupation - range - Occupation | Lady - type - Title | Jon_Snow - label - Jon Snow | Lady - type - Female | the_Winter_Solstice - type - Time | Jon_Snow - type - Main_Character | hasActor - range - Hero | House_Stark - label - House Stark | Core - type - Class | hasTitle - range - Title | Event_01 - hasPlace - The_Whispering_Wood | Jon_Snow - type - Male | hasTime - range - Time | Event_01 - type - Event | Event_01 - hasHouse - House_Stark | cause_of_death - range - string | Event_01 - type - OrdinaryWorld | Event_01 - hasTitle - Lady | Event_01 - label - Ordinary World presentation | Event_01 - hasOccupation - soldier | OrdinaryWorld - label - First stage of the story - Ordinary world presentation | "
+]
+}
+}

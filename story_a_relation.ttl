@@ -9,13 +9,13 @@ HERO:Event_01 a HERO:OrdinaryWorld,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Ordinary World presentation" ;
-    HERO:hasHouse HERO:House_Greyjoy ;
-    HERO:hasOccupation HERO:assassin ;
-    HERO:hasTitle HERO:Lady ;
+    HERO:hasHouse HERO:House_Stark ;
+    HERO:hasOccupation HERO:military_leader ;
+    HERO:hasTitle HERO:fictional_king ;
     HERO:journeyStage "1" ;
-    sem:hasActor HERO:Tyrion_Lannister ;
-    sem:hasPlace HERO:Bear_Island ;
-    sem:hasTime HERO:christmas .
+    sem:hasActor HERO:Jon_Snow ;
+    sem:hasPlace HERO:Riverlands ;
+    sem:hasTime HERO:sunrise .
 
 HERO:cause_of_death rdfs:range xsd:string .
 
@@ -31,29 +31,29 @@ sem:hasPlace rdfs:range sem:Place .
 
 sem:hasTime rdfs:range sem:Time .
 
-HERO:Bear_Island a sem:Place ;
-    rdfs:label "Bear Island" .
+HERO:House_Stark a HERO:House ;
+    rdfs:label "House Stark" .
 
-HERO:House_Greyjoy a HERO:House ;
-    rdfs:label "House Greyjoy" .
-
-HERO:Lady a HERO:Female,
-        HERO:Title,
+HERO:Jon_Snow a HERO:Main_Character,
+        HERO:Male,
         sem:Actor ;
-    rdfs:label "Lady" .
+    rdfs:label "Jon Snow" .
 
 HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" .
 
-HERO:Tyrion_Lannister a HERO:Main_Character,
-        HERO:Male,
+HERO:Riverlands a sem:Place ;
+    rdfs:label "Riverlands" .
+
+HERO:fictional_king a HERO:Male,
+        HERO:Title,
         sem:Actor ;
-    rdfs:label "Tyrion Lannister" .
+    rdfs:label "King" .
 
-HERO:assassin a HERO:Occupation ;
-    rdfs:label "assassin" .
+HERO:military_leader a HERO:Occupation ;
+    rdfs:label "military leader" .
 
-HERO:christmas a sem:Time ;
-    rdfs:label "Christmas" .
+HERO:sunrise a sem:Time ;
+    rdfs:label "sunrise" .
 
 sem:Core a owl:Class ;
     rdfs:label "Core" .

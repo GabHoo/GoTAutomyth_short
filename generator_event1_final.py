@@ -369,10 +369,10 @@ def create_dict(method):
     triples_list = clear(method)
     text1 = list(textGeneration_Event1(story))
     if text1 != []:
-        print(text1)
-        story = gen_story(method)
-        triples_list = clear(method)
-        text1 = list(textGeneration_Event1(story))
+        #print(text1)
+        #story = gen_story(method)
+        #triples_list = clear(method)
+        #text1 = list(textGeneration_Event1(story))
 
         text2 = list(textGeneration_Event12(story))
         text3 = list(textGeneration_Event13(story))
@@ -382,7 +382,7 @@ def create_dict(method):
         dict['Event_11'] = text1
         dict['Event_12'] = text2
         dict['Event_13'] = text3
-        #dict['Knowledge Graph'] = triples_list
+        dict['Knowledge Graph'] = triples_list
 
     if text1 == []:
         dict = {}
@@ -394,14 +394,21 @@ def create_dict(method):
 
 def main(argv, arc):
     data = {}
-    for i in range(5):
+    for i in range(1000):
+    #while len(data)<=5:
         story = create_dict('relation')  # story is a dictionary with triples and text
-        data[i] = story
+        if story != {}:
+            data[i] = story
+        print(len(data))
+        if len(data)==500:
+            break
     # data = {val for key, val in data.items() if val}
     #new_dict = {key: val for key,val in data.items() if val != {}}
 
+    #if len(data)!=500:
+    print(len(data))
 
-    with open('data1.json', 'w', encoding='utf-8') as f:
+    with open('train_data_event1.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent="")
 
     # for s,p,o in story.triples((HERO.Event_04, None , None)):
