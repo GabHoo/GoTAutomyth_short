@@ -395,13 +395,8 @@ def create_dict(method):
 def main(argv, arc):
     data = {}
     for i in range(5):
-    #if len(data)<5:
         story = create_dict('relation')  # story is a dictionary with triples and text
-        data = story
-    #data = {val for key, val in data.items() if val}
-    data = {key: value for key, value in data.items() if data.get(key)}
-    #print(data)
-
+        data[i] = story
     # data = {val for key, val in data.items() if val}
     #new_dict = {key: val for key,val in data.items() if val != {}}
 
@@ -409,6 +404,11 @@ def main(argv, arc):
     with open('data1.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent="")
 
+    # for s,p,o in story.triples((HERO.Event_04, None , None)):
+    #    print(s,p,o)
+    # story = story.serialize(f"./story_a_{method}.ttl")
+    # AND HERE WE TRY TO PUT EVERYTHING INTO ONE JSON
+    # print(f"\n{method} based story has been generated succesfully! Check ./story_{method}.ttl ")
 
 
 if __name__ == '__main__':

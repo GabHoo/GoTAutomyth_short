@@ -9,13 +9,13 @@ HERO:Event_01 a HERO:OrdinaryWorld,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Ordinary World presentation" ;
-    HERO:hasHouse HERO:House_Tyrell ;
-    HERO:hasOccupation HERO:warrior ;
-    HERO:hasTitle HERO:Lord ;
+    HERO:hasHouse HERO:House_Greyjoy ;
+    HERO:hasOccupation HERO:assassin ;
+    HERO:hasTitle HERO:Lady ;
     HERO:journeyStage "1" ;
-    sem:hasActor HERO:Cersei_Lannister ;
-    sem:hasPlace HERO:The_Whispering_Wood ;
-    sem:hasTime HERO:the_Summer_Solstice .
+    sem:hasActor HERO:Tyrion_Lannister ;
+    sem:hasPlace HERO:Bear_Island ;
+    sem:hasTime HERO:christmas .
 
 HERO:cause_of_death rdfs:range xsd:string .
 
@@ -31,29 +31,29 @@ sem:hasPlace rdfs:range sem:Place .
 
 sem:hasTime rdfs:range sem:Time .
 
-HERO:Cersei_Lannister a HERO:Female,
-        HERO:Main_Character,
-        sem:Actor ;
-    rdfs:label "Cersei Lannister" .
+HERO:Bear_Island a sem:Place ;
+    rdfs:label "Bear Island" .
 
-HERO:House_Tyrell a HERO:House ;
-    rdfs:label "House Tyrell" .
+HERO:House_Greyjoy a HERO:House ;
+    rdfs:label "House Greyjoy" .
 
-HERO:Lord a HERO:Male,
+HERO:Lady a HERO:Female,
         HERO:Title,
         sem:Actor ;
-    rdfs:label "Lord" .
+    rdfs:label "Lady" .
 
 HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" .
 
-HERO:The_Whispering_Wood a sem:Place ;
-    rdfs:label "The Whispering Wood" .
+HERO:Tyrion_Lannister a HERO:Main_Character,
+        HERO:Male,
+        sem:Actor ;
+    rdfs:label "Tyrion Lannister" .
 
-HERO:the_Summer_Solstice a sem:Time ;
-    rdfs:label "the Summer Solstice" .
+HERO:assassin a HERO:Occupation ;
+    rdfs:label "assassin" .
 
-HERO:warrior a HERO:Occupation ;
-    rdfs:label "warrior" .
+HERO:christmas a sem:Time ;
+    rdfs:label "Christmas" .
 
 sem:Core a owl:Class ;
     rdfs:label "Core" .
