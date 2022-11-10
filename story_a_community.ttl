@@ -9,13 +9,13 @@ HERO:Event_01 a HERO:OrdinaryWorld,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Ordinary World presentation" ;
-    HERO:hasHouse HERO:House_Lannister ;
-    HERO:hasOccupation HERO:murderer ;
-    HERO:hasTitle HERO:Lord ;
+    HERO:hasHouse HERO:House_Targaryen ;
+    HERO:hasOccupation HERO:squire ;
+    HERO:hasTitle HERO:king ;
     HERO:journeyStage "1" ;
-    sem:hasActor HERO:Tyrion_Lannister ;
-    sem:hasPlace HERO:Castle_Black ;
-    sem:hasTime HERO:christmas .
+    sem:hasActor HERO:Jon_Snow ;
+    sem:hasPlace HERO:Beach ;
+    sem:hasTime HERO:evening .
 
 HERO:Event_04 a HERO:MeetingTheMentor,
         sem:Core,
@@ -23,11 +23,11 @@ HERO:Event_04 a HERO:MeetingTheMentor,
         rdfs:Resource ;
     rdfs:label "Meeting the Mentor" ;
     HERO:journeyStage "4" ;
-    HERO:meetsMentor HERO:Cassana_Baratheon ;
+    HERO:meetsMentor HERO:Myrcella_Baratheon ;
     HERO:powerLearned HERO:slowingTime ;
-    sem:hasActor HERO:Tyrion_Lannister ;
-    sem:hasPlace HERO:Kings_Landing ;
-    sem:hasTime HERO:theMiddleOftheNight .
+    sem:hasActor HERO:Jon_Snow ;
+    sem:hasPlace HERO:Castle_Black ;
+    sem:hasTime HERO:lunch .
 
 HERO:cause_of_death rdfs:range xsd:string .
 
@@ -47,38 +47,35 @@ sem:hasPlace rdfs:range sem:Place .
 
 sem:hasTime rdfs:range sem:Time .
 
-HERO:Cassana_Baratheon a sem:Actor ;
-    rdfs:label "Cassana Baratheon" .
+HERO:Beach a sem:Place ;
+    rdfs:label "Beach" .
 
 HERO:Castle_Black a sem:Place ;
     rdfs:label "Castle Black" .
 
-HERO:House_Lannister a HERO:House ;
-    rdfs:label "House Lannister" .
+HERO:House_Targaryen a HERO:House ;
+    rdfs:label "House Targaryen" .
 
-HERO:Kings_Landing a sem:Place ;
-    rdfs:label "Kings Landing" .
-
-HERO:Lord a HERO:Title ;
-    rdfs:label "Lord" .
+HERO:Myrcella_Baratheon a sem:Actor ;
+    rdfs:label "Myrcella Baratheon" .
 
 HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" .
 
-HERO:christmas a sem:Time ;
-    rdfs:label "Christmas" .
+HERO:evening a sem:Time ;
+    rdfs:label "evening" .
 
-HERO:murderer a HERO:Occupation ;
-    rdfs:label "murderer" .
+HERO:lunch a sem:Time ;
+    rdfs:label "lunch" .
 
 HERO:slowingTime a HERO:Power ;
     rdfs:label "slowing Time" .
 
-HERO:theMiddleOftheNight a sem:Time ;
-    rdfs:label "the Middle Of the Night" .
+HERO:squire a HERO:Occupation ;
+    rdfs:label "squire" .
 
-HERO:Tyrion_Lannister a HERO:Main_Character,
+HERO:Jon_Snow a HERO:Main_Character,
         sem:Actor ;
-    rdfs:label "Tyrion Lannister" .
+    rdfs:label "Jon Snow" .
 
 sem:Core a owl:Class ;
     rdfs:label "Core" .
