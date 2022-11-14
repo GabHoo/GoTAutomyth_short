@@ -358,6 +358,7 @@ def clear(story):
         triples_clean = re.sub('XMLSchema#', '', triples_clean)
 
     triples_list = [triples_clean]
+
     return triples_list
 
 
@@ -397,27 +398,90 @@ def create_dict(method):
 def main(argv, arc):
     data = []
     count = 0
-    for i in range(10):
-    #while len(data)<=5:
-        story = create_dict('relation')  # story is a dictionary with triples and text
+    count_KG = 0
 
-        if story != {}:
-            count +=1
-            story['index']=count
-            print(story)
-            print(type(story))
-            #data[i] = story
-            data.append(story)
+    for i in range(1000):
+        dict = {}
+        story_try = gen_story('relation')
+        triples_list_try = clear(story_try)
+        text_try = list(textGeneration_Event1(story_try))
+        if text_try != []:
+
+            # print(text_try)
+            # story = gen_story(method)
+            story = story_try
+            triples_list = triples_list_try
+            text1 = text_try
+
+            dict['index'] = count
+            count += 1
+            dict['story'] = text1
+            dict['KG index'] = count_KG
+            dict['Knowledge Graph'] = triples_list
+            data.append(dict)
+            dict = {}
+            dict['index'] = count
+            count += 1
+            dict['story'] = list(textGeneration_Event12(story))
+            dict['KG index'] = count_KG
+            dict['Knowledge Graph'] = triples_list
+            data.append(dict)
+            dict = {}
+            dict['index'] = count
+            count += 1
+            dict['story'] = list(textGeneration_Event13(story))
+            dict['KG index'] = count_KG
+            dict['Knowledge Graph'] = triples_list
+            data.append(dict)
+
+            count_KG += 1
+        #if dict != {} :
+            #data.append(dict)
         print(len(data))
-        if len(data)==5:
+        #print(data)
+        if len(data)==500:
+
             break
+
+
+
+
+
+
+
+            #text2 = list(textGeneration_Event12(story))
+            #text3 = list(textGeneration_Event13(story))
+            # print(type(text1))
+
+            #dict = {}
+            #dict['Event_11'] = text1
+            #dict['Event_12'] = text2
+            #dict['Event_13'] = text3
+            #dict['Knowledge Graph'] = triples_list
+
+        #if text_try == []:
+        #    dict = {}
+
+        #inst = create_dict('relation')  # story is a dictionary with triples and text
+
+
+       # if inst != {}:
+       #     count +=1
+        #    inst['index']=count
+            #print(inst)
+            #print(type(inst))
+            #data[i] = story
+        #    data.append(inst)
+        #print(len(data))
+        #if len(data)==5:
+        #    break
     # data = {val for key, val in data.items() if val}
     #new_dict = {key: val for key,val in data.items() if val != {}}
 
     #if len(data)!=500:
-    print(len(data))
+    #print(len(data))
 
-    with open('data1.json', 'w', encoding='utf-8') as f:
+    with open('generated_output/train_data_event1.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent="")
 
     # for s,p,o in story.triples((HERO.Event_04, None , None)):
