@@ -357,9 +357,9 @@ def clear(story):
         triples_clean = re.sub('rdf-schema#', '', triples_clean)
         triples_clean = re.sub('XMLSchema#', '', triples_clean)
 
-    triples_list = [triples_clean]
+    #triples_list = [triples_clean]
 
-    return triples_list
+    return triples_clean
 
 
 
@@ -400,7 +400,9 @@ def main(argv, arc):
     count = 0
     count_KG = 0
 
-    for i in range(1000):
+    #for training set this to 1000
+    #for testing set this to 100
+    for i in range(10):
         dict = {}
         story_try = gen_story('relation')
         triples_list_try = clear(story_try)
@@ -415,21 +417,31 @@ def main(argv, arc):
 
             dict['index'] = count
             count += 1
+            text1 = str(list(textGeneration_Event1(story)))
+           # text1 = re.sub("[[(rdflib.term.Literal(''),)]]", '', text1)
+            text1 = text1.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
             dict['story'] = text1
+            #print(type(dict['story']))
+
+            dict['KG index'] = count_KG
+            dict['Knowledge Graph'] = triples_list
+
+            data.append(dict)
+            dict = {}
+            dict['index'] = count
+            count += 1
+            text2 = str(list(textGeneration_Event12(story)))
+            text2 = text2.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
+            dict['story'] = text2
             dict['KG index'] = count_KG
             dict['Knowledge Graph'] = triples_list
             data.append(dict)
             dict = {}
             dict['index'] = count
             count += 1
-            dict['story'] = list(textGeneration_Event12(story))
-            dict['KG index'] = count_KG
-            dict['Knowledge Graph'] = triples_list
-            data.append(dict)
-            dict = {}
-            dict['index'] = count
-            count += 1
-            dict['story'] = list(textGeneration_Event13(story))
+            text3 = str(list(textGeneration_Event13(story)))
+            text3 = text3.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
+            dict['story'] = text3
             dict['KG index'] = count_KG
             dict['Knowledge Graph'] = triples_list
             data.append(dict)
@@ -438,8 +450,9 @@ def main(argv, arc):
         #if dict != {} :
             #data.append(dict)
         print(len(data))
-        #print(data)
-        if len(data)==500:
+        #for training set this to 500
+        #for test set this to 50
+        if len(data)==50:
 
             break
 
@@ -481,7 +494,7 @@ def main(argv, arc):
     #if len(data)!=500:
     #print(len(data))
 
-    with open('generated_output/train_data_event1.json', 'w', encoding='utf-8') as f:
+    with open('generated_output/try.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent="")
 
     # for s,p,o in story.triples((HERO.Event_04, None , None)):
