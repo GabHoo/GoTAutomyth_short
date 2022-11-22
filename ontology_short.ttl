@@ -220,22 +220,5 @@ HERO:Event_01 a HERO:OrdinaryWorld; #instanciated
 	rdfs:label "Ordinary World presentation". 
 	
 
-		
 
-#4 MEETING THE MENTOR
-HERO:MeetingTheMentor rdfs:subClassOf sem:Event .
-
-HERO:meetsMentor a rdfs:Property;
-	rdfs:range HERO:Mentor;
-	rdfs:domain HERO:MeetingTheMentor.
-	
-HERO:powerLearned a rdfs:Property;
-	rdfs:range HERO:HeroPower;
-	rdfs:domain HERO:MeetingTheMentor.
-	
-#motivatonal quotes?????	
-	
-HERO:Event_04 a HERO:MeetingTheMentor; #instanciated
-	HERO:journeyStage '4';
-	rdfs:label "Meeting the Mentor".  
 

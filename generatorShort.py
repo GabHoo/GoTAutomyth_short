@@ -8,9 +8,13 @@ import pandas as pd
 from string import Template
 import networkx as nx
 import networkx.algorithms.community as nxcom
+<<<<<<< HEAD
+
+=======
 import re
 import json
 #import SPARQLWrapper
+>>>>>>> 4aa260415117419497abdcff0d3349500213c5f2
 
 from scipy import rand
 
@@ -147,12 +151,17 @@ def instantiate_ordinary_world(g, fixed):
     fixed["House"] = random.choice([row.house for row in qres])
     fixed["Title"] = random.choice([row.title for row in qres])
 
+<<<<<<< HEAD
+def textGeneration(story):
+    texts=[]
+=======
 
 
 
 
 def textGeneration_Event1(story):
     texts = []
+>>>>>>> 4aa260415117419497abdcff0d3349500213c5f2
     text1 = story.query("""
     SELECT ?Event_01 WHERE 
     {ns2:Event_01 ns1:hasActor ?Hero.
@@ -163,6 +172,8 @@ def textGeneration_Event1(story):
     ?Title rdfs:label ?TitleLabel.
     ns2:Event_01 ns2:hasHouse ?Family.
     ?Family rdfs:label ?FamilyLabel.
+<<<<<<< HEAD
+=======
 
     ns2:Event_01 ns1:hasTime ?Time1.
     ?Time1 rdfs:label ?TimeLabel1.
@@ -181,17 +192,17 @@ def textGeneration_Event4(story):
         ?mentor rdfs:label ?MentorLabel.
         ns2:Event_04 ns2:powerLearned ?power.
         ?power rdfs:label ?HeroPowerLabel.
+>>>>>>> 4aa260415117419497abdcff0d3349500213c5f2
 
+    ns2:Event_01 ns1:hasTime ?Time1.
+    ?Time1 rdfs:label ?TimeLabel1.
+    ns2:Event_01 ns1:hasPlace ?Loc1.
+    ?Loc1 rdfs:label ?LocLabel1.
 
-        ns2:Event_04 ns1:hasTime ?Time4.
-        ?Time4 rdfs:label ?TimeLabel4.
-        ns2:Event_04 ns1:hasPlace ?Loc4.
-        ?Loc4 rdfs:label ?LocLabel4
-
-
-        BIND(CONCAT('At ',?TimeLabel4, ' in ', ?LocLabel4, ',', ?HeroName, ' met ', ?MentorLabel,' . ',' From ', ?MentorLabel,' ', ?HeroName ,' learnt the power of ', ?HeroPowerLabel ) AS ?Event_04).
+    BIND(CONCAT('Once upon a time, in ',?LocLabel1 ,' there was a ',?HeroJob,' whose name was ', ?HeroName,'. ', ?HeroName, ' was a ', ?TitleLabel,' from the ', ?FamilyLabel,'. It was ',?TimeLabel1,' when this story begins.' ) AS ?Event_01).
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
-    return text
+    texts.append(text1)
+    return (text1)
 
 
 
@@ -294,6 +305,21 @@ def main(argv, arc):
     story = add_labels(g,story)
     story = domain_range(g,story)
     print("____________________________---\n")
+<<<<<<< HEAD
+    triples=""
+    for s,p,o in story.triples((HERO.Event_01, None , None)):
+        triples+=((str(s).split('/')[-1]+" - "+str(p).split("/")[-1]+" - "+str(o).split("/")[-1]+" | "))
+
+
+    print(triples)
+    #story.serialize(f"./story_a_{method}.ttl")
+    #AND HERE WE TRY TO PUT EVERYTHING INTO ONE JSON
+    #print(f"\n{method} based story has been generated succesfully! Check ./story_{method}.ttl ")
+    text=textGeneration(story)
+    print(type(text),str(text))
+    for i in text:
+        print(i)
+=======
     text1 = textGeneration_Event1(story)
     text2 = textGeneration_Event4(story)
     print(type(text1))
@@ -358,6 +384,7 @@ def main(argv, arc):
     #AND HERE WE TRY TO PUT EVERYTHING INTO ONE JSON
     #print(f"\n{method} based story has been generated succesfully! Check ./story_{method}.ttl ")
 
+>>>>>>> 4aa260415117419497abdcff0d3349500213c5f2
 
 
 
