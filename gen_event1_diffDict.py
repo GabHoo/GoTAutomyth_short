@@ -242,6 +242,75 @@ def textGeneration_Event13(story):
     return (text13)
 
 
+def textGeneration_Event21(story):
+    texts = []
+    text = story.query("""
+        SELECT ?Event_02 WHERE 
+    {  
+    ns2:Event_02 ns1:hasActor ?Hero.
+    ?Hero  rdfs:label ?HeroName.
+    ns2:Event_02 ns2:ThreatenedElement ?el.
+    ?el   rdfs:label ?ElementLabel.
+    ns2:Event_02 ns2:villain ?villain.
+    ?villain rdfs:label ?VillainLabel.
+
+    ns2:Event_02 ns1:hasTime ?Time2.
+    ?Time2 rdfs:label ?TimeLabel2.
+    ns2:Event_02 ns1:hasPlace ?Loc2.
+    ?Loc2 rdfs:label ?LocLabel2.
+
+    BIND(CONCAT('It was ',?TimeLabel2, ' in ' ,?LocLabel2,' when ', ?VillainLabel ,  ' threatened the  ',?ElementLabel, ' of ', ?HeroName ) AS ?Event_02).
+
+    }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+    texts.append(text)
+    return (text)
+
+def textGeneration_Event22(story):
+    texts = []
+    text = story.query("""
+        SELECT ?Event_02 WHERE 
+    {  
+    ns2:Event_02 ns1:hasActor ?Hero.
+    ?Hero  rdfs:label ?HeroName.
+    ns2:Event_02 ns2:ThreatenedElement ?el.
+    ?el   rdfs:label ?ElementLabel.
+    ns2:Event_02 ns2:villain ?villain.
+    ?villain rdfs:label ?VillainLabel.
+
+    ns2:Event_02 ns1:hasTime ?Time2.
+    ?Time2 rdfs:label ?TimeLabel2.
+    ns2:Event_02 ns1:hasPlace ?Loc2.
+    ?Loc2 rdfs:label ?LocLabel2.
+
+    BIND(CONCAT('It was known that ', ?VillainLabel ,' wanted the  ',?ElementLabel, '  that belonged to ', ?HeroName, '. It was ',?TimeLabel2, ' in ' ,?LocLabel2,'  when ', ?VillainLabel ,'  threatened ', ?HeroName,  ' of   ',?ElementLabel ) AS ?Event_02).
+
+    }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+    texts.append(text)
+    return (text)
+
+def textGeneration_Event23(story):
+    texts = []
+    text = story.query("""
+        SELECT ?Event_02 WHERE 
+    {  
+    ns2:Event_02 ns1:hasActor ?Hero.
+    ?Hero  rdfs:label ?HeroName.
+    ns2:Event_02 ns2:ThreatenedElement ?el.
+    ?el   rdfs:label ?ElementLabel.
+    ns2:Event_02 ns2:villain ?villain.
+    ?villain rdfs:label ?VillainLabel.
+
+    ns2:Event_02 ns1:hasTime ?Time2.
+    ?Time2 rdfs:label ?TimeLabel2.
+    ns2:Event_02 ns1:hasPlace ?Loc2.
+    ?Loc2 rdfs:label ?LocLabel2.
+
+    BIND(CONCAT('' ,?HeroName,' really cared about  ',?ElementLabel, '. It was ',?TimeLabel2, ' in ' ,?LocLabel2,'  when  ', ?VillainLabel , ' threatened the  ',?ElementLabel, ' of ', ?HeroName ) AS ?Event_02).
+
+    }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+    texts.append(text)
+    return (text)
+
 def gen_story(method):
     g = Graph(base="http://test.com/ns#")
     g.parse("./ontology_event1and2.ttl")
@@ -380,57 +449,36 @@ def clear(story,method):
 
 
 
-def create_dict(method):
-    story_try = gen_story(method)
-    triples_list_try = clear(story_try)
-    text_try = list(textGeneration_Event1(story_try))
-    if text_try != []:
-        #print(text_try)
-        #story = gen_story(method)
-        story = story_try
-        triples_list = triples_list_try
-        text1 = text_try
-
-
-        text2 = list(textGeneration_Event12(story))
-        text3 = list(textGeneration_Event13(story))
-        #print(type(text1))
-
-        dict = {}
-        dict['Event_11'] = text1
-        dict['Event_12'] = text2
-        dict['Event_13'] = text3
-        dict['Knowledge Graph'] = triples_list
-
-    if text_try == []:
-        dict = {}
-
-
-    return dict
-
-
 
 def main(argv, arc):
-    #method for srtory generation
-    #method for how many triples to keep
+    method_generation = argv[1]
+    method_triples = argv[2]
+    n_kg_generated = int(argv[3])
+
     data = []
     count = 0
     count_KG = 0
 
-    #for training set this to 1000
-    #for testing set this to 100
-    for i in range(10):
+
+    while count_KG <n_kg_generated:
         dict = {}
-        story_try = gen_story('relation')
+        story_try = gen_story(method_generation)
+
+        #story_try = gen_story('relation')
         text_try = list(textGeneration_Event1(story_try))
         if text_try != []: #check if text coherent
             story = story_try
-            triples_list = clear(story,'types') #can have different experiments - how populated is KG
+            triples_list = clear(story, method_triples)
             text1 = str(text_try)
             dict['index'] = count
             count += 1
             text1 = text1.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
-            dict['story'] = text1
+
+            text12 = str(list(textGeneration_Event23(story)))
+            text12 = text12.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
+            print(text12)
+            dict['story'] = text1 + text12
+
             dict['KG index'] = count_KG
             dict['Knowledge Graph'] = triples_list
 
@@ -457,54 +505,9 @@ def main(argv, arc):
             dict['KG index'] = count_KG
             dict['Knowledge Graph'] = triples_list
             data.append(dict)
-
+            print(f'generating stories for {count_KG} th Knowledge graph')
             count_KG += 1
-        #if dict != {} :
-            #data.append(dict)
-        print(len(data))
-        #for training set this to 500
-        #for test set this to 50
-        if len(data)==5:
 
-            break
-
-
-
-
-
-
-
-            #text2 = list(textGeneration_Event12(story))
-            #text3 = list(textGeneration_Event13(story))
-            # print(type(text1))
-
-            #dict = {}
-            #dict['Event_11'] = text1
-            #dict['Event_12'] = text2
-            #dict['Event_13'] = text3
-            #dict['Knowledge Graph'] = triples_list
-
-        #if text_try == []:
-        #    dict = {}
-
-        #inst = create_dict('relation')  # story is a dictionary with triples and text
-
-
-       # if inst != {}:
-       #     count +=1
-        #    inst['index']=count
-            #print(inst)
-            #print(type(inst))
-            #data[i] = story
-        #    data.append(inst)
-        #print(len(data))
-        #if len(data)==5:
-        #    break
-    # data = {val for key, val in data.items() if val}
-    #new_dict = {key: val for key,val in data.items() if val != {}}
-
-    #if len(data)!=500:
-    #print(len(data))
 
     with open('generated_output/try.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent="")

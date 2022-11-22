@@ -1,128 +1,20 @@
 [
 {
 "index": 0,
-"story": "Once upon a time, in Kings Landing there was a vigilante whose name was Robert Baratheon. Robert Baratheon was a King from the House Stark. It was the Summer Solstice when this story begins.",
+"story": "Once upon a time, in Karhold there was a soldier whose name was Arya Stark. Arya Stark was a Princess from the House Martell. It was the Winter Solstice when this story begins.Arya Stark really cared about  Title. It was the Autumnal Equinox in The Eyrie  when  Robb Stark threatened the  Title of Arya Stark",
 "KG index": 0,
-"Knowledge Graph": "lifestyle - type - ThreatTarget | Event_02 - type - Event | the_Summer_Solstice - type - Time | Core - type - Class | Cersei_Lannister - type - Main_Character | Event_02 - type - CallToAdventure | Kings_Landing - type - Place | King - type - Title | King - type - Actor | Event_01 - type - Event | Event_01 - type - OrdinaryWorld | Robert_Baratheon - type - Male | vigilante - type - Occupation | Robert_Baratheon - type - Main_Character | Red_Keep - type - Place | Event - type - Class | Cersei_Lannister - type - Actor | Event_02 - villain - Cersei_Lannister | Cersei_Lannister - type - Female | Robert_Baratheon - type - Actor | theMiddleOftheNight - type - Time | Event_02 - ThreatenedElement - lifestyle | House_Stark - type - House | King - type - Male | "
+"Knowledge Graph": "Event_02 - ThreatenedElement - Title | Event_02 - type - Event | Event_02 - type - CallToAdventure | fictional_princess - type - Female | Event - type - Class | The_Eyrie - type - Place | fictional_princess - type - Actor | Arya_Stark - type - Female | Karhold - type - Place | fictional_princess - type - Title | Title - type - ThreatTarget | Arya_Stark - type - Actor | Core - type - Class | Event_01 - type - Event | Event_02 - villain - Robb_Stark | Event_01 - type - OrdinaryWorld | soldier - type - Occupation | Arya_Stark - type - Main_Character | the_Winter_Solstice - type - Time | Robb_Stark - type - Male | Robb_Stark - type - Actor | the_Autumnal_Equinox - type - Time | House_Martell - type - House | "
 },
 {
 "index": 1,
-"story": "It was the Summer Solstice in Kings Landing. Robert Baratheon was a  King from the House Stark and worked as a vigilante",
+"story": "It was the Winter Solstice in Karhold. Arya Stark was a  Princess from the House Martell and worked as a soldier",
 "KG index": 0,
-"Knowledge Graph": "lifestyle - type - ThreatTarget | Event_02 - type - Event | the_Summer_Solstice - type - Time | Core - type - Class | Cersei_Lannister - type - Main_Character | Event_02 - type - CallToAdventure | Kings_Landing - type - Place | King - type - Title | King - type - Actor | Event_01 - type - Event | Event_01 - type - OrdinaryWorld | Robert_Baratheon - type - Male | vigilante - type - Occupation | Robert_Baratheon - type - Main_Character | Red_Keep - type - Place | Event - type - Class | Cersei_Lannister - type - Actor | Event_02 - villain - Cersei_Lannister | Cersei_Lannister - type - Female | Robert_Baratheon - type - Actor | theMiddleOftheNight - type - Time | Event_02 - ThreatenedElement - lifestyle | House_Stark - type - House | King - type - Male | "
+"Knowledge Graph": "Event_02 - ThreatenedElement - Title | Event_02 - type - Event | Event_02 - type - CallToAdventure | fictional_princess - type - Female | Event - type - Class | The_Eyrie - type - Place | fictional_princess - type - Actor | Arya_Stark - type - Female | Karhold - type - Place | fictional_princess - type - Title | Title - type - ThreatTarget | Arya_Stark - type - Actor | Core - type - Class | Event_01 - type - Event | Event_02 - villain - Robb_Stark | Event_01 - type - OrdinaryWorld | soldier - type - Occupation | Arya_Stark - type - Main_Character | the_Winter_Solstice - type - Time | Robb_Stark - type - Male | Robb_Stark - type - Actor | the_Autumnal_Equinox - type - Time | House_Martell - type - House | "
 },
 {
 "index": 2,
-"story": "Kings Landing was the place where the Robert Baratheon,King of House Starkused to live. Robert Baratheon was also known around Kings Landing as a great vigilante . It was the Summer Solstice when this story takes place.",
+"story": "Karhold was the place where the Arya Stark,Princess of House Martellused to live. Arya Stark was also known around Karhold as a great soldier . It was the Winter Solstice when this story takes place.",
 "KG index": 0,
-"Knowledge Graph": "lifestyle - type - ThreatTarget | Event_02 - type - Event | the_Summer_Solstice - type - Time | Core - type - Class | Cersei_Lannister - type - Main_Character | Event_02 - type - CallToAdventure | Kings_Landing - type - Place | King - type - Title | King - type - Actor | Event_01 - type - Event | Event_01 - type - OrdinaryWorld | Robert_Baratheon - type - Male | vigilante - type - Occupation | Robert_Baratheon - type - Main_Character | Red_Keep - type - Place | Event - type - Class | Cersei_Lannister - type - Actor | Event_02 - villain - Cersei_Lannister | Cersei_Lannister - type - Female | Robert_Baratheon - type - Actor | theMiddleOftheNight - type - Time | Event_02 - ThreatenedElement - lifestyle | House_Stark - type - House | King - type - Male | "
-},
-{
-"index": 3,
-"story": "Once upon a time, in Great Sept of Baelor there was a rebel whose name was Jon Snow. Jon Snow was a King from the House Tyrell. It was the Summer Solstice when this story begins.",
-"KG index": 1,
-"Knowledge Graph": "Bran_Stark - type - Main_Character | the_Summer_Solstice - type - Time | Core - type - Class | Great_Sept_of_Baelor - type - Place | Event_02 - villain - Bran_Stark | Event_02 - type - CallToAdventure | Bran_Stark - type - Actor | Event_01 - type - Event | House_Tyrell - type - House | fictional_king - type - Male | Event_01 - type - OrdinaryWorld | Event - type - Class | Jon_Snow - type - Male | Jon_Snow - type - Main_Character | sunrise - type - Time | Moat_Cailin - type - Place | rebel - type - Occupation | fictional_king - type - Actor | fictional_king - type - Title | Event_02 - ThreatenedElement - happiness | Event_02 - type - Event | Jon_Snow - type - Actor | Bran_Stark - type - Male | happiness - type - ThreatTarget | "
-},
-{
-"index": 4,
-"story": "It was the Summer Solstice in Great Sept of Baelor. Jon Snow was a  King from the House Tyrell and worked as a rebel",
-"KG index": 1,
-"Knowledge Graph": "Bran_Stark - type - Main_Character | the_Summer_Solstice - type - Time | Core - type - Class | Great_Sept_of_Baelor - type - Place | Event_02 - villain - Bran_Stark | Event_02 - type - CallToAdventure | Bran_Stark - type - Actor | Event_01 - type - Event | House_Tyrell - type - House | fictional_king - type - Male | Event_01 - type - OrdinaryWorld | Event - type - Class | Jon_Snow - type - Male | Jon_Snow - type - Main_Character | sunrise - type - Time | Moat_Cailin - type - Place | rebel - type - Occupation | fictional_king - type - Actor | fictional_king - type - Title | Event_02 - ThreatenedElement - happiness | Event_02 - type - Event | Jon_Snow - type - Actor | Bran_Stark - type - Male | happiness - type - ThreatTarget | "
-},
-{
-"index": 5,
-"story": "Great Sept of Baelor was the place where the Jon Snow,King of House Tyrellused to live. Jon Snow was also known around Great Sept of Baelor as a great rebel . It was the Summer Solstice when this story takes place.",
-"KG index": 1,
-"Knowledge Graph": "Bran_Stark - type - Main_Character | the_Summer_Solstice - type - Time | Core - type - Class | Great_Sept_of_Baelor - type - Place | Event_02 - villain - Bran_Stark | Event_02 - type - CallToAdventure | Bran_Stark - type - Actor | Event_01 - type - Event | House_Tyrell - type - House | fictional_king - type - Male | Event_01 - type - OrdinaryWorld | Event - type - Class | Jon_Snow - type - Male | Jon_Snow - type - Main_Character | sunrise - type - Time | Moat_Cailin - type - Place | rebel - type - Occupation | fictional_king - type - Actor | fictional_king - type - Title | Event_02 - ThreatenedElement - happiness | Event_02 - type - Event | Jon_Snow - type - Actor | Bran_Stark - type - Male | happiness - type - ThreatTarget | "
-},
-{
-"index": 6,
-"story": "Once upon a time, in The Trident there was a official whose name was Jon Snow. Jon Snow was a Lord from the House Arryn. It was the Middle Of the Night when this story begins.",
-"KG index": 2,
-"Knowledge Graph": "Bran_Stark - type - Main_Character | Core - type - Class | Event_02 - ThreatenedElement - HeroAlly | Event_02 - villain - Bran_Stark | Bran_Stark - type - Actor | Event_02 - type - CallToAdventure | official - type - Occupation | Jon_Snow - type - Main_Character | Jon_Snow - type - Actor | Bran_Stark - type - Male | House_Arryn - type - House | The_Trident - type - Place | The_Eyrie - type - Place | the_first_day_of_Spring - type - Time | Lord - type - Male | Event_01 - type - Event | Event_01 - type - OrdinaryWorld | Event - type - Class | Jon_Snow - type - Male | HeroAlly - type - ThreatTarget | Lord - type - Actor | Lord - type - Title | theMiddleOftheNight - type - Time | Event_02 - type - Event | "
-},
-{
-"index": 7,
-"story": "It was the Middle Of the Night in The Trident. Jon Snow was a  Lord from the House Arryn and worked as a official",
-"KG index": 2,
-"Knowledge Graph": "Bran_Stark - type - Main_Character | Core - type - Class | Event_02 - ThreatenedElement - HeroAlly | Event_02 - villain - Bran_Stark | Bran_Stark - type - Actor | Event_02 - type - CallToAdventure | official - type - Occupation | Jon_Snow - type - Main_Character | Jon_Snow - type - Actor | Bran_Stark - type - Male | House_Arryn - type - House | The_Trident - type - Place | The_Eyrie - type - Place | the_first_day_of_Spring - type - Time | Lord - type - Male | Event_01 - type - Event | Event_01 - type - OrdinaryWorld | Event - type - Class | Jon_Snow - type - Male | HeroAlly - type - ThreatTarget | Lord - type - Actor | Lord - type - Title | theMiddleOftheNight - type - Time | Event_02 - type - Event | "
-},
-{
-"index": 8,
-"story": "The Trident was the place where the Jon Snow,Lord of House Arrynused to live. Jon Snow was also known around The Trident as a great official . It was the Middle Of the Night when this story takes place.",
-"KG index": 2,
-"Knowledge Graph": "Bran_Stark - type - Main_Character | Core - type - Class | Event_02 - ThreatenedElement - HeroAlly | Event_02 - villain - Bran_Stark | Bran_Stark - type - Actor | Event_02 - type - CallToAdventure | official - type - Occupation | Jon_Snow - type - Main_Character | Jon_Snow - type - Actor | Bran_Stark - type - Male | House_Arryn - type - House | The_Trident - type - Place | The_Eyrie - type - Place | the_first_day_of_Spring - type - Time | Lord - type - Male | Event_01 - type - Event | Event_01 - type - OrdinaryWorld | Event - type - Class | Jon_Snow - type - Male | HeroAlly - type - ThreatTarget | Lord - type - Actor | Lord - type - Title | theMiddleOftheNight - type - Time | Event_02 - type - Event | "
-},
-{
-"index": 9,
-"story": "Once upon a time, in The Iron Island there was a regent whose name was Bran Stark. Bran Stark was a Lord from the House Tyrell. It was the first day of Spring when this story begins.",
-"KG index": 3,
-"Knowledge Graph": "Bran_Stark - type - Main_Character | treasure - type - ThreatTarget | Core - type - Class | regent - type - Occupation | Bran_Stark - type - Actor | Event_02 - type - CallToAdventure | the_first_day_of_Spring - type - Time | christmas - type - Time | Lord - type - Male | Event_01 - type - Event | Event_02 - ThreatenedElement - treasure | House_Tyrell - type - House | Event_01 - type - OrdinaryWorld | Event - type - Class | Jon_Snow - type - Male | Jon_Snow - type - Main_Character | Lord - type - Actor | The_Ruby_Ford - type - Place | Lord - type - Title | Event_02 - villain - Jon_Snow | Event_02 - type - Event | The_Iron_Island - type - Place | Jon_Snow - type - Actor | Bran_Stark - type - Male | "
-},
-{
-"index": 10,
-"story": "It was the first day of Spring in The Iron Island. Bran Stark was a  Lord from the House Tyrell and worked as a regent",
-"KG index": 3,
-"Knowledge Graph": "Bran_Stark - type - Main_Character | treasure - type - ThreatTarget | Core - type - Class | regent - type - Occupation | Bran_Stark - type - Actor | Event_02 - type - CallToAdventure | the_first_day_of_Spring - type - Time | christmas - type - Time | Lord - type - Male | Event_01 - type - Event | Event_02 - ThreatenedElement - treasure | House_Tyrell - type - House | Event_01 - type - OrdinaryWorld | Event - type - Class | Jon_Snow - type - Male | Jon_Snow - type - Main_Character | Lord - type - Actor | The_Ruby_Ford - type - Place | Lord - type - Title | Event_02 - villain - Jon_Snow | Event_02 - type - Event | The_Iron_Island - type - Place | Jon_Snow - type - Actor | Bran_Stark - type - Male | "
-},
-{
-"index": 11,
-"story": "The Iron Island was the place where the Bran Stark,Lord of House Tyrellused to live. Bran Stark was also known around The Iron Island as a great regent . It was the first day of Spring when this story takes place.",
-"KG index": 3,
-"Knowledge Graph": "Bran_Stark - type - Main_Character | treasure - type - ThreatTarget | Core - type - Class | regent - type - Occupation | Bran_Stark - type - Actor | Event_02 - type - CallToAdventure | the_first_day_of_Spring - type - Time | christmas - type - Time | Lord - type - Male | Event_01 - type - Event | Event_02 - ThreatenedElement - treasure | House_Tyrell - type - House | Event_01 - type - OrdinaryWorld | Event - type - Class | Jon_Snow - type - Male | Jon_Snow - type - Main_Character | Lord - type - Actor | The_Ruby_Ford - type - Place | Lord - type - Title | Event_02 - villain - Jon_Snow | Event_02 - type - Event | The_Iron_Island - type - Place | Jon_Snow - type - Actor | Bran_Stark - type - Male | "
-},
-{
-"index": 12,
-"story": "Once upon a time, in The Ruby Ford there was a assassin whose name was Jon Snow. Jon Snow was a Lord from the House Greyjoy. It was Easter day when this story begins.",
-"KG index": 4,
-"Knowledge Graph": "Riverlands - type - Place | Core - type - Class | Event_02 - type - CallToAdventure | assassin - type - Occupation | christmas - type - Time | Lord - type - Male | Event_01 - type - Event | Event_01 - type - OrdinaryWorld | Event_02 - villain - Samwell_Tarly | Event - type - Class | Jon_Snow - type - Male | Jon_Snow - type - Main_Character | Lord - type - Actor | easter - type - Time | The_Ruby_Ford - type - Place | Lord - type - Title | House_Greyjoy - type - House | Event_02 - ThreatenedElement - happiness | Event_02 - type - Event | Jon_Snow - type - Actor | happiness - type - ThreatTarget | "
-},
-{
-"index": 13,
-"story": "It was Easter day in The Ruby Ford. Jon Snow was a  Lord from the House Greyjoy and worked as a assassin",
-"KG index": 4,
-"Knowledge Graph": "Riverlands - type - Place | Core - type - Class | Event_02 - type - CallToAdventure | assassin - type - Occupation | christmas - type - Time | Lord - type - Male | Event_01 - type - Event | Event_01 - type - OrdinaryWorld | Event_02 - villain - Samwell_Tarly | Event - type - Class | Jon_Snow - type - Male | Jon_Snow - type - Main_Character | Lord - type - Actor | easter - type - Time | The_Ruby_Ford - type - Place | Lord - type - Title | House_Greyjoy - type - House | Event_02 - ThreatenedElement - happiness | Event_02 - type - Event | Jon_Snow - type - Actor | happiness - type - ThreatTarget | "
-},
-{
-"index": 14,
-"story": "The Ruby Ford was the place where the Jon Snow,Lord of House Greyjoyused to live. Jon Snow was also known around The Ruby Ford as a great assassin . It was Easter day when this story takes place.",
-"KG index": 4,
-"Knowledge Graph": "Riverlands - type - Place | Core - type - Class | Event_02 - type - CallToAdventure | assassin - type - Occupation | christmas - type - Time | Lord - type - Male | Event_01 - type - Event | Event_01 - type - OrdinaryWorld | Event_02 - villain - Samwell_Tarly | Event - type - Class | Jon_Snow - type - Male | Jon_Snow - type - Main_Character | Lord - type - Actor | easter - type - Time | The_Ruby_Ford - type - Place | Lord - type - Title | House_Greyjoy - type - House | Event_02 - ThreatenedElement - happiness | Event_02 - type - Event | Jon_Snow - type - Actor | happiness - type - ThreatTarget | "
-},
-{
-"index": 15,
-"story": "Once upon a time, in Great Sept of Baelor there was a hunter whose name was Margaery Tyrell. Margaery Tyrell was a Princess from the House Lannister. It was Christmas when this story begins.",
-"KG index": 5,
-"Knowledge Graph": "Margaery_Tyrell - type - Main_Character | Core - type - Class | fictional_princess - type - Actor | fictional_princess - type - Title | Great_Sept_of_Baelor - type - Place | Cersei_Lannister - type - Main_Character | Event_02 - ThreatenedElement - peace | fictional_princess - type - Female | Event_02 - type - CallToAdventure | christmas - type - Time | peace - type - ThreatTarget | Event_01 - type - Event | hunter - type - Occupation | Margaery_Tyrell - type - Actor | Event_01 - type - OrdinaryWorld | Margaery_Tyrell - type - Female | Event - type - Class | House_Lannister - type - House | Cersei_Lannister - type - Actor | Event_02 - villain - Cersei_Lannister | easter - type - Time | Cersei_Lannister - type - Female | Castle_Black - type - Place | Event_02 - type - Event | "
-},
-{
-"index": 16,
-"story": "It was Christmas in Great Sept of Baelor. Margaery Tyrell was a  Princess from the House Lannister and worked as a hunter",
-"KG index": 5,
-"Knowledge Graph": "Margaery_Tyrell - type - Main_Character | Core - type - Class | fictional_princess - type - Actor | fictional_princess - type - Title | Great_Sept_of_Baelor - type - Place | Cersei_Lannister - type - Main_Character | Event_02 - ThreatenedElement - peace | fictional_princess - type - Female | Event_02 - type - CallToAdventure | christmas - type - Time | peace - type - ThreatTarget | Event_01 - type - Event | hunter - type - Occupation | Margaery_Tyrell - type - Actor | Event_01 - type - OrdinaryWorld | Margaery_Tyrell - type - Female | Event - type - Class | House_Lannister - type - House | Cersei_Lannister - type - Actor | Event_02 - villain - Cersei_Lannister | easter - type - Time | Cersei_Lannister - type - Female | Castle_Black - type - Place | Event_02 - type - Event | "
-},
-{
-"index": 17,
-"story": "Great Sept of Baelor was the place where the Margaery Tyrell,Princess of House Lannisterused to live. Margaery Tyrell was also known around Great Sept of Baelor as a great hunter . It was Christmas when this story takes place.",
-"KG index": 5,
-"Knowledge Graph": "Margaery_Tyrell - type - Main_Character | Core - type - Class | fictional_princess - type - Actor | fictional_princess - type - Title | Great_Sept_of_Baelor - type - Place | Cersei_Lannister - type - Main_Character | Event_02 - ThreatenedElement - peace | fictional_princess - type - Female | Event_02 - type - CallToAdventure | christmas - type - Time | peace - type - ThreatTarget | Event_01 - type - Event | hunter - type - Occupation | Margaery_Tyrell - type - Actor | Event_01 - type - OrdinaryWorld | Margaery_Tyrell - type - Female | Event - type - Class | House_Lannister - type - House | Cersei_Lannister - type - Actor | Event_02 - villain - Cersei_Lannister | easter - type - Time | Cersei_Lannister - type - Female | Castle_Black - type - Place | Event_02 - type - Event | "
-},
-{
-"index": 18,
-"story": "Once upon a time, in Karhold there was a military leader whose name was Cersei Lannister. Cersei Lannister was a Queen  from the House Arryn. It was the Winter Solstice when this story begins.",
-"KG index": 6,
-"Knowledge Graph": "lifestyle - type - ThreatTarget | House_Arryn - type - House | Core - type - Class | Tyrion_Lannister - type - Male | Tyrion_Lannister - type - Main_Character | military_leader - type - Occupation | Cersei_Lannister - type - Main_Character | Karhold - type - Place | Event_02 - type - CallToAdventure | Event_01 - type - Event | the_Winter_Solstice - type - Time | Tyrion_Lannister - type - Actor | Event_01 - type - OrdinaryWorld | Event - type - Class | Cersei_Lannister - type - Actor | queen_consort - type - Actor | queen_consort - type - Title | Deepwood_Motte - type - Place | Event_02 - villain - Tyrion_Lannister | queen_consort - type - Female | easter - type - Time | Cersei_Lannister - type - Female | Event_02 - ThreatenedElement - lifestyle | Event_02 - type - Event | "
-},
-{
-"index": 19,
-"story": "It was the Winter Solstice in Karhold. Cersei Lannister was a  Queen  from the House Arryn and worked as a military leader",
-"KG index": 6,
-"Knowledge Graph": "lifestyle - type - ThreatTarget | House_Arryn - type - House | Core - type - Class | Tyrion_Lannister - type - Male | Tyrion_Lannister - type - Main_Character | military_leader - type - Occupation | Cersei_Lannister - type - Main_Character | Karhold - type - Place | Event_02 - type - CallToAdventure | Event_01 - type - Event | the_Winter_Solstice - type - Time | Tyrion_Lannister - type - Actor | Event_01 - type - OrdinaryWorld | Event - type - Class | Cersei_Lannister - type - Actor | queen_consort - type - Actor | queen_consort - type - Title | Deepwood_Motte - type - Place | Event_02 - villain - Tyrion_Lannister | queen_consort - type - Female | easter - type - Time | Cersei_Lannister - type - Female | Event_02 - ThreatenedElement - lifestyle | Event_02 - type - Event | "
-},
-{
-"index": 20,
-"story": "Karhold was the place where the Cersei Lannister,Queen  of House Arrynused to live. Cersei Lannister was also known around Karhold as a great military leader . It was the Winter Solstice when this story takes place.",
-"KG index": 6,
-"Knowledge Graph": "lifestyle - type - ThreatTarget | House_Arryn - type - House | Core - type - Class | Tyrion_Lannister - type - Male | Tyrion_Lannister - type - Main_Character | military_leader - type - Occupation | Cersei_Lannister - type - Main_Character | Karhold - type - Place | Event_02 - type - CallToAdventure | Event_01 - type - Event | the_Winter_Solstice - type - Time | Tyrion_Lannister - type - Actor | Event_01 - type - OrdinaryWorld | Event - type - Class | Cersei_Lannister - type - Actor | queen_consort - type - Actor | queen_consort - type - Title | Deepwood_Motte - type - Place | Event_02 - villain - Tyrion_Lannister | queen_consort - type - Female | easter - type - Time | Cersei_Lannister - type - Female | Event_02 - ThreatenedElement - lifestyle | Event_02 - type - Event | "
+"Knowledge Graph": "Event_02 - ThreatenedElement - Title | Event_02 - type - Event | Event_02 - type - CallToAdventure | fictional_princess - type - Female | Event - type - Class | The_Eyrie - type - Place | fictional_princess - type - Actor | Arya_Stark - type - Female | Karhold - type - Place | fictional_princess - type - Title | Title - type - ThreatTarget | Arya_Stark - type - Actor | Core - type - Class | Event_01 - type - Event | Event_02 - villain - Robb_Stark | Event_01 - type - OrdinaryWorld | soldier - type - Occupation | Arya_Stark - type - Main_Character | the_Winter_Solstice - type - Time | Robb_Stark - type - Male | Robb_Stark - type - Actor | the_Autumnal_Equinox - type - Time | House_Martell - type - House | "
 }
 ]

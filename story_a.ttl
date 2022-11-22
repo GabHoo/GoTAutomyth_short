@@ -4,16 +4,20 @@
 @prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+HERO:Title a HERO:ThreatTarget,
+        rdfs:Class ;
+    rdfs:label "Title" .
+
 HERO:Event_01 a HERO:OrdinaryWorld,
         sem:Core,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Ordinary World presentation" ;
-    HERO:hasHouse HERO:House_Arryn ;
-    HERO:hasOccupation HERO:military_leader ;
-    HERO:hasTitle HERO:queen_consort ;
+    HERO:hasHouse HERO:House_Martell ;
+    HERO:hasOccupation HERO:soldier ;
+    HERO:hasTitle HERO:fictional_princess ;
     HERO:journeyStage "1" ;
-    sem:hasActor HERO:Cersei_Lannister ;
+    sem:hasActor HERO:Arya_Stark ;
     sem:hasPlace HERO:Karhold ;
     sem:hasTime HERO:the_Winter_Solstice .
 
@@ -22,12 +26,12 @@ HERO:Event_02 a HERO:CallToAdventure,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Villain threatens the safety of somebody. This is the call for the hero" ;
-    HERO:ThreatenedElement HERO:lifestyle ;
+    HERO:ThreatenedElement HERO:Title ;
     HERO:journeyStage "2" ;
-    HERO:villain HERO:Tyrion_Lannister ;
-    sem:hasActor HERO:Cersei_Lannister ;
-    sem:hasPlace HERO:Deepwood_Motte ;
-    sem:hasTime HERO:easter .
+    HERO:villain HERO:Robb_Stark ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:The_Eyrie ;
+    sem:hasTime HERO:the_Autumnal_Equinox .
 
 HERO:ThreatenedElement rdfs:range HERO:ThreatTarget .
 
@@ -47,43 +51,39 @@ sem:hasPlace rdfs:range sem:Place .
 
 sem:hasTime rdfs:range sem:Time .
 
-HERO:Deepwood_Motte a sem:Place ;
-    rdfs:label "Deepwood Motte" .
-
-HERO:House_Arryn a HERO:House ;
-    rdfs:label "House Arryn" .
+HERO:House_Martell a HERO:House ;
+    rdfs:label "House Martell" .
 
 HERO:Karhold a sem:Place ;
     rdfs:label "Karhold" .
 
 HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" .
 
-HERO:Tyrion_Lannister a HERO:Main_Character,
-        HERO:Male,
+HERO:Robb_Stark a HERO:Male,
         sem:Actor ;
-    rdfs:label "Tyrion Lannister" .
+    rdfs:label "Robb Stark" .
 
-HERO:easter a sem:Time ;
-    rdfs:label "Easter day" .
+HERO:The_Eyrie a sem:Place ;
+    rdfs:label "The Eyrie" .
 
-HERO:lifestyle a HERO:ThreatTarget ;
-    rdfs:label "lifestyle" .
-
-HERO:military_leader a HERO:Occupation ;
-    rdfs:label "military leader" .
-
-HERO:queen_consort a HERO:Female,
+HERO:fictional_princess a HERO:Female,
         HERO:Title,
         sem:Actor ;
-    rdfs:label "Queen " .
+    rdfs:label "Princess" .
+
+HERO:soldier a HERO:Occupation ;
+    rdfs:label "soldier" .
+
+HERO:the_Autumnal_Equinox a sem:Time ;
+    rdfs:label "the Autumnal Equinox" .
 
 HERO:the_Winter_Solstice a sem:Time ;
     rdfs:label "the Winter Solstice" .
 
-HERO:Cersei_Lannister a HERO:Female,
+HERO:Arya_Stark a HERO:Female,
         HERO:Main_Character,
         sem:Actor ;
-    rdfs:label "Cersei Lannister" .
+    rdfs:label "Arya Stark" .
 
 sem:Core a owl:Class ;
     rdfs:label "Core" .
