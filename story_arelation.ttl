@@ -1,0 +1,93 @@
+@prefix HERO: <http://hero_ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+HERO:Event_01 a HERO:OrdinaryWorld,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Ordinary World presentation" ;
+    HERO:hasHouse HERO:House_Stark ;
+    HERO:hasOccupation HERO:hunter ;
+    HERO:hasTitle HERO:Lord ;
+    HERO:journeyStage "1" ;
+    sem:hasActor HERO:Robert_Baratheon ;
+    sem:hasPlace HERO:White_Harbor ;
+    sem:hasTime HERO:christmas .
+
+HERO:Event_02 a HERO:CallToAdventure,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Villain threatens the safety of somebody. This is the call for the hero" ;
+    HERO:ThreatenedElement HERO:castle ;
+    HERO:journeyStage "2" ;
+    HERO:villain HERO:Cersei_Lannister ;
+    sem:hasActor HERO:Robert_Baratheon ;
+    sem:hasPlace HERO:Raventree_Hall ;
+    sem:hasTime HERO:the_Summer_Solstice .
+
+HERO:ThreatenedElement rdfs:range HERO:ThreatTarget .
+
+HERO:cause_of_death rdfs:range xsd:string .
+
+HERO:hasHouse rdfs:range HERO:House .
+
+HERO:hasOccupation rdfs:range HERO:Occupation .
+
+HERO:hasTitle rdfs:range HERO:Title .
+
+HERO:villain rdfs:range HERO:Villain .
+
+sem:hasActor rdfs:range HERO:Hero .
+
+sem:hasPlace rdfs:range sem:Place .
+
+sem:hasTime rdfs:range sem:Time .
+
+HERO:Cersei_Lannister a HERO:Female,
+        HERO:Main_Character,
+        sem:Actor ;
+    rdfs:label "Cersei Lannister" .
+
+HERO:House_Stark a HERO:House ;
+    rdfs:label "House Stark" .
+
+HERO:Lord a HERO:Male,
+        HERO:Title,
+        sem:Actor ;
+    rdfs:label "Lord" .
+
+HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" .
+
+HERO:Raventree_Hall a sem:Place ;
+    rdfs:label "Raventree Hall" .
+
+HERO:White_Harbor a sem:Place ;
+    rdfs:label "White Harbor" .
+
+HERO:castle a HERO:ThreatTarget ;
+    rdfs:label "castle" .
+
+HERO:christmas a sem:Time ;
+    rdfs:label "Christmas" .
+
+HERO:hunter a HERO:Occupation ;
+    rdfs:label "hunter" .
+
+HERO:the_Summer_Solstice a sem:Time ;
+    rdfs:label "the Summer Solstice" .
+
+HERO:Robert_Baratheon a HERO:Main_Character,
+        HERO:Male,
+        sem:Actor ;
+    rdfs:label "Robert Baratheon" .
+
+sem:Core a owl:Class ;
+    rdfs:label "Core" .
+
+sem:Event a owl:Class ;
+    rdfs:label "Event" .
+
