@@ -21,7 +21,7 @@ def random_pick(ist_class):
         return (random.choice([Literal("true", datatype=XSD.boolean), Literal("false", datatype=XSD.boolean)]))
 
     g = Graph()
-    g.parse("./ontology_event1.ttl")
+    g.parse("./ontology_event1and2.ttl")
     g.parse("./got_instances.ttl")
 
     list_e = []
@@ -244,7 +244,7 @@ def textGeneration_Event13(story):
 
 def gen_story(method):
     g = Graph(base="http://test.com/ns#")
-    g.parse("./ontology_event1.ttl")
+    g.parse("./ontology_event1and2.ttl")
     g.parse("./got_instances.ttl")
 
     HERO = Namespace("http://hero_ontology/")
@@ -336,28 +336,43 @@ def gen_story(method):
 
     return story
 
-def clear(story):
+def clean_triples(s,p,o):
+    triples_clean = ""
+    triples_clean += (
+        (str(s).split('/')[-1] + " - " + str(p).split("/")[-1] + " - " + str(o).split("/")[-1] + " | "))
+    triples_clean = re.sub('22-rdf-syntax-ns#', '', triples_clean)
+    triples_clean = re.sub('rdf-schema##', '', triples_clean)
+    triples_clean = re.sub('owl#', '', triples_clean)
+    triples_clean = re.sub('rdf-schema#', '', triples_clean)
+    triples_clean = re.sub('XMLSchema#', '', triples_clean)
+    return triples_clean
+
+def clear(story,method):
     HERO = Namespace("http://hero_ontology/")
     sem = Namespace("http://semanticweb.cs.vu.nl/2009/11/sem/")
-    #story = gen_story(method)
     triples_clean = ""
 
-    #story = story.serialize(f"./story_a_{method}.ttl")
-    for s, p, o in story.triples((HERO.Event_01, None, None)):
-        story.remove((None, None, RDFS.Resource))
-        story.remove((None, None, sem.Core))
-        # story.remove((None, RDFS.label, None))
+    if method=='types':
+        for s, p, o in story.triples((None, None, None)):
+            if o==RDFS.Class or o==RDFS.Resource or o==sem.Core or p==HERO.journeyStage or p==RDFS.range or p==HERO.hasTitle or p==HERO.hasHouse or p==HERO.hasOccupation or p==sem.hasActor or p==sem.hasPlace or p==sem.hasTime or p==RDFS.label:
+                continue
+            triples_clean += clean_triples(s,p,o)
 
-    for s, p, o in story.triples((None, None, None)):
-        triples_clean += (
-            (str(s).split('/')[-1] + " - " + str(p).split("/")[-1] + " - " + str(o).split("/")[-1] + " | "))
-        triples_clean = re.sub('22-rdf-syntax-ns#', '', triples_clean)
-        triples_clean = re.sub('rdf-schema##', '', triples_clean)
-        triples_clean = re.sub('owl#', '', triples_clean)
-        triples_clean = re.sub('rdf-schema#', '', triples_clean)
-        triples_clean = re.sub('XMLSchema#', '', triples_clean)
 
-    #triples_list = [triples_clean]
+
+    if method=='event':
+        for s, p, o in story.triples((None, None, None)):
+            if o==RDFS.Resource or o==sem.Core or p==RDFS.range or p==RDFS.label:
+                continue
+            triples_clean += clean_triples(s,p,o)
+
+
+    if method=='range':
+        for s, p, o in story.triples((None, None, None)):
+            if o == RDFS.Resource or o == sem.Core or p == RDFS.label:
+                continue
+            triples_clean += clean_triples(s,p,o)
+
 
     return triples_clean
 
@@ -396,6 +411,8 @@ def create_dict(method):
 
 
 def main(argv, arc):
+    #method for srtory generation
+    #method for how many triples to keep
     data = []
     count = 0
     count_KG = 0
@@ -405,28 +422,21 @@ def main(argv, arc):
     for i in range(10):
         dict = {}
         story_try = gen_story('relation')
-        triples_list_try = clear(story_try)
         text_try = list(textGeneration_Event1(story_try))
-        if text_try != []:
-
-            # print(text_try)
-            # story = gen_story(method)
+        if text_try != []: #check if text coherent
             story = story_try
-            triples_list = triples_list_try
-            text1 = text_try
-
+            triples_list = clear(story,'types') #can have different experiments - how populated is KG
+            text1 = str(text_try)
             dict['index'] = count
             count += 1
-            text1 = str(list(textGeneration_Event1(story)))
-           # text1 = re.sub("[[(rdflib.term.Literal(''),)]]", '', text1)
             text1 = text1.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
             dict['story'] = text1
-            #print(type(dict['story']))
-
             dict['KG index'] = count_KG
             dict['Knowledge Graph'] = triples_list
 
             data.append(dict)
+            #second formulation
+
             dict = {}
             dict['index'] = count
             count += 1
@@ -436,6 +446,8 @@ def main(argv, arc):
             dict['KG index'] = count_KG
             dict['Knowledge Graph'] = triples_list
             data.append(dict)
+
+            #3rd formulation
             dict = {}
             dict['index'] = count
             count += 1
@@ -452,7 +464,7 @@ def main(argv, arc):
         print(len(data))
         #for training set this to 500
         #for test set this to 50
-        if len(data)==50:
+        if len(data)==5:
 
             break
 
@@ -497,9 +509,9 @@ def main(argv, arc):
     with open('generated_output/try.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent="")
 
-    # for s,p,o in story.triples((HERO.Event_04, None , None)):
-    #    print(s,p,o)
-    # story = story.serialize(f"./story_a_{method}.ttl")
+    #for s,p,o in story.triples((HERO.Event_04, None , None)):
+        #print(s,p,o)
+    story = story.serialize(f"./story_a.ttl")
     # AND HERE WE TRY TO PUT EVERYTHING INTO ONE JSON
     # print(f"\n{method} based story has been generated succesfully! Check ./story_{method}.ttl ")
 
