@@ -1,7 +1,7 @@
 [
 {
 "index": 0,
-"story": "It was Christmas in White Harbor. Robert Baratheon was a  Lord from the House Stark and worked as a hunterIt was known that Cersei Lannister wanted the  castle  that belonged to Robert Baratheon. It was the Summer Solstice in Raventree Hall  when Cersei Lannister  threatened Robert Baratheon of  castle",
-"Knowledge Graph": "Robert_Baratheon - type - Male | Event_02 - type - CallToAdventure | Robert_Baratheon - type - Main_Character | House_Stark - type - House | hunter - type - Occupation | the_Summer_Solstice - type - Time | Event - type - Class | Lord - type - Male | Cersei_Lannister - type - Female | Robert_Baratheon - type - Actor | Cersei_Lannister - type - Main_Character | White_Harbor - type - Place | Event_02 - villain - Cersei_Lannister | Event_01 - type - Event | christmas - type - Time | Lord - type - Actor | Cersei_Lannister - type - Actor | Event_01 - type - OrdinaryWorld | Event_02 - ThreatenedElement - castle | castle - type - ThreatTarget | Core - type - Class | Raventree_Hall - type - Place | Event_02 - type - Event | Lord - type - Title | "
+"story": "It was Christmas in Castle Black. Jon Snow was a  King from the House Greyjoy and worked as a assassin[]",
+"Knowledge Graph": "House_Greyjoy - type - House | Jon_Snow - type - Actor | the_first_day_of_Spring - type - Time | Event_02 - type - CallToAdventure | Event - type - Class | Jon_Snow - type - Male | King - type - Title | Event_02 - villain - Pypar | christmas - type - Time | King - type - Actor | Castle_Black - type - Place | Title - type - ThreatTarget | Event_02 - type - Event | Event_02 - ThreatenedElement - Title | Event_01 - type - OrdinaryWorld | King - type - Male | The_Dreadfort - type - Place | Jon_Snow - type - Main_Character | assassin - type - Occupation | Event_01 - type - Event | Core - type - Class | "
 }
 ]

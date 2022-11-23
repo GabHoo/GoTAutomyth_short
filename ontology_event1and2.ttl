@@ -231,9 +231,8 @@ HERO:Event_01 a HERO:OrdinaryWorld; #instanciated
 
 
 
-
-
-HERO:CallToAdventure rdfs:subClassOf sem:Event.
+HERO:CallToAdventure rdfs:subClassOf sem:Event;
+                      rdfs:label "Second stage of the story - Call to adventure".
 
 
 HERO:villain  a rdfs:Property; #introducing the villain

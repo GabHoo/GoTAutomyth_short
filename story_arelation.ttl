@@ -10,12 +10,12 @@ HERO:Event_01 a HERO:OrdinaryWorld,
         rdfs:Resource ;
     rdfs:label "Ordinary World presentation" ;
     HERO:hasHouse HERO:House_Stark ;
-    HERO:hasOccupation HERO:hunter ;
-    HERO:hasTitle HERO:Lord ;
+    HERO:hasOccupation HERO:rebel ;
+    HERO:hasTitle HERO:fictional_king ;
     HERO:journeyStage "1" ;
-    sem:hasActor HERO:Robert_Baratheon ;
-    sem:hasPlace HERO:White_Harbor ;
-    sem:hasTime HERO:christmas .
+    sem:hasActor HERO:Margaery_Tyrell ;
+    sem:hasPlace HERO:The_Trident ;
+    sem:hasTime HERO:the_Autumnal_Equinox .
 
 HERO:Event_02 a HERO:CallToAdventure,
         sem:Core,
@@ -24,10 +24,10 @@ HERO:Event_02 a HERO:CallToAdventure,
     rdfs:label "Villain threatens the safety of somebody. This is the call for the hero" ;
     HERO:ThreatenedElement HERO:castle ;
     HERO:journeyStage "2" ;
-    HERO:villain HERO:Cersei_Lannister ;
-    sem:hasActor HERO:Robert_Baratheon ;
-    sem:hasPlace HERO:Raventree_Hall ;
-    sem:hasTime HERO:the_Summer_Solstice .
+    HERO:villain HERO:Tommen_Baratheon ;
+    sem:hasActor HERO:Margaery_Tyrell ;
+    sem:hasPlace HERO:The_Ruby_Ford ;
+    sem:hasTime HERO:easter .
 
 HERO:ThreatenedElement rdfs:range HERO:ThreatTarget .
 
@@ -47,43 +47,44 @@ sem:hasPlace rdfs:range sem:Place .
 
 sem:hasTime rdfs:range sem:Time .
 
-HERO:Cersei_Lannister a HERO:Female,
-        HERO:Main_Character,
-        sem:Actor ;
-    rdfs:label "Cersei Lannister" .
+HERO:CallToAdventure rdfs:label "Second stage of the story - Call to adventure" .
 
 HERO:House_Stark a HERO:House ;
     rdfs:label "House Stark" .
 
-HERO:Lord a HERO:Male,
-        HERO:Title,
-        sem:Actor ;
-    rdfs:label "Lord" .
-
 HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" .
 
-HERO:Raventree_Hall a sem:Place ;
-    rdfs:label "Raventree Hall" .
+HERO:The_Ruby_Ford a sem:Place ;
+    rdfs:label "The Ruby Ford" .
 
-HERO:White_Harbor a sem:Place ;
-    rdfs:label "White Harbor" .
+HERO:The_Trident a sem:Place ;
+    rdfs:label "The Trident" .
+
+HERO:Tommen_Baratheon a HERO:Male,
+        sem:Actor ;
+    rdfs:label "Tommen Baratheon" .
 
 HERO:castle a HERO:ThreatTarget ;
     rdfs:label "castle" .
 
-HERO:christmas a sem:Time ;
-    rdfs:label "Christmas" .
+HERO:easter a sem:Time ;
+    rdfs:label "Easter day" .
 
-HERO:hunter a HERO:Occupation ;
-    rdfs:label "hunter" .
-
-HERO:the_Summer_Solstice a sem:Time ;
-    rdfs:label "the Summer Solstice" .
-
-HERO:Robert_Baratheon a HERO:Main_Character,
-        HERO:Male,
+HERO:fictional_king a HERO:Male,
+        HERO:Title,
         sem:Actor ;
-    rdfs:label "Robert Baratheon" .
+    rdfs:label "King" .
+
+HERO:rebel a HERO:Occupation ;
+    rdfs:label "rebel" .
+
+HERO:the_Autumnal_Equinox a sem:Time ;
+    rdfs:label "the Autumnal Equinox" .
+
+HERO:Margaery_Tyrell a HERO:Female,
+        HERO:Main_Character,
+        sem:Actor ;
+    rdfs:label "Margaery Tyrell" .
 
 sem:Core a owl:Class ;
     rdfs:label "Core" .

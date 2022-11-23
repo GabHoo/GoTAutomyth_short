@@ -163,15 +163,14 @@ def textGeneration_Event1_1(story):
      ?Title a ns2:Male}
       }
      }.
-    ns2:Event_01 ns1:hasTime ?Time1.
-    ?Time1 rdfs:label ?TimeLabel1.
     ns2:Event_01 ns1:hasPlace ?Loc1.
     ?Loc1 rdfs:label ?LocLabel1.
 
-    BIND(CONCAT('Once upon a time, in ',?LocLabel1 ,' there was a ',?HeroJob,' whose name was ', ?HeroName,'. ', ?HeroName, ' was a ', ?TitleLabel,' from the ', ?FamilyLabel,'. It was ',?TimeLabel1,' when this story begins.' ) AS ?Event_01).
+    BIND(CONCAT('Once upon a time, in ',?LocLabel1 ,' there was a ',?HeroJob,' whose name was ', ?HeroName,'. ', ?HeroName, ' was a ', ?TitleLabel,' from the ', ?FamilyLabel,'. ' ) AS ?Event_01).
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     texts.append(text1)
     return (text1)
+#It was ',?TimeLabel1,' when this story begins.
 
 
 def textGeneration_Event1_2(story):
@@ -196,15 +195,17 @@ def textGeneration_Event1_2(story):
      ?Title a ns2:Male}
       }
      }.
-    ns2:Event_01 ns1:hasTime ?Time1.
-    ?Time1 rdfs:label ?TimeLabel1.
+
     ns2:Event_01 ns1:hasPlace ?Loc1.
     ?Loc1 rdfs:label ?LocLabel1.
 
-    BIND(CONCAT('It was ',?TimeLabel1, ' in ', ?LocLabel1, '. ', ?HeroName, ' was a  ' ,?TitleLabel,' from the ', ?FamilyLabel ,  ' and worked as a ',?HeroJob ) AS ?Event_01).
+    BIND(CONCAT(' In ', ?LocLabel1, '. ', ?HeroName, ' was a  ' ,?TitleLabel,' from the ', ?FamilyLabel ,  ' and worked as a ',?HeroJob ) AS ?Event_01).
       }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     texts.append(text12)
     return (text12)
+    #'It was ',?TimeLabel1,
+    #ns2:Event_01 ns1:hasTime ?Time1.
+    #?Time1 rdfs:label ?TimeLabel1.
 
 
 def textGeneration_Event1_3(story):
@@ -229,17 +230,17 @@ def textGeneration_Event1_3(story):
      ?Title a ns2:Male}
       }
      }.
-    ns2:Event_01 ns1:hasTime ?Time1.
-    ?Time1 rdfs:label ?TimeLabel1.
+
     ns2:Event_01 ns1:hasPlace ?Loc1.
     ?Loc1 rdfs:label ?LocLabel1.
 
 
-    BIND(CONCAT('' ,?LocLabel1,' was the place where the ',?HeroName, ',' ,?TitleLabel,' of ',?FamilyLabel, 'used to live. ' ,?HeroName,' was also known around ',?LocLabel1, ' as a great ',?HeroJob,' . It was ',?TimeLabel1,' when this story takes place.') AS ?Event_01). 
+    BIND(CONCAT('' ,?LocLabel1,' was the place where the ',?HeroName, ',' ,?TitleLabel,' of ',?FamilyLabel, 'used to live. ' ,?HeroName,' was also known around ',?LocLabel1, ' as a great ',?HeroJob,' . ') AS ?Event_01). 
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     texts.append(text13)
     return (text13)
+    #It was ',?TimeLabel1,' when this story takes place.'
 
 
 def textGeneration_Event2_1(story):
@@ -282,7 +283,7 @@ def textGeneration_Event2_2(story):
     ns2:Event_02 ns1:hasPlace ?Loc2.
     ?Loc2 rdfs:label ?LocLabel2.
 
-    BIND(CONCAT('It was known that ', ?VillainLabel ,' wanted the  ',?ElementLabel, '  that belonged to ', ?HeroName, '. It was ',?TimeLabel2, ' in ' ,?LocLabel2,'  when ', ?VillainLabel ,'  threatened ', ?HeroName, ' of  ',?ElementLabel ) AS ?Event_02).
+    BIND(CONCAT('It was known that ', ?VillainLabel ,' wanted the  ',?ElementLabel, '  that belonged to ', ?HeroName, '. It was ',?TimeLabel2, ' in ' ,?LocLabel2,'  when ', ?VillainLabel ,'  threatened the ',?ElementLabel, 'of ', ?HeroName ) AS ?Event_02).
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     texts.append(text)
@@ -449,8 +450,8 @@ def random_formulation(story):
     x=random.randint(1,3)
     t1 = globals()[f"textGeneration_Event1_{x}"](story)
 
-    y = random.randint(1, 3)
-    t2 = globals()[f"textGeneration_Event2_{y}"](story)
+    #y = random.randint(1, 3)
+    t2 = globals()[f"textGeneration_Event2_{x}"](story)
     t1 = str(list(t1))
     t1 = t1.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
     t2 = str(list(t2))
