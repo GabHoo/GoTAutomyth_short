@@ -73,7 +73,7 @@ def domain_range(g, story):
     return story
     # print('domain-range')
 
-
+#THIS is necessary because in the community based pick we create the communities based onpy on these main charachter
 main_characters = {"Jon_Snow": "Q3183235",
                    "Daenerys_Targaryen": "Q2708078",
                    "Arya_Stark": "Q3624677",
@@ -81,7 +81,8 @@ main_characters = {"Jon_Snow": "Q3183235",
                    "Cersei_Lannister": "Q3665163",
                    "Tyrion_Lannister": "Q2076759",
                    "Margaery_Tyrell": "Q12900933",
-                   "Robert_Baratheon": "Q13634885"}
+                   "Robert_Baratheon": "Q13634885",
+                   "Petyr_Baelish":"Q0000000"}
 
 
 def find_communities(weighted_input):
@@ -94,7 +95,7 @@ def find_communities(weighted_input):
     G.add_weighted_edges_from(tuples_lst)
 
     communities = sorted(nxcom.greedy_modularity_communities(G), key=len, reverse=True)
-
+    #print(f"{communities}")
     communities_dict = {}
     for com in communities:
         for mc in main_characters.keys():
@@ -102,7 +103,7 @@ def find_communities(weighted_input):
                 com_copy = list(com)
                 com_copy.remove(mc)
                 communities_dict[mc] = com_copy
-
+    #print("\ncommunities dict", communities_dict)
     return communities_dict
 
 
@@ -110,8 +111,8 @@ def comm_based_pick(ist_class, communities=None, hero=None, char_type=None, vill
     category = ist_class.split("/")[-1]
     if category == "Actor":
         hero = hero.split("/")[-1]
-        print("inside community, hero is", hero)
-        print(communities[hero])
+
+        #print(communities[hero])
         if char_type == "Ally":
             return URIRef('http://hero_ontology/' + random.choice(list(communities[hero])))
         elif char_type == "Villain":
