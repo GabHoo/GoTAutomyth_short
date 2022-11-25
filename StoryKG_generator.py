@@ -22,8 +22,8 @@ def random_pick(ist_class):
         return (random.choice([Literal("true", datatype=XSD.boolean), Literal("false", datatype=XSD.boolean)]))
 
     g = Graph()
-    g.parse("./ontology_event1and2.ttl")
-    g.parse("./got_instances.ttl")
+    g.parse("./Useful_turtles/ontology_event1and2.ttl")
+    g.parse("./Useful_turtles/got_instances.ttl")
 
     list_e = []
 
@@ -110,7 +110,8 @@ def comm_based_pick(ist_class, communities=None, hero=None, char_type=None, vill
     category = ist_class.split("/")[-1]
     if category == "Actor":
         hero = hero.split("/")[-1]
-
+        print("inside community, hero is", hero)
+        print(communities[hero])
         if char_type == "Ally":
             return URIRef('http://hero_ontology/' + random.choice(list(communities[hero])))
         elif char_type == "Villain":
@@ -144,8 +145,8 @@ def relation_based_pick(edges, related_to_char, n):
 
 def gen_story(method):
     g = Graph(base="http://test.com/ns#")
-    g.parse("./ontology_event1and2.ttl")
-    g.parse("./got_instances.ttl")
+    g.parse("./Useful_turtles/ontology_event1and2.ttl")
+    g.parse("./Useful_turtles/got_instances.ttl")
 
     HERO = Namespace("http://hero_ontology/")
     sem = Namespace("http://semanticweb.cs.vu.nl/2009/11/sem/")
@@ -175,6 +176,7 @@ def gen_story(method):
 
     fixed = {} #THER IS A LIST OF RECOURRENTS ELEMNTS SUCH AS VILLAN; HERO ALLAY etcc, we pick those based on the methon, the hero is picked randomly
     fixed["Hero"] = random_pick("http://hero_ontology/Hero")
+    print("selected Hero,", fixed["Hero"])
 
     if method == "community":
         fixed["Villain"] = comm_based_pick("http://semanticweb.cs.vu.nl/2009/11/sem/Actor", communities, fixed["Hero"],

@@ -85,12 +85,13 @@ def main(argv, arc):
 
     while count<n_kg_generated:
         dict = {}
+        print("genrating1")
         story=gen_story(method_generation)
 
         text_try = list(Queries4Text.textGeneration_Event1_1(story))
 
         if text_try != []: #check if text coherent
-
+            count += 1
             triples_list = clear(story, semantic_given)
             dict['Knowledge Graph'] = triples_list
 
@@ -99,6 +100,7 @@ def main(argv, arc):
 
             with open(f'generated_output/try_{method_generation}_{semantic_given}.json', 'w', encoding='utf-8') as f:
                 json.dump(dict, f, ensure_ascii=False, indent="")
+
 
 
 

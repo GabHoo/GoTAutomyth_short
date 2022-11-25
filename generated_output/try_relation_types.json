@@ -1,7 +1,7 @@
 [
 {
 "index": 0,
-"story": "It was Christmas in Castle Black. Jon Snow was a  King from the House Greyjoy and worked as a assassin[]",
-"Knowledge Graph": "House_Greyjoy - type - House | Jon_Snow - type - Actor | the_first_day_of_Spring - type - Time | Event_02 - type - CallToAdventure | Event - type - Class | Jon_Snow - type - Male | King - type - Title | Event_02 - villain - Pypar | christmas - type - Time | King - type - Actor | Castle_Black - type - Place | Title - type - ThreatTarget | Event_02 - type - Event | Event_02 - ThreatenedElement - Title | Event_01 - type - OrdinaryWorld | King - type - Male | The_Dreadfort - type - Place | Jon_Snow - type - Main_Character | assassin - type - Occupation | Event_01 - type - Event | Core - type - Class | "
+"story": "Seagard was the place where the Robert Baratheon,King of House Martellused to live. Robert Baratheon was also known around Seagard as a great vigilante . Robert Baratheon really cared about  peace. It was the Middle Of the Night in The Ruby Ford  when  Eddard Stark threatened the  peace of Robert Baratheon",
+"Knowledge Graph": "Eddard_Stark - type - Male | peace - type - ThreatTarget | Event - type - Class | Event_02 - type - CallToAdventure | Event_01 - type - OrdinaryWorld | Event_02 - villain - Eddard_Stark | vigilante - type - Occupation | House_Martell - type - House | The_Ruby_Ford - type - Place | Event_02 - ThreatenedElement - peace | fictional_king - type - Title | fictional_king - type - Actor | Robert_Baratheon - type - Actor | Eddard_Stark - type - Actor | theMiddleOftheNight - type - Time | Core - type - Class | fictional_king - type - Male | Event_02 - type - Event | Robert_Baratheon - type - Male | Seagard - type - Place | Robert_Baratheon - type - Main_Character | Event_01 - type - Event | the_Summer_Solstice - type - Time | "
 }
 ]

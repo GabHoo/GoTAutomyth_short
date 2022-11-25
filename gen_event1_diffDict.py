@@ -21,8 +21,8 @@ def random_pick(ist_class):
         return (random.choice([Literal("true", datatype=XSD.boolean), Literal("false", datatype=XSD.boolean)]))
 
     g = Graph()
-    g.parse("./ontology_event1and2.ttl")
-    g.parse("./got_instances.ttl")
+    g.parse("./Useful_turtles/ontology_event1and2.ttl")
+    g.parse("./Useful_turtles/got_instances.ttl")
 
     list_e = []
 
@@ -314,8 +314,8 @@ def textGeneration_Event2_3(story):
 
 def gen_story(method):
     g = Graph(base="http://test.com/ns#")
-    g.parse("./ontology_event1and2.ttl")
-    g.parse("./got_instances.ttl")
+    g.parse("./Useful_turtles/ontology_event1and2.ttl")
+    g.parse("./Useful_turtles/got_instances.ttl")
 
     HERO = Namespace("http://hero_ontology/")
     sem = Namespace("http://semanticweb.cs.vu.nl/2009/11/sem/")
@@ -463,9 +463,9 @@ def random_formulation(story):
 
 
 def main(argv, arc):
-    #if arc!=3 or argv[1] not in ["community","relation","random"] or argv[2] not in ['types','event','range']:
-    #    print("Error! Please enter a (valid) charachter picking method. (community,relation,random)")
-    #    exit()
+    if arc!=4 or argv[1] not in ["community","relation","random"] or argv[2] not in ['types','event','range']:
+        print("Error! Please enter a (valid) charachter picking method. (community,relation,random)")
+        exit()
     method_generation = argv[1]
     method_triples = argv[2]
     n_kg_generated = int(argv[3])
@@ -525,10 +525,10 @@ def main(argv, arc):
             count_KG += 1
             '''
 
-    with open(f'generated_output/try_{method_generation}_{method_triples}.json', 'w', encoding='utf-8') as f:
+    with open(f'generated_output/DEBUG_try_{method_generation}_{method_triples}.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent="")
 
-    story = story.serialize(f"./story_a{method_generation}.ttl")
+    story = story.serialize(f"./generated_stories/tory_DEBUG_a{method_generation}.ttl")
 
 
 

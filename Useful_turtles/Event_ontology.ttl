@@ -82,7 +82,7 @@ sem:Place a owl:Class ;
         wgs84:SpatialThing .
 
 sem:Time a owl:Class ;
-    rdfs:label "Time" ;
+    rdfs:label "Time"
     rdfs:comment "Time contains symbolic representations of when an Event took place. Time instances do not necessarily need to have a timestamp associated with them. The Time class exists to represent semantics of time, e.g. that one thing happens before another, even though the exact timestamps are unknown." ;
     rdfs:subClassOf sem:Core ;
     skos:broadMatch time1:TemporalEntity .
