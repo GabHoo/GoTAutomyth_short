@@ -177,7 +177,7 @@ def gen_story(method):
 
     fixed = {} #THER IS A LIST OF RECOURRENTS ELEMNTS SUCH AS VILLAN; HERO ALLAY etcc, we pick those based on the methon, the hero is picked randomly
     fixed["Hero"] = random_pick("http://hero_ontology/Hero")
-    print("selected Hero,", fixed["Hero"])
+    #print("selected Hero,", fixed["Hero"])
 
     if method == "community":
         fixed["Villain"] = comm_based_pick("http://semanticweb.cs.vu.nl/2009/11/sem/Actor", communities, fixed["Hero"],

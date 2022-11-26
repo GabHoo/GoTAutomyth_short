@@ -36,7 +36,7 @@ def clear(story,semantic_given):
 
     if semantic_given=='types':
         for s, p, o in story.triples((None, None, None)):
-            if o==RDFS.Class or o==RDFS.Resource or o==sem.Core or or p == HERO.villain or p == HERO.ThreatenedElement or p==HERO.journeyStage or p==RDFS.range or p==HERO.hasTitle or p==HERO.hasHouse or p==HERO.hasOccupation or p==sem.hasActor or p==sem.hasPlace or p==sem.hasTime or p==RDFS.label:
+            if o==RDFS.Class or o==RDFS.Resource or o==sem.Core or  p == HERO.villain or p == HERO.ThreatenedElement or p==HERO.journeyStage or p==RDFS.range or p==HERO.hasTitle or p==HERO.hasHouse or p==HERO.hasOccupation or p==sem.hasActor or p==sem.hasPlace or p==sem.hasTime or p==RDFS.label:
                 continue
             triples_clean += clean_triples(s,p,o)
 
@@ -90,20 +90,22 @@ def main(argv, arc):
             story=gen_story(method_generation)
             text_try = list(Queries4Text.textGeneration_Event1_1(story))
             text_try2 = list(Queries4Text.textGeneration_Event2_1(story))
-            if text_try2 == []: print(clear(story, semantic_given))
+
+            if text_try2 == []: print(f'wrong {clear(story, semantic_given)}')
             if text_try != [] and text_try2 != []: #check if text coherent
-                count += 1
+
                 triples_list = clear(story, semantic_given)
                 dict['Knowledge Graph'] = triples_list
 
                 dict['story'] = random_formulation(story)
-                count += 1
+
                 print(f'Generated story n {count}')
+                count += 1
                 json.dump(dict, f, ensure_ascii=False, indent="")
                 # story = story.serialize(f"./story_a_{method_generation}_{count}.ttl")
-            if count != n_kg_generated:
-                f.write(',')
-            f.write(']')
+                if count != n_kg_generated:
+                    f.write(',')
+        f.write(']')
 
            # with open(f'generated_output/try_{method_generation}_{semantic_given}.json', 'w', encoding='utf-8') as f:
             #    json.dump(dict, f, ensure_ascii=False, indent="")

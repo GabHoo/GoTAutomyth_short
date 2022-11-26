@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/Queries4Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Queries4Text.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StoryKG_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/StoryKG_generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated_output/try_community_types.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated_output/try_community_types.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

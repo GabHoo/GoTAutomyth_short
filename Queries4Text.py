@@ -105,7 +105,7 @@ def textGeneration_Event1_3(story):
     ?Loc1 rdfs:label ?LocLabel1.
 
 
-    BIND(CONCAT('' ,?LocLabel1,' was the place where the ',?HeroName, ',' ,?TitleLabel,' of ',?FamilyLabel, ' used to live. ' ,?HeroName,' was also known around ',?LocLabel1, ' as a great ',?HeroJob,' . ') AS ?Event_01). 
+    BIND(CONCAT('' ,?LocLabel1,' was the place where ',?HeroName, ', the ' ,?TitleLabel,' of ',?FamilyLabel, ' used to live. ' ,?HeroName,' was also known around ',?LocLabel1, ' as a great ',?HeroJob,' . ') AS ?Event_01). 
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     texts.append(text13)
