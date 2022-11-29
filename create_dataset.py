@@ -62,11 +62,11 @@ def random_formulation(story):
     y = random.randint(1, 3)
     t2 = globals()[f"textGeneration_Event2_{y}"](story)
     t1 = str(list(t1))
-    #t1 = t1.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
+    t1 = t1.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
     t2 = str(list(t2))
-    #t2 = t2.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
+    t2 = t2.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
     result = t1 + t2
-    result = result.replace("[(rdflib.term.Literal('", "")
+    result = result.replace('[(rdflib.term.Literal("', "")
     result = result.replace("'),)]", "")
 
     return result
