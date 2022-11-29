@@ -676,8 +676,8 @@ HERO:Title a HERO:ThreatTarget.
 HERO:Title rdfs:label "Title".
 HERO:House a HERO:ThreatTarget.
 HERO:House rdfs:label "House".
-HERO:HeroAlly a HERO:ThreatTarget.
-HERO:HeroAlly rdfs:label "Ally".
+#HERO:HeroAlly a HERO:ThreatTarget.
+#HERO:HeroAlly rdfs:label "Ally".
 
 #Celebration
 HERO:feast a HERO:Celebration .

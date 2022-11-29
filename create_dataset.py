@@ -62,10 +62,14 @@ def random_formulation(story):
     y = random.randint(1, 3)
     t2 = globals()[f"textGeneration_Event2_{y}"](story)
     t1 = str(list(t1))
-    t1 = t1.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
+    #t1 = t1.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
     t2 = str(list(t2))
-    t2 = t2.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
-    return t1 + t2
+    #t2 = t2.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
+    result = t1 + t2
+    result = result.replace("[(rdflib.term.Literal('", "")
+    result = result.replace("'),)]", "")
+
+    return result
 
 
 
@@ -76,14 +80,30 @@ def main(argv, arc):
         exit()
     method_generation = argv[1]
     semantic_given = argv[2]
-    n_kg_generated = int(argv[3])
+    #n_kg_generated = int(argv[3])
+    what = argv[3]
+
+    if what == 'train':
+        n_kg_generated = 500
+
+    if what =='test':
+        n_kg_generated = 50
+
+    if what =='val':
+        n_kg_generated = 50
+
+    if what =='try':
+        n_kg_generated = 5
 
     data = []
     count = 0
     count_KG = 0
+    path = f'/Users/teresa/Documents/GitHub/GoTAutomyth_short/generated_output/events12_{method_generation}_{semantic_given}'
+    if os.path.exists(path)==False:
+        os.mkdir(path)
 
 
-    with open(f'generated_output/try_{method_generation}_{semantic_given}.json', 'w', encoding='utf-8') as f:
+    with open(f'generated_output/events12_{method_generation}_{semantic_given}/{what}_events12_{method_generation}_{semantic_given}.json', 'w', encoding='utf-8') as f:
         f.write('[')
         while count<n_kg_generated:
             dict = {}
@@ -98,6 +118,7 @@ def main(argv, arc):
                 dict['Knowledge Graph'] = triples_list
 
                 dict['story'] = random_formulation(story)
+                dict['story'] = dict['story'].replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
 
                 print(f'Generated story n {count}')
                 count += 1
