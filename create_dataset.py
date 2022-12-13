@@ -56,34 +56,41 @@ def clear(story,semantic_given):
 
     return triples_clean
 
+def clear1(story):
+    result = ""
+    for i in story:
+        s = i[0]
+        p = i[1]
+        o = i[2]
+        triples_clean = ""
+        triples_clean += (
+            (str(s).split('/')[-1] + " - " + str(p).split("/")[-1] + " - " + str(o).split("/")[-1] + " | "))
+        triples_clean = re.sub('22-rdf-syntax-ns#', '', triples_clean)
+        triples_clean = re.sub('rdf-schema##', '', triples_clean)
+        triples_clean = re.sub('owl#', '', triples_clean)
+        triples_clean = re.sub('rdf-schema#', '', triples_clean)
+        triples_clean = re.sub('XMLSchema#', '', triples_clean)
+        result += triples_clean
+    return result
+
+
+
+
+
 def random_formulation(story):
     #x=random.randint(1,3)
     # y = random.randint(1, 3)
     x = y = 1
     result = ''
 
-
-    for i in [1,2,3,4,5,6,8,9,10,11,12]:
+    for i in [11,12]:
         t = globals()[f"textGeneration_Event{i}_{x}"](story)
         t = str(list(t))
         t = t.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
         print(t)
         result += t
     print(result)
-    #t1 = globals()[f"textGeneration_Event1_{x}"](story)
-    #t2 = globals()[f"textGeneration_Event2_{y}"](story)
-    #t3 = globals()[f"textGeneration_Event1_{x}"](story)
-    #t4 = globals()[f"textGeneration_Event2_{y}"](story)
-    #t1 = str(list(t1))
-    #t1 = t1.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
-    #t1 = str(list(t1.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")))
-    #t2 = str(list(t2))
-    #t2 = t2.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
 
-
-    #result = t1 + t2
-    #result = result.replace('[(rdflib.term.Literal("', "")
-    #result = result.replace('"),)]', "")
     return result
 
 
@@ -118,7 +125,7 @@ def main(argv, arc):
         os.mkdir(path)
 
 
-    with open(f'generated_output/events12_{method_generation}_{semantic_given}/{what}_events_{method_generation}_{semantic_given}.json', 'w', encoding='utf-8') as f:
+    with open(f'generated_output/events_{method_generation}_{semantic_given}/{what}_events_yo_{method_generation}_{semantic_given}.json', 'w', encoding='utf-8') as f:
         f.write('[')
         while count<n_kg_generated:
             dict = {}
@@ -129,7 +136,11 @@ def main(argv, arc):
             if text_try2 == []: print(f'wrong {clear(story, semantic_given)}')
             if text_try != [] and text_try2 != []: #check if text coherent
 
-                triples_list = clear(story, semantic_given)
+                #triples_list = clear(story, semantic_given)
+                #print(story.triples)
+                triples= Queries4Text.Graph_Generator(story)
+                triples_list = clear1(triples)
+                #print(story.triples)
                 dict['Knowledge Graph'] = triples_list
 
                 dict['story'] = random_formulation(story)
@@ -138,7 +149,9 @@ def main(argv, arc):
                 print(f'Generated story n {count}')
                 count += 1
                 json.dump(dict, f, ensure_ascii=False, indent="")
-                # story = story.serialize(f"./story_a_{method_generation}_{count}.ttl")
+                story = story.serialize(f"./story_a_{method_generation}_{count}.ttl")
+                #story.parse("http://www.w3.org/People/Berners-Lee/card")
+                #v = story.serialize(format="xml")
                 if count != n_kg_generated:
                     f.write(',')
         f.write(']')

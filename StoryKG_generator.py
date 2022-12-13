@@ -18,7 +18,7 @@ from scipy import rand
 
 def random_pick(ist_class):
     if ist_class == URIRef("http://www.w3.org/2001/XMLSchema#boolean"):
-        print("considering boooolean")
+        #print("considering boooolean")
         return (random.choice([Literal("true", datatype=XSD.boolean), Literal("false", datatype=XSD.boolean)]))
 
     g = Graph()

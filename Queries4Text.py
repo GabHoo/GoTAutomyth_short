@@ -348,10 +348,10 @@ def textGeneration_Event8_1(story):
 	ns2:Event_08 ns1:hasTime ?Time8.
 	?Time8 rdfs:label ?TimeLabel8.
 	ns2:Event_08 ns1:hasPlace ?Loc8.
-	?Loc8 rdfs:label ?LocLabel8.
+	?Loc8 rdfs:label ?LocLabel8
 
 
-	BIND(CONCAT('It was ',?TimeLabel8, ' in ', ?LocLabel8, 'when  ', ?HeroName,' faced ', ?viLabel,'. ', ?HeroName, ' used ', ?poHLabel,' powers, but ',?viLabel, ' used '    , ?poLabel,'. Our hero was ', ?str, '. ' ) as ?Event_08).
+	BIND(CONCAT('It was ',?TimeLabel8, ' in ', ?LocLabel8, ' when  ', ?HeroName,' faced ', ?viLabel,'. ', ?HeroName, ' used ', ?poHLabel,' powers, but ',?viLabel, ' used '    , ?poLabel,'. Our hero was ', ?str, '. ' ) as ?Event_08).
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     texts.append(text)
@@ -363,25 +363,22 @@ def textGeneration_Event9_1(story):
     text = story.query("""
         SELECT ?Event_09 WHERE 
     {  
-        ns2:Event_09 ns1:hasActor ?Hero.
+    ns2:Event_09 ns1:hasActor ?Hero.
 	?Hero  rdfs:label ?HeroName.
 
 	ns2:Event_09 ns2:saves ?target.
 	?target rdfs:label ?targetLabel.
 
-	ns2:Event_09 ns1:hasTime ?Time9.
-	?Time9 rdfs:label ?TimeLabel9.
-	ns2:Event_09 ns1:hasPlace ?Loc9.
-	?Loc9 rdfs:label ?LocLabel9
-
-
-	BIND(CONCAT(After a bloody fight, ',?HeroName,' finally saved ', ?targetLabel, '. ') as ?Event_09).
+	BIND(CONCAT('After a bloody fight, ',?HeroName,' finally saved ', ?targetLabel, '. ') as ?Event_09).
 
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     texts.append(text)
     return (text)
-
+#	ns2:Event_09 ns1:hasTime ?Time9.
+#	?Time9 rdfs:label ?TimeLabel9.
+#	ns2:Event_09 ns1:hasPlace ?Loc9.
+#	?Loc9 rdfs:label ?LocLabel9
 
 def textGeneration_Event10_1(story):
     texts = []
@@ -394,10 +391,7 @@ def textGeneration_Event10_1(story):
 	ns2:Event_10 ns2:chasedBy ?vil.
 	?vil rdfs:label ?vilLabel.
 
-	ns2:Event_10 ns1:hasTime ?Time10.
-	?Time10 rdfs:label ?TimeLabel10.
-	ns2:Event_10 ns1:hasPlace ?Loc10.
-	?Loc10 rdfs:label ?LocLabel10
+
 
 
 	BIND(CONCAT('Soon after ',?vilLabel, ' was hungry for revenge and chased down ', ?HeroName, '. ') as ?Event_10).
@@ -406,6 +400,10 @@ def textGeneration_Event10_1(story):
     texts.append(text)
     return (text)
 
+#	ns2:Event_10 ns1:hasTime ?Time10.
+#	?Time10 rdfs:label ?TimeLabel10.
+#	ns2:Event_10 ns1:hasPlace ?Loc10.
+#?Loc10 rdfs:label ?LocLabel10
 
 def textGeneration_Event11_1(story):
     texts = []
@@ -468,3 +466,19 @@ def textGeneration_Event12_1(story):
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     texts.append(text)
     return (text)
+
+
+
+
+
+def Graph_Generator(story):
+    texts = []
+    text = story.query("""
+  CONSTRUCT { ?s a ?o . } 
+  WHERE {?s a ?o}
+    """)
+    texts.append(text)
+    print('wtf is this')
+    print(texts)
+    print(type(texts))
+    return text
