@@ -57,18 +57,33 @@ def clear(story,semantic_given):
     return triples_clean
 
 def random_formulation(story):
-    x=random.randint(1,3)
-    t1 = globals()[f"textGeneration_Event1_{x}"](story)
-    y = random.randint(1, 3)
-    t2 = globals()[f"textGeneration_Event2_{y}"](story)
-    t1 = str(list(t1))
-    t1 = t1.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
-    t2 = str(list(t2))
-    t2 = t2.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
-    result = t1 + t2
-    result = result.replace('[(rdflib.term.Literal("', "")
-    result = result.replace("'),)]", "")
+    #x=random.randint(1,3)
+    # y = random.randint(1, 3)
+    x = y = 1
+    result = ''
 
+
+    for i in [10,11,12]:
+        t = globals()[f"textGeneration_Event{i}_{x}"](story)
+        t = str(list(t))
+        t = t.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
+        print(t)
+        result += t
+    print(result)
+    #t1 = globals()[f"textGeneration_Event1_{x}"](story)
+    #t2 = globals()[f"textGeneration_Event2_{y}"](story)
+    #t3 = globals()[f"textGeneration_Event1_{x}"](story)
+    #t4 = globals()[f"textGeneration_Event2_{y}"](story)
+    #t1 = str(list(t1))
+    #t1 = t1.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
+    #t1 = str(list(t1.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")))
+    #t2 = str(list(t2))
+    #t2 = t2.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
+
+
+    #result = t1 + t2
+    #result = result.replace('[(rdflib.term.Literal("', "")
+    #result = result.replace('"),)]', "")
     return result
 
 
@@ -93,17 +108,17 @@ def main(argv, arc):
         n_kg_generated = 50
 
     if what =='try':
-        n_kg_generated = 5
+        n_kg_generated = 1
 
     data = []
     count = 0
     count_KG = 0
-    path = f'/Users/teresa/Documents/GitHub/GoTAutomyth_short/generated_output/events12_{method_generation}_{semantic_given}'
+    path = f'/Users/teresa/Documents/GitHub/GoTAutomyth_short/generated_output/events_{method_generation}_{semantic_given}'
     if os.path.exists(path)==False:
         os.mkdir(path)
 
 
-    with open(f'generated_output/events12_{method_generation}_{semantic_given}/{what}_events12_{method_generation}_{semantic_given}.json', 'w', encoding='utf-8') as f:
+    with open(f'generated_output/events12_{method_generation}_{semantic_given}/{what}_events_{method_generation}_{semantic_given}.json', 'w', encoding='utf-8') as f:
         f.write('[')
         while count<n_kg_generated:
             dict = {}
@@ -118,7 +133,7 @@ def main(argv, arc):
                 dict['Knowledge Graph'] = triples_list
 
                 dict['story'] = random_formulation(story)
-                dict['story'] = dict['story'].replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
+                #dict['story'] = dict['story'].replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
 
                 print(f'Generated story n {count}')
                 count += 1

@@ -37,8 +37,8 @@ sem:Object a owl:Class ;
         eo:Product,
         dcmitype:PhysicalObject,
         dcterms:PhysicalResource .
-        
-        
+
+
 sem:hasActor a owl:ObjectProperty ;
     rdfs:label "has Actor" ;
     rdfs:comment "Has actor is used to state which Actors or Objects participate in an Event." ;
@@ -47,9 +47,9 @@ sem:hasActor a owl:ObjectProperty ;
     skos:exactMatch lode:involved ;
     skos:narrowMatch cs:agent ;
     rdfs:domain sem:Event.
-    
 
-    
+
+
 sem:hasPlace a owl:ObjectProperty ;
     rdfs:label "has Place" ;
     rdfs:comment "Has place is used to state in which Place(s) an Event happened. Coordinates can be attached to the Place with the W3C Geospatial Vocabulary (http://www.w3.org/2005/Incubator/geo/XGR-geo-20071023/)." ;
@@ -58,8 +58,8 @@ sem:hasPlace a owl:ObjectProperty ;
     skos:exactMatch cs:place ;
     skos:narrowMatch lode:inSpace ;
     rdfs:domain sem:Event.
-    
-    
+
+
 sem:hasTime a owl:ObjectProperty ;
     rdfs:label "has Time" ;
     rdfs:comment "Has time is used to indicate at which time an Event took place or when a property under the Temporary Constraint is valid. Has time points to a symbolic representation of time, which allows semantic relations between time resources. (see http://www.w3.org/TR/owl-time/)" ;
@@ -67,7 +67,7 @@ sem:hasTime a owl:ObjectProperty ;
     rdfs:subPropertyOf sem:eventProperty ;
     skos:broadMatch lode:atTime ;
     rdfs:domain sem:Event.
-    
+
 
 
 sem:Place a owl:Class ;
@@ -86,8 +86,8 @@ sem:Time a owl:Class ;
     rdfs:comment "Time contains symbolic representations of when an Event took place. Time instances do not necessarily need to have a timestamp associated with them. The Time class exists to represent semantics of time, e.g. that one thing happens before another, even though the exact timestamps are unknown." ;
     rdfs:subClassOf sem:Core ;
     skos:broadMatch time1:TemporalEntity .
-    
-    
+
+
 sem:Actor a owl:Class ;
     rdfs:label "Actor" ;
     rdfs:comment """Actors are entities that take part in an Event, either actively or passively. Actors do not necessarily have to be sentient. They can also be objects. Actors are a thing, animate or inanimate, physical or non-physical.
@@ -102,7 +102,7 @@ sem:Actor a owl:Class ;
         sumo:Agent,
         cidoc:E39.Actor,
         foaf:Agent .
-        
+
 sem:Event a owl:Class ;
     rdfs:label "Event" ;
     rdfs:comment "Events are things that happen. This comprises everything from historical events to web site sessions and mythical journeys. Event is the central class of SEM." ;
@@ -114,16 +114,16 @@ sem:Event a owl:Class ;
         dolce:perdurant,
         sumo:Process,
         cidoc:E5.Event .
-        
+
 sem:Core a owl:Class ;
     rdfs:label "Core" ;
-    rdfs:comment "The SEM Core class contains all entities that make up the context of an event: Events, Actors, Places, Times. This class is meant to be extended for each application domain." .                
-        
-           
-        
-        
-        
-        
+    rdfs:comment "The SEM Core class contains all entities that make up the context of an event: Events, Actors, Places, Times. This class is meant to be extended for each application domain." .
+
+
+
+
+
+
 #hero here we AREEEEE
 
 
@@ -139,13 +139,13 @@ HERO:EventWorld a rdfs:Class.
 
 HERO:Hero a rdfs:Class;
 	rdfs:subClassOf HERO:Main_Character.
-	
+
 HERO:Villain a rdfs:Class;
 	rdfs:subClassOf HERO:Main_Character;
     rdfs:label "Villain".
 
 
-HERO:HeroAlly a rdfs:Class;	
+HERO:HeroAlly a rdfs:Class;
 	rdfs:subClassOf sem:Actor.
 
 #HERO:HeroLover a rdfs:Class;
@@ -178,7 +178,7 @@ HERO:Celebration a rdfs:Class. #feast, dance, marriage, concert, freebeer, magic
 
 #HERO:Challenge a rdfs:Class.
 
-#GENERIC EVENT PROPERTIES DECLARATION 
+#GENERIC EVENT PROPERTIES DECLARATION
 
 
 #HERO:journeyStage a rdfs:Property; #This is to tell which step of the journey we are in. Is gonna be numeric #I THINK NO NEED FOR THIS BC WE ARE INSTANCIATING IT
@@ -188,144 +188,106 @@ HERO:Celebration a rdfs:Class. #feast, dance, marriage, concert, freebeer, magic
 
 
 
-	
+
 #HERO:predicate a rdfs:Property ; #this is to store the string which is gonna be the predicate of rdfstar main triple
 	#rdfs:range rdfs:Literal ;
 	#rdfs:domain HERO:Event .
 
 
-	
+
 #SUBCLASSES DEFINITION. THOSE AR 12 DIFFERENT SUBLCASSES NOT 12 istances of ONE SUBCLASS
 
 #1  ORDINARYWORLD
-HERO:OrdinaryWorld rdfs:subClassOf sem:Event;
+HERO:Story rdfs:subClassOf sem:Event;
                    rdfs:label "First stage of the story - Ordinary world presentation".
-                   
+
 HERO:hasTitle a rdfs:Property ;
 	rdfs:range HERO:Title ;
-	rdfs:domain HERO:OrdinaryWorld .
+	rdfs:domain HERO:Story .
 
 
 HERO:hasHouse a rdfs:Property ;
 	rdfs:label "";
 	rdfs:range HERO:House ;
-	rdfs:domain HERO:OrdinaryWorld .
+	rdfs:domain HERO:Story .
 
 HERO:hasOccupation a rdfs:Property ;
 	rdfs:range HERO:Occupation ;
-	rdfs:domain HERO:OrdinaryWorld .
-	
-HERO:Event_01 a HERO:OrdinaryWorld; #instanciated
-	HERO:journeyStage '1';
-	rdfs:label "Ordinary World presentation". 
-	
-#2 CALL TO ADVENTURE
+	rdfs:domain HERO:Story .
 
-HERO:CallToAdventure rdfs:subClassOf sem:Event.
 
 
 HERO:villain  a rdfs:Property; #introducing the villain
 	rdfs:range HERO:Villain;
-	rdfs:domain HERO:CallToAdventure.
+	rdfs:domain HERO:Story.
 
 
-#HERO:Threatens a rdfs:Property;
-	#rdfs:range HERO:Threat;
-	#rdfs:domain HERO:CallToAdventure.
 
 HERO:ThreatenedElement a rdfs:Property;
 	rdfs:range HERO:ThreatTarget;
-	
-	rdfs:domain HERO:CallToAdventure.
 
-	
-HERO:Event_02 a HERO:CallToAdventure; #instanciated
-	HERO:journeyStage '2';
-	rdfs:label "Villain threatens the safety of somebody. This is the call for the hero". 
+	rdfs:domain HERO:Story.
 
-#3 REFUSAL OF THE CALL
 
-HERO:RefusalOfCall rdfs:subClassOf sem:Event.
+
+
 
 #hasactor is hero
 
 HERO:refusesToFight   a rdfs:Property;
 	rdfs:range HERO:Villain;
-	rdfs:domain HERO:RefusalOfCall.
-	
+	rdfs:domain HERO:Story.
+
 HERO:scaredOf   a rdfs:Property;
 	rdfs:range HERO:EnemyPower; #hero scaredd ofpower of villain and thus rfuse to fight
-	rdfs:domain HERO:RefusalOfCall.
-	
-HERO:Event_03 a HERO:RefusalOfCall; #instanciated
-	HERO:journeyStage '3';
-	rdfs:label "Hero refuses to help saving the target and the world". 	
-	
-		
+	rdfs:domain HERO:Story.
 
-#4 MEETING THE MENTOR
-HERO:MeetingTheMentor rdfs:subClassOf sem:Event .
+
+
 
 HERO:meetsMentor a rdfs:Property;
 	rdfs:range HERO:Mentor;
-	rdfs:domain HERO:MeetingTheMentor.
-	
+	rdfs:domain HERO:Story.
+
 HERO:powerLearned a rdfs:Property;
 	rdfs:range HERO:HeroPower;
-	rdfs:domain HERO:MeetingTheMentor.
-	
-#motivatonal quotes?????	
-	
-HERO:Event_04 a HERO:MeetingTheMentor; #instanciated
-	HERO:journeyStage '4';
-	rdfs:label "Meeting the Mentor".  
+	rdfs:domain HERO:Story.
 
 
-#5 CROSSING THE THRESHOLD - CHANGE OF LOCATION, DO WE NEED THAT???
-HERO:CrossThreshold rdfs:subClassOf sem:Event .
+
 
 HERO:travelsTo a rdfs:Property;
 	rdfs:range sem:Place;
-	rdfs:domain HERO:CrossThreshold  .
-
-HERO:Event_05 a HERO:CrossThreshold; #instanciated
-	HERO:journeyStage '5';
-	rdfs:label "The hero decides to face the villain and travels to the Place where the villain is.".
+	rdfs:domain HERO:Story .
 
 
 #6 TESTS ALLIES AND ENEMIES
 
-HERO:TestAlly rdfs:subClassOf sem:Event .
 
 HERO:meetsAlly a rdfs:Property;
 	rdfs:label "The hero meets the ally that will help him face the challenge";
 	rdfs:range HERO:HeroAlly;
-	rdfs:domain HERO:TestAlly  .
+	rdfs:domain HERO:Story  .
 
 HERO:faces a rdfs:Property;
 	rdfs:label "The hero together with the ally faces the ally of the villain";
 	rdfs:range HERO:VillainAlly;
-	rdfs:domain HERO:TestAlly  .
+	rdfs:domain HERO:Story .
 
 #HERO:challenge a rdfs:Property;
 	#rdfs:range HERO:Challenge;
 	#rdfs:domain HERO:TestAlly.
 
-	
+
 HERO:victory a rdfs:Property;
 	rdfs:range xsd:boolean;
-	rdfs:domain HERO:TestAlly.
-	
-	
-HERO:Event_06 a HERO:TestAlly; #instanciated
-	HERO:journeyStage '6';
-	rdfs:label "The ally help the hero to face the challenge against the Villain and its ally. it is a firt test".
+	rdfs:domain HERO:Story.
 
 
 #7 Approach to inmost Cave
 #changed:: love drama to be involved
 
-HERO:InmostCave rdfs:subClassOf sem:Event .
+
 
 #HERO:InLovewith a rdfs:Property;
 #	rdfs:label "";
@@ -335,7 +297,7 @@ HERO:InmostCave rdfs:subClassOf sem:Event .
 HERO:feeling a rdfs:Property;
 	rdfs:label "The hero is arrived at the place where he will have to face the challenge and is overwhelmed by some feeling"	;
 	rdfs:range HERO:Feelings;
-	rdfs:domain HERO:InmostCave  .
+	rdfs:domain HERO:Story .
 
 
 
@@ -345,104 +307,70 @@ HERO:feeling a rdfs:Property;
 
 
 
-HERO:Event_07 a HERO:InmostCave; #instanciated
-	HERO:journeyStage '7';
-	#rdfs:label "The hero falls in love with (the ally?) or someone and this someone is threatened".
-	rdfs:label "The hero is arrived at the location to face the villain and feel strong emotions".
 
 
-#8 Ordeal
-
-HERO:Ordeal rdfs:subClassOf sem:Event .
 
 HERO:herofights a rdfs:Property;
 	rdfs:range HERO:Villain;
-	rdfs:domain HERO:Ordeal  .
+	rdfs:domain HERO:Story .
 
 
 HERO:herousespower a rdfs:Property;
 	rdfs:range HERO:HeroPower;
-	rdfs:domain HERO:Ordeal  .
+	rdfs:domain HERO:Story .
 
 HERO:enemyusespower a rdfs:Property;
 	rdfs:range HERO:EnemyPower;
-	rdfs:domain HERO:Ordeal  .
+	rdfs:domain HERO:Story  .
 
 
 HERO:herogetsinjured a rdfs:Property;
 	rdfs:range xsd:boolean;
-	rdfs:domain HERO:Ordeal  .
+	rdfs:domain HERO:Story  .
 
 
 
-HERO:Event_08 a HERO:Ordeal; #instanciated
-	HERO:journeyStage '8';
-	rdfs:label "Hero fights the enemy with powers".  
-
-#9 Reward, seizing the sword WHAT ABOUT WE SAY THE HERO SAVES WHATEVER WAS THE TARGET OF THE THREAT SO HE GETS IT BACK (?)
-
-HERO:Reward rdfs:subClassOf sem:Event .
 
 HERO:saves a rdfs:Property;
-	rdfs:range HERO:ThreatTarget; 
-	rdfs:domain HERO:Reward  .
+	rdfs:range HERO:ThreatTarget;
+	rdfs:domain HERO:Story .
 
-#reference here also
-HERO:Event_09 a HERO:Reward;
-	HERO:journeyStage '9';
-	rdfs:label "Hero  SAVES WHATEVER WAS THE TARGET OF THE THREAT SO HE GETS IT BACK ".  
 
-	
+
 
 #10 The Road Back
 #here I dont know why there should be another fight just here -> lets make that hero saves lover
 
-HERO:RoadBack rdfs:subClassOf sem:Event .
 
 
 
 HERO:chasedBy a rdfs:Property;
 	rdfs:range HERO:Villain;
-	rdfs:domain HERO:RoadBack .
-
-HERO:Event_10 a HERO:RoadBack; #instanciated
-	HERO:journeyStage '10';
-	rdfs:label "Villain chases hero down and seek for final battle".
+	rdfs:domain HERO:Story .
 
 
-#11 Resurrection 
-
-HERO:Resurrection rdfs:subClassOf sem:Event .
 
 HERO:against a rdfs:Property;
 	rdfs:range HERO:Villain;
-	rdfs:domain HERO:Resurrection .
+	rdfs:domain HERO:Story .
 
 HERO:killsVillain a rdfs:Property;
 	rdfs:range xsd:boolean;
-	rdfs:domain HERO:Resurrection .
+	rdfs:domain HERO:Story.
 
 
 
-HERO:Event_11 a HERO:Resurrection; #instanciated 
-	HERO:journeyStage '11';
-	rdfs:label "Final confrontation between hero and villain".
-
-#12 end of the story -party
-
-HERO:Party rdfs:subClassOf sem:Event .
 
 
 HERO:celebratesvictory a rdfs:Property;
 	rdfs:range HERO:Celebration;
-	rdfs:domain HERO:Party .
+	rdfs:domain HERO:Story.
 
 
 HERO:partywith a rdfs:Property;
 	rdfs:range HERO:HeroAlly;
-	rdfs:domain HERO:Party .
+	rdfs:domain HERO:Story .
 
 
-HERO:Event_12 a HERO:Party; #instanciated 
-	HERO:journeyStage '12';
-	rdfs:label "Hero throws a party".  
+
+

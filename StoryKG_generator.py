@@ -22,7 +22,7 @@ def random_pick(ist_class):
         return (random.choice([Literal("true", datatype=XSD.boolean), Literal("false", datatype=XSD.boolean)]))
 
     g = Graph()
-    g.parse("./Useful_turtles/ontology_event1and2.ttl")
+    g.parse("./Useful_turtles/Event_ontology.ttl")
     g.parse("./Useful_turtles/got_instances.ttl")
 
     list_e = []
@@ -146,7 +146,7 @@ def relation_based_pick(edges, related_to_char, n):
 
 def gen_story(method):
     g = Graph(base="http://test.com/ns#")
-    g.parse("./Useful_turtles/ontology_event1and2.ttl")
+    g.parse("./Useful_turtles/Event_ontology.ttl")
     g.parse("./Useful_turtles/got_instances.ttl")
 
     HERO = Namespace("http://hero_ontology/")
@@ -177,6 +177,7 @@ def gen_story(method):
 
     fixed = {} #THER IS A LIST OF RECOURRENTS ELEMNTS SUCH AS VILLAN; HERO ALLAY etcc, we pick those based on the methon, the hero is picked randomly
     fixed["Hero"] = random_pick("http://hero_ontology/Hero")
+
     #print("selected Hero,", fixed["Hero"])
 
     if method == "community":
@@ -198,7 +199,13 @@ def gen_story(method):
         fixed["HeroAlly"] = random_pick("http://hero_ontology/HeroAlly")
         fixed["VillainAlly"] = random_pick("http://hero_ontology/VillainAlly")
 
-    # print("list of subevents is:", subEvents)
+   # print("list of subevents is:", subEvents)
+
+
+
+
+
+
     for i in subEvents:
         # print("Considering event", i)
         # NOW we are considering one subevent at a time
@@ -232,6 +239,7 @@ def gen_story(method):
                 story.add((instance_i, s, fixed[range_str]))
             else:
                 story.add((instance_i, s, random_pick(rand_range)))
+                
 
     # HERE WE FIND A WAY TO DO THE SPARQL QUERY AND GET THE TEXT
     story = add_labels(g, story)

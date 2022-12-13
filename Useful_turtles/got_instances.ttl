@@ -681,21 +681,21 @@ HERO:House rdfs:label "House".
 
 #Celebration
 HERO:feast a HERO:Celebration .
-HERO:feast rdfs:label "feast".
+HERO:feast rdfs:label " having a feast".
 HERO:ball a HERO:Celebration .
-HERO:ball rdfs:label "ball".
+HERO:ball rdfs:label "throwing a ball".
 HERO:show a HERO:Celebration .
-HERO:show rdfs:label "show".
+HERO:show rdfs:label "watching a show".
 HERO:fireworks a HERO:Celebration .
-HERO:fireworks rdfs:label "fireworks".
+HERO:fireworks rdfs:label "making fireworks".
 HERO:game a HERO:Celebration .
-HERO:game rdfs:label "game".
+HERO:game rdfs:label "playing a game".
 HERO:storytelling a HERO:Celebration .
-HERO:storytelling rdfs:label "storytelling".
+HERO:storytelling rdfs:label "listening to a storytelling".
 HERO:marriage a HERO:Celebration .
-HERO:marriage rdfs:label "marriage".
+HERO:marriage rdfs:label "getting married".
 HERO:concert a HERO:Celebration .
-HERO:concert rdfs:label "concert".
+HERO:concert rdfs:label "organizing a concert".
 
 #Time
 HERO:sunrise a sem:Time.
