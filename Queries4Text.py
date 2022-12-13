@@ -433,7 +433,7 @@ def textGeneration_Event11_1(story):
 	?Loc11 rdfs:label ?LocLabel11
 
 
-	BIND(CONCAT('At ',?TimeLabel11, ' in ', ?LocLabel11, ',  our hero met ' ,?vilLabel, ' again, and they fought in the final battle. ',?HeroName,  ?str11, '. ') as ?Event_11).
+	BIND(CONCAT('It was ',?TimeLabel11, ' in ', ?LocLabel11, ',  when our hero met ' ,?vilLabel, ' again, and they fought in the final battle. ',?HeroName,  ?str11, '. ') as ?Event_11).
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     texts.append(text)
@@ -462,7 +462,7 @@ def textGeneration_Event12_1(story):
 	?Loc12 rdfs:label ?LocLabel12
 
 
-	BIND(CONCAT('At ',?TimeLabel12, ' in ', ?LocLabel12, ', ', ?HeroName, ' was finally safe, and celebrated with ' , ?friendLabel , ' by '  , ?celLabel, '. ') as ?Event_12).
+	BIND(CONCAT('Finally it was ',?TimeLabel12, ' in ', ?LocLabel12, ' when ', ?HeroName, ' was finally safe, and celebrated with ' , ?friendLabel , ' by '  , ?celLabel, '. ') as ?Event_12).
 
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
