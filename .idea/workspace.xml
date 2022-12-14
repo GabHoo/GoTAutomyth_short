@@ -7,9 +7,9 @@
     <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queries4Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Queries4Text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StoryKG_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/StoryKG_generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated_output/events12_random_range/try_events_random_range.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated_output/events12_random_range/try_events_random_range.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated_output/events_community_types/try_events_yo_community_types.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated_output/events_community_types/try_events_yo_community_types.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/story_a_community_1.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/story_a_community_1.ttl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

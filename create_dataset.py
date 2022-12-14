@@ -138,7 +138,8 @@ def main(argv, arc):
 
                 #triples_list = clear(story, semantic_given)
                 #print(story.triples)
-                triples= Queries4Text.Graph_Generator(story)
+                triples = globals()[f"Graph_Generator_{semantic_given}"](story)
+                #triples= Queries4Text.Graph_Generator(story)
                 triples_list = clear1(triples)
                 #print(story.triples)
                 dict['Knowledge Graph'] = triples_list

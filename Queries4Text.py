@@ -471,14 +471,35 @@ def textGeneration_Event12_1(story):
 
 
 
-def Graph_Generator(story):
+def Graph_Generator_types(story):
     texts = []
     text = story.query("""
   CONSTRUCT { ?s a ?o . } 
   WHERE {?s a ?o}
     """)
     texts.append(text)
-    print('wtf is this')
-    print(texts)
-    print(type(texts))
+
+    return text
+
+def Graph_Generator_event(story):
+    texts = []
+    text = story.query("""
+  CONSTRUCT { ?s ?p ?o . } 
+  WHERE {VALUES ?s { ns2:Event_01 ns2:Event_02 ns2:Event_03 ns2:Event_04 ns2:Event_05 ns2:Event_06 ns2:Event_08 ns2:Event_09 ns2:Event_010
+   ns2:Event_11 ns2:Event_12 } ?s ?p ?o}
+    """)
+    texts.append(text)
+
+    return text
+
+
+def Graph_Generator_range(story):
+    texts = []
+    text = story.query("""
+  CONSTRUCT { ?s ?p ?o . } 
+  WHERE {{VALUES ?s { ns2:Event_01 ns2:Event_02 ns2:Event_03 ns2:Event_04 ns2:Event_05 ns2:Event_06 ns2:Event_08 ns2:Event_09 ns2:Event_010
+   ns2:Event_11 ns2:Event_12 } ?s ?p ?o } UNION {VALUES ?p { rdf:type rdfs:range} ?s ?p ?o }}
+    """, initNs={'ns2': 'http://hero_ontology/'})
+    texts.append(text)
+
     return text
