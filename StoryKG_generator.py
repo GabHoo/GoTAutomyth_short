@@ -22,8 +22,8 @@ def random_pick(ist_class):
         return (random.choice([Literal("true", datatype=XSD.boolean), Literal("false", datatype=XSD.boolean)]))
 
     g = Graph()
-    #g.parse("./Useful_turtles/Event_ontology.ttl")
-    g.parse("./Useful_turtles/ontology_event1and2.ttl")
+    g.parse("./Useful_turtles/Event_ontology.ttl")
+    #g.parse("./Useful_turtles/ontology_event1and2.ttl")
     g.parse("./Useful_turtles/got_instances.ttl")
 
     list_e = []
@@ -148,8 +148,8 @@ def relation_based_pick(edges, related_to_char, n):
 
 def gen_story(method):
     g = Graph(base="http://test.com/ns#")
-    #g.parse("./Useful_turtles/Event_ontology.ttl")
-    g.parse("./Useful_turtles/ontology_event1and2.ttl")
+    g.parse("./Useful_turtles/Event_ontology.ttl")
+    #g.parse("./Useful_turtles/ontology_event1and2.ttl")
     g.parse("./Useful_turtles/got_instances.ttl")
 
     HERO = Namespace("http://hero_ontology/")

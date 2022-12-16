@@ -513,7 +513,13 @@ def Graph_Generator_baseline_instances(story):
   ?herolabel ns2:hasHouse ?houselabel.
   ?herolabel ns2:hasOccupation ?joblabel.
   ?villainlabel ns2:Threatens ?targetlabel.
-  
+  ?herolabel ns2:refusesToFight ?villainlabel.
+  ?herolabel ns2:scaredOf ?enemypowerlabel.
+  ?herolabel ns2:meetsMentor ?mentorlabel.
+  ?herolabel ns2:powerLearned ?heropowerlabel.
+  ?herolabel ns2:travelsTo ?place5label.
+  ?herolabel ns2:meetsAlly ?allylabel.
+  ?allylabel ns2:faces ?villainallylabel.
 
    } 
   WHERE {ns2:Event_01 ns2:hasTitle ?title.
@@ -528,6 +534,19 @@ def Graph_Generator_baseline_instances(story):
   ?villain rdfs:label ?villainlabel.
   ns2:Event_02 ns2:Threatens ?target.
   ?target rdfs:label ?targetlabel.
+  ns2:Event_03 ns2:scaredOf ?enemypower.
+  ?enemypower  rdfs:label ?enemypowerlabel.
+  ns2:Event_04 ns2:meetsMentor ?mentor.
+  ?mentor rdfs:label ?mentorlabel.
+  ns2:Event_04 ns2:powerLearned ?heropower.
+  ?heropower rdfs:label ?heropowerlabel.
+  ns2:Event_05 ns2:travelsTo ?place5.
+  ?place5 rdfs:label ?place5label.
+  ns2:Event_06 ns2:meetsAlly ?ally.
+  ?ally rdfs:label ?allylabel.
+  ns2:Event_06 ns2:faces ?villainally.
+  ?villainally rdfs:label ?villainallylabel.
+  
   
   
 

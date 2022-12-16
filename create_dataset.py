@@ -83,7 +83,7 @@ def random_formulation(story):
     x = y = 1
     result = ''
 
-    for i in [1,2]:
+    for i in [1,2,3,4]:
         t = globals()[f"textGeneration_Event{i}_{x}"](story)
         t = str(list(t))
         t = t.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
