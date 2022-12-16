@@ -22,7 +22,8 @@ def random_pick(ist_class):
         return (random.choice([Literal("true", datatype=XSD.boolean), Literal("false", datatype=XSD.boolean)]))
 
     g = Graph()
-    g.parse("./Useful_turtles/Event_ontology.ttl")
+    #g.parse("./Useful_turtles/Event_ontology.ttl")
+    g.parse("./Useful_turtles/ontology_event1and2.ttl")
     g.parse("./Useful_turtles/got_instances.ttl")
 
     list_e = []
@@ -42,6 +43,7 @@ def random_pick(ist_class):
 
     # print("\nclass is ",class_node," list is of possible is : ",list_e)
     return (random.choice(list_e))
+
 
 
 def add_labels(g,story):  # This methods add to our output story graph all the labels of the instances involved in the story. They are necessary for the visualization!
@@ -146,7 +148,8 @@ def relation_based_pick(edges, related_to_char, n):
 
 def gen_story(method):
     g = Graph(base="http://test.com/ns#")
-    g.parse("./Useful_turtles/Event_ontology.ttl")
+    #g.parse("./Useful_turtles/Event_ontology.ttl")
+    g.parse("./Useful_turtles/ontology_event1and2.ttl")
     g.parse("./Useful_turtles/got_instances.ttl")
 
     HERO = Namespace("http://hero_ontology/")
@@ -177,6 +180,7 @@ def gen_story(method):
 
     fixed = {} #THER IS A LIST OF RECOURRENTS ELEMNTS SUCH AS VILLAN; HERO ALLAY etcc, we pick those based on the methon, the hero is picked randomly
     fixed["Hero"] = random_pick("http://hero_ontology/Hero")
+
 
     #print("selected Hero,", fixed["Hero"])
 

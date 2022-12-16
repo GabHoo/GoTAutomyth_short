@@ -1,0 +1,95 @@
+@prefix HERO: <http://hero_ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+HERO:Event_01 a HERO:OrdinaryWorld,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Ordinary World presentation" ;
+    HERO:hasHouse HERO:House_Arryn ;
+    HERO:hasOccupation HERO:revolutionary ;
+    HERO:hasTitle HERO:fictional_king ;
+    HERO:journeyStage "1" ;
+    sem:hasActor HERO:Tyrion_Lannister ;
+    sem:hasPlace HERO:The_Trident ;
+    sem:hasTime HERO:the_first_day_of_Spring .
+
+HERO:Event_02 a HERO:CallToAdventure,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Villain threatens the safety of somebody. This is the call for the hero" ;
+    HERO:Threatens HERO:peace ;
+    HERO:journeyStage "2" ;
+    HERO:villain HERO:Daenerys_Targaryen ;
+    sem:hasActor HERO:Tyrion_Lannister ;
+    sem:hasPlace HERO:The_Whispering_Wood ;
+    sem:hasTime HERO:easter .
+
+HERO:Threatens rdfs:range HERO:ThreatTarget .
+
+HERO:cause_of_death rdfs:range xsd:string .
+
+HERO:hasHouse rdfs:range HERO:House .
+
+HERO:hasOccupation rdfs:range HERO:Occupation .
+
+HERO:hasTitle rdfs:range HERO:Title .
+
+HERO:villain rdfs:range HERO:Villain .
+
+sem:hasActor rdfs:range HERO:Hero .
+
+sem:hasPlace rdfs:range sem:Place .
+
+sem:hasTime rdfs:range sem:Time .
+
+HERO:CallToAdventure rdfs:label "Second stage of the story - Call to adventure" .
+
+HERO:Daenerys_Targaryen a HERO:Female,
+        HERO:Main_Character,
+        sem:Actor ;
+    rdfs:label "Daenerys Targaryen" .
+
+HERO:House_Arryn a HERO:House ;
+    rdfs:label "House Arryn" .
+
+HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" .
+
+HERO:The_Trident a sem:Place ;
+    rdfs:label "The Trident" .
+
+HERO:The_Whispering_Wood a sem:Place ;
+    rdfs:label "The Whispering Wood" .
+
+HERO:easter a sem:Time ;
+    rdfs:label "Easter day" .
+
+HERO:fictional_king a HERO:Male,
+        HERO:Title,
+        sem:Actor ;
+    rdfs:label "King" .
+
+HERO:peace a HERO:ThreatTarget ;
+    rdfs:label "peace" .
+
+HERO:revolutionary a HERO:Occupation ;
+    rdfs:label "revolutionary" .
+
+HERO:the_first_day_of_Spring a sem:Time ;
+    rdfs:label "the first day of Spring" .
+
+HERO:Tyrion_Lannister a HERO:Main_Character,
+        HERO:Male,
+        sem:Actor ;
+    rdfs:label "Tyrion Lannister" .
+
+sem:Core a owl:Class ;
+    rdfs:label "Core" .
+
+sem:Event a owl:Class ;
+    rdfs:label "Event" .
+

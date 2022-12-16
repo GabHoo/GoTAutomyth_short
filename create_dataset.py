@@ -28,7 +28,7 @@ def clean_triples(s,p,o):
     triples_clean = re.sub('rdf-schema#', '', triples_clean)
     triples_clean = re.sub('XMLSchema#', '', triples_clean)
     return triples_clean
-
+'''
 def clear(story,semantic_given):
     HERO = Namespace("http://hero_ontology/")
     sem = Namespace("http://semanticweb.cs.vu.nl/2009/11/sem/")
@@ -55,7 +55,7 @@ def clear(story,semantic_given):
 
 
     return triples_clean
-
+'''
 def clear1(story):
     result = ""
     for i in story:
@@ -83,10 +83,11 @@ def random_formulation(story):
     x = y = 1
     result = ''
 
-    for i in [11,12]:
+    for i in [1,2]:
         t = globals()[f"textGeneration_Event{i}_{x}"](story)
         t = str(list(t))
         t = t.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
+        t = t.replace('[(rdflib.term.Literal("','').replace('"),)]', '')
         print(t)
         result += t
     print(result)
@@ -97,7 +98,7 @@ def random_formulation(story):
 
 
 def main(argv, arc):
-    if arc!=4 or argv[1] not in ["community","relation","random"] or argv[2] not in ['types','event','range']:
+    if arc!=4 or argv[1] not in ["community","relation","random"] or argv[2] not in ['types','event','range', 'baseline_instances','baseline_classes']:
         print("Error! Please enter a (valid) charachter picking method. (community,relation,random)")
         exit()
     method_generation = argv[1]
@@ -130,19 +131,31 @@ def main(argv, arc):
         while count<n_kg_generated:
             dict = {}
             story=gen_story(method_generation)
+            print(type(story))
+
             text_try = list(Queries4Text.textGeneration_Event1_1(story))
             text_try2 = list(Queries4Text.textGeneration_Event2_1(story))
 
-            if text_try2 == []: print(f'wrong {clear(story, semantic_given)}')
+            if text_try2 == []: print(f'wrong {clear1(story)}')
             if text_try != [] and text_try2 != []: #check if text coherent
 
                 #triples_list = clear(story, semantic_given)
                 #print(story.triples)
-                triples = globals()[f"Graph_Generator_{semantic_given}"](story)
+                #triples = globals()[f"Graph_Generator_{semantic_given}"](story)
                 #triples= Queries4Text.Graph_Generator(story)
-                triples_list = clear1(triples)
-                #print(story.triples)
-                dict['Knowledge Graph'] = triples_list
+                triples_classes = globals()[f"Graph_Generator_baseline_classes"](story)
+                dict['Class Knowledge Graph'] = clear1(triples_classes)
+                triples_inst = globals()[f"Graph_Generator_baseline_instances"](story)
+                dict['Instances Knowledge Graph'] = clear1(triples_inst)
+                triples_type = globals()[f"Graph_Generator_types"](story)
+                dict['Types Knowledge Graph'] = clear1(triples_type)
+                triples_event = globals()[f"Graph_Generator_event"](story)
+                dict['Event Knowledge Graph'] = clear1(triples_event)
+                triples_range = globals()[f"Graph_Generator_range"](story)
+                dict['Range Knowledge Graph'] = clear1(triples_range)
+
+
+
 
                 dict['story'] = random_formulation(story)
                 #dict['story'] = dict['story'].replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
@@ -152,7 +165,7 @@ def main(argv, arc):
                 json.dump(dict, f, ensure_ascii=False, indent="")
                 story = story.serialize(f"./story_a_{method_generation}_{count}.ttl")
                 #story.parse("http://www.w3.org/People/Berners-Lee/card")
-                #v = story.serialize(format="xml")
+                story.serialize(format="xml")
                 if count != n_kg_generated:
                     f.write(',')
         f.write(']')

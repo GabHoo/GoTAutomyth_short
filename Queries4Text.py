@@ -120,7 +120,7 @@ def textGeneration_Event2_1(story):
     {  
     ns2:Event_02 ns1:hasActor ?Hero.
     ?Hero  rdfs:label ?HeroName.
-    ns2:Event_02 ns2:ThreatenedElement ?el.
+    ns2:Event_02 ns2:Threatens ?el.
     ?el   rdfs:label ?ElementLabel.
     ns2:Event_02 ns2:villain ?villain.
     ?villain rdfs:label ?VillainLabel.
@@ -144,7 +144,7 @@ def textGeneration_Event2_2(story):
     {  
     ns2:Event_02 ns1:hasActor ?Hero.
     ?Hero  rdfs:label ?HeroName.
-    ns2:Event_02 ns2:ThreatenedElement ?el.
+    ns2:Event_02 ns2:Threatens ?el.
     ?el   rdfs:label ?ElementLabel.
     ns2:Event_02 ns2:villain ?villain.
     ?villain rdfs:label ?VillainLabel.
@@ -168,7 +168,7 @@ def textGeneration_Event2_3(story):
     {  
     ns2:Event_02 ns1:hasActor ?Hero.
     ?Hero  rdfs:label ?HeroName.
-    ns2:Event_02 ns2:ThreatenedElement ?el.
+    ns2:Event_02 ns2:Threatens ?el.
     ?el   rdfs:label ?ElementLabel.
     ns2:Event_02 ns2:villain ?villain.
     ?villain rdfs:label ?VillainLabel.
@@ -485,9 +485,8 @@ def Graph_Generator_event(story):
     texts = []
     text = story.query("""
   CONSTRUCT { ?s ?p ?o . } 
-  WHERE {VALUES ?s { ns2:Event_01 ns2:Event_02 ns2:Event_03 ns2:Event_04 ns2:Event_05 ns2:Event_06 ns2:Event_08 ns2:Event_09 ns2:Event_010
-   ns2:Event_11 ns2:Event_12 } ?s ?p ?o}
-    """)
+  WHERE {VALUES ?s { ns2:Event_01 ns2:Event_02 ns2:Event_03 ns2:Event_04 ns2:Event_05 ns2:Event_06 ns2:Event_08 ns2:Event_09 ns2:Event_10 ns2:Event_11 ns2:Event_12 } ?s ?p ?o}
+    """, initNs={'ns2': 'http://hero_ontology/'})
     texts.append(text)
 
     return text
@@ -500,6 +499,73 @@ def Graph_Generator_range(story):
   WHERE {{VALUES ?s { ns2:Event_01 ns2:Event_02 ns2:Event_03 ns2:Event_04 ns2:Event_05 ns2:Event_06 ns2:Event_08 ns2:Event_09 ns2:Event_010
    ns2:Event_11 ns2:Event_12 } ?s ?p ?o } UNION {VALUES ?p { rdf:type rdfs:range} ?s ?p ?o }}
     """, initNs={'ns2': 'http://hero_ontology/'})
+    texts.append(text)
+
+    return text
+
+
+
+#https://networkedplanet.com/blog/2015/10/16/sparql-construct-101.html resource to understand CONSTRUCT
+def Graph_Generator_baseline_instances(story):
+    texts = []
+    text = story.query("""
+  CONSTRUCT { ?herolabel ns2:hasTitle ?titlelabel.
+  ?herolabel ns2:hasHouse ?houselabel.
+  ?herolabel ns2:hasOccupation ?joblabel.
+  ?villainlabel ns2:Threatens ?targetlabel.
+  
+
+   } 
+  WHERE {ns2:Event_01 ns2:hasTitle ?title.
+  ?title rdfs:label ?titlelabel.
+  ns2:Event_01 ns1:hasActor ?hero.
+  ?hero rdfs:label ?herolabel.
+  ns2:Event_01 ns2:hasHouse ?house.
+  ?house rdfs:label ?houselabel.
+  ns2:Event_01 ns2:hasOccupation ?job.
+  ?job rdfs:label ?joblabel.
+  ns2:Event_02 ns2:villain ?villain.
+  ?villain rdfs:label ?villainlabel.
+  ns2:Event_02 ns2:Threatens ?target.
+  ?target rdfs:label ?targetlabel.
+  
+  
+
+
+  }
+    """, initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/','ns2': 'http://hero_ontology/'})
+    texts.append(text)
+
+    return text
+
+
+def Graph_Generator_baseline_classes(story):
+    texts = []
+    text = story.query("""
+  CONSTRUCT { 
+  ?classhero ns2:hasTitle ?classtitle.
+  ?classhero ns2:hasHouse ?classhouse.
+  ?classhero ns2:hasOccupation ?classoccupation.
+  ns2:Event_01 ns1:hasTime ?classtime.
+  ns2:Event_01 ns1:hasPlace ?classplace.
+   ?villainclass ns2:Threatens ?targetclass.
+  
+   } 
+  WHERE {
+  ns1:hasActor rdfs:range ?classhero .
+  ns2:hasTitle rdfs:range ?classtitle .
+  ns2:hasHouse rdfs:range ?classhouse .
+  ns2:hasOccupation rdfs:range ?classoccupation .
+  ns1:hasPlace rdfs:range ?classplace.
+  ns1:hasTime rdfs:range ?classtime.
+  ns2:Threatens rdfs:range ?targetclass.
+  ns2:villain rdfs:range ?villainclass.
+   
+  
+  
+
+  }
+    """, initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/','ns2': 'http://hero_ontology/'})
     texts.append(text)
 
     return text

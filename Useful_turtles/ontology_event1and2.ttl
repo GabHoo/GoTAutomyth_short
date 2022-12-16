@@ -244,7 +244,7 @@ HERO:villain  a rdfs:Property; #introducing the villain
 	#rdfs:range HERO:Threat;
 	#rdfs:domain HERO:CallToAdventure.
 
-HERO:ThreatenedElement a rdfs:Property;
+HERO:Threatens a rdfs:Property;
 	rdfs:range HERO:ThreatTarget;
 
 	rdfs:domain HERO:CallToAdventure.
