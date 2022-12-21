@@ -361,10 +361,12 @@ HERO:herofights a rdfs:Property;
 
 
 HERO:herousespower a rdfs:Property;
+#HERO:usepower a rdfs:Property;
 	rdfs:range HERO:HeroPower;
 	rdfs:domain HERO:Ordeal  .
 
 HERO:enemyusespower a rdfs:Property;
+#HERO:usepower a rdfs:Property;
 	rdfs:range HERO:EnemyPower;
 	rdfs:domain HERO:Ordeal  .
 

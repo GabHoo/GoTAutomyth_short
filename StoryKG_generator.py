@@ -33,6 +33,7 @@ def random_pick(ist_class):
     for e in g.subjects(RDF.type, class_node):
         list_e.append(e)
 
+
     # THis is because Mentor for example is a subclass of actor. Since there are no instance directly for mentor we look for its super class (Actor) and pick instance of it.
     while (not list_e):
         # print("EMPTY LIST for", class_node)
@@ -62,6 +63,7 @@ def add_labels(g,story):  # This methods add to our output story graph all the l
         for s, o, p in story.triples((e, None, None)):
             story += g.triples((p, RDF.type, None))
             story += g.triples((p, RDFS.label, None))
+            story += g.triples((p, RDFS.subClassOf, None))
 
     return story
 

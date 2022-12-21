@@ -351,7 +351,7 @@ def textGeneration_Event8_1(story):
 	?Loc8 rdfs:label ?LocLabel8
 
 
-	BIND(CONCAT('It was ',?TimeLabel8, ' in ', ?LocLabel8, ' when  ', ?HeroName,' faced ', ?viLabel,'. ', ?HeroName, ' used ', ?poHLabel,' powers, but ',?viLabel, ' used '    , ?poLabel,'. Our hero was ', ?str, '. ' ) as ?Event_08).
+	BIND(CONCAT('It was ',?TimeLabel8, ' in ', ?LocLabel8, ' when  ', ?HeroName,' faced ', ?viLabel,'. ', ?HeroName, ' used the power of ', ?poHLabel,' , but ',?viLabel, ' used '    , ?poLabel,'. Our hero was ', ?str, '. ' ) as ?Event_08).
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     texts.append(text)
@@ -470,13 +470,27 @@ def textGeneration_Event12_1(story):
 
 
 
-
+'''
 def Graph_Generator_types(story):
     texts = []
     text = story.query("""
   CONSTRUCT { ?s a ?o . } 
   WHERE {?s a ?o}
     """)
+    texts.append(text)
+
+    return text
+
+'''
+
+
+def Graph_Generator_types(story):
+    texts = []
+    text = story.query("""
+  CONSTRUCT { ?s ?p ?o . } 
+  WHERE { {VALUES ?p {rdf:type rdfs:subClassOf} ?s ?p ?o} FILTER { ?o !=  {RDFS.Resource ns1.Core ns1.Authority}}}
+
+    """, initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/'})
     texts.append(text)
 
     return text
@@ -520,6 +534,21 @@ def Graph_Generator_baseline_instances(story):
   ?herolabel ns2:travelsTo ?place5label.
   ?herolabel ns2:meetsAlly ?allylabel.
   ?allylabel ns2:faces ?villainallylabel.
+  ?herolabel ns2:faces ?villainallylabel.
+  ?herolabel ns2:herofights ?villainlabel.
+  
+  ?herolabel ns2:herousespower ?heropowerlabel.
+  ?villainlabel ns2:enemyusespower ?enemypowerlabel.
+  
+  ?herolabel ns2:saves ?targetlabel.
+  ?herolabel ns2:chasedby ?villainlabel.
+  ?herolabel ns2:celebratesvictory ?celebrationlabel.
+  ?herolabel ns2:partywith ?allylabel.
+
+  
+
+
+
 
    } 
   WHERE {ns2:Event_01 ns2:hasTitle ?title.
@@ -546,8 +575,14 @@ def Graph_Generator_baseline_instances(story):
   ?ally rdfs:label ?allylabel.
   ns2:Event_06 ns2:faces ?villainally.
   ?villainally rdfs:label ?villainallylabel.
-  
-  
+  ns2:Event_06 ns2:faces ?villainally.
+  ?villainally rdfs:label ?villainallylabel.
+  ns2:Event_12 ns2:celebratesvictory ?celebration.
+  ?celebration rdfs:label ?celebrationlabel.
+
+
+
+
   
 
 
@@ -556,6 +591,12 @@ def Graph_Generator_baseline_instances(story):
     texts.append(text)
 
     return text
+
+
+
+
+
+
 
 
 def Graph_Generator_baseline_classes(story):
@@ -567,7 +608,23 @@ def Graph_Generator_baseline_classes(story):
   ?classhero ns2:hasOccupation ?classoccupation.
   ns2:Event_01 ns1:hasTime ?classtime.
   ns2:Event_01 ns1:hasPlace ?classplace.
-   ?villainclass ns2:Threatens ?targetclass.
+  ?classvillain ns2:Threatens ?classtarget.
+  ?classhero ns2:refusesToFight ?classvillain.
+  ?classhero ns2:scaredOf ?classenemypower.
+  ?classhero ns2:meetsMentor ?classmentor.
+  ?classhero ns2:powerLearned ?classheropower.
+  ?classhero ns2:travelsTo ?classplace5.
+  ?classhero ns2:meetsAlly ?classally.
+  ?classally ns2:faces ?classvillainally.
+  ?classhero ns2:faces  ?classvillainally.
+  ?classhero ns2:herofights ?classvillain.
+  ?classhero ns2:herousespower ?classheropower.
+  ?classvillain ns2:enemyusespower ?classenemypower.
+  ?classhero ns2:saves ?classtarget.
+  ?classhero ns2:chasedby ?classvillain.
+  ?classhero ns2:celebratesvictory ?classcelebration.
+  ?classhero ns2:partywith ?classally.
+
   
    } 
   WHERE {
@@ -577,8 +634,22 @@ def Graph_Generator_baseline_classes(story):
   ns2:hasOccupation rdfs:range ?classoccupation .
   ns1:hasPlace rdfs:range ?classplace.
   ns1:hasTime rdfs:range ?classtime.
-  ns2:Threatens rdfs:range ?targetclass.
-  ns2:villain rdfs:range ?villainclass.
+  ns2:Threatens rdfs:range ?classtarget.
+  ns2:villain rdfs:range ?classvillain.
+  ns2:refusesToFight rdfs:range ?classvillain.
+  
+  ns2:scaredOf rdfs:range ?classenemypower.
+  ns2:meetsMentor rdfs:range ?classmentor.
+  ns2:powerLearned rdfs:range ?classheropower.
+  ns2:travelsTo rdfs:range ?classplace5.
+  ns2:meetsAlly rdfs:range ?classally.
+  ns2:faces rdfs:range ?classvillainally.
+  ns2:faces rdfs:range ?classvillainally.
+  ns2:herofights rdfs:range ?classvillain.
+  
+  ns2:celebratesvictory rdfs:range ?classcelebration.
+  
+
    
   
   

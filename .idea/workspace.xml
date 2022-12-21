@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queries4Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Queries4Text.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StoryKG_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/StoryKG_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Useful_turtles/Event_ontology.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/Useful_turtles/Event_ontology.ttl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_dataset.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/generated_output/events_random_baseline_classes/try_events_yo_random_baseline_classes.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated_output/events_random_baseline_classes/try_events_yo_random_baseline_classes.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/story_a_random_1.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/story_a_random_1.ttl" afterDir="false" />
