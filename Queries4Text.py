@@ -483,7 +483,7 @@ def Graph_Generator_types(story):
 
 '''
 
-
+'''
 def Graph_Generator_types(story):
     texts = []
     text = story.query("""
@@ -494,13 +494,26 @@ def Graph_Generator_types(story):
     texts.append(text)
 
     return text
+'''
+
+def Graph_Generator_types(story):
+    texts = []
+    text = story.query("""
+  CONSTRUCT { ?s a ?o . } 
+  WHERE {?s a ?o.  FILTER(?o != ns1:Core). FILTER(?o != rdfs:Resource) }
+
+    """, initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/'})
+    texts.append(text)
+
+    return text
 
 def Graph_Generator_event(story):
     texts = []
     text = story.query("""
   CONSTRUCT { ?s ?p ?o . } 
-  WHERE {VALUES ?s { ns2:Event_01 ns2:Event_02 ns2:Event_03 ns2:Event_04 ns2:Event_05 ns2:Event_06 ns2:Event_08 ns2:Event_09 ns2:Event_10 ns2:Event_11 ns2:Event_12 } ?s ?p ?o}
-    """, initNs={'ns2': 'http://hero_ontology/'})
+  WHERE {VALUES ?s { ns2:Event_01 ns2:Event_02 ns2:Event_03 ns2:Event_04 ns2:Event_05 ns2:Event_06 ns2:Event_08 ns2:Event_09 ns2:Event_10 ns2:Event_11 ns2:Event_12 } ?s ?p ?o.
+  FILTER(?o != ns1:Core). FILTER(?o != rdfs:Resource) }
+    """, initNs={'ns2': 'http://hero_ontology/','ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/'})
     texts.append(text)
 
     return text
@@ -511,8 +524,9 @@ def Graph_Generator_range(story):
     text = story.query("""
   CONSTRUCT { ?s ?p ?o . } 
   WHERE {{VALUES ?s { ns2:Event_01 ns2:Event_02 ns2:Event_03 ns2:Event_04 ns2:Event_05 ns2:Event_06 ns2:Event_08 ns2:Event_09 ns2:Event_010
-   ns2:Event_11 ns2:Event_12 } ?s ?p ?o } UNION {VALUES ?p { rdf:type rdfs:range} ?s ?p ?o }}
-    """, initNs={'ns2': 'http://hero_ontology/'})
+   ns2:Event_11 ns2:Event_12 } ?s ?p ?o } UNION {VALUES ?p { rdf:type rdfs:range} ?s ?p ?o. 
+   }  FILTER(?o != ns1:Core). FILTER(?o != rdfs:Resource)}
+    """, initNs={'ns2': 'http://hero_ontology/','ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/'})
     texts.append(text)
 
     return text

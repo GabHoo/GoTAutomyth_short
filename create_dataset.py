@@ -88,9 +88,9 @@ def random_formulation(story):
         t = str(list(t))
         t = t.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
         t = t.replace('[(rdflib.term.Literal("','').replace('"),)]', '')
-        print(t)
+        #print(t)
         result += t
-    print(result)
+    #print(result)
 
     return result
 
@@ -98,11 +98,12 @@ def random_formulation(story):
 
 
 def main(argv, arc):
-    if arc!=4 or argv[1] not in ["community","relation","random"] or argv[2] not in ['types','event','range', 'baseline_instances','baseline_classes']:
+    if arc!=4 or argv[1] not in ["community","relation","random"] :
+            #or argv[2] not in ['types','event','range', 'baseline_instances','baseline_classes']:
         print("Error! Please enter a (valid) charachter picking method. (community,relation,random)")
         exit()
     method_generation = argv[1]
-    semantic_given = argv[2]
+    #semantic_given = argv[2]
     #n_kg_generated = int(argv[3])
     what = argv[3]
 
@@ -121,17 +122,17 @@ def main(argv, arc):
     data = []
     count = 0
     count_KG = 0
-    path = f'/Users/teresa/Documents/GitHub/GoTAutomyth_short/generated_output/events_{method_generation}_{semantic_given}'
+    path = f'/Users/teresa/Documents/GitHub/GoTAutomyth_short/generated_output/events_{method_generation}'
     if os.path.exists(path)==False:
         os.mkdir(path)
 
 
-    with open(f'generated_output/events_{method_generation}_{semantic_given}/{what}_events_yo_{method_generation}_{semantic_given}.json', 'w', encoding='utf-8') as f:
+    with open(f'generated_output/events_{method_generation}/{what}_events_{method_generation}.json', 'w', encoding='utf-8') as f:
         f.write('[')
         while count<n_kg_generated:
             dict = {}
             story=gen_story(method_generation)
-            print(type(story))
+            #print(type(story))
 
             text_try = list(Queries4Text.textGeneration_Event1_1(story))
             text_try2 = list(Queries4Text.textGeneration_Event2_1(story))
