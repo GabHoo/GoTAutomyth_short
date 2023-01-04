@@ -1,0 +1,348 @@
+@prefix HERO: <http://hero_ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+HERO:Event_01 a HERO:OrdinaryWorld,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Ordinary World presentation" ;
+    HERO:hasHouse HERO:House_Martell ;
+    HERO:hasOccupation HERO:rebel ;
+    HERO:hasTitle HERO:Lady ;
+    HERO:journeyStage "1" ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:Great_Sept_of_Baelor ;
+    sem:hasTime HERO:sunrise .
+
+HERO:Event_02 a HERO:CallToAdventure,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Villain threatens the safety of somebody. This is the call for the hero" ;
+    HERO:Threatens HERO:peace ;
+    HERO:journeyStage "2" ;
+    HERO:villain HERO:Margaery_Tyrell ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:Kings_Landing ;
+    sem:hasTime HERO:christmas .
+
+HERO:Event_03 a HERO:RefusalOfCall,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Hero refuses to help saving the target and the world" ;
+    HERO:journeyStage "3" ;
+    HERO:refusesToFight HERO:Margaery_Tyrell ;
+    HERO:scaredOf HERO:gravityControl ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:Deepwood_Motte ;
+    sem:hasTime HERO:christmas .
+
+HERO:Event_04 a HERO:MeetingTheMentor,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Meeting the Mentor" ;
+    HERO:journeyStage "4" ;
+    HERO:meetsMentor HERO:Robert_Arryn ;
+    HERO:powerLearned HERO:pausingTime ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:Seagard ;
+    sem:hasTime HERO:christmas .
+
+HERO:Event_05 a HERO:CrossThreshold,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "The hero decides to face the villain and travels to the Place where the villain is." ;
+    HERO:journeyStage "5" ;
+    HERO:travelsTo HERO:Oldstones ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:Torrhen_Square ;
+    sem:hasTime HERO:easter .
+
+HERO:Event_06 a HERO:TestAlly,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "The ally help the hero to face the challenge against the Villain and its ally. it is a firt test" ;
+    HERO:faces HERO:Tommen_Baratheon ;
+    HERO:journeyStage "6" ;
+    HERO:meetsAlly HERO:Sansa_Stark ;
+    HERO:victory true ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:Karhold ;
+    sem:hasTime HERO:easter .
+
+HERO:Event_07 a HERO:InmostCave,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "The hero is arrived at the location to face the villain and feel strong emotions" ;
+    HERO:feeling HERO:hangover ;
+    HERO:journeyStage "7" ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:Castle_Black ;
+    sem:hasTime HERO:sunrise .
+
+HERO:Event_08 a HERO:Ordeal,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Hero fights the enemy with powers" ;
+    HERO:enemyusespower HERO:fireResistance ;
+    HERO:herofights HERO:Margaery_Tyrell ;
+    HERO:herogetsinjured true ;
+    HERO:herousespower HERO:invisibility ;
+    HERO:journeyStage "8" ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:The_Vale_of_Arryn ;
+    sem:hasTime HERO:the_Summer_Solstice .
+
+HERO:Event_09 a HERO:Reward,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Hero  SAVES WHATEVER WAS THE TARGET OF THE THREAT SO HE GETS IT BACK " ;
+    HERO:journeyStage "9" ;
+    HERO:saves HERO:jewel ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:Great_Sept_of_Baelor ;
+    sem:hasTime HERO:theMiddleOftheNight .
+
+HERO:Event_10 a HERO:RoadBack,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Villain chases hero down and seek for final battle" ;
+    HERO:chasedBy HERO:Margaery_Tyrell ;
+    HERO:journeyStage "10" ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:The_Vale_of_Arryn ;
+    sem:hasTime HERO:the_Winter_Solstice .
+
+HERO:Event_11 a HERO:Resurrection,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Final confrontation between hero and villain" ;
+    HERO:against HERO:Margaery_Tyrell ;
+    HERO:journeyStage "11" ;
+    HERO:killsVillain false ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:The_Dreadfort ;
+    sem:hasTime HERO:the_Autumnal_Equinox .
+
+HERO:Event_12 a HERO:Party,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Hero throws a party" ;
+    HERO:celebratesvictory HERO:fireworks ;
+    HERO:journeyStage "12" ;
+    HERO:partywith HERO:Sansa_Stark ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:The_Dreadfort ;
+    sem:hasTime HERO:the_first_day_of_Spring .
+
+HERO:Threatens rdfs:range HERO:ThreatTarget .
+
+HERO:against rdfs:range HERO:Villain .
+
+HERO:cause_of_death rdfs:range xsd:string .
+
+HERO:celebratesvictory rdfs:range HERO:Celebration .
+
+HERO:chasedBy rdfs:range HERO:Villain .
+
+HERO:enemyusespower rdfs:range HERO:EnemyPower .
+
+HERO:faces rdfs:range HERO:VillainAlly .
+
+HERO:feeling rdfs:range HERO:Feelings .
+
+HERO:hasHouse rdfs:range HERO:House .
+
+HERO:hasOccupation rdfs:range HERO:Occupation .
+
+HERO:hasTitle rdfs:range HERO:Title .
+
+HERO:herofights rdfs:range HERO:Villain .
+
+HERO:herogetsinjured rdfs:range xsd:boolean .
+
+HERO:herousespower rdfs:range HERO:HeroPower .
+
+HERO:killsVillain rdfs:range xsd:boolean .
+
+HERO:meetsAlly rdfs:range HERO:HeroAlly .
+
+HERO:meetsMentor rdfs:range HERO:Mentor .
+
+HERO:partywith rdfs:range HERO:HeroAlly .
+
+HERO:powerLearned rdfs:range HERO:HeroPower .
+
+HERO:refusesToFight rdfs:range HERO:Villain .
+
+HERO:saves rdfs:range HERO:ThreatTarget .
+
+HERO:scaredOf rdfs:range HERO:EnemyPower .
+
+HERO:travelsTo rdfs:range sem:Place .
+
+HERO:victory rdfs:range xsd:boolean .
+
+HERO:villain rdfs:range HERO:Villain .
+
+sem:hasActor rdfs:range HERO:Hero .
+
+sem:hasPlace rdfs:range sem:Place .
+
+sem:hasTime rdfs:range sem:Time .
+
+HERO:CallToAdventure rdfs:subClassOf sem:Event .
+
+HERO:Castle_Black a sem:Place ;
+    rdfs:label "Castle Black" .
+
+HERO:CrossThreshold rdfs:subClassOf sem:Event .
+
+HERO:Deepwood_Motte a sem:Place ;
+    rdfs:label "Deepwood Motte" .
+
+HERO:House_Martell a HERO:House ;
+    rdfs:label "House Martell" .
+
+HERO:InmostCave rdfs:subClassOf sem:Event .
+
+HERO:Karhold a sem:Place ;
+    rdfs:label "Karhold" .
+
+HERO:Kings_Landing a sem:Place ;
+    rdfs:label "Kings Landing" .
+
+HERO:Lady a HERO:Female,
+        HERO:Title,
+        sem:Actor ;
+    rdfs:label "Lady" .
+
+HERO:MeetingTheMentor rdfs:subClassOf sem:Event .
+
+HERO:Oldstones a sem:Place ;
+    rdfs:label "Oldstones" .
+
+HERO:Ordeal rdfs:subClassOf sem:Event .
+
+HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" ;
+    rdfs:subClassOf sem:Event .
+
+HERO:Party rdfs:subClassOf sem:Event .
+
+HERO:RefusalOfCall rdfs:subClassOf sem:Event .
+
+HERO:Resurrection rdfs:subClassOf sem:Event .
+
+HERO:Reward rdfs:subClassOf sem:Event .
+
+HERO:RoadBack rdfs:subClassOf sem:Event .
+
+HERO:Robert_Arryn a HERO:Male,
+        sem:Actor ;
+    rdfs:label "Robert Arryn" .
+
+HERO:Seagard a sem:Place ;
+    rdfs:label "Seagard" .
+
+HERO:TestAlly rdfs:subClassOf sem:Event .
+
+HERO:Tommen_Baratheon a HERO:Male,
+        sem:Actor ;
+    rdfs:label "Tommen Baratheon" .
+
+HERO:Torrhen_Square a sem:Place ;
+    rdfs:label "Torrhen's Square" .
+
+HERO:fireResistance a HERO:Power ;
+    rdfs:label "fire Resistance" .
+
+HERO:fireworks a HERO:Celebration ;
+    rdfs:label "making fireworks" .
+
+HERO:gravityControl a HERO:Power ;
+    rdfs:label "gravity Control" .
+
+HERO:hangover a HERO:Feelings ;
+    rdfs:label "hangover" .
+
+HERO:invisibility a HERO:Power ;
+    rdfs:label "invisibility" .
+
+HERO:jewel a HERO:ThreatTarget ;
+    rdfs:label "jewel" .
+
+HERO:pausingTime a HERO:Power ;
+    rdfs:label "pausing Time" .
+
+HERO:peace a HERO:ThreatTarget ;
+    rdfs:label "peace" .
+
+HERO:rebel a HERO:Occupation ;
+    rdfs:label "rebel" .
+
+HERO:theMiddleOftheNight a sem:Time ;
+    rdfs:label "the Middle Of the Night" .
+
+HERO:the_Autumnal_Equinox a sem:Time ;
+    rdfs:label "the Autumnal Equinox" .
+
+HERO:the_Summer_Solstice a sem:Time ;
+    rdfs:label "the Summer Solstice" .
+
+HERO:the_Winter_Solstice a sem:Time ;
+    rdfs:label "the Winter Solstice" .
+
+HERO:the_first_day_of_Spring a sem:Time ;
+    rdfs:label "the first day of Spring" .
+
+HERO:Great_Sept_of_Baelor a sem:Place ;
+    rdfs:label "Great Sept of Baelor" .
+
+HERO:Sansa_Stark a HERO:Female,
+        sem:Actor ;
+    rdfs:label "Sansa Stark" .
+
+HERO:The_Dreadfort a sem:Place ;
+    rdfs:label "The Dreadfort" .
+
+HERO:The_Vale_of_Arryn a sem:Place ;
+    rdfs:label "The Vale of Arryn" .
+
+HERO:easter a sem:Time ;
+    rdfs:label "Easter day" .
+
+HERO:sunrise a sem:Time ;
+    rdfs:label "sunrise" .
+
+HERO:christmas a sem:Time ;
+    rdfs:label "Christmas" .
+
+HERO:Margaery_Tyrell a HERO:Female,
+        HERO:Main_Character,
+        sem:Actor ;
+    rdfs:label "Margaery Tyrell" .
+
+HERO:Arya_Stark a HERO:Female,
+        HERO:Main_Character,
+        sem:Actor ;
+    rdfs:label "Arya Stark" .
+
+sem:Core a owl:Class ;
+    rdfs:label "Core" .
+
+sem:Event a owl:Class ;
+    rdfs:label "Event" .
+
