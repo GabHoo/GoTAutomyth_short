@@ -8,7 +8,7 @@ import pandas as pd
 from string import Template
 import networkx as nx
 import networkx.algorithms.community as nxcom
-import re
+import remain_characters
 import json
 import Queries4Text
 # import SPARQLWrapper
@@ -86,7 +86,9 @@ main_characters = {"Jon_Snow": "Q3183235",
                    "Tyrion_Lannister": "Q2076759",
                    "Margaery_Tyrell": "Q12900933",
                    "Robert_Baratheon": "Q13634885",
-                   "Petyr_Baelish":"Q0000000"}
+                    "Petyr_Baelish": "Q4360302"}
+
+
 
 
 def find_communities(weighted_input):
@@ -136,6 +138,8 @@ def read_network_data():
     edges = pd.read_csv("Network_of_Thrones/edges_subset.csv")
     nodes = pd.read_csv("Network_of_Thrones/nodes_subset.csv")
     return nodes, edges
+
+
 
 
 def relation_based_pick(edges, related_to_char, n):
@@ -193,7 +197,7 @@ def gen_story(method):
                                             "Ally")
         fixed["VillainAlly"] = comm_based_pick("http://semanticweb.cs.vu.nl/2009/11/sem/Actor", communities,
                                                fixed["Hero"], "Villain_Ally", fixed["Villain"])
-        # instantiate_ordinary_world(g, fixed)
+        instantiate_ordinary_world(g, fixed)
     elif method == "relation":
         fixed["Villain"] = relation_based_pick(edges, fixed["Hero"], 10)
         fixed["HeroAlly"] = relation_based_pick(edges, fixed["Hero"], n)
@@ -245,7 +249,7 @@ def gen_story(method):
                 story.add((instance_i, s, fixed[range_str]))
             else:
                 story.add((instance_i, s, random_pick(rand_range)))
-                
+
 
     # HERE WE FIND A WAY TO DO THE SPARQL QUERY AND GET THE TEXT
     story = add_labels(g, story)
@@ -253,7 +257,14 @@ def gen_story(method):
 
     return story
 
-    return t1 + t2
 
 
+'''
+if __name__ == '__main__':
+    if arc != 2 or argv[1] not in ["community", "relation", "random"]:
+        print("Error! Please enter a (valid) charachter picking method. (community,relation,random)")
+        exit()
+    method = argv[1]
+    gen_story(sys.argv, len(sys.argv))
 
+'''
