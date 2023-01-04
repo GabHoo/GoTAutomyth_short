@@ -1,0 +1,341 @@
+@prefix HERO: <http://hero_ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+HERO:House a HERO:ThreatTarget,
+        rdfs:Class ;
+    rdfs:label "House" ;
+    rdfs:subClassOf HERO:House .
+
+HERO:Event_01 a HERO:OrdinaryWorld,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Ordinary World presentation" ;
+    HERO:hasHouse HERO:House_Lannister ;
+    HERO:hasOccupation HERO:official ;
+    HERO:hasTitle HERO:King ;
+    HERO:journeyStage "1" ;
+    sem:hasActor HERO:Robert_Baratheon ;
+    sem:hasPlace HERO:The_Dreadfort ;
+    sem:hasTime HERO:theMiddleOftheNight .
+
+HERO:Event_02 a HERO:CallToAdventure,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Villain threatens the safety of somebody. This is the call for the hero" ;
+    HERO:Threatens HERO:House ;
+    HERO:journeyStage "2" ;
+    HERO:villain HERO:Cersei_Lannister ;
+    sem:hasActor HERO:Robert_Baratheon ;
+    sem:hasPlace HERO:Raventree_Hall ;
+    sem:hasTime HERO:the_Winter_Solstice .
+
+HERO:Event_03 a HERO:RefusalOfCall,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Hero refuses to help saving the target and the world" ;
+    HERO:journeyStage "3" ;
+    HERO:refusesToFight HERO:Cersei_Lannister ;
+    HERO:scaredOf HERO:fireResistance ;
+    sem:hasActor HERO:Robert_Baratheon ;
+    sem:hasPlace HERO:Red_Keep ;
+    sem:hasTime HERO:the_first_day_of_Spring .
+
+HERO:Event_04 a HERO:MeetingTheMentor,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Meeting the Mentor" ;
+    HERO:journeyStage "4" ;
+    HERO:meetsMentor HERO:Shae ;
+    HERO:powerLearned HERO:slowingTime ;
+    sem:hasActor HERO:Robert_Baratheon ;
+    sem:hasPlace HERO:Riverlands ;
+    sem:hasTime HERO:the_Autumnal_Equinox .
+
+HERO:Event_05 a HERO:CrossThreshold,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "The hero decides to face the villain and travels to the Place where the villain is." ;
+    HERO:journeyStage "5" ;
+    HERO:travelsTo HERO:Oldstones ;
+    sem:hasActor HERO:Robert_Baratheon ;
+    sem:hasPlace HERO:White_Harbor ;
+    sem:hasTime HERO:the_Summer_Solstice .
+
+HERO:Event_06 a HERO:TestAlly,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "The ally help the hero to face the challenge against the Villain and its ally. it is a firt test" ;
+    HERO:faces HERO:Lancel_Lannister ;
+    HERO:journeyStage "6" ;
+    HERO:meetsAlly HERO:Edric_Storm ;
+    HERO:victory false ;
+    sem:hasActor HERO:Robert_Baratheon ;
+    sem:hasPlace HERO:The_Vale_of_Arryn ;
+    sem:hasTime HERO:the_Winter_Solstice .
+
+HERO:Event_07 a HERO:InmostCave,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "The hero is arrived at the location to face the villain and feel strong emotions" ;
+    HERO:feeling HERO:arrogant ;
+    HERO:journeyStage "7" ;
+    sem:hasActor HERO:Robert_Baratheon ;
+    sem:hasPlace HERO:The_Ruby_Ford ;
+    sem:hasTime HERO:theMiddleOftheNight .
+
+HERO:Event_08 a HERO:Ordeal,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Hero fights the enemy with powers" ;
+    HERO:enemyusespower HERO:fireResistance ;
+    HERO:herofights HERO:Cersei_Lannister ;
+    HERO:herogetsinjured true ;
+    HERO:herousespower HERO:slowingTime ;
+    HERO:journeyStage "8" ;
+    sem:hasActor HERO:Robert_Baratheon ;
+    sem:hasPlace HERO:Castle_Black ;
+    sem:hasTime HERO:the_Autumnal_Equinox .
+
+HERO:Event_09 a HERO:Reward,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Hero  SAVES WHATEVER WAS THE TARGET OF THE THREAT SO HE GETS IT BACK " ;
+    HERO:journeyStage "9" ;
+    HERO:saves HERO:freedom ;
+    sem:hasActor HERO:Robert_Baratheon ;
+    sem:hasPlace HERO:The_Trident ;
+    sem:hasTime HERO:christmas .
+
+HERO:Event_10 a HERO:RoadBack,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Villain chases hero down and seek for final battle" ;
+    HERO:chasedBy HERO:Cersei_Lannister ;
+    HERO:journeyStage "10" ;
+    sem:hasActor HERO:Robert_Baratheon ;
+    sem:hasPlace HERO:Castle_Black ;
+    sem:hasTime HERO:the_Summer_Solstice .
+
+HERO:Event_11 a HERO:Resurrection,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Final confrontation between hero and villain" ;
+    HERO:against HERO:Cersei_Lannister ;
+    HERO:journeyStage "11" ;
+    HERO:killsVillain true ;
+    sem:hasActor HERO:Robert_Baratheon ;
+    sem:hasPlace HERO:Karhold ;
+    sem:hasTime HERO:christmas .
+
+HERO:Event_12 a HERO:Party,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Hero throws a party" ;
+    HERO:celebratesvictory HERO:game ;
+    HERO:journeyStage "12" ;
+    HERO:partywith HERO:Edric_Storm ;
+    sem:hasActor HERO:Robert_Baratheon ;
+    sem:hasPlace HERO:The_Vale_of_Arryn ;
+    sem:hasTime HERO:christmas .
+
+HERO:Threatens rdfs:range HERO:ThreatTarget .
+
+HERO:against rdfs:range HERO:Villain .
+
+HERO:cause_of_death rdfs:range xsd:string .
+
+HERO:celebratesvictory rdfs:range HERO:Celebration .
+
+HERO:chasedBy rdfs:range HERO:Villain .
+
+HERO:enemyusespower rdfs:range HERO:EnemyPower .
+
+HERO:faces rdfs:range HERO:VillainAlly .
+
+HERO:feeling rdfs:range HERO:Feelings .
+
+HERO:hasHouse rdfs:range HERO:House .
+
+HERO:hasOccupation rdfs:range HERO:Occupation .
+
+HERO:hasTitle rdfs:range HERO:Title .
+
+HERO:herofights rdfs:range HERO:Villain .
+
+HERO:herogetsinjured rdfs:range xsd:boolean .
+
+HERO:herousespower rdfs:range HERO:HeroPower .
+
+HERO:killsVillain rdfs:range xsd:boolean .
+
+HERO:meetsAlly rdfs:range HERO:HeroAlly .
+
+HERO:meetsMentor rdfs:range HERO:Mentor .
+
+HERO:partywith rdfs:range HERO:HeroAlly .
+
+HERO:powerLearned rdfs:range HERO:HeroPower .
+
+HERO:refusesToFight rdfs:range HERO:Villain .
+
+HERO:saves rdfs:range HERO:ThreatTarget .
+
+HERO:scaredOf rdfs:range HERO:EnemyPower .
+
+HERO:travelsTo rdfs:range sem:Place .
+
+HERO:victory rdfs:range xsd:boolean .
+
+HERO:villain rdfs:range HERO:Villain .
+
+sem:hasActor rdfs:range HERO:Hero .
+
+sem:hasPlace rdfs:range sem:Place .
+
+sem:hasTime rdfs:range sem:Time .
+
+HERO:CallToAdventure rdfs:subClassOf sem:Event .
+
+HERO:CrossThreshold rdfs:subClassOf sem:Event .
+
+HERO:House_Lannister a HERO:House ;
+    rdfs:label "House Lannister" .
+
+HERO:InmostCave rdfs:subClassOf sem:Event .
+
+HERO:Karhold a sem:Place ;
+    rdfs:label "Karhold" .
+
+HERO:King a HERO:Male,
+        HERO:Title,
+        sem:Actor ;
+    rdfs:label "King" .
+
+HERO:Lancel_Lannister a HERO:Male,
+        sem:Actor ;
+    rdfs:label "Lancel Lannister" .
+
+HERO:MeetingTheMentor rdfs:subClassOf sem:Event .
+
+HERO:Oldstones a sem:Place ;
+    rdfs:label "Oldstones" .
+
+HERO:Ordeal rdfs:subClassOf sem:Event .
+
+HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" ;
+    rdfs:subClassOf sem:Event .
+
+HERO:Party rdfs:subClassOf sem:Event .
+
+HERO:Raventree_Hall a sem:Place ;
+    rdfs:label "Raventree Hall" .
+
+HERO:Red_Keep a sem:Place ;
+    rdfs:label "Red Keep" .
+
+HERO:RefusalOfCall rdfs:subClassOf sem:Event .
+
+HERO:Resurrection rdfs:subClassOf sem:Event .
+
+HERO:Reward rdfs:subClassOf sem:Event .
+
+HERO:Riverlands a sem:Place ;
+    rdfs:label "Riverlands" .
+
+HERO:RoadBack rdfs:subClassOf sem:Event .
+
+HERO:Shae a HERO:Male,
+        sem:Actor ;
+    rdfs:label "Shae" .
+
+HERO:TestAlly rdfs:subClassOf sem:Event .
+
+HERO:The_Dreadfort a sem:Place ;
+    rdfs:label "The Dreadfort" .
+
+HERO:The_Ruby_Ford a sem:Place ;
+    rdfs:label "The Ruby Ford" .
+
+HERO:The_Trident a sem:Place ;
+    rdfs:label "The Trident" .
+
+HERO:White_Harbor a sem:Place ;
+    rdfs:label "White Harbor" .
+
+HERO:arrogant a HERO:Feelings ;
+    rdfs:label "arrogant" .
+
+HERO:freedom a HERO:ThreatTarget ;
+    rdfs:label "freedom" .
+
+HERO:game a HERO:Celebration ;
+    rdfs:label "playing a game" .
+
+HERO:official a HERO:Occupation ;
+    rdfs:label "official" .
+
+HERO:the_first_day_of_Spring a sem:Time ;
+    rdfs:label "the first day of Spring" .
+
+HERO:Castle_Black a sem:Place ;
+    rdfs:label "Castle Black" .
+
+HERO:Edric_Storm a HERO:Male,
+        sem:Actor ;
+    rdfs:label "Edric Storm" .
+
+HERO:The_Vale_of_Arryn a sem:Place ;
+    rdfs:label "The Vale of Arryn" .
+
+HERO:fireResistance a HERO:Power ;
+    rdfs:label "fire Resistance" .
+
+HERO:slowingTime a HERO:Power ;
+    rdfs:label "slowing Time" .
+
+HERO:theMiddleOftheNight a sem:Time ;
+    rdfs:label "the Middle Of the Night" .
+
+HERO:the_Autumnal_Equinox a sem:Time ;
+    rdfs:label "the Autumnal Equinox" .
+
+HERO:the_Summer_Solstice a sem:Time ;
+    rdfs:label "the Summer Solstice" .
+
+HERO:the_Winter_Solstice a sem:Time ;
+    rdfs:label "the Winter Solstice" .
+
+HERO:christmas a sem:Time ;
+    rdfs:label "Christmas" .
+
+HERO:Cersei_Lannister a HERO:Female,
+        HERO:Main_Character,
+        sem:Actor ;
+    rdfs:label "Cersei Lannister" .
+
+HERO:Robert_Baratheon a HERO:Main_Character,
+        HERO:Male,
+        sem:Actor ;
+    rdfs:label "Robert Baratheon" .
+
+sem:Core a owl:Class ;
+    rdfs:label "Core" .
+
+sem:Event a owl:Class ;
+    rdfs:label "Event" .
+

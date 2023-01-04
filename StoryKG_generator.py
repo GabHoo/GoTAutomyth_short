@@ -109,7 +109,31 @@ def find_communities(weighted_input):
                 communities_dict[mc] = com_copy
     #print("\ncommunities dict", communities_dict)
     return communities_dict
+'''
+def instantiate_ordinary_world(g, fixed):
+    qres = g.query("""SELECT ?hero ?occupation ?house ?title WHERE {
+                                        ?hero a HERO:Main_Character;
+                                       
+                                                HERO:occupation ?occupation;
+                                                HERO:family ?house;
+                                                 HERO:title ?title}""",initNs={ 'HERO': 'http://hero_ontology/'})
 
+    #qres = g.query(ordinary_world_template.substitute({'hero': fixed["Hero"].split("/")[-1]}))
+    fixed["Occupation"] = random.choice([row.occupation for row in qres])
+    fixed["House"] = random.choice([row.house for row in qres])
+    fixed["Title"] = random.choice([row.title for row in qres])
+'''
+
+def instantiate_ordinary_world(g, fixed):
+    ordinary_world_template = Template("""SELECT ?occupation ?house ?title WHERE {
+                                       HERO:$hero HERO:occupation ?occupation.
+                                       HERO:$hero HERO:family ?house .
+                                       HERO:$hero HERO:title ?title}""")
+
+    qres = g.query(ordinary_world_template.substitute({'hero': fixed["Hero"].split("/")[-1]}),initNs={ 'HERO': 'http://hero_ontology/'})
+    fixed["Occupation"] = random.choice([row.occupation for row in qres])
+    fixed["House"] = random.choice([row.house for row in qres])
+    fixed["Title"] = random.choice([row.title for row in qres])
 
 def comm_based_pick(ist_class, communities=None, hero=None, char_type=None, villain=None):
     category = ist_class.split("/")[-1]
@@ -193,7 +217,7 @@ def gen_story(method):
                                             "Ally")
         fixed["VillainAlly"] = comm_based_pick("http://semanticweb.cs.vu.nl/2009/11/sem/Actor", communities,
                                                fixed["Hero"], "Villain_Ally", fixed["Villain"])
-        # instantiate_ordinary_world(g, fixed)
+        instantiate_ordinary_world(g, fixed)
     elif method == "relation":
         fixed["Villain"] = relation_based_pick(edges, fixed["Hero"], 10)
         fixed["HeroAlly"] = relation_based_pick(edges, fixed["Hero"], n)
