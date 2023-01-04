@@ -229,9 +229,6 @@ HERO:villain  a rdfs:Property; #introducing the villain
 	rdfs:domain HERO:CallToAdventure.
 
 
-#HERO:Threatens a rdfs:Property;
-	#rdfs:range HERO:Threat;
-	#rdfs:domain HERO:CallToAdventure.
 
 HERO:Threatens a rdfs:Property;
 	rdfs:range HERO:ThreatTarget;
@@ -374,8 +371,6 @@ HERO:enemyusespower a rdfs:Property;
 HERO:herogetsinjured a rdfs:Property;
 	rdfs:range xsd:boolean;
 	rdfs:domain HERO:Ordeal  .
-
-
 
 HERO:Event_08 a HERO:Ordeal; #instanciated
 	HERO:journeyStage '8';
