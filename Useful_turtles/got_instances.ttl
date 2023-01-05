@@ -657,27 +657,27 @@ HERO:slowingTime rdfs:label "slowing Time".
 
 #Threat Target
 HERO:castle a HERO:ThreatTarget.
-HERO:castle rdfs:label "castle".
-HERO:lifestyle a HERO:ThreatTarget.
-HERO:lifestyle rdfs:label "lifestyle".
+HERO:castle rdfs:label "the castle".
+#HERO:lifestyle a HERO:ThreatTarget.
+#HERO:lifestyle rdfs:label "lifestyle"."""
 HERO:peace a HERO:ThreatTarget.
-HERO:peace rdfs:label "peace".
-HERO:equality a HERO:ThreatTarget.
-HERO:equality rdfs:label "equality".
+HERO:peace rdfs:label "the peace".
+#HERO:equality a HERO:ThreatTarget.
+#HERO:equality rdfs:label "equality".
 HERO:freedom a HERO:ThreatTarget.
-HERO:freedom rdfs:label "freedom".
-HERO:happiness a HERO:ThreatTarget.
-HERO:happiness rdfs:label "happiness".
+HERO:freedom rdfs:label "the freedom".
+#HERO:happiness a HERO:ThreatTarget.
+#HERO:happiness rdfs:label "happiness".
 HERO:jewel a HERO:ThreatTarget.
-HERO:jewel rdfs:label "jewel".
+HERO:jewel rdfs:label "the jewel".
 HERO:treasure a HERO:ThreatTarget.
 HERO:treasure rdfs:label "treasure".
-HERO:Title a HERO:ThreatTarget.
-HERO:Title rdfs:label "Title".
+#HERO:Title a HERO:ThreatTarget.
+#HERO:Title rdfs:label "Title".
 HERO:House a HERO:ThreatTarget.
-HERO:House rdfs:label "House".
-#HERO:HeroAlly a HERO:ThreatTarget.
-#HERO:HeroAlly rdfs:label "Ally".
+HERO:House rdfs:label "The House".
+HERO:HeroAlly a HERO:ThreatTarget.
+HERO:HeroAlly rdfs:label "Ally".
 
 #Celebration
 HERO:feast a HERO:Celebration .

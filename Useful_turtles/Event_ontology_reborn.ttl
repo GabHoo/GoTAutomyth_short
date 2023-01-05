@@ -242,22 +242,7 @@ HERO:Event_02 a HERO:CallToAdventure; #instanciated
 
 #3 REFUSAL OF THE CALL
 
-HERO:RefusalOfCall rdfs:subClassOf sem:Event.
-
-#hasactor is hero
-
-HERO:refusesToFight   a rdfs:Property;
-	rdfs:range HERO:Villain;
-	rdfs:domain HERO:RefusalOfCall.
-	
-HERO:scaredOf   a rdfs:Property;
-	rdfs:range HERO:EnemyPower; #hero scaredd ofpower of villain and thus rfuse to fight
-	rdfs:domain HERO:RefusalOfCall.
-	
-HERO:Event_03 a HERO:RefusalOfCall; #instanciated
-	HERO:journeyStage '3';
-	rdfs:label "Hero refuses to help saving the target and the world". 	
-	
+#NO MORE
 
 
 #4 MEETING THE MENTOR
@@ -271,7 +256,7 @@ HERO:powerLearned a rdfs:Property;
 	rdfs:range HERO:HeroPower;
 	rdfs:domain HERO:MeetingTheMentor.
 	
-#motivatonal quotes?????	
+
 	
 HERO:Event_04 a HERO:MeetingTheMentor; #instanciated
 	HERO:journeyStage '4';
@@ -305,7 +290,7 @@ HERO:faces a rdfs:Property;
 	rdfs:domain HERO:TestAlly  .
 
 #HERO:challenge a rdfs:Property;
-	#rdfs:range HERO:Challenge;HERO:feeling a rdfs:Property;
+	#rdfs:range HERO:Challenge;
 	#rdfs:domain HERO:TestAlly.
 
 	
