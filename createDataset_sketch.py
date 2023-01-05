@@ -1,61 +1,9 @@
-from ast import arg
-from rdflib import Graph, RDFS, RDF, URIRef, Namespace, Literal, XSD
-from owlrl import DeductiveClosure, RDFS_Semantics
-import random, sys
-import sys
-import os
-import pandas as pd
-from string import Template
-import networkx as nx
-import networkx.algorithms.community as nxcom
-import re
-import json
-from StoryKG_generator import *
+from StoryKG_gen_reborn import *
 import StoryKG_generator
 from Queries4Text import *
 import Queries4Text
 # import SPARQLWrapper
 
-from scipy import rand
-
-def clean_triples(s,p,o):
-    triples_clean = ""
-    triples_clean += (
-        (str(s).split('/')[-1] + " - " + str(p).split("/")[-1] + " - " + str(o).split("/")[-1] + " | "))
-    triples_clean = re.sub('22-rdf-syntax-ns#', '', triples_clean)
-    triples_clean = re.sub('rdf-schema##', '', triples_clean)
-    triples_clean = re.sub('owl#', '', triples_clean)
-    triples_clean = re.sub('rdf-schema#', '', triples_clean)
-    triples_clean = re.sub('XMLSchema#', '', triples_clean)
-    return triples_clean
-'''
-def clear(story,semantic_given):
-    HERO = Namespace("http://hero_ontology/")
-    sem = Namespace("http://semanticweb.cs.vu.nl/2009/11/sem/")
-    triples_clean = ""
-
-    if semantic_given=='types':
-        for s, p, o in story.triples((None, None, None)):
-            if o==RDFS.Class or o==RDFS.Resource or o==sem.Core or  p == HERO.villain or p == HERO.ThreatenedElement or p==HERO.journeyStage or p==RDFS.range or p==HERO.hasTitle or p==HERO.hasHouse or p==HERO.hasOccupation or p==sem.hasActor or p==sem.hasPlace or p==sem.hasTime or p==RDFS.label:
-                continue
-            triples_clean += clean_triples(s,p,o)
-
-    if semantic_given=='event':
-        for s, p, o in story.triples((None, None, None)):
-            if o==RDFS.Resource or o==sem.Core or p==RDFS.range or p==RDFS.label:
-                continue
-            triples_clean += clean_triples(s,p,o)
-
-
-    if semantic_given=='range':
-        for s, p, o in story.triples((None, None, None)):
-            if o == RDFS.Resource or o == sem.Core or p == RDFS.label:
-                continue
-            triples_clean += clean_triples(s,p,o)
-
-
-    return triples_clean
-'''
 def clear1(story):
     result = ""
     for i in story:
@@ -96,28 +44,39 @@ def random_formulation(story):
 
 
 
-
 def main(argv, arc):
+    if arc!=3:
+        raise ValueError("nr of Parameters is incorrect!")
+
+    if argv[1] not in ["community","relation","random"] :
+        #or argv[2] not in ['types','event','range', 'baseline_instances','baseline_classes']:
+        raise ValueError("Error! Please enter a (valid) charachter picking method. (community,relation,random)")
+
+    method = argv[1]
+    n = int(argv[2])
+    for i in range(n):
+        story,hero = gen_story(method)
+        print(hero)
+        story = story.serialize("./TESTING.ttl")
+
+    """  linearized_baseline = Graph_Generator_baseline_instances(story)
+
+        text_to=clear1(linearized_baseline)
+        print("\n final: \n",text_to)"""
+    return None
+
+
+
+"""def main(argv, arc):
     if arc!=4 or argv[1] not in ["community","relation","random"] :
             #or argv[2] not in ['types','event','range', 'baseline_instances','baseline_classes']:
         print("Error! Please enter a (valid) charachter picking method. (community,relation,random)")
         exit()
-    method_generation = argv[1]
+    method= argv[1]
     #semantic_given = argv[2]
     #n_kg_generated = int(argv[3])
-    what = argv[3]
+    nr_inst = argv[3]
 
-    if what == 'train':
-        n_kg_generated = 500
-
-    if what =='test':
-        n_kg_generated = 50
-
-    if what =='val':
-        n_kg_generated = 50
-
-    if what =='try':
-        n_kg_generated = 1
 
     data = []
     count = 0
@@ -174,7 +133,7 @@ def main(argv, arc):
 
            # with open(f'generated_output/try_{method_generation}_{semantic_given}.json', 'w', encoding='utf-8') as f:
             #    json.dump(dict, f, ensure_ascii=False, indent="")
-
+"""
 
 
 

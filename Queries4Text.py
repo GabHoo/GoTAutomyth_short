@@ -594,15 +594,12 @@ def Graph_Generator_baseline_instances(story):
   ns2:Event_12 ns2:celebratesvictory ?celebration.
   ?celebration rdfs:label ?celebrationlabel.
 
-
-
-
-  
-
-
   }
     """, initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/','ns2': 'http://hero_ontology/'})
     texts.append(text)
+    print("TOUPLES AFTER CONSTRUT")
+    for s,p,o in text:
+        print(s,p,o)
 
     return text
 

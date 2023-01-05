@@ -159,6 +159,8 @@ HERO:Petyr_Baelish a HERO:Main_Character;
 	rdfs:label "Petyr Baelish";
 	a sem:Actor ;
 	HERO:spouse HERO:Lysa_Arryn ;
+	HERO:family HERO:House_Baelish ;
+
 	HERO:relative HERO:Robert_Arryn ;
 	HERO:occupation HERO:bureaucrat ;
 	HERO:occupation HERO:murderer ;
@@ -514,6 +516,10 @@ HERO:House_Lannister a HERO:House .
 HERO:House_Lannister rdfs:label "House Lannister".
 HERO:House_Tyrell a HERO:House .
 HERO:House_Tyrell rdfs:label "House Tyrell".
+
+HERO:House_Baelish a HERO:House .
+HERO:House_Baelish rdfs:label "House Tyrell".
+
 HERO:House_Greyjoy a HERO:House .
 HERO:House_Greyjoy rdfs:label "House Greyjoy".
 HERO:House_Arryn a HERO:House .

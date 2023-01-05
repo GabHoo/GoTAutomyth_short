@@ -16,15 +16,15 @@ import Queries4Text
 from scipy import rand
 
 
-def random_pick(ist_class):
+def random_pick(ist_class,g):
     if ist_class == URIRef("http://www.w3.org/2001/XMLSchema#boolean"):
         #print("considering boooolean")
         return (random.choice([Literal("true", datatype=XSD.boolean), Literal("false", datatype=XSD.boolean)]))
 
-    g = Graph()
+    """g = Graph()
     g.parse("./Useful_turtles/Event_ontology.ttl")
     #g.parse("./Useful_turtles/ontology_event1and2.ttl")
-    g.parse("./Useful_turtles/got_instances.ttl")
+    g.parse("./Useful_turtles/got_instances.ttl")"""
 
     list_e = []
 
@@ -37,7 +37,8 @@ def random_pick(ist_class):
     # THis is because Mentor for example is a subclass of actor. Since there are no instance directly for mentor we look for its super class (Actor) and pick instance of it.
     while (not list_e):
         # print("EMPTY LIST for", class_node)
-        class_node = g.value(predicate=RDFS.subClassOf, subject=class_node, any=False)
+        class_node = g.value(predicate=RDFS.subClassOf, subject=class_node, any=True) #WITH ANY TRUE TAKES ALWAYS MAIN CHARACHTER THANKS GOD
+
         # print("new super class ", class_node)
         for e in g.subjects(RDF.type, class_node):
             list_e.append(e)
@@ -133,6 +134,8 @@ def instantiate_ordinary_world(g, fixed):
                                        HERO:$hero HERO:title ?title}""")
 
     qres = g.query(ordinary_world_template.substitute({'hero': fixed["Hero"].split("/")[-1]}),initNs={ 'HERO': 'http://hero_ontology/'})
+
+
     fixed["Occupation"] = random.choice([row.occupation for row in qres])
     fixed["House"] = random.choice([row.house for row in qres])
     fixed["Title"] = random.choice([row.title for row in qres])
@@ -155,7 +158,7 @@ def comm_based_pick(ist_class, communities=None, hero=None, char_type=None, vill
             villain = villain.split("/")[-1]
             return URIRef('http://hero_ontology/' + random.choice(list(communities[villain])))
 
-    return random_pick(ist_class)
+    return random_pick(ist_class,g)
 
 
 def read_network_data():
@@ -178,7 +181,7 @@ def relation_based_pick(edges, related_to_char, n):
 
 def gen_story(method):
     g = Graph(base="http://test.com/ns#")
-    g.parse("./Useful_turtles/Event_ontology.ttl")
+    g.parse("./Useful_turtles/Event_ontology_reborn.ttl")
     #g.parse("./Useful_turtles/ontology_event1and2.ttl")
     g.parse("./Useful_turtles/got_instances.ttl")
 
@@ -209,10 +212,8 @@ def gen_story(method):
     story.namespace_manager.bind('sem', URIRef('http://semanticweb.cs.vu.nl/2009/11/sem/'))
 
     fixed = {} #THER IS A LIST OF RECOURRENTS ELEMNTS SUCH AS VILLAN; HERO ALLAY etcc, we pick those based on the methon, the hero is picked randomly
-    fixed["Hero"] = random_pick("http://hero_ontology/Hero")
+    fixed["Hero"] = random_pick("http://hero_ontology/Hero",g)
 
-
-    #print("selected Hero,", fixed["Hero"])
 
     if method == "community":
         fixed["Villain"] = comm_based_pick("http://semanticweb.cs.vu.nl/2009/11/sem/Actor", communities, fixed["Hero"],
@@ -229,9 +230,9 @@ def gen_story(method):
         # instantiate_ordinary_world(g, fixed)
 
     elif method == "random":
-        fixed["Villain"] = random_pick("http://hero_ontology/Villain")
-        fixed["HeroAlly"] = random_pick("http://hero_ontology/HeroAlly")
-        fixed["VillainAlly"] = random_pick("http://hero_ontology/VillainAlly")
+        fixed["Villain"] = random_pick("http://hero_ontology/Villain",g)
+        fixed["HeroAlly"] = random_pick("http://hero_ontology/HeroAlly",g)
+        fixed["VillainAlly"] = random_pick("http://hero_ontology/VillainAlly",g)
 
    # print("list of subevents is:", subEvents)
 
@@ -257,7 +258,7 @@ def gen_story(method):
                 #print(range_str, "is in fixed dic?")
                 story.add((instance_i, p, fixed[range_str]))
             else:
-                story.add((instance_i, p, random_pick(r)))
+                story.add((instance_i, p, random_pick(r,g)))
 
         # THIS IS TO INSTANCIATE AND ADD TO STORY THE TRIPLES SPECIFIC OF THAT EVENT i
         for s, p, o in g.triples((None, RDFS.domain, i)):  # takiing all the specific event properties
@@ -272,14 +273,14 @@ def gen_story(method):
                 # print(range_str, "is in fixed dic")
                 story.add((instance_i, s, fixed[range_str]))
             else:
-                story.add((instance_i, s, random_pick(rand_range)))
+                story.add((instance_i, s, random_pick(rand_range,g)))
 
 
     # HERE WE FIND A WAY TO DO THE SPARQL QUERY AND GET THE TEXT
     story = add_labels(g, story)
     story = domain_range(g, story)
 
-    return story
+    return story,fixed["Hero"]
 
 
 
