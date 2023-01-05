@@ -199,7 +199,6 @@ HERO:OrdinaryWorld rdfs:subClassOf sem:Event;
               rdfs:label "First stage of the story - Ordinary world presentation".
 
 
-sem:hasPlace rdfs:domain HERO:OrdinaryWorld .
 
 
 
@@ -305,15 +304,19 @@ sem:hasPlace rdfs:domain HERO:FinalBattle .
 sem:hasTime rdfs:domain HERO:FinalBattle .
 
 
-HERO:Event_5 a HERO:FinalBattle; #instanciated
+HERO:Event_05 a HERO:FinalBattle; #instanciated
 	HERO:journeyStage '5';
 	rdfs:label "Final confrontation between hero and villain".
 
 
 
-#12 end of the story -party
+#6 end of the story -party
 
 HERO:Party rdfs:subClassOf sem:Event .
+
+HERO:saves a rdfs:Property;
+	rdfs:range HERO:ThreatTarget;
+	rdfs:domain HERO:Party  .
 
 
 HERO:celebratesvictory a rdfs:Property;
@@ -327,6 +330,6 @@ HERO:partywith a rdfs:Property;
 
 
 
-HERO:Event_6 a HERO:Party; #instanciated
+HERO:Event_06 a HERO:Party; #instanciated
 	HERO:journeyStage '6';
 	rdfs:label "Hero throws a party".  

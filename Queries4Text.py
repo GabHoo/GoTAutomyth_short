@@ -534,7 +534,7 @@ def Graph_Generator_range(story):
 
 
 #https://networkedplanet.com/blog/2015/10/16/sparql-construct-101.html resource to understand CONSTRUCT
-def Graph_Generator_baseline_instances(story):
+def Graph_Generator_baseline_instances_old(story):
     texts = []
     text = story.query("""
   CONSTRUCT { ?herolabel ns2:hasTitle ?titlelabel.
@@ -558,10 +558,6 @@ def Graph_Generator_baseline_instances(story):
   ?herolabel ns2:chasedby ?villainlabel.
   ?herolabel ns2:celebratesvictory ?celebrationlabel.
   ?herolabel ns2:partywith ?allylabel.
-
-  
-
-
 
 
    } 
@@ -597,18 +593,98 @@ def Graph_Generator_baseline_instances(story):
   }
     """, initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/','ns2': 'http://hero_ontology/'})
     texts.append(text)
-    print("TOUPLES AFTER CONSTRUT")
-    for s,p,o in text:
-        print(s,p,o)
-
+    print(text)
+    if len(texts)==0:
+        print("WRONG smth in the query I am in q4text line 597")
     return text
 
 
+def Graph_Generator_baseline_instances(story):
+    texts = []
+    text = story.query("""
+  CONSTRUCT { ?herolabel ns2:hasTitle ?titlelabel.
+  ?herolabel ns2:hasHouse ?houselabel.
+  ?herolabel ns2:hasOccupation ?joblabel.
+  
+  ?villainlabel ns2:Threatens ?targetlabel.
+  
+  ?herolabel ns2:meetsMentor ?mentorlabel.
+  ?herolabel ns2:powerLearned ?powerlabel.
+  
+  ?herolabel ns2:Place4 ?labelplace4.
+  ?herolabel ns2:Time4 ?labeltime4.
+  ?herolabel ns2:meetsAlly ?allylabel4.
+    
+
+  ?herolabel ns2:Place5 ?place5label.
+  ?herolabel ns2:Time5 ?time5label.
+  ?herolabel ns2:fights ?labelvillain5.
+  ?herolabel ns2:helpedby ?labelally5.
+  ?herolabel ns2:usespower ?labelpower.
+  
+  ?herolabel ns2:saves ?target6label.
+  ?herolabel ns2:celebratesvictory ?celebrationlabel.
+  ?herolabel ns2:partywith ?labelally6.
 
 
-
-
-
+ 
+   } 
+  WHERE {ns2:Event_01 ns2:hasTitle ?title.
+  ?title rdfs:label ?titlelabel.
+  ns2:Event_01 ns1:hasActor ?hero.
+  ?hero rdfs:label ?herolabel.
+  ns2:Event_01 ns2:hasHouse ?house.
+  ?house rdfs:label ?houselabel.
+  ns2:Event_01 ns2:hasOccupation ?job.
+  ?job rdfs:label ?joblabel.
+  
+  ns2:Event_02 ns2:villain ?villain.
+  ?villain rdfs:label ?villainlabel.
+  ns2:Event_02 ns2:Threatens ?target.
+  ?target rdfs:label ?targetlabel.
+  
+  ns2:Event_03 ns2:meetsMentor ?mentor.
+  ?mentor rdfs:label ?mentorlabel.
+  ns2:Event_03 ns2:powerLearned ?power.
+  ?power rdfs:label ?powerlabel.
+  
+  
+  ns2:Event_04 ns2:meetsAlly ?ally4.
+  ?ally4 rdfs:label ?allylabel4.
+  ns2:Event_04 ns1:hasPlace ?place4.
+  ?place4 rdfs:label ?labelplace4. 
+  ns2:Event_04 ns1:hasTime ?time4.
+  ?time4 rdfs:label ?labeltime4.
+  
+ 
+  ns2:Event_05 ns1:hasPlace ?place5.
+  ?place5 rdfs:label ?place5label.  
+  ns2:Event_05 ns1:hasTime ?time5.
+  ?time5 rdfs:label ?time5label.
+  
+  ns2:Event_05 ns2:herofights ?villain5.
+  ?villain5 rdfs:label ?labelvillain5.
+  ns2:Event_05 ns2:helpedBy ?ally5.
+  ?ally5 rdfs:label ?labelally5.
+  ns2:Event_05 ns2:usepower ?power.
+  ?power rdfs:label ?labelpower.
+  
+  ns2:Event_06 ns2:saves ?target6.
+  ?target rdfs:label ?target6label.
+  ns2:Event_06 ns2:celebratesvictory ?celebration.
+  ?celebration rdfs:label ?celebrationlabel.
+  ns2:Event_06 ns2:partywith ?ally6.
+  ?ally6 rdfs:label ?labelally6.
+ 
+ 
+  }
+    """, initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+    texts.append(text)
+    #for s,p,o in text:
+        #print(s,p,o)
+    if len(texts) == 0:
+        print("WRONG smth in the query I am in q4text line 597")
+    return text
 
 def Graph_Generator_baseline_classes(story):
     texts = []

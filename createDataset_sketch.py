@@ -59,10 +59,14 @@ def main(argv, arc):
         print(hero)
         story = story.serialize("./TESTING.ttl")
 
-    """  linearized_baseline = Graph_Generator_baseline_instances(story)
+        linearized_baseline = Graph_Generator_baseline_instances(story)
 
+        #print(i)
         text_to=clear1(linearized_baseline)
-        print("\n final: \n",text_to)"""
+        if text_to == "":
+            print("YOO")
+            story = story.serialize(f"./TESTING_wrong{i}.ttl", )
+        print("\n final: \n",text_to)
     return None
 
 

@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="hh">
-      <change afterPath="$PROJECT_DIR$/StoryKG_gen_reborn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/createDataset_sketch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GoTAutomyth_short.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GoTAutomyth_short.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="herojourney short, 6 events">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queries4Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Queries4Text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StoryKG_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/StoryKG_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StoryKG_gen_reborn.py" beforeDir="false" afterPath="$PROJECT_DIR$/StoryKG_gen_reborn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TESTING.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/TESTING.ttl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Useful_turtles/Event_ontology.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/Useful_turtles/Event_ontology.ttl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Useful_turtles/Event_ontology_reborn.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/Useful_turtles/Event_ontology_reborn.ttl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Useful_turtles/got_instances.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/Useful_turtles/got_instances.ttl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/createDataset_sketch.py" beforeDir="false" afterPath="$PROJECT_DIR$/createDataset_sketch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/story_a_random_1.ttl" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +167,21 @@
       <option name="project" value="LOCAL" />
       <updated>1672921010388</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="hh">
+      <created>1672935310893</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1672935310893</updated>
+    </task>
+    <task id="LOCAL-00005" summary="herojourney short, 6 events">
+      <created>1672935341061</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672935341061</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -187,6 +200,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hh" />
-    <option name="LAST_COMMIT_MESSAGE" value="hh" />
+    <MESSAGE value="herojourney short, 6 events" />
+    <option name="LAST_COMMIT_MESSAGE" value="herojourney short, 6 events" />
   </component>
 </project>

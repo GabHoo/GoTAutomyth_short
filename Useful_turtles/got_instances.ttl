@@ -31,7 +31,7 @@ HERO:Jon_Snow a HERO:Main_Character;
 	HERO:occupation HERO:soldier ;
 	HERO:occupation HERO:spy ;
 	HERO:title HERO:Lord ;
-	HERO:title HERO:king ;
+	HERO:title HERO:King ;
 	sem:Place_of_death HERO:Castle_Black ;
 	HERO:cause_of_death HERO:stabbing ;
 	HERO:battles_participated HERO:Battle_of_Castle_Black ;
@@ -53,7 +53,7 @@ HERO:Daenerys_Targaryen a HERO:Main_Character;
 	HERO:family HERO:House_Targaryen ;
 	HERO:occupation HERO:ruler ;
 	HERO:occupation HERO:revolutionary ;
-	HERO:title HERO:princess ;
+	HERO:title HERO:Princess ;
 .
 
 #### Arya_Stark ####
@@ -149,7 +149,6 @@ HERO:Margaery_Tyrell a HERO:Main_Character;
 	HERO:family HERO:House_Tyrell ;
 	HERO:occupation HERO:influencer ;
 	HERO:title HERO:queen_consort ;
-	HERO:title HERO:queen ;
 	sem:Place_of_death HERO:Great_Sept_of_Baelor ;
 	HERO:cause_of_death HERO:explosion ;
 .
@@ -240,7 +239,14 @@ HERO:murderer a HERO:Occupation .
 HERO:murderer rdfs:label "murderer".
 HERO:squire a HERO:Occupation .
 HERO:squire rdfs:label "squire".
-
+HERO:mass_murderer a HERO:Occupation.
+HERO:mass_murderer rdfs:label "mass murderer".
+HERO:King_of_the_Andals_the_Rhoynar_and_the_First_Men a HERO:Occupation.
+HERO:King_of_the_Andals_the_Rhoynar_and_the_First_Men rdfs:label "King of the Andals the Rhoynar and the First Men".
+HERO:ruler a HERO:Occupation.
+HERO:ruler rdfs:label "ruler".
+HERO:influencer a HERO:Occupation.
+HERO:influencer rdfs:label "Influencer".
 
 
 
@@ -254,15 +260,28 @@ HERO:Lord rdfs:label "Lord".
 HERO:fictional_princess a HERO:Title ;
 						a HERO:Female.
 HERO:fictional_princess rdfs:label "Princess".
+HERO:Princess a HERO:Title.
+HERO:Princess rdfs:label "Princess".
 HERO:queen_consort a HERO:Title;
 				   a HERO:Female.
-HERO:queen_consort rdfs:label "Queen ".
+HERO:queen_consort rdfs:label "Queen consort".
 HERO:Lady a HERO:Title;
 		  a HERO:Female.
 HERO:Lady  rdfs:label "Lady" .
 HERO:King a HERO:Title;
 		  a HERO:Male.
 HERO:King  rdfs:label "King".
+
+HERO:queen_regnant a HERO:Title;
+				   a HERO:Female.
+HERO:queen_regnant rdfs:label "Queen regnant ".
+
+HERO:queen a HERO:Title.
+HERO:queen rdfs:label "Queen".
+
+HERO:queen a HERO:Title.
+HERO:queen rdfs:label "Queen".
+
 
 #Actor
 HERO:Gendry a sem:Actor;

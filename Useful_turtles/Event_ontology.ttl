@@ -202,12 +202,14 @@ HERO:OrdinaryWorld rdfs:subClassOf sem:Event;
                    rdfs:label "First stage of the story - Ordinary world presentation".
                    
 HERO:hasTitle a rdfs:Property ;
+    rdfs:label "is a";
+
 	rdfs:range HERO:Title ;
 	rdfs:domain HERO:OrdinaryWorld .
 
 
 HERO:hasHouse a rdfs:Property ;
-	rdfs:label "";
+	rdfs:label "has House";
 	rdfs:range HERO:House ;
 	rdfs:domain HERO:OrdinaryWorld .
 

@@ -227,7 +227,7 @@ def gen_story(method):
         fixed["Villain"] = relation_based_pick(edges, fixed["Hero"], 10)
         fixed["HeroAlly"] = relation_based_pick(edges, fixed["Hero"], n)
         fixed["VillainAlly"] = relation_based_pick(edges, fixed["Villain"], n)
-        # instantiate_ordinary_world(g, fixed)
+        # instantiate_ordinary_world(g, fixed)nightVision
 
     elif method == "random":
         fixed["Villain"] = random_pick("http://hero_ontology/Villain",g)
@@ -236,13 +236,11 @@ def gen_story(method):
 
    # print("list of subevents is:", subEvents)
 
-
-
-
-
+    #POWER IS A RECCURRET IMMUTABLE
+    fixed["HeroPower"] = random_pick("http://hero_ontology/Power",g)
 
     for i in subEvents:
-        # print("Considering event", i)
+        #print("Considering event", i)
         # NOW we are considering one subevent at a time
 
         # FIRST ADD THE ALREADY EXISTING INSTANCE TO THE STORY AND ITS TRIPLES(EVENT_N)
@@ -269,8 +267,9 @@ def gen_story(method):
                 allranges.append(o1)
             rand_range = (random.choice(allranges))
             range_str = rand_range.split('/')[-1]  # pick one from the possible ranges
+            #print(range_str)
             if (range_str in fixed):
-                # print(range_str, "is in fixed dic")
+                #print(range_str, "is in fixed dic")
                 story.add((instance_i, s, fixed[range_str]))
             else:
                 story.add((instance_i, s, random_pick(rand_range,g)))
