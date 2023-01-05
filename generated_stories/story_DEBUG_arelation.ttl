@@ -1,0 +1,92 @@
+@prefix HERO: <http://hero_ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+HERO:HeroAlly a HERO:ThreatTarget,
+        rdfs:Class ;
+    rdfs:label "Ally" .
+
+HERO:Event_01 a HERO:OrdinaryWorld,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Ordinary World presentation" ;
+    HERO:hasHouse HERO:House_Greyjoy ;
+    HERO:hasOccupation HERO:rebel ;
+    HERO:hasTitle HERO:fictional_princess ;
+    HERO:journeyStage "1" ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:Riverlands ;
+    sem:hasTime HERO:sunrise .
+
+HERO:Event_02 a HERO:CallToAdventure,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Villain threatens the safety of somebody. This is the call for the hero" ;
+    HERO:ThreatenedElement HERO:HeroAlly ;
+    HERO:journeyStage "2" ;
+    HERO:villain HERO:Robb_Stark ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:The_Ruby_Ford ;
+    sem:hasTime HERO:sunrise .
+
+HERO:ThreatenedElement rdfs:range HERO:ThreatTarget .
+
+HERO:cause_of_death rdfs:range xsd:string .
+
+HERO:hasHouse rdfs:range HERO:House .
+
+HERO:hasOccupation rdfs:range HERO:Occupation .
+
+HERO:hasTitle rdfs:range HERO:Title .
+
+HERO:villain rdfs:range HERO:Villain .
+
+sem:hasActor rdfs:range HERO:Hero .
+
+sem:hasPlace rdfs:range sem:Place .
+
+sem:hasTime rdfs:range sem:Time .
+
+HERO:CallToAdventure rdfs:label "Second stage of the story - Call to adventure" .
+
+HERO:House_Greyjoy a HERO:House ;
+    rdfs:label "House Greyjoy" .
+
+HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" .
+
+HERO:Riverlands a sem:Place ;
+    rdfs:label "Riverlands" .
+
+HERO:Robb_Stark a HERO:Male,
+        sem:Actor ;
+    rdfs:label "Robb Stark" .
+
+HERO:The_Ruby_Ford a sem:Place ;
+    rdfs:label "The Ruby Ford" .
+
+HERO:fictional_princess a HERO:Female,
+        HERO:Title,
+        sem:Actor ;
+    rdfs:label "Princess" .
+
+HERO:rebel a HERO:Occupation ;
+    rdfs:label "rebel" .
+
+HERO:Arya_Stark a HERO:Female,
+        HERO:Main_Character,
+        sem:Actor ;
+    rdfs:label "Arya Stark" .
+
+HERO:sunrise a sem:Time ;
+    rdfs:label "sunrise" .
+
+sem:Core a owl:Class ;
+    rdfs:label "Core" .
+
+sem:Event a owl:Class ;
+    rdfs:label "Event" .
+

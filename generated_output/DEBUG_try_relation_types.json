@@ -1,0 +1,7 @@
+[
+{
+"index": 0,
+"story": "Riverlands was the place where the Daenerys Targaryen,Lady of House Starkused to live. Daenerys Targaryen was also known around Riverlands as a great rebel . Daenerys Targaryen really cared about  treasure. It was the Autumnal Equinox in Winterfell  when  Hizdahr zo Loraq threatened the  treasure of Daenerys Targaryen",
+"Knowledge Graph": "Event_02 - type - Event | Riverlands - type - Place | Event - type - Class | Event_02 - type - CallToAdventure | Event_01 - type - OrdinaryWorld | Hizdahr_zo_Loraq - type - Actor | Daenerys_Targaryen - type - Female | Lady - type - Actor | Core - type - Class | treasure - type - ThreatTarget | Event_01 - type - Event | Event_02 - villain - Hizdahr_zo_Loraq | Lady - type - Title | Event_02 - ThreatenedElement - treasure | House_Stark - type - House | the_Autumnal_Equinox - type - Time | the_Winter_Solstice - type - Time | Lady - type - Female | Daenerys_Targaryen - type - Main_Character | rebel - type - Occupation | Daenerys_Targaryen - type - Actor | Hizdahr_zo_Loraq - type - Male | Winterfell - type - Place | "
+}
+]

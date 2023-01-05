@@ -1,0 +1,183 @@
+@prefix HERO: <http://hero_ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+HERO:House a HERO:ThreatTarget,
+        rdfs:Class ;
+    rdfs:label "The House" ;
+    rdfs:subClassOf HERO:House .
+
+HERO:Event_01 a HERO:OrdinaryWorld,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Ordinary World presentation" ;
+    HERO:hasHouse HERO:House_Baelish ;
+    HERO:hasOccupation HERO:bureaucrat ;
+    HERO:hasTitle HERO:Lord ;
+    HERO:journeyStage "1" ;
+    sem:hasActor HERO:Petyr_Baelish ;
+    sem:hasPlace HERO:The_Iron_Island .
+
+HERO:Event_02 a HERO:CallToAdventure,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Villain threatens the safety of somebody. This is the call for the hero" ;
+    HERO:Threatens HERO:House ;
+    HERO:journeyStage "2" ;
+    HERO:villain HERO:Daenerys_Targaryen ;
+    sem:hasActor HERO:Petyr_Baelish .
+
+HERO:Event_03 a HERO:MeetingTheMentor,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Meeting the Mentor" ;
+    HERO:journeyStage "3" ;
+    HERO:meetsMentor HERO:Tywin_Lannister ;
+    HERO:powerLearned HERO:mindReading ;
+    sem:hasActor HERO:Petyr_Baelish .
+
+HERO:Event_04 a HERO:EncounterAlly,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "The hero meets ally" ;
+    HERO:journeyStage "4" ;
+    HERO:meetsAlly HERO:Lysa_Arryn ;
+    sem:hasActor HERO:Petyr_Baelish ;
+    sem:hasPlace HERO:Moat_Cailin ;
+    sem:hasTime HERO:sunrise .
+
+HERO:Event_5 a HERO:FinalBattle,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Final confrontation between hero and villain" ;
+    HERO:helpedBy HERO:Lysa_Arryn ;
+    HERO:herofights HERO:Daenerys_Targaryen ;
+    HERO:journeyStage "5" ;
+    HERO:usepower HERO:slowingTime ;
+    sem:hasActor HERO:Petyr_Baelish ;
+    sem:hasPlace HERO:The_Whispering_Wood ;
+    sem:hasTime HERO:christmas .
+
+HERO:Event_6 a HERO:Party,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Hero throws a party" ;
+    HERO:celebratesvictory HERO:feast ;
+    HERO:journeyStage "6" ;
+    HERO:partywith HERO:Lysa_Arryn ;
+    sem:hasActor HERO:Petyr_Baelish .
+
+HERO:Threatens rdfs:range HERO:ThreatTarget .
+
+HERO:cause_of_death rdfs:range xsd:string .
+
+HERO:celebratesvictory rdfs:range HERO:Celebration .
+
+HERO:hasHouse rdfs:range HERO:House .
+
+HERO:hasOccupation rdfs:range HERO:Occupation .
+
+HERO:hasTitle rdfs:range HERO:Title .
+
+HERO:helpedBy rdfs:range HERO:HeroAlly .
+
+HERO:herofights rdfs:range HERO:Villain .
+
+HERO:meetsAlly rdfs:range HERO:HeroAlly .
+
+HERO:meetsMentor rdfs:range HERO:Mentor .
+
+HERO:partywith rdfs:range HERO:HeroAlly .
+
+HERO:powerLearned rdfs:range HERO:HeroPower .
+
+HERO:usepower rdfs:range HERO:HeroPower .
+
+HERO:villain rdfs:range HERO:Villain .
+
+sem:hasActor rdfs:range HERO:Hero .
+
+sem:hasPlace rdfs:range sem:Place .
+
+sem:hasTime rdfs:range sem:Time .
+
+HERO:CallToAdventure rdfs:subClassOf sem:Event .
+
+HERO:EncounterAlly rdfs:subClassOf sem:Event .
+
+HERO:FinalBattle rdfs:subClassOf sem:Event .
+
+HERO:House_Baelish a HERO:House ;
+    rdfs:label "House Tyrell" .
+
+HERO:Lord a HERO:Male,
+        HERO:Title,
+        sem:Actor ;
+    rdfs:label "Lord" .
+
+HERO:MeetingTheMentor rdfs:subClassOf sem:Event .
+
+HERO:Moat_Cailin a sem:Place ;
+    rdfs:label "Moat Cailin" .
+
+HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" ;
+    rdfs:subClassOf sem:Event .
+
+HERO:Party rdfs:subClassOf sem:Event .
+
+HERO:The_Iron_Island a sem:Place ;
+    rdfs:label "The Iron Island" .
+
+HERO:The_Whispering_Wood a sem:Place ;
+    rdfs:label "The Whispering Wood" .
+
+HERO:Tywin_Lannister a HERO:Male,
+        sem:Actor ;
+    rdfs:label "Tywin Lannister" .
+
+HERO:bureaucrat a HERO:Occupation ;
+    rdfs:label "bureaucrat" .
+
+HERO:christmas a sem:Time ;
+    rdfs:label "Christmas" .
+
+HERO:feast a HERO:Celebration ;
+    rdfs:label " having a feast" .
+
+HERO:mindReading a HERO:Power ;
+    rdfs:label "mind Reading" .
+
+HERO:slowingTime a HERO:Power ;
+    rdfs:label "slowing Time" .
+
+HERO:sunrise a sem:Time ;
+    rdfs:label "sunrise" .
+
+HERO:Daenerys_Targaryen a HERO:Female,
+        HERO:Main_Character,
+        sem:Actor ;
+    rdfs:label "Daenerys Targaryen" .
+
+HERO:Lysa_Arryn a HERO:Female,
+        sem:Actor ;
+    rdfs:label "Lysa Arryn" .
+
+HERO:Petyr_Baelish a HERO:Main_Character,
+        HERO:Male,
+        sem:Actor ;
+    rdfs:label "Petyr Baelish" .
+
+sem:Core a owl:Class ;
+    rdfs:label "Core" .
+
+sem:Event a owl:Class ;
+    rdfs:label "Event" .
+
