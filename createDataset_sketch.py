@@ -1,6 +1,7 @@
 from StoryKG_gen_reborn import *
 import StoryKG_generator
 from Queries4Text import *
+from Queries4LinearizedGraph import *
 import Queries4Text
 # import SPARQLWrapper
 
