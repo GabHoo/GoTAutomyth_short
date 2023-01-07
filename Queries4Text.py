@@ -9,9 +9,10 @@ from string import Template
 import re
 import json
 
-def textGeneration_Event1_1(story):
-    texts = []
-    text1 = story.query("""
+
+
+def textGeneration_Event1_1_NEW(story):
+    res = story.query("""
     SELECT ?Event_01 WHERE 
     {  
     ns2:Event_01 ns1:hasActor ?Hero.
@@ -23,21 +24,16 @@ def textGeneration_Event1_1(story):
     ?Title rdfs:label ?TitleLabel.
     ns2:Event_01 ns2:hasHouse ?Family.
     ?Family rdfs:label ?FamilyLabel.
-    { SELECT ?Hero WHERE {
-     {?Hero a ns2:Female.
-     ?Title a ns2:Female}
-     UNION
-     {?Hero a ns2:Male.
-     ?Title a ns2:Male}
-      }
-     }.
-    ns2:Event_01 ns1:hasPlace ?Loc1.
-    ?Loc1 rdfs:label ?LocLabel1.
-
-    BIND(CONCAT('Once upon a time, in ',?LocLabel1 ,' there was a ',?HeroJob,' whose name was ', ?HeroName,'. ', ?HeroName, ' was a ', ?TitleLabel,' from the ', ?FamilyLabel,'. ' ) AS ?Event_01).
+    
+ 
+    BIND(CONCAT('Once upon a time, there was ',?HeroJob,' whose name was ', ?HeroName,'. ', ?HeroName, ' was a ', ?TitleLabel,' from the ', ?FamilyLabel,'. ' ) AS ?Event_01).
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
-    texts.append(text1)
-    return (text1)
+    # SO THING IS: STORY.QUERY returns a sparqlRESULTObject.
+    # If the query was with select, sparqlResultObject is an interables of resultRow object.
+    # ResultRow is a touple and our sententce is a literal in the first term.
+    # Dus we do [0] to get the first element of list then [0] to get first element of a tuple
+    # THne we do toPython() which a method of the class rdflib.term.Literal and this returns a string
+    return list(res)[0][0].toPython()
 
 
 # It was ',?TimeLabel1,' when this story begins.

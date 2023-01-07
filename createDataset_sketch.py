@@ -54,20 +54,34 @@ def main(argv, arc):
         raise ValueError("Error! Please enter a (valid) charachter picking method. (community,relation,random)")
 
     method = argv[1]
+    heros=[]
     n = int(argv[2])
     for i in range(n):
         story,hero = gen_story(method)
+        heros.append(hero)
         print(hero)
         story = story.serialize("./TESTING.ttl")
 
-        linearized_baseline = Graph_Generator_baseline_instances(story)
+        #Creating the linearizations
 
-        #print(i)
-        text_to=clear1(linearized_baseline)
-        if text_to == "":
+            #Instance baseline
+        linearized_baseline = Graph_Generator_baseline_instances(story)
+        text_baseline = clear1(linearized_baseline)
+
+
+
+        #Creating text
+        event1str=textGeneration_Event1_1_NEW(story)
+        print("TExt event 1:\n",event1str)
+
+
+
+
+
+        if text_baseline == "":
             print("YOO")
             story = story.serialize(f"./TESTING_wrong{i}.ttl", )
-        print("\n final: \n",text_to)
+        #print("\n final: \n",text_baseline)
     return None
 
 

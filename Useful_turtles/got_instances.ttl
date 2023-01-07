@@ -206,47 +206,47 @@ HERO:Robert_Baratheon a HERO:Main_Character;
 
 #Occupation
 HERO:warrior a HERO:Occupation .
-HERO:warrior rdfs:label "warrior".
+HERO:warrior rdfs:label "a warrior".
 HERO:soldier a HERO:Occupation .
-HERO:soldier rdfs:label "soldier".
+HERO:soldier rdfs:label "a soldier".
 HERO:assassin a HERO:Occupation .
-HERO:assassin rdfs:label "assassin".
+HERO:assassin rdfs:label "an assassin".
 HERO:regent a HERO:Occupation .
-HERO:regent rdfs:label "regent".
+HERO:regent rdfs:label "a regent".
 HERO:rebel a HERO:Occupation .
-HERO:rebel rdfs:label "rebel".
+HERO:rebel rdfs:label "a rebel".
 HERO:advisor a HERO:Occupation .
-HERO:advisor rdfs:label "advisor".
+HERO:advisor rdfs:label "an advisor".
 HERO:revolutionary a HERO:Occupation .
-HERO:revolutionary rdfs:label "revolutionary".
+HERO:revolutionary rdfs:label "a revolutionary".
 HERO:official a HERO:Occupation .
-HERO:official rdfs:label "official".
+HERO:official rdfs:label "a official".
 HERO:spy a HERO:Occupation .
-HERO:spy rdfs:label "spy".
+HERO:spy rdfs:label "a spy".
 HERO:military_leader a HERO:Occupation .
-HERO:military_leader rdfs:label "military leader".
+HERO:military_leader rdfs:label "a military leader".
 HERO:bureaucrat a HERO:Occupation .
-HERO:bureaucrat rdfs:label "bureaucrat".
+HERO:bureaucrat rdfs:label "a bureaucrat".
 HERO:hunter a HERO:Occupation .
-HERO:hunter rdfs:label "hunter".
+HERO:hunter rdfs:label "a hunter".
 HERO:vigilante a HERO:Occupation .
-HERO:vigilante rdfs:label "vigilante".
+HERO:vigilante rdfs:label "a vigilante".
 HERO:procurer a HERO:Occupation .
-HERO:procurer rdfs:label "procurer".
+HERO:procurer rdfs:label "a procurer".
 HERO:prophet a HERO:Occupation .
-HERO:prophet rdfs:label "prophet".
+HERO:prophet rdfs:label "a prophet".
 HERO:murderer a HERO:Occupation .
-HERO:murderer rdfs:label "murderer".
+HERO:murderer rdfs:label "a murderer".
 HERO:squire a HERO:Occupation .
-HERO:squire rdfs:label "squire".
+HERO:squire rdfs:label "a squire".
 HERO:mass_murderer a HERO:Occupation.
-HERO:mass_murderer rdfs:label "mass murderer".
+HERO:mass_murderer rdfs:label "a mass murderer".
 HERO:King_of_the_Andals_the_Rhoynar_and_the_First_Men a HERO:Occupation.
 HERO:King_of_the_Andals_the_Rhoynar_and_the_First_Men rdfs:label "King of the Andals the Rhoynar and the First Men".
 HERO:ruler a HERO:Occupation.
-HERO:ruler rdfs:label "ruler".
+HERO:ruler rdfs:label "a ruler".
 HERO:influencer a HERO:Occupation.
-HERO:influencer rdfs:label "Influencer".
+HERO:influencer rdfs:label "an influencer".
 
 
 

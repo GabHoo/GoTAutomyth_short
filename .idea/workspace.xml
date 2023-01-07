@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="herojourney short, 6 events.&#10;rn $python3 createDataset_sketch.py community 10 &#10;to get 10 stories.&#10;query for base line works. All other queries are to be done">
-      <change afterPath="$PROJECT_DIR$/Queries4LinearizedGraph.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queries4Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Queries4Text.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TESTING.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/TESTING.ttl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Useful_turtles/got_instances.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/Useful_turtles/got_instances.ttl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/createDataset_sketch.py" beforeDir="false" afterPath="$PROJECT_DIR$/createDataset_sketch.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,18 +44,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/gabhoo/research/GoTAutomyth_Short/GoTAutomyth_short&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/gabhoo/research/GoTAutomyth_Short/GoTAutomyth_short/Useful_turtles",
+    "settings.editor.selected.configurable": "preferences.fileTypes"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Useful_turtles" />
+      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/" />
@@ -184,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672950599719</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="herojourney short, 6 events.&#10;rn $python3 createDataset_sketch.py community 10 &#10;to get 10 stories.&#10;query for base line works. All other queries are to be done">
+      <created>1673092616678</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673092616678</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
