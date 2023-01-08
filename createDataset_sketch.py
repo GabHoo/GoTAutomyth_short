@@ -72,7 +72,12 @@ def main(argv, arc):
 
         #Creating text
         event1str=textGeneration_Event1_1_NEW(story)
-        print("TExt event 1:\n",event1str)
+        event2str=textGeneration_Event2_3_NEW(story)
+        event3str=textGeneration_Event3_1_NEW(story)
+        event4str=textGeneration_Event4_1_NEW(story)
+        event5str=textGeneration_Event5_1_NEW(story)
+        event6str=textGeneration_Event6_1_NEW(story)
+        print("TExt event 2:\n",event6str)
 
 
 

@@ -38,7 +38,197 @@ def textGeneration_Event1_1_NEW(story):
 
 # It was ',?TimeLabel1,' when this story begins.
 
+def textGeneration_Event2_1_NEW(story):
+    res = story.query("""
+        SELECT ?Event_02 WHERE 
+    {  
+    ns2:Event_02 ns1:hasActor ?Hero.
+    ?Hero  rdfs:label ?HeroName.
+    ns2:Event_02 ns2:Threatens ?el.
+    ?el   rdfs:label ?ElementLabel.
+    ns2:Event_02 ns2:villain ?villain.
+    ?villain rdfs:label ?VillainLabel.
 
+   
+    BIND(CONCAT('Everything was quiet when suddenly ', ?VillainLabel, ' threatened the  ',?ElementLabel, ' of ', ?HeroName,' . ' ) AS ?Event_02).
+
+    }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+    return list(res)[0][0].toPython()
+
+
+def textGeneration_Event2_2_NEW(story):
+    res = story.query("""
+        SELECT ?Event_02 WHERE 
+    {  
+    ns2:Event_02 ns1:hasActor ?Hero.
+    ?Hero  rdfs:label ?HeroName.
+    ns2:Event_02 ns2:Threatens ?el.
+    ?el   rdfs:label ?ElementLabel.
+    ns2:Event_02 ns2:villain ?villain.
+    ?villain rdfs:label ?VillainLabel.
+
+
+    BIND(CONCAT('The evil ', ?VillainLabel, ' posed a threat to the ',?ElementLabel, ' of ', ?HeroName,' . ' ) AS ?Event_02).
+
+    }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+    return list(res)[0][0].toPython()
+
+def textGeneration_Event2_3_NEW(story):
+    res = story.query("""
+        SELECT ?Event_02 WHERE 
+    {  
+    ns2:Event_02 ns1:hasActor ?Hero.
+    ?Hero  rdfs:label ?HeroName.
+    ns2:Event_02 ns2:Threatens ?el.
+    ?el   rdfs:label ?ElementLabel.
+    ns2:Event_02 ns2:villain ?villain.
+    ?villain rdfs:label ?VillainLabel.
+
+
+    BIND(CONCAT('',?HeroName,' realized that their beloved ', ?ElementLabel, ' was in danger of being taken away by ' , ?VillainLabel,' . ' ) AS ?Event_02).
+
+    }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+    return list(res)[0][0].toPython()
+
+
+def textGeneration_Event3_1_NEW(story):
+    res = story.query("""
+        SELECT ?Event_04 WHERE 
+    {  
+        ns2:Event_03 ns1:hasActor ?Hero.
+    ?Hero  rdfs:label ?HeroName.
+    ns2:Event_03 ns2:meetsMentor ?mentor.
+    ?mentor rdfs:label ?MentorLabel.
+    ns2:Event_03 ns2:powerLearned ?power.
+    ?power rdfs:label ?HeroPowerLabel.
+
+    
+
+    
+    BIND(CONCAT('Initially ', ?HeroName,' was afraid, but with the help of ', ?MentorLabel, ' got stronger and learnt ', ?HeroPowerLabel  ,'. ') AS ?Event_04).
+
+
+    }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+    return list(res)[0][0].toPython()
+
+
+def textGeneration_Event4_1_NEW(story):
+    res = story.query("""
+        SELECT ?Event_04 WHERE 
+    {  
+        ns2:Event_04 ns1:hasActor ?Hero.
+    ?Hero  rdfs:label ?HeroName.
+    ns2:Event_04 ns2:meetsAlly ?ally.
+    ?ally rdfs:label ?AllyLabel.
+   
+
+    
+    ns2:Event_04 ns1:hasTime ?Time4.
+    ?Time4 rdfs:label ?TimeLabel4.
+    ns2:Event_04 ns1:hasPlace ?Loc4.
+    ?Loc4 rdfs:label ?LocLabel4
+
+
+    BIND(CONCAT('On the way to ', ?LocLabel4 ,' at ',?TimeLabel4,', ',?HeroName,' met ', ?AllyLabel,' and they immediately became friends.'. ') AS ?Event_04).
+
+
+    }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+    return list(res)[0][0].toPython()
+
+
+def textGeneration_Event4_2_NEW(story):
+    res = story.query("""
+        SELECT ?Event_04 WHERE 
+    {  
+        ns2:Event_04 ns1:hasActor ?Hero.
+    ?Hero  rdfs:label ?HeroName.
+    ns2:Event_04 ns2:meetsAlly ?ally.
+    ?ally rdfs:label ?AllyLabel.
+
+
+
+    ns2:Event_04 ns1:hasTime ?Time4.
+    ?Time4 rdfs:label ?TimeLabel4.
+    ns2:Event_04 ns1:hasPlace ?Loc4.
+    ?Loc4 rdfs:label ?LocLabel4
+
+
+    BIND(CONCAT('At ', ?TimeLabel4,', ', ? 
+    On the way to ', ?PlaceLabel4 ,' at ',?TimeLabel4,', ',?HeroName,' met ', ?AllyLabel,'. ') AS ?Event_04).
+
+
+    }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+    return list(res)[0][0].toPython()
+
+
+def textGeneration_Event5_1_NEW(story):
+    res = story.query("""
+        SELECT ?Event_05 WHERE 
+    {  
+        ns2:Event_05 ns1:hasActor ?Hero.
+	?Hero  rdfs:label ?HeroName.
+
+	ns2:Event_05 ns2:helpedby ?ally.
+	?ally rdfs:label ?AllyLabel.
+
+	ns2:Event_05 ns2:herofights ?villain .
+	?villain rdfs:label ?VillainLabel.
+
+	ns2:Event_05 ns2:usepower ?poH .
+	?poH rdfs:label ?poHLabel.
+
+    ns2:Event_05 ns1:hasTime ?Time5.
+    ?Time5 rdfs:label ?TimeLabel5.
+    ns2:Event_05 ns1:hasPlace ?Loc5.
+    ?Loc5 rdfs:label ?LocLabel5
+
+
+    BIND(CONCAT('At ', ?TimeLabel5 ,' in ',?LocLabel5,', ',?HeroName,' meets ', ?VillainLabel,'
+     and it is a bloody fight. Luckily ', ?AllyLabel,' is there to help. ', ?HeroName,
+      ' uses ', ?poHLabel,' to scare away ', ?VillainLabel ,'. ') AS ?Event_05).
+
+
+    }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+    return list(res)[0][0].toPython()
+
+
+def textGeneration_Event6_1_NEW(story):
+    res = story.query("""
+        SELECT ?Event_6 WHERE 
+    {  
+      ns2:Event_6 ns1:hasActor ?Hero.
+	?Hero  rdfs:label ?HeroName.
+
+	ns2:Event_6 ns2:celebratesvictory ?cel.
+	?cel rdfs:label ?celLabel.
+
+	ns2:Event_6 ns2:partywith ?friend.
+	?friend rdfs:label ?friendLabel.
+	
+	ns2:Event_6 ns2:saves ?obj.
+	?obj rdfs:label ?savedobjLabel.
+	
+	
+
+
+
+	ns2:Event_6 ns1:hasTime ?Time12.
+	?Time12 rdfs:label ?TimeLabel12.
+	ns2:Event_6 ns1:hasPlace ?Loc12.
+	?Loc12 rdfs:label ?LocLabel12
+
+
+	BIND(CONCAT('It was in ', ?LocLabel12, ' when ', ?HeroName, ' was finally safe, and celebrated with ' , ?friendLabel , ' by '  , ?celLabel, '. The ',?savedobjLabel,' was safe.'. ') as ?Event_6).
+
+
+    }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+    return list(res)[0][0].toPython()
+
+
+
+
+
+# It was ',?TimeLabel1,' when this story begins.
 def textGeneration_Event1_2(story):
     texts = []
     text12 = story.query("""

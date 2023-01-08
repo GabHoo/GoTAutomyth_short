@@ -328,6 +328,7 @@ HERO:partywith a rdfs:Property;
 	rdfs:range HERO:HeroAlly;
 	rdfs:domain HERO:Party .
 
+sem:hasPlace rdfs:domain HERO:Party .
 
 
 HERO:Event_06 a HERO:Party; #instanciated

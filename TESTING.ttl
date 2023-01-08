@@ -9,21 +9,21 @@ HERO:Event_01 a HERO:OrdinaryWorld,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Ordinary World presentation" ;
-    HERO:hasHouse HERO:House_Lannister ;
-    HERO:hasOccupation HERO:advisor ;
-    HERO:hasTitle HERO:queen_regnant ;
+    HERO:hasHouse HERO:House_Tyrell ;
+    HERO:hasOccupation HERO:influencer ;
+    HERO:hasTitle HERO:queen_consort ;
     HERO:journeyStage "1" ;
-    sem:hasActor HERO:Cersei_Lannister .
+    sem:hasActor HERO:Margaery_Tyrell .
 
 HERO:Event_02 a HERO:CallToAdventure,
         sem:Core,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Villain threatens the safety of somebody. This is the call for the hero" ;
-    HERO:Threatens HERO:peace ;
+    HERO:Threatens HERO:treasure ;
     HERO:journeyStage "2" ;
-    HERO:villain HERO:Jon_Snow ;
-    sem:hasActor HERO:Cersei_Lannister .
+    HERO:villain HERO:Daenerys_Targaryen ;
+    sem:hasActor HERO:Margaery_Tyrell .
 
 HERO:Event_03 a HERO:MeetingTheMentor,
         sem:Core,
@@ -31,9 +31,9 @@ HERO:Event_03 a HERO:MeetingTheMentor,
         rdfs:Resource ;
     rdfs:label "Meeting the Mentor" ;
     HERO:journeyStage "3" ;
-    HERO:meetsMentor HERO:Mace_Tyrell ;
+    HERO:meetsMentor HERO:Garlan_Tyrell ;
     HERO:powerLearned HERO:mindReading ;
-    sem:hasActor HERO:Cersei_Lannister .
+    sem:hasActor HERO:Margaery_Tyrell .
 
 HERO:Event_04 a HERO:EncounterAlly,
         sem:Core,
@@ -41,34 +41,35 @@ HERO:Event_04 a HERO:EncounterAlly,
         rdfs:Resource ;
     rdfs:label "The hero meets ally" ;
     HERO:journeyStage "4" ;
-    HERO:meetsAlly HERO:Joanna_Lannister ;
-    sem:hasActor HERO:Cersei_Lannister ;
-    sem:hasPlace HERO:The_Eyrie ;
-    sem:hasTime HERO:the_Autumnal_Equinox .
+    HERO:meetsAlly HERO:Loras_Tyrell ;
+    sem:hasActor HERO:Margaery_Tyrell ;
+    sem:hasPlace HERO:The_Whispering_Wood ;
+    sem:hasTime HERO:the_Summer_Solstice .
 
 HERO:Event_05 a HERO:FinalBattle,
         sem:Core,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Final confrontation between hero and villain" ;
-    HERO:helpedBy HERO:Joanna_Lannister ;
-    HERO:herofights HERO:Jon_Snow ;
+    HERO:helpedBy HERO:Loras_Tyrell ;
+    HERO:herofights HERO:Daenerys_Targaryen ;
     HERO:journeyStage "5" ;
     HERO:usepower HERO:mindReading ;
-    sem:hasActor HERO:Cersei_Lannister ;
-    sem:hasPlace HERO:Kings_Landing ;
-    sem:hasTime HERO:the_Autumnal_Equinox .
+    sem:hasActor HERO:Margaery_Tyrell ;
+    sem:hasPlace HERO:The_Ruby_Ford ;
+    sem:hasTime HERO:the_Winter_Solstice .
 
 HERO:Event_06 a HERO:Party,
         sem:Core,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Hero throws a party" ;
-    HERO:celebratesvictory HERO:ball ;
+    HERO:celebratesvictory HERO:game ;
     HERO:journeyStage "6" ;
-    HERO:partywith HERO:Joanna_Lannister ;
-    HERO:saves HERO:castle ;
-    sem:hasActor HERO:Cersei_Lannister .
+    HERO:partywith HERO:Loras_Tyrell ;
+    HERO:saves HERO:freedom ;
+    sem:hasActor HERO:Margaery_Tyrell ;
+    sem:hasPlace HERO:Seagard .
 
 HERO:Threatens rdfs:range HERO:ThreatTarget .
 
@@ -112,15 +113,12 @@ HERO:EncounterAlly rdfs:subClassOf sem:Event .
 
 HERO:FinalBattle rdfs:subClassOf sem:Event .
 
-HERO:House_Lannister a HERO:House ;
-    rdfs:label "House Lannister" .
-
-HERO:Kings_Landing a sem:Place ;
-    rdfs:label "Kings Landing" .
-
-HERO:Mace_Tyrell a HERO:Male,
+HERO:Garlan_Tyrell a HERO:Male,
         sem:Actor ;
-    rdfs:label "Mace Tyrell" .
+    rdfs:label "Garlan Tyrell" .
+
+HERO:House_Tyrell a HERO:House ;
+    rdfs:label "House Tyrell" .
 
 HERO:MeetingTheMentor rdfs:subClassOf sem:Event .
 
@@ -129,45 +127,54 @@ HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world present
 
 HERO:Party rdfs:subClassOf sem:Event .
 
-HERO:The_Eyrie a sem:Place ;
-    rdfs:label "The Eyrie" .
+HERO:Seagard a sem:Place ;
+    rdfs:label "Seagard" .
 
-HERO:advisor a HERO:Occupation ;
-    rdfs:label "an advisor" .
+HERO:The_Ruby_Ford a sem:Place ;
+    rdfs:label "The Ruby Ford" .
 
-HERO:ball a HERO:Celebration ;
-    rdfs:label "throwing a ball" .
+HERO:The_Whispering_Wood a sem:Place ;
+    rdfs:label "The Whispering Wood" .
 
-HERO:castle a HERO:ThreatTarget ;
-    rdfs:label "the castle" .
+HERO:freedom a HERO:ThreatTarget ;
+    rdfs:label "the freedom" .
 
-HERO:peace a HERO:ThreatTarget ;
-    rdfs:label "the peace" .
+HERO:game a HERO:Celebration ;
+    rdfs:label "playing a game" .
 
-HERO:queen_regnant a HERO:Female,
+HERO:influencer a HERO:Occupation ;
+    rdfs:label "an influencer" .
+
+HERO:queen_consort a HERO:Female,
         HERO:Title,
         sem:Actor ;
-    rdfs:label "Queen regnant " .
+    rdfs:label "Queen consort" .
 
-HERO:Jon_Snow a HERO:Main_Character,
-        HERO:Male,
+HERO:the_Summer_Solstice a sem:Time ;
+    rdfs:label "the Summer Solstice" .
+
+HERO:the_Winter_Solstice a sem:Time ;
+    rdfs:label "the Winter Solstice" .
+
+HERO:treasure a HERO:ThreatTarget ;
+    rdfs:label "treasure" .
+
+HERO:Daenerys_Targaryen a HERO:Female,
+        HERO:Main_Character,
         sem:Actor ;
-    rdfs:label "Jon Snow" .
+    rdfs:label "Daenerys Targaryen" .
 
 HERO:mindReading a HERO:Power ;
     rdfs:label "mind Reading" .
 
-HERO:the_Autumnal_Equinox a sem:Time ;
-    rdfs:label "the Autumnal Equinox" .
-
-HERO:Joanna_Lannister a HERO:Female,
+HERO:Loras_Tyrell a HERO:Male,
         sem:Actor ;
-    rdfs:label "Joanna Lannister" .
+    rdfs:label "Loras Tyrell" .
 
-HERO:Cersei_Lannister a HERO:Female,
+HERO:Margaery_Tyrell a HERO:Female,
         HERO:Main_Character,
         sem:Actor ;
-    rdfs:label "Cersei Lannister" .
+    rdfs:label "Margaery Tyrell" .
 
 sem:Core a owl:Class ;
     rdfs:label "Core" .
