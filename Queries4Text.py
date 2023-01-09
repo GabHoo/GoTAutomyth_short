@@ -126,10 +126,13 @@ def textGeneration_Event4_1_NEW(story):
     ns2:Event_04 ns1:hasTime ?Time4.
     ?Time4 rdfs:label ?TimeLabel4.
     ns2:Event_04 ns1:hasPlace ?Loc4.
-    ?Loc4 rdfs:label ?LocLabel4
+    ?Loc4 rdfs:label ?LocLabel4.
 
 
-    BIND(CONCAT('On the way to ', ?LocLabel4 ,' at ',?TimeLabel4,', ',?HeroName,' met ', ?AllyLabel,' and they immediately became friends.'. ') AS ?Event_04).
+    
+    BIND(CONCAT('On the way to ', ?LocLabel4 ,' at ',?TimeLabel4,', ',?HeroName,' met ',
+     ?AllyLabel,' and they immediately became friends. ') AS ?Event_04).
+
 
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
@@ -168,7 +171,7 @@ def textGeneration_Event5_1_NEW(story):
         ns2:Event_05 ns1:hasActor ?Hero.
 	?Hero  rdfs:label ?HeroName.
 
-	ns2:Event_05 ns2:helpedby ?ally.
+	ns2:Event_05 ns2:helpedBy ?ally.
 	?ally rdfs:label ?AllyLabel.
 
 	ns2:Event_05 ns2:herofights ?villain .
@@ -180,13 +183,12 @@ def textGeneration_Event5_1_NEW(story):
     ns2:Event_05 ns1:hasTime ?Time5.
     ?Time5 rdfs:label ?TimeLabel5.
     ns2:Event_05 ns1:hasPlace ?Loc5.
-    ?Loc5 rdfs:label ?LocLabel5
+    ?Loc5 rdfs:label ?LocLabel5.
 
+     BIND(CONCAT('At ', ?TimeLabel5 ,' in ', ?LocLabel5 ,', ' , ?HeroName, ' meets ', ?VillainLabel ,
+      'and it is a bloody fight. Luckily ', ?AllyLabel,' is there to help. ', ?HeroName, ' uses ', ?poHLabel,' to scare away ', ?VillainLabel ,'.') AS ?Event_05).
 
-    BIND(CONCAT('At ', ?TimeLabel5 ,' in ',?LocLabel5,', ',?HeroName,' meets ', ?VillainLabel,'
-     and it is a bloody fight. Luckily ', ?AllyLabel,' is there to help. ', ?HeroName,
-      ' uses ', ?poHLabel,' to scare away ', ?VillainLabel ,'. ') AS ?Event_05).
-
+   
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     return list(res)[0][0].toPython()
@@ -196,29 +198,24 @@ def textGeneration_Event6_1_NEW(story):
     res = story.query("""
         SELECT ?Event_6 WHERE 
     {  
-      ns2:Event_6 ns1:hasActor ?Hero.
+      ns2:Event_06 ns1:hasActor ?Hero.
 	?Hero  rdfs:label ?HeroName.
 
-	ns2:Event_6 ns2:celebratesvictory ?cel.
+	ns2:Event_06 ns2:celebratesvictory ?cel.
 	?cel rdfs:label ?celLabel.
 
-	ns2:Event_6 ns2:partywith ?friend.
+	ns2:Event_06 ns2:partywith ?friend.
 	?friend rdfs:label ?friendLabel.
 	
-	ns2:Event_6 ns2:saves ?obj.
+	ns2:Event_06 ns2:saves ?obj.
 	?obj rdfs:label ?savedobjLabel.
 	
 	
+	ns2:Event_06 ns1:hasPlace ?Loc12.
+	?Loc12 rdfs:label ?LocLabel6.
 
-
-
-	ns2:Event_6 ns1:hasTime ?Time12.
-	?Time12 rdfs:label ?TimeLabel12.
-	ns2:Event_6 ns1:hasPlace ?Loc12.
-	?Loc12 rdfs:label ?LocLabel12
-
-
-	BIND(CONCAT('It was in ', ?LocLabel12, ' when ', ?HeroName, ' was finally safe, and celebrated with ' , ?friendLabel , ' by '  , ?celLabel, '. The ',?savedobjLabel,' was safe.'. ') as ?Event_6).
+BIND(CONCAT('It was in ', ?LocLabel6, ' when ', ?HeroName, ' was finally safe, and celebrated with ' ,
+	 ?friendLabel , ' by '  , ?celLabel, '. The ',?savedobjLabel,' was safe.' ) as ?Event_6).
 
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})

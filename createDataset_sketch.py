@@ -77,7 +77,8 @@ def main(argv, arc):
         event4str=textGeneration_Event4_1_NEW(story)
         event5str=textGeneration_Event5_1_NEW(story)
         event6str=textGeneration_Event6_1_NEW(story)
-        print("TExt event 2:\n",event6str)
+        texto=event1str+event2str+event3str+event4str+event5str+event6str
+        print("TExt event 2:\n",texto)
 
 
 

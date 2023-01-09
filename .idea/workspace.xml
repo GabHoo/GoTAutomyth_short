@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queries4Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Queries4Text.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TESTING.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/TESTING.ttl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Useful_turtles/Event_ontology_reborn.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/Useful_turtles/Event_ontology_reborn.ttl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/createDataset_sketch.py" beforeDir="false" afterPath="$PROJECT_DIR$/createDataset_sketch.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -198,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673100078972</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Query for text event 1 is done, new cool way to make it into a string easly was found">
+      <created>1673139230125</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673139230125</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="UnknownFeatures">
