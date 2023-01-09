@@ -65,8 +65,19 @@ def main(argv, arc):
         #Creating the linearizations
 
             #Instance baseline
-        linearized_baseline = Graph_Generator_baseline_instances(story)
-        text_baseline = clear1(linearized_baseline)
+        baseline = clear1(Graph_Generator_baseline_instances(story))
+
+
+        ontology = clear1(Graph_Generator_baseline_class(story))
+        
+
+        types = clear1(Graph_Generator_types(story))
+
+        ranges = clear1(Graph_Generator_range(story))
+
+        events = clear1(Graph_Generator_event(story))
+
+        
 
 
 
@@ -78,13 +89,19 @@ def main(argv, arc):
         event5str=textGeneration_Event5_1_NEW(story)
         event6str=textGeneration_Event6_1_NEW(story)
         texto=event1str+event2str+event3str+event4str+event5str+event6str
-        print("TExt event 2:\n",texto)
+        print("Text :\n",texto)
+        #print("graph:\n" , baseline)
+        #print("ontology:\n" , ontology)
+        print("types:" ,types)
+        #print("ranges:" ,ranges)
+        #print("events:" ,events)
 
 
 
 
 
-        if text_baseline == "":
+
+        if baseline == "":
             print("YOO")
             story = story.serialize(f"./TESTING_wrong{i}.ttl", )
         #print("\n final: \n",text_baseline)

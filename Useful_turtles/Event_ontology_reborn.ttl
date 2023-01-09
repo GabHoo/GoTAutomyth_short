@@ -216,6 +216,8 @@ HERO:hasHouse a rdfs:Property ;
 HERO:hasOccupation a rdfs:Property ;
 	rdfs:range HERO:Occupation ;
 	rdfs:domain HERO:OrdinaryWorld .
+
+   
 	
 HERO:Event_01 a HERO:OrdinaryWorld; #instanciated
 	HERO:journeyStage '1';
@@ -275,7 +277,8 @@ HERO:meetsAlly a rdfs:Property;
 
 sem:hasPlace rdfs:domain HERO:EncounterAlly .
 sem:hasTime rdfs:domain HERO:EncounterAlly .
-
+sem:hasPlace rdfs:range sem:Place .
+sem:hasTime rdfs:range sem:Time .
 
 	
 HERO:Event_04 a HERO:EncounterAlly; #instanciated

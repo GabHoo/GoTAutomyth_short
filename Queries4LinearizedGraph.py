@@ -22,13 +22,13 @@ def Graph_Generator_baseline_instances(story):
   ?herolabel ns2:meetsMentor ?mentorlabel.
   ?herolabel ns2:powerLearned ?powerlabel.
 
-  ?herolabel ns2:Place4 ?labelplace4.
-  ?herolabel ns2:Time4 ?labeltime4.
+  ?event4label ns2:Place4 ?labelplace4.
+  ?event4label ns2:Time4 ?labeltime4.
   ?herolabel ns2:meetsAlly ?allylabel4.
 
 
-  ?herolabel ns2:Place5 ?place5label.
-  ?herolabel ns2:Time5 ?time5label.
+  ?event5label ns2:Place5 ?place5label.
+  ?event5label ns2:Time5 ?time5label.
   ?herolabel ns2:fights ?labelvillain5.
   ?herolabel ns2:helpedby ?labelally5.
   ?herolabel ns2:usespower ?labelpower.
@@ -66,12 +66,15 @@ def Graph_Generator_baseline_instances(story):
   ?place4 rdfs:label ?labelplace4. 
   ns2:Event_04 ns1:hasTime ?time4.
   ?time4 rdfs:label ?labeltime4.
+  ns2:Event_04 rdfs:label ?event4label.
 
 
   ns2:Event_05 ns1:hasPlace ?place5.
   ?place5 rdfs:label ?place5label.  
   ns2:Event_05 ns1:hasTime ?time5.
   ?time5 rdfs:label ?time5label.
+  ns2:Event_05 rdfs:label ?event5label.
+
 
   ns2:Event_05 ns2:herofights ?villain5.
   ?villain5 rdfs:label ?labelvillain5.
@@ -103,6 +106,71 @@ def Graph_Generator_baseline_instances(story):
 #FROM HERE ON CONSTRUCTS NEED TO BE FIXED BASED ON NEW SHORT STORY
 
 
+#ok but time and place is a problem :=)
+def Graph_Generator_baseline_class(story):
+    texts = []
+    text = story.query("""
+  CONSTRUCT { ?classhero ns2:hasTitle ?classtitle.
+  ?classhero ns2:hasHouse ?classhouse.
+  ?classhero ns2:hasOccupation ?classjob.
+
+  ?villainlabel ns2:Threatens ?classtarget.
+
+  ?classhero ns2:meetsMentor ?classmentor.
+  ?classhero ns2:powerLearned ?classpowerlearnt.
+  
+  ?classhero ns2:meetsAlly ?allylabel4.
+
+
+
+
+  ?classhero ns2:fights ?classvillain5.
+  ?classhero ns2:helpedby ?classally5.
+  ?classhero ns2:usespower ?classpower.
+
+  ?classhero ns2:saves ?classtarget6.
+  ?classhero ns2:celebratesvictory ?classcelebration.
+  ?classhero ns2:partywith ?classally6.
+
+
+
+   } 
+  WHERE { ns2:hasTitle rdfs:range ?classtitle.
+  ns1:hasActor rdfs:range ?classhero.
+  ns2:hasHouse rdfs:range ?classhouse.
+  ns2:hasOccupation rdfs:range ?classjob.
+
+  ns2:villain rdfs:range  ?villainlabel.
+  ns2:Threatens rdfs:range  ?classtarget.
+
+  ns2:meetsMentor rdfs:range  ?classmentor.
+  ns2:powerLearned rdfs:range  ?classpowerlearnt.
+
+
+  ns2:meetsAlly rdfs:range ?allylabel4.
+
+
+
+
+
+  ns2:herofights rdfs:range  ?classvillain5.
+  ns2:helpedBy rdfs:range  ?classally5.
+  ns2:usepower rdfs:range ?classpower.
+
+  ns2:saves rdfs:range ?classtarget6.
+  ns2:celebratesvictory  rdfs:range  ?classcelebration.
+  ns2:partywith rdfs:range  ?classally6.
+
+
+  }
+    """, initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+    texts.append(text)
+    # for s,p,o in text:
+    # print(s,p,o)
+    if len(texts) == 0:
+        print("WRONG smth in the query I am in q4text line 597")
+    return text
+
 
 def Graph_Generator_types(story):
     texts = []
@@ -120,9 +188,9 @@ def Graph_Generator_types(story):
     texts = []
     text = story.query("""
   CONSTRUCT { ?s a ?o . } 
-  WHERE {?s a ?o.  FILTER(?o != ns1:Core). FILTER(?o != rdfs:Resource) }
+  WHERE {?s a ?o.  FILTER(?o != ns1:Core). FILTER(?o != rdfs:Resource). FILTER(?o != ns2:Male) . FILTER(?o != ns2:Female) . FILTER(?o != owl:Class) . FILTER(?o != ns1:Event)}
 
-    """, initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/'})
+    """, initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/','ns2': 'http://hero_ontology/','owl':'http://www.w3.org/2002/07/owl/'})
     texts.append(text)
 
     return text
@@ -220,7 +288,7 @@ def Graph_Generator_baseline_instances_old(story):
 
 
 
-def Graph_Generator_baseline_classes(story):
+def Graph_Generator_baseline_classes_old(story):
     texts = []
     text = story.query("""
   CONSTRUCT { 
