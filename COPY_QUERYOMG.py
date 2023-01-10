@@ -14,7 +14,7 @@ import json
 
 
 
-def textGeneration_Event1_2_NEW(story):
+def textGeneration_Event1_2(story):
     res = story.query("""
     SELECT ?Event_01 WHERE 
     {  
@@ -38,7 +38,7 @@ def textGeneration_Event1_2_NEW(story):
     # THne we do toPython() which a method of the class rdflib.term.Literal and this returns a string
     return list(res)[0][0].toPython()
 
-def textGeneration_Event2_2_NEW(story):
+def textGeneration_Event2_2(story):
     res = story.query("""
         SELECT ?Event_02 WHERE 
     {  
@@ -56,7 +56,7 @@ def textGeneration_Event2_2_NEW(story):
     return list(res)[0][0].toPython()
 
 
-def textGeneration_Event3_2_NEW(story):
+def textGeneration_Event3_2(story):
     res = story.query("""
         SELECT ?Event_03 WHERE 
     {  
@@ -77,7 +77,7 @@ def textGeneration_Event3_2_NEW(story):
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     return list(res)[0][0].toPython()
 
-def textGeneration_Event4_2_NEW(story):
+def textGeneration_Event4_2(story):
     res = story.query("""
         SELECT ?Event_04 WHERE 
     {  
@@ -102,7 +102,7 @@ def textGeneration_Event4_2_NEW(story):
     return list(res)[0][0].toPython()
 
 
-def textGeneration_Event5_2_NEW(story):
+def textGeneration_Event5_2(story):
     res = story.query("""
         SELECT ?Event_05 WHERE 
     {  
@@ -132,7 +132,7 @@ def textGeneration_Event5_2_NEW(story):
     return list(res)[0][0].toPython()
 
 
-def textGeneration_Event6_2_NEW(story):
+def textGeneration_Event6_2(story):
     res = story.query("""
         SELECT ?Event_6 WHERE 
     {  

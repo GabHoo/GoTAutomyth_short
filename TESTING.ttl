@@ -9,21 +9,21 @@ HERO:Event_01 a HERO:OrdinaryWorld,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Ordinary World presentation" ;
-    HERO:hasHouse HERO:House_Lannister ;
-    HERO:hasOccupation HERO:official ;
-    HERO:hasTitle HERO:Lord ;
+    HERO:hasHouse HERO:House_Baratheon ;
+    HERO:hasOccupation HERO:regent ;
+    HERO:hasTitle HERO:queen_regnant ;
     HERO:journeyStage "1" ;
-    sem:hasActor HERO:Tyrion_Lannister .
+    sem:hasActor HERO:Cersei_Lannister .
 
 HERO:Event_02 a HERO:CallToAdventure,
         sem:Core,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Villain threatens the safety of somebody. This is the call for the hero" ;
-    HERO:Threatens HERO:peace ;
+    HERO:Threatens HERO:treasure ;
     HERO:journeyStage "2" ;
     HERO:villain HERO:Robert_Baratheon ;
-    sem:hasActor HERO:Tyrion_Lannister .
+    sem:hasActor HERO:Cersei_Lannister .
 
 HERO:Event_03 a HERO:MeetingTheMentor,
         sem:Core,
@@ -31,9 +31,9 @@ HERO:Event_03 a HERO:MeetingTheMentor,
         rdfs:Resource ;
     rdfs:label "Meeting the Mentor" ;
     HERO:journeyStage "3" ;
-    HERO:meetsMentor HERO:Joffrey_Baratheon ;
-    HERO:powerLearned HERO:mindReading ;
-    sem:hasActor HERO:Tyrion_Lannister .
+    HERO:meetsMentor HERO:Shae ;
+    HERO:powerLearned HERO:gravityControl ;
+    sem:hasActor HERO:Cersei_Lannister .
 
 HERO:Event_04 a HERO:EncounterAlly,
         sem:Core,
@@ -41,35 +41,35 @@ HERO:Event_04 a HERO:EncounterAlly,
         rdfs:Resource ;
     rdfs:label "The hero meets ally" ;
     HERO:journeyStage "4" ;
-    HERO:meetsAlly HERO:Joanna_Lannister ;
-    sem:hasActor HERO:Tyrion_Lannister ;
-    sem:hasPlace HERO:The_Vale_of_Arryn ;
-    sem:hasTime HERO:the_Summer_Solstice .
+    HERO:meetsAlly HERO:Euron_Greyjoy ;
+    sem:hasActor HERO:Cersei_Lannister ;
+    sem:hasPlace HERO:Karhold ;
+    sem:hasTime HERO:sunrise .
 
 HERO:Event_05 a HERO:FinalBattle,
         sem:Core,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Final confrontation between hero and villain" ;
-    HERO:helpedBy HERO:Joanna_Lannister ;
+    HERO:helpedBy HERO:Euron_Greyjoy ;
     HERO:herofights HERO:Robert_Baratheon ;
     HERO:journeyStage "5" ;
-    HERO:usepower HERO:mindReading ;
-    sem:hasActor HERO:Tyrion_Lannister ;
-    sem:hasPlace HERO:Kings_Landing ;
-    sem:hasTime HERO:the_first_day_of_Spring .
+    HERO:usepower HERO:gravityControl ;
+    sem:hasActor HERO:Cersei_Lannister ;
+    sem:hasPlace HERO:The_Twins ;
+    sem:hasTime HERO:christmas .
 
 HERO:Event_06 a HERO:Party,
         sem:Core,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Hero throws a party" ;
-    HERO:celebratesvictory HERO:concert ;
+    HERO:celebratesvictory HERO:game ;
     HERO:journeyStage "6" ;
-    HERO:partywith HERO:Joanna_Lannister ;
-    HERO:saves HERO:peace ;
-    sem:hasActor HERO:Tyrion_Lannister ;
-    sem:hasPlace HERO:Oldstones .
+    HERO:partywith HERO:Euron_Greyjoy ;
+    HERO:saves HERO:treasure ;
+    sem:hasActor HERO:Cersei_Lannister ;
+    sem:hasPlace HERO:Castle_Black .
 
 HERO:Threatens rdfs:range HERO:ThreatTarget .
 
@@ -109,69 +109,69 @@ sem:hasTime rdfs:range sem:Time .
 
 HERO:CallToAdventure rdfs:subClassOf sem:Event .
 
+HERO:Castle_Black a sem:Place ;
+    rdfs:label "Castle Black" .
+
 HERO:EncounterAlly rdfs:subClassOf sem:Event .
 
 HERO:FinalBattle rdfs:subClassOf sem:Event .
 
-HERO:House_Lannister a HERO:House ;
-    rdfs:label "House Lannister" .
+HERO:House_Baratheon a HERO:House ;
+    rdfs:label "House Baratheon" .
 
-HERO:Joffrey_Baratheon a HERO:Male,
-        sem:Actor ;
-    rdfs:label "Joffrey Baratheon" .
-
-HERO:Kings_Landing a sem:Place ;
-    rdfs:label "Kings Landing" .
-
-HERO:Lord a HERO:Male,
-        HERO:Title,
-        sem:Actor ;
-    rdfs:label "Lord" .
+HERO:Karhold a sem:Place ;
+    rdfs:label "Karhold" .
 
 HERO:MeetingTheMentor rdfs:subClassOf sem:Event .
-
-HERO:Oldstones a sem:Place ;
-    rdfs:label "Oldstones" .
 
 HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" ;
     rdfs:subClassOf sem:Event .
 
 HERO:Party rdfs:subClassOf sem:Event .
 
-HERO:The_Vale_of_Arryn a sem:Place ;
-    rdfs:label "The Vale of Arryn" .
+HERO:Shae a HERO:Male,
+        sem:Actor ;
+    rdfs:label "Shae" .
 
-HERO:concert a HERO:Celebration ;
-    rdfs:label "organizing a concert" .
+HERO:The_Twins a sem:Place ;
+    rdfs:label "The Twins" .
 
-HERO:official a HERO:Occupation ;
-    rdfs:label "a official" .
+HERO:christmas a sem:Time ;
+    rdfs:label "Christmas" .
 
-HERO:the_Summer_Solstice a sem:Time ;
-    rdfs:label "the Summer Solstice" .
+HERO:game a HERO:Celebration ;
+    rdfs:label "playing a game" .
 
-HERO:the_first_day_of_Spring a sem:Time ;
-    rdfs:label "the first day of Spring" .
+HERO:queen_regnant a HERO:Female,
+        HERO:Title,
+        sem:Actor ;
+    rdfs:label "Queen regnant" .
+
+HERO:regent a HERO:Occupation ;
+    rdfs:label "a regent" .
+
+HERO:sunrise a sem:Time ;
+    rdfs:label "sunrise" .
 
 HERO:Robert_Baratheon a HERO:Main_Character,
         HERO:Male,
         sem:Actor ;
     rdfs:label "Robert Baratheon" .
 
-HERO:mindReading a HERO:Power ;
-    rdfs:label "mind Reading" .
+HERO:gravityControl a HERO:Power ;
+    rdfs:label "gravity Control" .
 
-HERO:peace a HERO:ThreatTarget ;
-    rdfs:label "the peace" .
+HERO:treasure a HERO:ThreatTarget ;
+    rdfs:label "the treasure" .
 
-HERO:Joanna_Lannister a HERO:Female,
+HERO:Euron_Greyjoy a HERO:Male,
         sem:Actor ;
-    rdfs:label "Joanna Lannister" .
+    rdfs:label "Euron Greyjoy" .
 
-HERO:Tyrion_Lannister a HERO:Main_Character,
-        HERO:Male,
+HERO:Cersei_Lannister a HERO:Female,
+        HERO:Main_Character,
         sem:Actor ;
-    rdfs:label "Tyrion Lannister" .
+    rdfs:label "Cersei Lannister" .
 
 sem:Core a owl:Class ;
     rdfs:label "Core" .

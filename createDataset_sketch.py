@@ -1,6 +1,6 @@
 from StoryKG_gen_reborn import *
 import StoryKG_generator
-from Queries4Text import *
+#from Queries4Text import *
 from Queries4LinearizedGraph import *
 import Queries4Text
 # import SPARQLWrapper
@@ -27,21 +27,18 @@ def clear1(story):
 
 
 def random_formulation(story):
-    #x=random.randint(1,3)
-    # y = random.randint(1, 3)
-    x = y = 1
-    result = ''
+    texto = ""
+    for e in range(1, 7):
+        r = random.randint(1, 3)
+        f = getattr(Queries4Text, f'textGeneration_Event{e}_{r}')
+        result = f(story)
 
-    for i in [1,2,3,4,5,6,8,9,10,11,12]:
-        t = globals()[f"textGeneration_Event{i}_{x}"](story)
-        t = str(list(t))
-        t = t.replace("[(rdflib.term.Literal('", "").replace("'),)]", "")
-        t = t.replace('[(rdflib.term.Literal("','').replace('"),)]', '')
-        #print(t)
-        result += t
-    #print(result)
+        if result == "":
+            raise "Excpetion event story text failed check testin.ttl"
 
-    return result
+        texto += result
+
+    return texto
 
 
 
@@ -57,54 +54,31 @@ def main(argv, arc):
     heros=[]
     n = int(argv[2])
     for i in range(n):
+
+        current_graph = {}
         story,hero = gen_story(method)
+
         heros.append(hero)
-        print(hero)
         story = story.serialize("./TESTING.ttl")
+
+        #Generates the text
+        label = random_formulation(story)
+        current_graph["text_label"]=label
 
         #Creating the linearizations
 
-            #Instance baseline
-        baseline = clear1(Graph_Generator_baseline_instances(story))
+        current_graph['baselineInstances'] = clear1(Graph_Generator_baseline_instances(story))
+        current_graph['Classes'] = clear1(Graph_Generator_baseline_class(story))
+        current_graph['types'] = clear1(Graph_Generator_types(story))
+        current_graph['ranges'] = clear1(Graph_Generator_range(story))
+        current_graph['events'] = clear1(Graph_Generator_event(story))
+
+        with open(f'generated_output/shortNEW.json', 'a', encoding='utf-8') as f:
+            json.dump(current_graph, f, ensure_ascii=False, indent="")
+
+        #print(label)
 
 
-        ontology = clear1(Graph_Generator_baseline_class(story))
-        
-
-        types = clear1(Graph_Generator_types(story))
-
-        ranges = clear1(Graph_Generator_range(story))
-
-        events = clear1(Graph_Generator_event(story))
-
-        
-
-
-
-        #Creating text
-        event1str=textGeneration_Event1_1_NEW(story)
-        event2str=textGeneration_Event2_3_NEW(story)
-        event3str=textGeneration_Event3_1_NEW(story)
-        event4str=textGeneration_Event4_1_NEW(story)
-        event5str=textGeneration_Event5_1_NEW(story)
-        event6str=textGeneration_Event6_1_NEW(story)
-        texto=event1str+event2str+event3str+event4str+event5str+event6str
-        print("Text :\n",texto)
-        #print("graph:\n" , baseline)
-        #print("ontology:\n" , ontology)
-        print("types:" ,types)
-        #print("ranges:" ,ranges)
-        #print("events:" ,events)
-
-
-
-
-
-
-        if baseline == "":
-            print("YOO")
-            story = story.serialize(f"./TESTING_wrong{i}.ttl", )
-        #print("\n final: \n",text_baseline)
     return None
 
 

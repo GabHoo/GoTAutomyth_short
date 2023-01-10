@@ -220,7 +220,7 @@ HERO:advisor rdfs:label "an advisor".
 HERO:revolutionary a HERO:Occupation .
 HERO:revolutionary rdfs:label "a revolutionary".
 HERO:official a HERO:Occupation .
-HERO:official rdfs:label "a official".
+HERO:official rdfs:label "an official".
 HERO:spy a HERO:Occupation .
 HERO:spy rdfs:label "a spy".
 HERO:military_leader a HERO:Occupation .
@@ -251,9 +251,9 @@ HERO:influencer rdfs:label "an influencer".
 
 
 #Title
-HERO:fictional_king a HERO:Title;
+HERO:King a HERO:Title;
 					a HERO:Male.
-HERO:fictional_king rdfs:label "King".
+HERO:King rdfs:label "King".
 HERO:Lord a HERO:Title ;
 		  a HERO:Male.
 HERO:Lord rdfs:label "Lord".
@@ -274,7 +274,7 @@ HERO:King  rdfs:label "King".
 
 HERO:queen_regnant a HERO:Title;
 				   a HERO:Female.
-HERO:queen_regnant rdfs:label "Queen regnant ".
+HERO:queen_regnant rdfs:label "Queen regnant".
 
 HERO:queen a HERO:Title.
 HERO:queen rdfs:label "Queen".
@@ -663,19 +663,15 @@ HERO:upset rdfs:label "upset".
 HERO:invisibility a HERO:Power.
 HERO:invisibility rdfs:label "invisibility".
 HERO:fireResistance a HERO:Power.
-HERO:fireResistance rdfs:label "fire Resistance".
-HERO:pausingTime a HERO:Power.
-HERO:pausingTime rdfs:label "pausing Time".
-HERO:nightVision a HERO:Power.
-HERO:nightVision rdfs:label "night Vision".
+HERO:fireResistance rdfs:label "fire sorcery".
 HERO:teleportation a HERO:Power.
 HERO:teleportation rdfs:label "teleportation".
 HERO:mindReading a HERO:Power.
-HERO:mindReading rdfs:label "mind Reading".
+HERO:mindReading rdfs:label "mind controlling".
 HERO:gravityControl a HERO:Power.
 HERO:gravityControl rdfs:label "gravity Control".
-HERO:erasingMemory a HERO:Power.
-HERO:erasingMemory rdfs:label "erasing Memory".
+HERO:militaryStrategy a HERO:Power.
+HERO:militaryStrategy rdfs:label "military strategy".
 HERO:slowingTime a HERO:Power.
 HERO:slowingTime rdfs:label "slowing Time".
 
@@ -696,21 +692,19 @@ HERO:freedom rdfs:label "the freedom".
 HERO:jewel a HERO:ThreatTarget.
 HERO:jewel rdfs:label "the jewel".
 HERO:treasure a HERO:ThreatTarget.
-HERO:treasure rdfs:label "treasure".
+HERO:treasure rdfs:label "the treasure".
 #HERO:Title a HERO:ThreatTarget.
 #HERO:Title rdfs:label "Title".
 HERO:House a HERO:ThreatTarget.
 HERO:House rdfs:label "The House".
-HERO:HeroAlly a HERO:ThreatTarget.
-HERO:HeroAlly rdfs:label "Ally".
+
 
 #Celebration
 HERO:feast a HERO:Celebration .
 HERO:feast rdfs:label " having a feast".
-HERO:ball a HERO:Celebration .
-HERO:ball rdfs:label "throwing a ball".
-HERO:show a HERO:Celebration .
-HERO:show rdfs:label "watching a show".
+HERO:play a HERO:Celebration .
+HERO:play rdfs:label "watching a play".
+
 HERO:fireworks a HERO:Celebration .
 HERO:fireworks rdfs:label "making fireworks".
 HERO:game a HERO:Celebration .
@@ -726,11 +720,9 @@ HERO:concert rdfs:label "organizing a concert".
 HERO:sunrise a sem:Time.
 HERO:sunrise rdfs:label "sunrise".
 HERO:theMiddleOftheNight a sem:Time.
-HERO:theMiddleOftheNight rdfs:label "the Middle Of the Night".
+HERO:theMiddleOftheNight rdfs:label "Night".
 HERO:christmas a sem:Time.
 HERO:christmas rdfs:label "Christmas".
-HERO:easter a sem:Time.
-HERO:easter rdfs:label "Easter day".
 HERO:the_Autumnal_Equinox a sem:Time.
 HERO:the_Autumnal_Equinox rdfs:label "the Autumnal Equinox".
 HERO:the_first_day_of_Spring a sem:Time.
