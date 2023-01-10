@@ -34,7 +34,7 @@ def random_formulation(story):
         result = f(story)
 
         if result == "":
-            raise "Excpetion event story text failed check testin.ttl"
+            raise "Excpetion event story text failed , check testin.ttl"
 
         texto += result
 

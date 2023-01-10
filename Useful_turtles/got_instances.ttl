@@ -257,19 +257,16 @@ HERO:King rdfs:label "King".
 HERO:Lord a HERO:Title ;
 		  a HERO:Male.
 HERO:Lord rdfs:label "Lord".
-HERO:fictional_princess a HERO:Title ;
-						a HERO:Female.
+HERO:fictional_princess a HERO:Title.
 HERO:fictional_princess rdfs:label "Princess".
 HERO:Princess a HERO:Title.
 HERO:Princess rdfs:label "Princess".
-HERO:queen_consort a HERO:Title;
-				   a HERO:Female.
+HERO:queen_consort a HERO:Title.
+
 HERO:queen_consort rdfs:label "Queen consort".
-HERO:Lady a HERO:Title;
-		  a HERO:Female.
+HERO:Lady a HERO:Title.
 HERO:Lady  rdfs:label "Lady" .
-HERO:King a HERO:Title;
-		  a HERO:Male.
+HERO:King a HERO:Title.
 HERO:King  rdfs:label "King".
 
 HERO:queen_regnant a HERO:Title;
@@ -379,81 +376,60 @@ HERO:Bran_Stark a sem:Actor;
 				a HERO:Male.
 HERO:Bran_Stark rdfs:label "Bran Stark".
 
-HERO:Tyrion_Lannister a sem:Actor;
-					  a HERO:Male.
+HERO:Tyrion_Lannister a sem:Actor.
+
 HERO:Tyrion_Lannister rdfs:label "Tyrion Lannister".
 
-HERO:Petyr_Baelish a sem:Actor;
-				   a HERO:Male.
+HERO:Petyr_Baelish a sem:Actor.
+
 HERO:Petyr_Baelish rdfs:label "Petyr Baelish".
-HERO:Robert_Baratheon a sem:Actor;
-					  a HERO:Male.
+HERO:Robert_Baratheon a sem:Actor.
 HERO:Robert_Baratheon rdfs:label "Robert Baratheon".
 
-HERO:Euron_Greyjoy a sem:Actor ;
-				   a HERO:Male.
+HERO:Euron_Greyjoy a sem:Actor .
 HERO:Euron_Greyjoy rdfs:label "Euron Greyjoy".
-HERO:Hizdahr_zo_Loraq a sem:Actor ;
-					  a HERO:Male.
+HERO:Hizdahr_zo_Loraq a sem:Actor .
 HERO:Hizdahr_zo_Loraq rdfs:label "Hizdahr zo Loraq".
-HERO:Garlan_Tyrell a sem:Actor ;
-				   a HERO:Male.
+HERO:Garlan_Tyrell a sem:Actor.
 HERO:Garlan_Tyrell rdfs:label "Garlan Tyrell".
-HERO:Mace_Tyrell a sem:Actor ;
-				 a HERO:Male.
+HERO:Mace_Tyrell a sem:Actor .
 HERO:Mace_Tyrell rdfs:label "Mace Tyrell".
 
 
 #GIRLSSSSS
-HERO:Cassana_Baratheon a sem:Actor;
-					   a HERO:Female.
+HERO:Cassana_Baratheon a sem:Actor.
 HERO:Cassana_Baratheon rdfs:label "Cassana Baratheon".
-HERO:Sansa_Stark a sem:Actor;
-				 a HERO:Female.
+HERO:Sansa_Stark a sem:Actor.
 HERO:Sansa_Stark rdfs:label "Sansa Stark".
-HERO:Arya_Stark  a sem:Actor;
-				 a HERO:Female.
+HERO:Arya_Stark  a sem:Actor.
 HERO:Arya_Stark rdfs:label "Arya Stark".
 
-HERO:Myrcella_Baratheon a sem:Actor ;
-						a HERO:Female.
+HERO:Myrcella_Baratheon a sem:Actor .
 HERO:Myrcella_Baratheon rdfs:label "Myrcella Baratheon".
-HERO:Joanna_Lannister a sem:Actor ;
-					  a HERO:Female.
+HERO:Joanna_Lannister a sem:Actor .
 HERO:Joanna_Lannister rdfs:label "Joanna Lannister".
-HERO:Rhaella_Targaryen a sem:Actor ;
-					   a HERO:Female.
+HERO:Rhaella_Targaryen a sem:Actor .
 HERO:Rhaella_Targaryen rdfs:label "Rhaella Targaryen".
-HERO:Cersei_Lannister a sem:Actor;
-					  a HERO:Female.
+HERO:Cersei_Lannister a sem:Actor.
 HERO:Cersei_Lannister rdfs:label "Cersei Lannister".
 
-HERO:Lyarra_Stark a sem:Actor ;
-				  a HERO:Female.
+HERO:Lyarra_Stark a sem:Actor .
 HERO:Lyarra_Stark rdfs:label "Lyarra Stark".
-HERO:Margaery_Tyrell a sem:Actor;
-					 a HERO:Female.
+HERO:Margaery_Tyrell a sem:Actor.
 HERO:Margaery_Tyrell rdfs:label "Margaery Tyrell".
-HERO:Daenerys_Targaryen a sem:Actor;
-						a HERO:Female.
+HERO:Daenerys_Targaryen a sem:Actor.
 HERO:Daenerys_Targaryen rdfs:label "Daenerys Targaryen".
-HERO:Lysa_Arryn a sem:Actor ;
-				a HERO:Female.
-HERO:Lysa_Arryn rdfs:label "Lysa Arryn";
-				a HERO:Female.
-HERO:Lyanna_Stark a sem:Actor ;
-				  a HERO:Female.
+HERO:Lysa_Arryn a sem:Actor .
+HERO:Lysa_Arryn rdfs:label "Lysa Arryn".
+HERO:Lyanna_Stark a sem:Actor .
 HERO:Lyanna_Stark rdfs:label "Lyanna Stark".
 
-HERO:Catelyn_Stark a sem:Actor ;
-				   a HERO:Female.
+HERO:Catelyn_Stark a sem:Actor .
 HERO:Catelyn_Stark rdfs:label "Catelyn Stark".
-HERO:Alerie_Tyrell a sem:Actor ;
-				   a HERO:Female.
+HERO:Alerie_Tyrell a sem:Actor .
 HERO:Alerie_Tyrell rdfs:label "Alerie Tyrell".
 
-HERO:Rhaenys_Targaryen_daughter_of_Rhaegar a sem:Actor ;
-										   a HERO:Female.
+HERO:Rhaenys_Targaryen_daughter_of_Rhaegar a sem:Actor .
 HERO:Rhaenys_Targaryen_daughter_of_Rhaegar rdfs:label "Rhaenys Targaryen".
 
 #Cause of Death

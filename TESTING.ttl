@@ -4,26 +4,31 @@
 @prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+HERO:House a HERO:ThreatTarget,
+        rdfs:Class ;
+    rdfs:label "The House" ;
+    rdfs:subClassOf HERO:House .
+
 HERO:Event_01 a HERO:OrdinaryWorld,
         sem:Core,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Ordinary World presentation" ;
-    HERO:hasHouse HERO:House_Baratheon ;
-    HERO:hasOccupation HERO:regent ;
-    HERO:hasTitle HERO:queen_regnant ;
+    HERO:hasHouse HERO:House_Stark ;
+    HERO:hasOccupation HERO:prophet ;
+    HERO:hasTitle HERO:Lord ;
     HERO:journeyStage "1" ;
-    sem:hasActor HERO:Cersei_Lannister .
+    sem:hasActor HERO:Bran_Stark .
 
 HERO:Event_02 a HERO:CallToAdventure,
         sem:Core,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Villain threatens the safety of somebody. This is the call for the hero" ;
-    HERO:Threatens HERO:treasure ;
+    HERO:Threatens HERO:jewel ;
     HERO:journeyStage "2" ;
-    HERO:villain HERO:Robert_Baratheon ;
-    sem:hasActor HERO:Cersei_Lannister .
+    HERO:villain HERO:Margaery_Tyrell ;
+    sem:hasActor HERO:Bran_Stark .
 
 HERO:Event_03 a HERO:MeetingTheMentor,
         sem:Core,
@@ -31,9 +36,9 @@ HERO:Event_03 a HERO:MeetingTheMentor,
         rdfs:Resource ;
     rdfs:label "Meeting the Mentor" ;
     HERO:journeyStage "3" ;
-    HERO:meetsMentor HERO:Shae ;
+    HERO:meetsMentor HERO:Khal_Drogo ;
     HERO:powerLearned HERO:gravityControl ;
-    sem:hasActor HERO:Cersei_Lannister .
+    sem:hasActor HERO:Bran_Stark .
 
 HERO:Event_04 a HERO:EncounterAlly,
         sem:Core,
@@ -41,35 +46,35 @@ HERO:Event_04 a HERO:EncounterAlly,
         rdfs:Resource ;
     rdfs:label "The hero meets ally" ;
     HERO:journeyStage "4" ;
-    HERO:meetsAlly HERO:Euron_Greyjoy ;
-    sem:hasActor HERO:Cersei_Lannister ;
-    sem:hasPlace HERO:Karhold ;
-    sem:hasTime HERO:sunrise .
+    HERO:meetsAlly HERO:Eddard_Stark ;
+    sem:hasActor HERO:Bran_Stark ;
+    sem:hasPlace HERO:Raventree_Hall ;
+    sem:hasTime HERO:the_Winter_Solstice .
 
 HERO:Event_05 a HERO:FinalBattle,
         sem:Core,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Final confrontation between hero and villain" ;
-    HERO:helpedBy HERO:Euron_Greyjoy ;
-    HERO:herofights HERO:Robert_Baratheon ;
+    HERO:helpedBy HERO:Eddard_Stark ;
+    HERO:herofights HERO:Margaery_Tyrell ;
     HERO:journeyStage "5" ;
     HERO:usepower HERO:gravityControl ;
-    sem:hasActor HERO:Cersei_Lannister ;
-    sem:hasPlace HERO:The_Twins ;
-    sem:hasTime HERO:christmas .
+    sem:hasActor HERO:Bran_Stark ;
+    sem:hasPlace HERO:Karhold ;
+    sem:hasTime HERO:the_first_day_of_Spring .
 
 HERO:Event_06 a HERO:Party,
         sem:Core,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Hero throws a party" ;
-    HERO:celebratesvictory HERO:game ;
+    HERO:celebratesvictory HERO:storytelling ;
     HERO:journeyStage "6" ;
-    HERO:partywith HERO:Euron_Greyjoy ;
-    HERO:saves HERO:treasure ;
-    sem:hasActor HERO:Cersei_Lannister ;
-    sem:hasPlace HERO:Castle_Black .
+    HERO:partywith HERO:Eddard_Stark ;
+    HERO:saves HERO:House ;
+    sem:hasActor HERO:Bran_Stark ;
+    sem:hasPlace HERO:The_Eyrie .
 
 HERO:Threatens rdfs:range HERO:ThreatTarget .
 
@@ -109,18 +114,24 @@ sem:hasTime rdfs:range sem:Time .
 
 HERO:CallToAdventure rdfs:subClassOf sem:Event .
 
-HERO:Castle_Black a sem:Place ;
-    rdfs:label "Castle Black" .
-
 HERO:EncounterAlly rdfs:subClassOf sem:Event .
 
 HERO:FinalBattle rdfs:subClassOf sem:Event .
 
-HERO:House_Baratheon a HERO:House ;
-    rdfs:label "House Baratheon" .
+HERO:House_Stark a HERO:House ;
+    rdfs:label "House Stark" .
 
 HERO:Karhold a sem:Place ;
     rdfs:label "Karhold" .
+
+HERO:Khal_Drogo a HERO:Male,
+        sem:Actor ;
+    rdfs:label "Khal Drogo" .
+
+HERO:Lord a HERO:Male,
+        HERO:Title,
+        sem:Actor ;
+    rdfs:label "Lord" .
 
 HERO:MeetingTheMentor rdfs:subClassOf sem:Event .
 
@@ -129,49 +140,42 @@ HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world present
 
 HERO:Party rdfs:subClassOf sem:Event .
 
-HERO:Shae a HERO:Male,
+HERO:Raventree_Hall a sem:Place ;
+    rdfs:label "Raventree Hall" .
+
+HERO:The_Eyrie a sem:Place ;
+    rdfs:label "The Eyrie" .
+
+HERO:jewel a HERO:ThreatTarget ;
+    rdfs:label "the jewel" .
+
+HERO:prophet a HERO:Occupation ;
+    rdfs:label "a prophet" .
+
+HERO:storytelling a HERO:Celebration ;
+    rdfs:label "listening to a storytelling" .
+
+HERO:the_Winter_Solstice a sem:Time ;
+    rdfs:label "the Winter Solstice" .
+
+HERO:the_first_day_of_Spring a sem:Time ;
+    rdfs:label "the first day of Spring" .
+
+HERO:Margaery_Tyrell a HERO:Main_Character,
         sem:Actor ;
-    rdfs:label "Shae" .
-
-HERO:The_Twins a sem:Place ;
-    rdfs:label "The Twins" .
-
-HERO:christmas a sem:Time ;
-    rdfs:label "Christmas" .
-
-HERO:game a HERO:Celebration ;
-    rdfs:label "playing a game" .
-
-HERO:queen_regnant a HERO:Female,
-        HERO:Title,
-        sem:Actor ;
-    rdfs:label "Queen regnant" .
-
-HERO:regent a HERO:Occupation ;
-    rdfs:label "a regent" .
-
-HERO:sunrise a sem:Time ;
-    rdfs:label "sunrise" .
-
-HERO:Robert_Baratheon a HERO:Main_Character,
-        HERO:Male,
-        sem:Actor ;
-    rdfs:label "Robert Baratheon" .
+    rdfs:label "Margaery Tyrell" .
 
 HERO:gravityControl a HERO:Power ;
     rdfs:label "gravity Control" .
 
-HERO:treasure a HERO:ThreatTarget ;
-    rdfs:label "the treasure" .
-
-HERO:Euron_Greyjoy a HERO:Male,
+HERO:Eddard_Stark a HERO:Male,
         sem:Actor ;
-    rdfs:label "Euron Greyjoy" .
+    rdfs:label "Eddard Stark" .
 
-HERO:Cersei_Lannister a HERO:Female,
-        HERO:Main_Character,
+HERO:Bran_Stark a HERO:Main_Character,
+        HERO:Male,
         sem:Actor ;
-    rdfs:label "Cersei Lannister" .
+    rdfs:label "Bran Stark" .
 
 sem:Core a owl:Class ;
     rdfs:label "Core" .
