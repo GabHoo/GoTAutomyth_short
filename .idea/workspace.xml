@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="creating json works">
-      <change beforePath="$PROJECT_DIR$/COPY_QUERYOMG.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTING.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/TESTING.ttl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Useful_turtles/got_instances.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/Useful_turtles/got_instances.ttl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/createDataset_sketch.py" beforeDir="false" afterPath="$PROJECT_DIR$/createDataset_sketch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated_stories/story_DEBUG_arelation.ttl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated_stories/tory_DEBUG_arelation.ttl" beforeDir="false" />
-    </list>
+    <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="deleting" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -234,7 +227,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673367122536</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="smol">
+      <created>1673428673426</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1673428673426</updated>
+    </task>
+    <task id="LOCAL-00015" summary="deleting">
+      <created>1673428763430</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673428763430</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -258,6 +265,8 @@
     <MESSAGE value="Query for text event 1 is done, new cool way to make it into a string easly was found" />
     <MESSAGE value="query n_2" />
     <MESSAGE value="creating json works" />
-    <option name="LAST_COMMIT_MESSAGE" value="creating json works" />
+    <MESSAGE value="smol" />
+    <MESSAGE value="deleting" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleting" />
   </component>
 </project>
