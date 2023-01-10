@@ -47,13 +47,25 @@ def main(argv, arc):
         raise ValueError("nr of Parameters is incorrect!")
 
     if argv[1] not in ["community","relation","random"] :
-        #or argv[2] not in ['types','event','range', 'baseline_instances','baseline_classes']:
         raise ValueError("Error! Please enter a (valid) charachter picking method. (community,relation,random)")
 
     method = argv[1]
     heros=[]
-    n = int(argv[2])
-    for i in range(n):
+    what = argv[2]
+
+    if what == 'train':
+        n_kg_generated = 500
+
+    if what =='test':
+        n_kg_generated = 50
+
+    if what =='val':
+        n_kg_generated = 50
+
+    if what =='try':
+        n_kg_generated = 1
+
+    for i in range(n_kg_generated):
 
         current_graph = {}
         story,hero = gen_story(method)
@@ -63,17 +75,17 @@ def main(argv, arc):
 
         #Generates the text
         label = random_formulation(story)
-        current_graph["text_label"]=label
+        current_graph["story"]=label
 
         #Creating the linearizations
 
-        current_graph['baselineInstances'] = clear1(Graph_Generator_baseline_instances(story))
-        current_graph['Classes'] = clear1(Graph_Generator_baseline_class(story))
-        current_graph['types'] = clear1(Graph_Generator_types(story))
-        current_graph['ranges'] = clear1(Graph_Generator_range(story))
-        current_graph['events'] = clear1(Graph_Generator_event(story))
+        current_graph['Instances Knowledge Graph'] = clear1(Graph_Generator_baseline_instances(story))
+        current_graph['Class Knowledge Graph'] = clear1(Graph_Generator_baseline_class(story))
+        current_graph['Types Knowledge Graph'] = clear1(Graph_Generator_types(story))
+        current_graph['Range Knowledge Graph'] = clear1(Graph_Generator_range(story))
+        current_graph['Event Knowledge Graph'] = clear1(Graph_Generator_event(story))
 
-        with open(f'generated_output/shortNEW.json', 'a', encoding='utf-8') as f:
+        with open(f'generated_output/{method}_{what}.json', 'a', encoding='utf-8') as f:
             json.dump(current_graph, f, ensure_ascii=False, indent="")
 
         #print(label)
