@@ -281,8 +281,8 @@ HERO:queen rdfs:label "Queen".
 
 
 #Actor
-HERO:Gendry a sem:Actor;
-			a HERO:Male.
+HERO:Gendry a sem:Actor.
+
 HERO:Gendry rdfs:label "Gendry".
 HERO:Robert_Arryn a sem:Actor;
 				  a HERO:Male.
@@ -340,40 +340,31 @@ HERO:Steffon_Baratheon a sem:Actor ;
 HERO:Steffon_Baratheon rdfs:label "Steffon Baratheon".
 
 
-HERO:Loras_Tyrell a sem:Actor ;
-				  a HERO:Male.
+HERO:Loras_Tyrell a sem:Actor .
 HERO:Loras_Tyrell rdfs:label "Loras Tyrell".
-HERO:Shae a sem:Actor ;
-		  a HERO:Male.
+HERO:Shae a sem:Actor .
 HERO:Shae rdfs:label "Shae".
-HERO:Jaime_Lannister a sem:Actor ;
-					 a HERO:Male.
+HERO:Jaime_Lannister a sem:Actor .
 HERO:Jaime_Lannister rdfs:label "Jaime Lannister".
-HERO:Viserys_Targaryen a sem:Actor ;
-					   a HERO:Male.
+HERO:Viserys_Targaryen a sem:Actor .
 HERO:Viserys_Targaryen rdfs:label "Viserys Targaryen".
 
-HERO:Daario_Naharis a sem:Actor ;
-					a HERO:Male.
+HERO:Daario_Naharis a sem:Actor .
 HERO:Daario_Naharis rdfs:label "Daario Naharis".
 
-HERO:Tywin_Lannister a sem:Actor ;
-					 a HERO:Male.
+HERO:Tywin_Lannister a sem:Actor .
 HERO:Tywin_Lannister rdfs:label "Tywin Lannister".
-HERO:Rickon_Stark a sem:Actor ;
-				  a HERO:Male.
+HERO:Rickon_Stark a sem:Actor .
 HERO:Rickon_Stark rdfs:label "Rickon Stark".
 
-HERO:Eddard_Stark a sem:Actor ;
-				  a HERO:Male.
+HERO:Eddard_Stark a sem:Actor .
 HERO:Eddard_Stark rdfs:label "Eddard Stark".
-HERO:Jon_Snow a sem:Actor;
-			  a HERO:Male.
+HERO:Jon_Snow a sem:Actor.
 HERO:Jon_Snow rdfs:label "Jon Snow".
 
 
-HERO:Bran_Stark a sem:Actor;
-				a HERO:Male.
+HERO:Bran_Stark a sem:Actor.
+
 HERO:Bran_Stark rdfs:label "Bran Stark".
 
 HERO:Tyrion_Lannister a sem:Actor.
