@@ -1,0 +1,241 @@
+Index: Queries4Text.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from ast import arg\nfrom rdflib import Graph, RDFS, RDF, URIRef, Namespace, Literal, XSD\nfrom owlrl import DeductiveClosure, RDFS_Semantics\nimport random, sys\nimport sys\nimport os\nimport pandas as pd\nfrom string import Template\nimport re\nimport json\n\n\n\ndef textGeneration_Event1_1(story):\n    res = story.query(\"\"\"\n    SELECT ?Event_01 WHERE \n    {  \n    ns2:Event_01 ns1:hasActor ?Hero.\n\n    ?Hero  rdfs:label ?HeroName.\n    ns2:Event_01 ns2:hasOccupation ?Job.\n    ?Job   rdfs:label ?HeroJob.\n    ns2:Event_01 ns2:hasTitle ?Title.\n    ?Title rdfs:label ?TitleLabel.\n    ns2:Event_01 ns2:hasHouse ?Family.\n    ?Family rdfs:label ?FamilyLabel.\n    \n \n    BIND(CONCAT('Once upon a time, there was ',?HeroJob,' whose name was ', ?HeroName,'. ', ?HeroName, ' was a ', ?TitleLabel,' from the ', ?FamilyLabel,'. ' ) AS ?Event_01).\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    # SO THING IS: STORY.QUERY returns a sparqlRESULTObject.\n    # If the query was with select, sparqlResultObject is an interables of resultRow object.\n    # ResultRow is a touple and our sententce is a literal in the first term.\n    # Dus we do [0] to get the first element of list then [0] to get first element of a tuple\n    # THne we do toPython() which a method of the class rdflib.term.Literal and this returns a string\n    return list(res)[0][0].toPython()\n\n\n# It was ',?TimeLabel1,' when this story begins.\n\ndef textGeneration_Event2_1(story):\n    res = story.query(\"\"\"\n        SELECT ?Event_02 WHERE \n    {  \n    ns2:Event_02 ns1:hasActor ?Hero.\n    ?Hero  rdfs:label ?HeroName.\n    ns2:Event_02 ns2:Threatens ?el.\n    ?el   rdfs:label ?ElementLabel.\n    ns2:Event_02 ns2:villain ?villain.\n    ?villain rdfs:label ?VillainLabel.\n\n   \n   \n    BIND(CONCAT('Everything was quiet when one day ', ?VillainLabel, ' threatened ',?ElementLabel, ' of ', ?HeroName,'. ' ) AS ?Event_02).\n\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    return list(res)[0][0].toPython()\n\n\n\ndef textGeneration_Event3_1(story):\n    res = story.query(\"\"\"\n        SELECT ?Event_04 WHERE \n    {  \n        ns2:Event_03 ns1:hasActor ?Hero.\n    ?Hero  rdfs:label ?HeroName.\n    ns2:Event_03 ns2:meetsMentor ?mentor.\n    ?mentor rdfs:label ?MentorLabel.\n    ns2:Event_03 ns2:powerLearned ?power.\n    ?power rdfs:label ?HeroPowerLabel.\n\n    \n\n    \n    BIND(CONCAT('Initially ', ?HeroName,' was afraid, but with the help of ', ?MentorLabel, ' got stronger and learnt ', ?HeroPowerLabel  ,'. ') AS ?Event_04).\n\n\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    return list(res)[0][0].toPython()\n\n\ndef textGeneration_Event4_1(story):\n    res = story.query(\"\"\"\n        SELECT ?Event_04 WHERE \n    {  \n        ns2:Event_04 ns1:hasActor ?Hero.\n    ?Hero  rdfs:label ?HeroName.\n    ns2:Event_04 ns2:meetsAlly ?ally.\n    ?ally rdfs:label ?AllyLabel.\n   \n\n    \n    ns2:Event_04 ns1:hasTime ?Time4.\n    ?Time4 rdfs:label ?TimeLabel4.\n    ns2:Event_04 ns1:hasPlace ?Loc4.\n    ?Loc4 rdfs:label ?LocLabel4.\n\n\n    \n    BIND(CONCAT('On the way to ', ?LocLabel4 ,' at ',?TimeLabel4,', ',?HeroName,' met ',\n     ?AllyLabel,' and they immediately became friends. ') AS ?Event_04).\n\n\n\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    return list(res)[0][0].toPython()\n\n\n\n\ndef textGeneration_Event5_1(story):\n    res = story.query(\"\"\"\n        SELECT ?Event_05 WHERE \n    {  \n        ns2:Event_05 ns1:hasActor ?Hero.\n\t?Hero  rdfs:label ?HeroName.\n\n\tns2:Event_05 ns2:helpedBy ?ally.\n\t?ally rdfs:label ?AllyLabel.\n\n\tns2:Event_05 ns2:herofights ?villain .\n\t?villain rdfs:label ?VillainLabel.\n\n\tns2:Event_05 ns2:usepower ?poH .\n\t?poH rdfs:label ?poHLabel.\n\n    ns2:Event_05 ns1:hasTime ?Time5.\n    ?Time5 rdfs:label ?TimeLabel5.\n    ns2:Event_05 ns1:hasPlace ?Loc5.\n    ?Loc5 rdfs:label ?LocLabel5.\n\n     BIND(CONCAT('After travelling across all the kingdom, ', ?HeroName,' with the help of ', ?AllyLabel, ' finally found ', ?VillainLabel , ' in ', ?LocLabel5 , '. A bloody battle begun but ' , ?HeroName, ' thanks to ',\n     ?poHLabel , ' powers got the better of ', ?VillainLabel ,'. ') AS ?Event_05).\n\n   \n\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    return list(res)[0][0].toPython()\n\n\ndef textGeneration_Event6_1(story):\n    res = story.query(\"\"\"\n        SELECT ?Event_6 WHERE \n    {  \n      ns2:Event_06 ns1:hasActor ?Hero.\n\t?Hero  rdfs:label ?HeroName.\n\n\tns2:Event_06 ns2:celebratesvictory ?cel.\n\t?cel rdfs:label ?celLabel.\n\n\tns2:Event_06 ns2:partywith ?friend.\n\t?friend rdfs:label ?friendLabel.\n\t\n\tns2:Event_06 ns2:saves ?obj.\n\t?obj rdfs:label ?savedobjLabel.\n\t\n\t\n\tns2:Event_06 ns1:hasPlace ?Loc12.\n\t?Loc12 rdfs:label ?LocLabel6.\n\nBIND(CONCAT('Eventually ',?savedobjLabel,' was safe again. ', ?HeroName, ' and ', ?friendLabel , ' went to ', ?LocLabel6, ' and celebrated by ' \n\t  , ?celLabel, '.' ) as ?Event_6).\n\n\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    return list(res)[0][0].toPython()\n\n\ndef textGeneration_Event1_2(story):\n    res = story.query(\"\"\"\n    SELECT ?Event_01 WHERE \n    {  \n    ns2:Event_01 ns1:hasActor ?Hero.\n\n    ?Hero  rdfs:label ?HeroName.\n    ns2:Event_01 ns2:hasOccupation ?Job.\n    ?Job   rdfs:label ?HeroJob.\n    ns2:Event_01 ns2:hasTitle ?Title.\n    ?Title rdfs:label ?TitleLabel.\n    ns2:Event_01 ns2:hasHouse ?Family.\n    ?Family rdfs:label ?FamilyLabel.\n\n\n    BIND(CONCAT(?HeroName,' was ',?TitleLabel,' for the ', ?FamilyLabel ,' and was also known in the whole kingdom as ', ?HeroJob,'. ') AS ?Event_01).\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    # SO THING IS: STORY.QUERY returns a sparqlRESULTObject.\n    # If the query was with select, sparqlResultObject is an interables of resultRow object.\n    # ResultRow is a touple and our sententce is a literal in the first term.\n    # Dus we do [0] to get the first element of list then [0] to get first element of a tuple\n    # THne we do toPython() which a method of the class rdflib.term.Literal and this returns a string\n    return list(res)[0][0].toPython()\n\ndef textGeneration_Event2_2(story):\n    res = story.query(\"\"\"\n        SELECT ?Event_02 WHERE \n    {  \n    ns2:Event_02 ns1:hasActor ?Hero.\n    ?Hero  rdfs:label ?HeroName.\n    ns2:Event_02 ns2:Threatens ?el.\n    ?el   rdfs:label ?ElementLabel.\n    ns2:Event_02 ns2:villain ?villain.\n    ?villain rdfs:label ?VillainLabel.\n\n\n    BIND(CONCAT('The evil ', ?VillainLabel, ' one day posed a threat to ',?ElementLabel, ' of ', ?HeroName,'. ' ) AS ?Event_02).\n\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    return list(res)[0][0].toPython()\n\n\ndef textGeneration_Event3_2(story):\n    res = story.query(\"\"\"\n        SELECT ?Event_03 WHERE \n    {  \n        ns2:Event_03 ns1:hasActor ?Hero.\n    ?Hero  rdfs:label ?HeroName.\n    ns2:Event_03 ns2:meetsMentor ?mentor.\n    ?mentor rdfs:label ?MentorLabel.\n    ns2:Event_03 ns2:powerLearned ?power.\n    ?power rdfs:label ?HeroPowerLabel.\n\n\n\n\n\n    BIND(CONCAT(?HeroName,' did not know what to do and went to ', ?MentorLabel, ' to seek help. ', ?MentorLabel ,' was a master of ',?HeroPowerLabel,' and taught the hero all its secrets. ' ) AS ?Event_03).\n\n\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    return list(res)[0][0].toPython()\n\ndef textGeneration_Event4_2(story):\n    res = story.query(\"\"\"\n        SELECT ?Event_04 WHERE \n    {  \n        ns2:Event_04 ns1:hasActor ?Hero.\n    ?Hero  rdfs:label ?HeroName.\n    ns2:Event_04 ns2:meetsAlly ?ally.\n    ?ally rdfs:label ?AllyLabel.\n\n\n\n    ns2:Event_04 ns1:hasTime ?Time4.\n    ?Time4 rdfs:label ?TimeLabel4.\n    ns2:Event_04 ns1:hasPlace ?Loc4.\n    ?Loc4 rdfs:label ?LocLabel4\n\n\n    BIND(CONCAT('During a long training session in ', ?LocLabel4,' at ', ?TimeLabel4,', ',?HeroName, ' met ',?AllyLabel,'. They immediately got along and decided to travel together. ') AS ?Event_04).\n\n\n\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    return list(res)[0][0].toPython()\n\n\ndef textGeneration_Event5_2(story):\n    res = story.query(\"\"\"\n        SELECT ?Event_05 WHERE \n    {  \n        ns2:Event_05 ns1:hasActor ?Hero.\n\t?Hero  rdfs:label ?HeroName.\n\n\tns2:Event_05 ns2:helpedBy ?ally.\n\t?ally rdfs:label ?AllyLabel.\n\n\tns2:Event_05 ns2:herofights ?villain .\n\t?villain rdfs:label ?VillainLabel.\n\n\tns2:Event_05 ns2:usepower ?poH .\n\t?poH rdfs:label ?poHLabel.\n\n    ns2:Event_05 ns1:hasTime ?Time5.\n    ?Time5 rdfs:label ?TimeLabel5.\n    ns2:Event_05 ns1:hasPlace ?Loc5.\n    ?Loc5 rdfs:label ?LocLabel5.\n\n     BIND(CONCAT('At ',?TimeLabel5, ', ',?HeroName, ' and ',?AllyLabel, ' were almost in ' , ?LocLabel5 , ' when they realized ',\n     ?VillainLabel, ' was after them. The two friends nevertheless were ready and the battle begun. ', ?HeroName, ' used ' , ?poHLabel , ' forcing the enemy to retreat. ') AS ?Event_05).\n\n\n\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    return list(res)[0][0].toPython()\n\n\ndef textGeneration_Event6_2(story):\n    res = story.query(\"\"\"\n        SELECT ?Event_6 WHERE \n    {  \n      ns2:Event_06 ns1:hasActor ?Hero.\n\t?Hero  rdfs:label ?HeroName.\n\n\tns2:Event_06 ns2:celebratesvictory ?cel.\n\t?cel rdfs:label ?celLabel.\n\n\tns2:Event_06 ns2:partywith ?friend.\n\t?friend rdfs:label ?friendLabel.\n\n\tns2:Event_06 ns2:saves ?obj.\n\t?obj rdfs:label ?savedobjLabel.\n\n\n\tns2:Event_06 ns1:hasPlace ?Loc12.\n\t?Loc12 rdfs:label ?LocLabel6.\n\nBIND(CONCAT('After the victory, ' ,?savedobjLabel, ' was not under treat anymore. ' ,?HeroName, ' and ' ,?friendLabel,\n' celebrated in ', ?LocLabel6, ' with ',?celLabel) as ?Event_6).\n\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    return list(res)[0][0].toPython()\n\n\ndef textGeneration_Event1_3(story):\n    res = story.query(\"\"\"\n    SELECT ?Event_01 WHERE \n    {  \n    ns2:Event_01 ns1:hasActor ?Hero.\n\n    ?Hero  rdfs:label ?HeroName.\n    ns2:Event_01 ns2:hasOccupation ?Job.\n    ?Job   rdfs:label ?HeroJob.\n    ns2:Event_01 ns2:hasTitle ?Title.\n    ?Title rdfs:label ?TitleLabel.\n    ns2:Event_01 ns2:hasHouse ?Family.\n    ?Family rdfs:label ?FamilyLabel.\n\n\n    BIND(CONCAT(  'A long time ago ', ?HeroName,', ', ?TitleLabel,' from the ', ?FamilyLabel,', was known to be very good as a ',?HeroJob,'. ' ) AS ?Event_01).\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    # SO THING IS: STORY.QUERY returns a sparqlRESULTObject.\n    # If the query was with select, sparqlResultObject is an interables of resultRow object.\n    # ResultRow is a touple and our sententce is a literal in the first term.\n    # Dus we do [0] to get the first element of list then [0] to get first element of a tuple\n    # THne we do toPython() which a method of the class rdflib.term.Literal and this returns a string\n    return list(res)[0][0].toPython()\n\n\n# It was ',?TimeLabel1,' when this story begins.\n\ndef textGeneration_Event2_3(story):\n    res = story.query(\"\"\"\n        SELECT ?Event_02 WHERE \n    {  \n    ns2:Event_02 ns1:hasActor ?Hero.\n    ?Hero  rdfs:label ?HeroName.\n    ns2:Event_02 ns2:Threatens ?el.\n    ?el   rdfs:label ?ElementLabel.\n    ns2:Event_02 ns2:villain ?villain.\n    ?villain rdfs:label ?VillainLabel.\n\n\n    BIND(CONCAT( '', ?HeroName,' was having an happy and peaceful life when ', ?VillainLabel, ' threatened  ',?ElementLabel, ' of ', ?HeroName,' . ') AS ?Event_02).\n\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    return list(res)[0][0].toPython()\n\n\ndef textGeneration_Event2_4(story):\n    res = story.query(\"\"\"\n        SELECT ?Event_02 WHERE \n    {  \n    ns2:Event_02 ns1:hasActor ?Hero.\n    ?Hero  rdfs:label ?HeroName.\n    ns2:Event_02 ns2:Threatens ?el.\n    ?el   rdfs:label ?ElementLabel.\n    ns2:Event_02 ns2:villain ?villain.\n    ?villain rdfs:label ?VillainLabel.\n\n\n    BIND(CONCAT('',?HeroName,' realized that their beloved ', ?ElementLabel, ' was in danger of being taken away by ' , ?VillainLabel,' . ' ) AS ?Event_02).\n\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    return list(res)[0][0].toPython()\n\n\ndef textGeneration_Event3_3(story):\n    res = story.query(\"\"\"\n        SELECT ?Event_03 WHERE \n    {  \n        ns2:Event_03 ns1:hasActor ?Hero.\n    ?Hero  rdfs:label ?HeroName.\n    ns2:Event_03 ns2:meetsMentor ?mentor.\n    ?mentor rdfs:label ?MentorLabel.\n    ns2:Event_03 ns2:powerLearned ?power.\n    ?power rdfs:label ?HeroPowerLabel.\n\n\n\n\n\n    BIND(CONCAT('Our hero was not ready to fight for it, but with the help of  ', ?MentorLabel, ', ', ?HeroName,' learnt the power of ', ?HeroPowerLabel  ,'. ') AS ?Event_03).\n\n\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    return list(res)[0][0].toPython()\n\n\ndef textGeneration_Event4_3(story):\n    res = story.query(\"\"\"\n        SELECT ?Event_04 WHERE \n    {  \n        ns2:Event_04 ns1:hasActor ?Hero.\n    ?Hero  rdfs:label ?HeroName.\n    ns2:Event_04 ns2:meetsAlly ?ally.\n    ?ally rdfs:label ?AllyLabel.\n\n\n\n    ns2:Event_04 ns1:hasTime ?Time4.\n    ?Time4 rdfs:label ?TimeLabel4.\n    ns2:Event_04 ns1:hasPlace ?Loc4.\n    ?Loc4 rdfs:label ?LocLabel4.\n\n\n\n    BIND(CONCAT(    'In ', ?LocLabel4 ,' at ',?TimeLabel4,' ,',?HeroName,' met ',?AllyLabel,' and they formed an alliance. ') AS ?Event_04).\n\n\n\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    return list(res)[0][0].toPython()\n\n\ndef textGeneration_Event5_3(story):\n    res = story.query(\"\"\"\n        SELECT ?Event_05 WHERE \n    {  \n        ns2:Event_05 ns1:hasActor ?Hero.\n\t?Hero  rdfs:label ?HeroName.\n\n\tns2:Event_05 ns2:helpedBy ?ally.\n\t?ally rdfs:label ?AllyLabel.\n\n\tns2:Event_05 ns2:herofights ?villain .\n\t?villain rdfs:label ?VillainLabel.\n\n\tns2:Event_05 ns2:usepower ?poH .\n\t?poH rdfs:label ?poHLabel.\n\n    ns2:Event_05 ns1:hasTime ?Time5.\n    ?Time5 rdfs:label ?TimeLabel5.\n    ns2:Event_05 ns1:hasPlace ?Loc5.\n    ?Loc5 rdfs:label ?LocLabel5.\n\n\n    BIND(CONCAT( 'Finally in ', ?LocLabel5 ,' at ', ?TimeLabel5 ,' , ' , ?HeroName, ' faced ', ?VillainLabel ,' . With the help of ', ?AllyLabel,' and thanks to the learnt power of ', ?poHLabel,' , the alliance scared away  ', ?VillainLabel ,' . ') AS ?Event_05).\n\n\n\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    return list(res)[0][0].toPython()\n\n\ndef textGeneration_Event6_3(story):\n    res = story.query(\"\"\"\n        SELECT ?Event_06 WHERE \n    {  \n      ns2:Event_06 ns1:hasActor ?Hero.\n\t?Hero  rdfs:label ?HeroName.\n\n\tns2:Event_06 ns2:celebratesvictory ?cel.\n\t?cel rdfs:label ?celLabel.\n\n\tns2:Event_06 ns2:partywith ?friend.\n\t?friend rdfs:label ?friendLabel.\n\n\tns2:Event_06 ns2:saves ?obj.\n\t?obj rdfs:label ?savedobjLabel.\n\n\n\tns2:Event_06 ns1:hasPlace ?Loc12.\n\t?Loc12 rdfs:label ?LocLabel6.\n\n\n     BIND(CONCAT('This is how ', ?HeroName, ' managed to save the beloved ',?savedobjLabel,'. In ', ?LocLabel6, ' celebrated with  ',?friendLabel , ' by ' ,?celLabel, ' .'  ) as ?Event_06).\n\n\n    }\"\"\", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})\n    return list(res)[0][0].toPython()\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Queries4Text.py b/Queries4Text.py
+--- a/Queries4Text.py	(revision 632eb46c2a75e754a598915e6df25d7b571f249d)
++++ b/Queries4Text.py	(date 1673371448314)
+@@ -326,7 +326,7 @@
+     ?Family rdfs:label ?FamilyLabel.
+ 
+ 
+-    BIND(CONCAT(  'A long time ago ', ?HeroName,', ', ?TitleLabel,' from the ', ?FamilyLabel,', was known to be very good as a ',?HeroJob,'. ' ) AS ?Event_01).
++    BIND(CONCAT(  'A long time ago ', ?HeroName,', ', ?TitleLabel,' from the ', ?FamilyLabel,', was known to be very good as ',?HeroJob,'. ' ) AS ?Event_01).
+     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
+     # SO THING IS: STORY.QUERY returns a sparqlRESULTObject.
+     # If the query was with select, sparqlResultObject is an interables of resultRow object.
+Index: TESTING.ttl
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@prefix HERO: <http://hero_ontology/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nHERO:House a HERO:ThreatTarget,\n        rdfs:Class ;\n    rdfs:label \"The House\" ;\n    rdfs:subClassOf HERO:House .\n\nHERO:Event_01 a HERO:OrdinaryWorld,\n        sem:Core,\n        sem:Event,\n        rdfs:Resource ;\n    rdfs:label \"Ordinary World presentation\" ;\n    HERO:hasHouse HERO:House_Stark ;\n    HERO:hasOccupation HERO:prophet ;\n    HERO:hasTitle HERO:Lord ;\n    HERO:journeyStage \"1\" ;\n    sem:hasActor HERO:Bran_Stark .\n\nHERO:Event_02 a HERO:CallToAdventure,\n        sem:Core,\n        sem:Event,\n        rdfs:Resource ;\n    rdfs:label \"Villain threatens the safety of somebody. This is the call for the hero\" ;\n    HERO:Threatens HERO:jewel ;\n    HERO:journeyStage \"2\" ;\n    HERO:villain HERO:Margaery_Tyrell ;\n    sem:hasActor HERO:Bran_Stark .\n\nHERO:Event_03 a HERO:MeetingTheMentor,\n        sem:Core,\n        sem:Event,\n        rdfs:Resource ;\n    rdfs:label \"Meeting the Mentor\" ;\n    HERO:journeyStage \"3\" ;\n    HERO:meetsMentor HERO:Khal_Drogo ;\n    HERO:powerLearned HERO:gravityControl ;\n    sem:hasActor HERO:Bran_Stark .\n\nHERO:Event_04 a HERO:EncounterAlly,\n        sem:Core,\n        sem:Event,\n        rdfs:Resource ;\n    rdfs:label \"The hero meets ally\" ;\n    HERO:journeyStage \"4\" ;\n    HERO:meetsAlly HERO:Eddard_Stark ;\n    sem:hasActor HERO:Bran_Stark ;\n    sem:hasPlace HERO:Raventree_Hall ;\n    sem:hasTime HERO:the_Winter_Solstice .\n\nHERO:Event_05 a HERO:FinalBattle,\n        sem:Core,\n        sem:Event,\n        rdfs:Resource ;\n    rdfs:label \"Final confrontation between hero and villain\" ;\n    HERO:helpedBy HERO:Eddard_Stark ;\n    HERO:herofights HERO:Margaery_Tyrell ;\n    HERO:journeyStage \"5\" ;\n    HERO:usepower HERO:gravityControl ;\n    sem:hasActor HERO:Bran_Stark ;\n    sem:hasPlace HERO:Karhold ;\n    sem:hasTime HERO:the_first_day_of_Spring .\n\nHERO:Event_06 a HERO:Party,\n        sem:Core,\n        sem:Event,\n        rdfs:Resource ;\n    rdfs:label \"Hero throws a party\" ;\n    HERO:celebratesvictory HERO:storytelling ;\n    HERO:journeyStage \"6\" ;\n    HERO:partywith HERO:Eddard_Stark ;\n    HERO:saves HERO:House ;\n    sem:hasActor HERO:Bran_Stark ;\n    sem:hasPlace HERO:The_Eyrie .\n\nHERO:Threatens rdfs:range HERO:ThreatTarget .\n\nHERO:cause_of_death rdfs:range xsd:string .\n\nHERO:celebratesvictory rdfs:range HERO:Celebration .\n\nHERO:hasHouse rdfs:range HERO:House .\n\nHERO:hasOccupation rdfs:range HERO:Occupation .\n\nHERO:hasTitle rdfs:range HERO:Title .\n\nHERO:helpedBy rdfs:range HERO:HeroAlly .\n\nHERO:herofights rdfs:range HERO:Villain .\n\nHERO:meetsAlly rdfs:range HERO:HeroAlly .\n\nHERO:meetsMentor rdfs:range HERO:Mentor .\n\nHERO:partywith rdfs:range HERO:HeroAlly .\n\nHERO:powerLearned rdfs:range HERO:HeroPower .\n\nHERO:saves rdfs:range HERO:ThreatTarget .\n\nHERO:usepower rdfs:range HERO:HeroPower .\n\nHERO:villain rdfs:range HERO:Villain .\n\nsem:hasActor rdfs:range HERO:Hero .\n\nsem:hasPlace rdfs:range sem:Place .\n\nsem:hasTime rdfs:range sem:Time .\n\nHERO:CallToAdventure rdfs:subClassOf sem:Event .\n\nHERO:EncounterAlly rdfs:subClassOf sem:Event .\n\nHERO:FinalBattle rdfs:subClassOf sem:Event .\n\nHERO:House_Stark a HERO:House ;\n    rdfs:label \"House Stark\" .\n\nHERO:Karhold a sem:Place ;\n    rdfs:label \"Karhold\" .\n\nHERO:Khal_Drogo a HERO:Male,\n        sem:Actor ;\n    rdfs:label \"Khal Drogo\" .\n\nHERO:Lord a HERO:Male,\n        HERO:Title,\n        sem:Actor ;\n    rdfs:label \"Lord\" .\n\nHERO:MeetingTheMentor rdfs:subClassOf sem:Event .\n\nHERO:OrdinaryWorld rdfs:label \"First stage of the story - Ordinary world presentation\" ;\n    rdfs:subClassOf sem:Event .\n\nHERO:Party rdfs:subClassOf sem:Event .\n\nHERO:Raventree_Hall a sem:Place ;\n    rdfs:label \"Raventree Hall\" .\n\nHERO:The_Eyrie a sem:Place ;\n    rdfs:label \"The Eyrie\" .\n\nHERO:jewel a HERO:ThreatTarget ;\n    rdfs:label \"the jewel\" .\n\nHERO:prophet a HERO:Occupation ;\n    rdfs:label \"a prophet\" .\n\nHERO:storytelling a HERO:Celebration ;\n    rdfs:label \"listening to a storytelling\" .\n\nHERO:the_Winter_Solstice a sem:Time ;\n    rdfs:label \"the Winter Solstice\" .\n\nHERO:the_first_day_of_Spring a sem:Time ;\n    rdfs:label \"the first day of Spring\" .\n\nHERO:Margaery_Tyrell a HERO:Main_Character,\n        sem:Actor ;\n    rdfs:label \"Margaery Tyrell\" .\n\nHERO:gravityControl a HERO:Power ;\n    rdfs:label \"gravity Control\" .\n\nHERO:Eddard_Stark a HERO:Male,\n        sem:Actor ;\n    rdfs:label \"Eddard Stark\" .\n\nHERO:Bran_Stark a HERO:Main_Character,\n        HERO:Male,\n        sem:Actor ;\n    rdfs:label \"Bran Stark\" .\n\nsem:Core a owl:Class ;\n    rdfs:label \"Core\" .\n\nsem:Event a owl:Class ;\n    rdfs:label \"Event\" .\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/TESTING.ttl b/TESTING.ttl
+--- a/TESTING.ttl	(revision 632eb46c2a75e754a598915e6df25d7b571f249d)
++++ b/TESTING.ttl	(date 1673371451482)
+@@ -4,11 +4,6 @@
+ @prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+ @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+ 
+-HERO:House a HERO:ThreatTarget,
+-        rdfs:Class ;
+-    rdfs:label "The House" ;
+-    rdfs:subClassOf HERO:House .
+-
+ HERO:Event_01 a HERO:OrdinaryWorld,
+         sem:Core,
+         sem:Event,
+@@ -25,9 +20,9 @@
+         sem:Event,
+         rdfs:Resource ;
+     rdfs:label "Villain threatens the safety of somebody. This is the call for the hero" ;
+-    HERO:Threatens HERO:jewel ;
++    HERO:Threatens HERO:peace ;
+     HERO:journeyStage "2" ;
+-    HERO:villain HERO:Margaery_Tyrell ;
++    HERO:villain HERO:Petyr_Baelish ;
+     sem:hasActor HERO:Bran_Stark .
+ 
+ HERO:Event_03 a HERO:MeetingTheMentor,
+@@ -36,8 +31,8 @@
+         rdfs:Resource ;
+     rdfs:label "Meeting the Mentor" ;
+     HERO:journeyStage "3" ;
+-    HERO:meetsMentor HERO:Khal_Drogo ;
+-    HERO:powerLearned HERO:gravityControl ;
++    HERO:meetsMentor HERO:Steffon_Baratheon ;
++    HERO:powerLearned HERO:teleportation ;
+     sem:hasActor HERO:Bran_Stark .
+ 
+ HERO:Event_04 a HERO:EncounterAlly,
+@@ -46,23 +41,23 @@
+         rdfs:Resource ;
+     rdfs:label "The hero meets ally" ;
+     HERO:journeyStage "4" ;
+-    HERO:meetsAlly HERO:Eddard_Stark ;
++    HERO:meetsAlly HERO:Arya_Stark ;
+     sem:hasActor HERO:Bran_Stark ;
+-    sem:hasPlace HERO:Raventree_Hall ;
+-    sem:hasTime HERO:the_Winter_Solstice .
++    sem:hasPlace HERO:Bear_Island ;
++    sem:hasTime HERO:the_Summer_Solstice .
+ 
+ HERO:Event_05 a HERO:FinalBattle,
+         sem:Core,
+         sem:Event,
+         rdfs:Resource ;
+     rdfs:label "Final confrontation between hero and villain" ;
+-    HERO:helpedBy HERO:Eddard_Stark ;
+-    HERO:herofights HERO:Margaery_Tyrell ;
++    HERO:helpedBy HERO:Arya_Stark ;
++    HERO:herofights HERO:Petyr_Baelish ;
+     HERO:journeyStage "5" ;
+-    HERO:usepower HERO:gravityControl ;
++    HERO:usepower HERO:teleportation ;
+     sem:hasActor HERO:Bran_Stark ;
+-    sem:hasPlace HERO:Karhold ;
+-    sem:hasTime HERO:the_first_day_of_Spring .
++    sem:hasPlace HERO:Bear_Island ;
++    sem:hasTime HERO:the_Autumnal_Equinox .
+ 
+ HERO:Event_06 a HERO:Party,
+         sem:Core,
+@@ -71,10 +66,10 @@
+     rdfs:label "Hero throws a party" ;
+     HERO:celebratesvictory HERO:storytelling ;
+     HERO:journeyStage "6" ;
+-    HERO:partywith HERO:Eddard_Stark ;
+-    HERO:saves HERO:House ;
++    HERO:partywith HERO:Arya_Stark ;
++    HERO:saves HERO:castle ;
+     sem:hasActor HERO:Bran_Stark ;
+-    sem:hasPlace HERO:The_Eyrie .
++    sem:hasPlace HERO:The_Twins .
+ 
+ HERO:Threatens rdfs:range HERO:ThreatTarget .
+ 
+@@ -121,13 +116,6 @@
+ HERO:House_Stark a HERO:House ;
+     rdfs:label "House Stark" .
+ 
+-HERO:Karhold a sem:Place ;
+-    rdfs:label "Karhold" .
+-
+-HERO:Khal_Drogo a HERO:Male,
+-        sem:Actor ;
+-    rdfs:label "Khal Drogo" .
+-
+ HERO:Lord a HERO:Male,
+         HERO:Title,
+         sem:Actor ;
+@@ -140,14 +128,18 @@
+ 
+ HERO:Party rdfs:subClassOf sem:Event .
+ 
+-HERO:Raventree_Hall a sem:Place ;
+-    rdfs:label "Raventree Hall" .
++HERO:Steffon_Baratheon a HERO:Male,
++        sem:Actor ;
++    rdfs:label "Steffon Baratheon" .
+ 
+-HERO:The_Eyrie a sem:Place ;
+-    rdfs:label "The Eyrie" .
++HERO:The_Twins a sem:Place ;
++    rdfs:label "The Twins" .
+ 
+-HERO:jewel a HERO:ThreatTarget ;
+-    rdfs:label "the jewel" .
++HERO:castle a HERO:ThreatTarget ;
++    rdfs:label "the castle" .
++
++HERO:peace a HERO:ThreatTarget ;
++    rdfs:label "the peace" .
+ 
+ HERO:prophet a HERO:Occupation ;
+     rdfs:label "a prophet" .
+@@ -155,25 +147,27 @@
+ HERO:storytelling a HERO:Celebration ;
+     rdfs:label "listening to a storytelling" .
+ 
+-HERO:the_Winter_Solstice a sem:Time ;
+-    rdfs:label "the Winter Solstice" .
++HERO:the_Autumnal_Equinox a sem:Time ;
++    rdfs:label "the Autumnal Equinox" .
+ 
+-HERO:the_first_day_of_Spring a sem:Time ;
+-    rdfs:label "the first day of Spring" .
++HERO:the_Summer_Solstice a sem:Time ;
++    rdfs:label "the Summer Solstice" .
+ 
+-HERO:Margaery_Tyrell a HERO:Main_Character,
++HERO:Bear_Island a sem:Place ;
++    rdfs:label "Bear Island" .
++
++HERO:Petyr_Baelish a HERO:Main_Character,
+         sem:Actor ;
+-    rdfs:label "Margaery Tyrell" .
++    rdfs:label "Petyr Baelish" .
+ 
+-HERO:gravityControl a HERO:Power ;
+-    rdfs:label "gravity Control" .
++HERO:teleportation a HERO:Power ;
++    rdfs:label "teleportation" .
+ 
+-HERO:Eddard_Stark a HERO:Male,
++HERO:Arya_Stark a HERO:Main_Character,
+         sem:Actor ;
+-    rdfs:label "Eddard Stark" .
++    rdfs:label "Arya Stark" .
+ 
+ HERO:Bran_Stark a HERO:Main_Character,
+-        HERO:Male,
+         sem:Actor ;
+     rdfs:label "Bran Stark" .
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"83a7392c-09da-4bb9-b6c1-71213b41c276\" name=\"Changes\" comment=\"creating json works\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/COPY_QUERYOMG.py\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/TESTING.ttl\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/TESTING.ttl\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Useful_turtles/got_instances.ttl\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Useful_turtles/got_instances.ttl\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/createDataset_sketch.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/createDataset_sketch.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/generated_stories/story_DEBUG_arelation.ttl\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/generated_stories/tory_DEBUG_arelation.ttl\" beforeDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Turtle file (LtE)\" />\n        <option value=\"Python Script\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitSEFilterConfiguration\">\n    <file-type-list>\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\n      <filtered-out-file-type name=\"TAG\" />\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\n    </file-type-list>\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2HDKxCjNNwfOH8tBLMMWIhtxfFr\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/home/gabhoo/research/GoTAutomyth_Short/GoTAutomyth_short&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$\" />\n      <recent name=\"$PROJECT_DIR$/Useful_turtles\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Python.generatorShort\">\n    <configuration name=\"StoryKG_generator\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"GoTAutomyth_short\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/StoryKG_generator.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"generatorShort\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"GoTAutomyth_short\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/generatorShort.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"try_json\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"GoTAutomyth_short\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/try_json.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Python.StoryKG_generator\" />\n        <item itemvalue=\"Python.try_json\" />\n        <item itemvalue=\"Python.generatorShort\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"83a7392c-09da-4bb9-b6c1-71213b41c276\" name=\"Changes\" comment=\"\" />\n      <created>1667814459711</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1667814459711</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"hh\">\n      <created>1672857870654</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1672857870654</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"hh\">\n      <created>1672857906948</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1672857906948</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"hh\">\n      <created>1672921010388</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1672921010388</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"hh\">\n      <created>1672935310893</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1672935310893</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"herojourney short, 6 events\">\n      <created>1672935341061</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1672935341061</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"herojourney short, 6 events.&#10;rn $python3 createDataset_sketch.py community 10 &#10;to get 10 stories.&#10;query for base line works. All other queries are to be done\">\n      <created>1672950599719</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1672950599719</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"herojourney short, 6 events.&#10;rn $python3 createDataset_sketch.py community 10 &#10;to get 10 stories.&#10;query for base line works. All other queries are to be done\">\n      <created>1673092616678</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1673092616678</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"Query for text event 1 is done, new cool way to make it into a string easly was found\">\n      <created>1673100078972</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1673100078972</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"Query for text event 1 is done, new cool way to make it into a string easly was found\">\n      <created>1673139230125</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1673139230125</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"Query for text event 1 is done, new cool way to make it into a string easly was found\">\n      <created>1673296735700</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1673296735700</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"query n_2\">\n      <created>1673349135981</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1673349135981</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"query n_2\">\n      <created>1673349417595</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1673349417595</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"creating json works\">\n      <created>1673367122536</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1673367122536</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"14\" />\n    <servers />\n  </component>\n  <component name=\"UnknownFeatures\">\n    <option featureType=\"com.intellij.fileTypeFactory\" implementationName=\"*.ttl\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"hh\" />\n    <MESSAGE value=\"herojourney short, 6 events\" />\n    <MESSAGE value=\"herojourney short, 6 events.&#10;rn $python3 createDataset_sketch.py community 10 &#10;to get 10 stories.&#10;query for base line works. All other queries are to be done\" />\n    <MESSAGE value=\"Query for text event 1 is done, new cool way to make it into a string easly was found\" />\n    <MESSAGE value=\"query n_2\" />\n    <MESSAGE value=\"creating json works\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"creating json works\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 632eb46c2a75e754a598915e6df25d7b571f249d)
++++ b/.idea/workspace.xml	(date 1673371448446)
+@@ -4,14 +4,11 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="creating json works">
++    <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="smol">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/COPY_QUERYOMG.py" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Queries4Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Queries4Text.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/TESTING.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/TESTING.ttl" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Useful_turtles/got_instances.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/Useful_turtles/got_instances.ttl" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/createDataset_sketch.py" beforeDir="false" afterPath="$PROJECT_DIR$/createDataset_sketch.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/generated_stories/story_DEBUG_arelation.ttl" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/generated_stories/tory_DEBUG_arelation.ttl" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -235,7 +232,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1673367122536</updated>
+     </task>
+-    <option name="localTasksCounter" value="14" />
++    <task id="LOCAL-00014" summary="smol">
++      <created>1673371155641</created>
++      <option name="number" value="00014" />
++      <option name="presentableId" value="LOCAL-00014" />
++      <option name="project" value="LOCAL" />
++      <updated>1673371155641</updated>
++    </task>
++    <option name="localTasksCounter" value="15" />
+     <servers />
+   </component>
+   <component name="UnknownFeatures">
+@@ -259,6 +263,7 @@
+     <MESSAGE value="Query for text event 1 is done, new cool way to make it into a string easly was found" />
+     <MESSAGE value="query n_2" />
+     <MESSAGE value="creating json works" />
+-    <option name="LAST_COMMIT_MESSAGE" value="creating json works" />
++    <MESSAGE value="smol" />
++    <option name="LAST_COMMIT_MESSAGE" value="smol" />
+   </component>
+ </project>
+\ No newline at end of file
