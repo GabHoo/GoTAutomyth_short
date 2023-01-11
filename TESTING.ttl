@@ -4,11 +4,6 @@
 @prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-HERO:House a HERO:ThreatTarget,
-        rdfs:Class ;
-    rdfs:label "The House" ;
-    rdfs:subClassOf HERO:House .
-
 HERO:Event_01 a HERO:OrdinaryWorld,
         sem:Core,
         sem:Event,
@@ -25,9 +20,9 @@ HERO:Event_02 a HERO:CallToAdventure,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Villain threatens the safety of somebody. This is the call for the hero" ;
-    HERO:Threatens HERO:jewel ;
+    HERO:Threatens HERO:peace ;
     HERO:journeyStage "2" ;
-    HERO:villain HERO:Margaery_Tyrell ;
+    HERO:villain HERO:Petyr_Baelish ;
     sem:hasActor HERO:Bran_Stark .
 
 HERO:Event_03 a HERO:MeetingTheMentor,
@@ -36,8 +31,8 @@ HERO:Event_03 a HERO:MeetingTheMentor,
         rdfs:Resource ;
     rdfs:label "Meeting the Mentor" ;
     HERO:journeyStage "3" ;
-    HERO:meetsMentor HERO:Khal_Drogo ;
-    HERO:powerLearned HERO:gravityControl ;
+    HERO:meetsMentor HERO:Steffon_Baratheon ;
+    HERO:powerLearned HERO:teleportation ;
     sem:hasActor HERO:Bran_Stark .
 
 HERO:Event_04 a HERO:EncounterAlly,
@@ -46,23 +41,23 @@ HERO:Event_04 a HERO:EncounterAlly,
         rdfs:Resource ;
     rdfs:label "The hero meets ally" ;
     HERO:journeyStage "4" ;
-    HERO:meetsAlly HERO:Eddard_Stark ;
+    HERO:meetsAlly HERO:Arya_Stark ;
     sem:hasActor HERO:Bran_Stark ;
-    sem:hasPlace HERO:Raventree_Hall ;
-    sem:hasTime HERO:the_Winter_Solstice .
+    sem:hasPlace HERO:Bear_Island ;
+    sem:hasTime HERO:the_Summer_Solstice .
 
 HERO:Event_05 a HERO:FinalBattle,
         sem:Core,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Final confrontation between hero and villain" ;
-    HERO:helpedBy HERO:Eddard_Stark ;
-    HERO:herofights HERO:Margaery_Tyrell ;
+    HERO:helpedBy HERO:Arya_Stark ;
+    HERO:herofights HERO:Petyr_Baelish ;
     HERO:journeyStage "5" ;
-    HERO:usepower HERO:gravityControl ;
+    HERO:usepower HERO:teleportation ;
     sem:hasActor HERO:Bran_Stark ;
-    sem:hasPlace HERO:Karhold ;
-    sem:hasTime HERO:the_first_day_of_Spring .
+    sem:hasPlace HERO:Bear_Island ;
+    sem:hasTime HERO:the_Autumnal_Equinox .
 
 HERO:Event_06 a HERO:Party,
         sem:Core,
@@ -71,10 +66,10 @@ HERO:Event_06 a HERO:Party,
     rdfs:label "Hero throws a party" ;
     HERO:celebratesvictory HERO:storytelling ;
     HERO:journeyStage "6" ;
-    HERO:partywith HERO:Eddard_Stark ;
-    HERO:saves HERO:House ;
+    HERO:partywith HERO:Arya_Stark ;
+    HERO:saves HERO:castle ;
     sem:hasActor HERO:Bran_Stark ;
-    sem:hasPlace HERO:The_Eyrie .
+    sem:hasPlace HERO:The_Twins .
 
 HERO:Threatens rdfs:range HERO:ThreatTarget .
 
@@ -121,13 +116,6 @@ HERO:FinalBattle rdfs:subClassOf sem:Event .
 HERO:House_Stark a HERO:House ;
     rdfs:label "House Stark" .
 
-HERO:Karhold a sem:Place ;
-    rdfs:label "Karhold" .
-
-HERO:Khal_Drogo a HERO:Male,
-        sem:Actor ;
-    rdfs:label "Khal Drogo" .
-
 HERO:Lord a HERO:Male,
         HERO:Title,
         sem:Actor ;
@@ -140,14 +128,18 @@ HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world present
 
 HERO:Party rdfs:subClassOf sem:Event .
 
-HERO:Raventree_Hall a sem:Place ;
-    rdfs:label "Raventree Hall" .
+HERO:Steffon_Baratheon a HERO:Male,
+        sem:Actor ;
+    rdfs:label "Steffon Baratheon" .
 
-HERO:The_Eyrie a sem:Place ;
-    rdfs:label "The Eyrie" .
+HERO:The_Twins a sem:Place ;
+    rdfs:label "The Twins" .
 
-HERO:jewel a HERO:ThreatTarget ;
-    rdfs:label "the jewel" .
+HERO:castle a HERO:ThreatTarget ;
+    rdfs:label "the castle" .
+
+HERO:peace a HERO:ThreatTarget ;
+    rdfs:label "the peace" .
 
 HERO:prophet a HERO:Occupation ;
     rdfs:label "a prophet" .
@@ -155,25 +147,27 @@ HERO:prophet a HERO:Occupation ;
 HERO:storytelling a HERO:Celebration ;
     rdfs:label "listening to a storytelling" .
 
-HERO:the_Winter_Solstice a sem:Time ;
-    rdfs:label "the Winter Solstice" .
+HERO:the_Autumnal_Equinox a sem:Time ;
+    rdfs:label "the Autumnal Equinox" .
 
-HERO:the_first_day_of_Spring a sem:Time ;
-    rdfs:label "the first day of Spring" .
+HERO:the_Summer_Solstice a sem:Time ;
+    rdfs:label "the Summer Solstice" .
 
-HERO:Margaery_Tyrell a HERO:Main_Character,
+HERO:Bear_Island a sem:Place ;
+    rdfs:label "Bear Island" .
+
+HERO:Petyr_Baelish a HERO:Main_Character,
         sem:Actor ;
-    rdfs:label "Margaery Tyrell" .
+    rdfs:label "Petyr Baelish" .
 
-HERO:gravityControl a HERO:Power ;
-    rdfs:label "gravity Control" .
+HERO:teleportation a HERO:Power ;
+    rdfs:label "teleportation" .
 
-HERO:Eddard_Stark a HERO:Male,
+HERO:Arya_Stark a HERO:Main_Character,
         sem:Actor ;
-    rdfs:label "Eddard Stark" .
+    rdfs:label "Arya Stark" .
 
 HERO:Bran_Stark a HERO:Main_Character,
-        HERO:Male,
         sem:Actor ;
     rdfs:label "Bran Stark" .
 
