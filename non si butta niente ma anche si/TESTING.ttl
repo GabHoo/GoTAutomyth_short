@@ -1,0 +1,180 @@
+@prefix HERO: <http://hero_ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+HERO:Event_01 a HERO:OrdinaryWorld,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Ordinary World presentation" ;
+    HERO:hasHouse HERO:House_Stark ;
+    HERO:hasOccupation HERO:assassin ;
+    HERO:hasTitle HERO:Lady ;
+    HERO:journeyStage "1" ;
+    sem:hasActor HERO:Arya_Stark .
+
+HERO:Event_02 a HERO:CallToAdventure,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Villain threatens the safety of somebody. This is the call for the hero" ;
+    HERO:Threatens HERO:jewel ;
+    HERO:journeyStage "2" ;
+    HERO:villain HERO:Jon_Snow ;
+    sem:hasActor HERO:Arya_Stark .
+
+HERO:Event_03 a HERO:MeetingTheMentor,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Meeting the Mentor" ;
+    HERO:journeyStage "3" ;
+    HERO:meetsMentor HERO:Daenerys_Targaryen ;
+    HERO:powerLearned HERO:slowingTime ;
+    sem:hasActor HERO:Arya_Stark .
+
+HERO:Event_04 a HERO:EncounterAlly,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "The hero meets ally" ;
+    HERO:journeyStage "4" ;
+    HERO:meetsAlly HERO:Bran_Stark ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:Riverlands ;
+    sem:hasTime HERO:the_Winter_Solstice .
+
+HERO:Event_05 a HERO:FinalBattle,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Final confrontation between hero and villain" ;
+    HERO:helpedBy HERO:Bran_Stark ;
+    HERO:herofights HERO:Jon_Snow ;
+    HERO:journeyStage "5" ;
+    HERO:usepower HERO:slowingTime ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:White_Harbor ;
+    sem:hasTime HERO:the_Autumnal_Equinox .
+
+HERO:Event_06 a HERO:Party,
+        sem:Core,
+        sem:Event,
+        rdfs:Resource ;
+    rdfs:label "Hero throws a party" ;
+    HERO:celebratesvictory HERO:feast ;
+    HERO:journeyStage "6" ;
+    HERO:partywith HERO:Bran_Stark ;
+    HERO:saves HERO:jewel ;
+    sem:hasActor HERO:Arya_Stark ;
+    sem:hasPlace HERO:White_Harbor .
+
+HERO:Threatens rdfs:range HERO:ThreatTarget .
+
+HERO:cause_of_death rdfs:range xsd:string .
+
+HERO:celebratesvictory rdfs:range HERO:Celebration .
+
+HERO:hasHouse rdfs:range HERO:House .
+
+HERO:hasOccupation rdfs:range HERO:Occupation .
+
+HERO:hasTitle rdfs:range HERO:Title .
+
+HERO:helpedBy rdfs:range HERO:HeroAlly .
+
+HERO:herofights rdfs:range HERO:Villain .
+
+HERO:meetsAlly rdfs:range HERO:HeroAlly .
+
+HERO:meetsMentor rdfs:range HERO:Mentor .
+
+HERO:partywith rdfs:range HERO:HeroAlly .
+
+HERO:powerLearned rdfs:range HERO:HeroPower .
+
+HERO:saves rdfs:range HERO:ThreatTarget .
+
+HERO:usepower rdfs:range HERO:HeroPower .
+
+HERO:villain rdfs:range HERO:Villain .
+
+sem:hasActor rdfs:range HERO:Hero .
+
+sem:hasPlace rdfs:range sem:Place .
+
+sem:hasTime rdfs:range sem:Time .
+
+HERO:CallToAdventure rdfs:subClassOf sem:Event .
+
+HERO:Daenerys_Targaryen a HERO:Female,
+        HERO:Main_Character,
+        sem:Actor ;
+    rdfs:label "Daenerys Targaryen" .
+
+HERO:EncounterAlly rdfs:subClassOf sem:Event .
+
+HERO:FinalBattle rdfs:subClassOf sem:Event .
+
+HERO:House_Stark a HERO:House ;
+    rdfs:label "House Stark" .
+
+HERO:Lady a HERO:Female,
+        HERO:Title,
+        sem:Actor ;
+    rdfs:label "Lady" .
+
+HERO:MeetingTheMentor rdfs:subClassOf sem:Event .
+
+HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" ;
+    rdfs:subClassOf sem:Event .
+
+HERO:Party rdfs:subClassOf sem:Event .
+
+HERO:Riverlands a sem:Place ;
+    rdfs:label "Riverlands" .
+
+HERO:assassin a HERO:Occupation ;
+    rdfs:label "an assassin" .
+
+HERO:feast a HERO:Celebration ;
+    rdfs:label " having a feast" .
+
+HERO:the_Autumnal_Equinox a sem:Time ;
+    rdfs:label "the Autumnal Equinox" .
+
+HERO:the_Winter_Solstice a sem:Time ;
+    rdfs:label "the Winter Solstice" .
+
+HERO:Jon_Snow a HERO:Main_Character,
+        HERO:Male,
+        sem:Actor ;
+    rdfs:label "Jon Snow" .
+
+HERO:White_Harbor a sem:Place ;
+    rdfs:label "White Harbor" .
+
+HERO:jewel a HERO:ThreatTarget ;
+    rdfs:label "the jewel" .
+
+HERO:slowingTime a HERO:Power ;
+    rdfs:label "slowing Time" .
+
+HERO:Bran_Stark a HERO:Main_Character,
+        HERO:Male,
+        sem:Actor ;
+    rdfs:label "Bran Stark" .
+
+HERO:Arya_Stark a HERO:Female,
+        HERO:Main_Character,
+        sem:Actor ;
+    rdfs:label "Arya Stark" .
+
+sem:Core a owl:Class ;
+    rdfs:label "Core" .
+
+sem:Event a owl:Class ;
+    rdfs:label "Event" .
+

@@ -10,10 +10,10 @@ HERO:Event_01 a HERO:OrdinaryWorld,
         rdfs:Resource ;
     rdfs:label "Ordinary World presentation" ;
     HERO:hasHouse HERO:House_Targaryen ;
-    HERO:hasOccupation HERO:spy ;
-    HERO:hasTitle HERO:King ;
+    HERO:hasOccupation HERO:revolutionary ;
+    HERO:hasTitle HERO:Princess ;
     HERO:journeyStage "1" ;
-    sem:hasActor HERO:Jon_Snow .
+    sem:hasActor HERO:Daenerys_Targaryen .
 
 HERO:Event_02 a HERO:CallToAdventure,
         sem:Core,
@@ -22,8 +22,8 @@ HERO:Event_02 a HERO:CallToAdventure,
     rdfs:label "Villain threatens the safety of somebody. This is the call for the hero" ;
     HERO:Threatens HERO:peace ;
     HERO:journeyStage "2" ;
-    HERO:villain HERO:Petyr_Baelish ;
-    sem:hasActor HERO:Jon_Snow .
+    HERO:villain HERO:Robert_Baratheon ;
+    sem:hasActor HERO:Daenerys_Targaryen .
 
 HERO:Event_03 a HERO:MeetingTheMentor,
         sem:Core,
@@ -31,9 +31,9 @@ HERO:Event_03 a HERO:MeetingTheMentor,
         rdfs:Resource ;
     rdfs:label "Meeting the Mentor" ;
     HERO:journeyStage "3" ;
-    HERO:meetsMentor HERO:Eddard_Stark ;
+    HERO:meetsMentor HERO:Joanna_Lannister ;
     HERO:powerLearned HERO:invisibility ;
-    sem:hasActor HERO:Jon_Snow .
+    sem:hasActor HERO:Daenerys_Targaryen .
 
 HERO:Event_04 a HERO:EncounterAlly,
         sem:Core,
@@ -41,35 +41,35 @@ HERO:Event_04 a HERO:EncounterAlly,
         rdfs:Resource ;
     rdfs:label "The hero meets ally" ;
     HERO:journeyStage "4" ;
-    HERO:meetsAlly HERO:Benjen_Stark ;
-    sem:hasActor HERO:Jon_Snow ;
-    sem:hasPlace HERO:Moat_Cailin ;
-    sem:hasTime HERO:the_Winter_Solstice .
+    HERO:meetsAlly HERO:Lyanna_Stark ;
+    sem:hasActor HERO:Daenerys_Targaryen ;
+    sem:hasPlace HERO:Oldstones ;
+    sem:hasTime HERO:the_Autumnal_Equinox .
 
 HERO:Event_05 a HERO:FinalBattle,
         sem:Core,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Final confrontation between hero and villain" ;
-    HERO:helpedBy HERO:Benjen_Stark ;
-    HERO:herofights HERO:Petyr_Baelish ;
+    HERO:helpedBy HERO:Lyanna_Stark ;
+    HERO:herofights HERO:Robert_Baratheon ;
     HERO:journeyStage "5" ;
     HERO:usepower HERO:invisibility ;
-    sem:hasActor HERO:Jon_Snow ;
-    sem:hasPlace HERO:Moat_Cailin ;
-    sem:hasTime HERO:the_Winter_Solstice .
+    sem:hasActor HERO:Daenerys_Targaryen ;
+    sem:hasPlace HERO:Seagard ;
+    sem:hasTime HERO:the_Summer_Solstice .
 
 HERO:Event_06 a HERO:Party,
         sem:Core,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Hero throws a party" ;
-    HERO:celebratesvictory HERO:fireworks ;
+    HERO:celebratesvictory HERO:storytelling ;
     HERO:journeyStage "6" ;
-    HERO:partywith HERO:Benjen_Stark ;
-    HERO:saves HERO:freedom ;
-    sem:hasActor HERO:Jon_Snow ;
-    sem:hasPlace HERO:Bear_Island .
+    HERO:partywith HERO:Lyanna_Stark ;
+    HERO:saves HERO:peace ;
+    sem:hasActor HERO:Daenerys_Targaryen ;
+    sem:hasPlace HERO:Moat_Cailin .
 
 HERO:Threatens rdfs:range HERO:ThreatTarget .
 
@@ -107,14 +107,7 @@ sem:hasPlace rdfs:range sem:Place .
 
 sem:hasTime rdfs:range sem:Time .
 
-HERO:Bear_Island a sem:Place ;
-    rdfs:label "Bear Island" .
-
 HERO:CallToAdventure rdfs:subClassOf sem:Event .
-
-HERO:Eddard_Stark a HERO:Male,
-        sem:Actor ;
-    rdfs:label "Eddard Stark" .
 
 HERO:EncounterAlly rdfs:subClassOf sem:Event .
 
@@ -123,52 +116,60 @@ HERO:FinalBattle rdfs:subClassOf sem:Event .
 HERO:House_Targaryen a HERO:House ;
     rdfs:label "House Targaryen" .
 
-HERO:King a HERO:Male,
-        HERO:Title,
+HERO:Joanna_Lannister a HERO:Female,
         sem:Actor ;
-    rdfs:label "King" .
+    rdfs:label "Joanna Lannister" .
 
 HERO:MeetingTheMentor rdfs:subClassOf sem:Event .
+
+HERO:Moat_Cailin a sem:Place ;
+    rdfs:label "Moat Cailin" .
+
+HERO:Oldstones a sem:Place ;
+    rdfs:label "Oldstones" .
 
 HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world presentation" ;
     rdfs:subClassOf sem:Event .
 
 HERO:Party rdfs:subClassOf sem:Event .
 
-HERO:fireworks a HERO:Celebration ;
-    rdfs:label "making fireworks" .
+HERO:Princess a HERO:Title ;
+    rdfs:label "Princess" .
 
-HERO:freedom a HERO:ThreatTarget ;
-    rdfs:label "the freedom" .
+HERO:Seagard a sem:Place ;
+    rdfs:label "Seagard" .
 
-HERO:peace a HERO:ThreatTarget ;
-    rdfs:label "the peace" .
+HERO:revolutionary a HERO:Occupation ;
+    rdfs:label "a revolutionary" .
 
-HERO:spy a HERO:Occupation ;
-    rdfs:label "a spy" .
+HERO:storytelling a HERO:Celebration ;
+    rdfs:label "listening to a storytelling" .
 
-HERO:Moat_Cailin a sem:Place ;
-    rdfs:label "Moat Cailin" .
+HERO:the_Autumnal_Equinox a sem:Time ;
+    rdfs:label "the Autumnal Equinox" .
 
-HERO:Petyr_Baelish a HERO:Main_Character,
+HERO:the_Summer_Solstice a sem:Time ;
+    rdfs:label "the Summer Solstice" .
+
+HERO:Robert_Baratheon a HERO:Main_Character,
         HERO:Male,
         sem:Actor ;
-    rdfs:label "Petyr Baelish" .
+    rdfs:label "Robert Baratheon" .
 
 HERO:invisibility a HERO:Power ;
     rdfs:label "invisibility" .
 
-HERO:the_Winter_Solstice a sem:Time ;
-    rdfs:label "the Winter Solstice" .
+HERO:peace a HERO:ThreatTarget ;
+    rdfs:label "the peace" .
 
-HERO:Benjen_Stark a HERO:Male,
+HERO:Lyanna_Stark a HERO:Female,
         sem:Actor ;
-    rdfs:label "Benjen Stark" .
+    rdfs:label "Lyanna Stark" .
 
-HERO:Jon_Snow a HERO:Main_Character,
-        HERO:Male,
+HERO:Daenerys_Targaryen a HERO:Female,
+        HERO:Main_Character,
         sem:Actor ;
-    rdfs:label "Jon Snow" .
+    rdfs:label "Daenerys Targaryen" .
 
 sem:Core a owl:Class ;
     rdfs:label "Core" .

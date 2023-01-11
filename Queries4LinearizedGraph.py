@@ -8,6 +8,7 @@ import pandas as pd
 from string import Template
 import re
 import json
+from SPARQLWrapper import SPARQLWrapper, JSON
 
 
 def Graph_Generator_baseline_instances(story):
@@ -172,35 +173,28 @@ def Graph_Generator_baseline_class(story):
     return text
 
 
-def Graph_Generator_types(story):
-    texts = []
-    text = story.query("""
-  CONSTRUCT { ?s ?p ?o . } 
-  WHERE { {VALUES ?p {rdf:type rdfs:subClassOf} ?s ?p ?o} FILTER { ?o !=  {RDFS.Resource ns1.Core ns1.Authority}}}
 
-    """, initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/'})
-    texts.append(text)
-
-    return text
 
 
 def Graph_Generator_types(story):
-    texts = []
     text = story.query("""
-  CONSTRUCT { ?s a ?o . } 
-  WHERE {?s a ?o.  FILTER(?o != ns1:Core). FILTER(?o != rdfs:Resource). FILTER(?o != ns2:Male) . FILTER(?o != ns2:Female) . FILTER(?o != owl:Class) . FILTER(?o != ns1:Event)}
+    SELECT ?s ?p ?o 
+  WHERE {VALUES ?p {rdf:type} ?s ?p ?o.  
+  FILTER(?o != ns1:Core). FILTER(?o != rdfs:Resource). FILTER(?o != ns2:Male) . FILTER(?o != ns2:Female). FILTER(?o != ns1:Event).}
 
-    """, initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/','ns2': 'http://hero_ontology/','owl':'http://www.w3.org/2002/07/owl/'})
-    texts.append(text)
-
+  ORDER BY ASC(?s)
+    """, initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/','ns2': 'http://hero_ontology/'})
     return text
+  
 
 def Graph_Generator_event(story):
     texts = []
     text = story.query("""
-  CONSTRUCT { ?s ?p ?o . } 
+  
+  SELECT ?s ?p ?o
   WHERE {VALUES ?s { ns2:Event_01 ns2:Event_02 ns2:Event_03 ns2:Event_04 ns2:Event_05 ns2:Event_06 ns2:Event_08 ns2:Event_09 ns2:Event_10 ns2:Event_11 ns2:Event_12 } ?s ?p ?o.
   FILTER(?o != ns1:Core). FILTER(?o != rdfs:Resource) }
+  ORDER BY ASC(?s)
     """, initNs={'ns2': 'http://hero_ontology/','ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/'})
     texts.append(text)
 
@@ -210,10 +204,11 @@ def Graph_Generator_event(story):
 def Graph_Generator_range(story):
     texts = []
     text = story.query("""
-  CONSTRUCT { ?s ?p ?o . } 
+  SELECT ?s ?p ?o
   WHERE {{VALUES ?s { ns2:Event_01 ns2:Event_02 ns2:Event_03 ns2:Event_04 ns2:Event_05 ns2:Event_06 ns2:Event_08 ns2:Event_09 ns2:Event_010
    ns2:Event_11 ns2:Event_12 } ?s ?p ?o } UNION {VALUES ?p { rdf:type rdfs:range} ?s ?p ?o. 
    }  FILTER(?o != ns1:Core). FILTER(?o != rdfs:Resource)}
+   ORDER BY ASC(?s)
     """, initNs={'ns2': 'http://hero_ontology/','ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/'})
     texts.append(text)
 
