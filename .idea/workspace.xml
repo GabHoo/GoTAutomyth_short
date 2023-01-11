@@ -4,47 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="ntg">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoT_Dataset_Generation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/CommunityMethodBackbone/GoT_Dataset_Generation.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network_of_Thrones/asoiaf-all-edges.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Network_of_Thrones[relationMethod]/asoiaf-all-edges.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network_of_Thrones/asoiaf-all-nodes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Network_of_Thrones[relationMethod]/asoiaf-all-nodes.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network_of_Thrones/asoiaf-book1-edges.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Network_of_Thrones[relationMethod]/asoiaf-book1-edges.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network_of_Thrones/asoiaf-book1-nodes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Network_of_Thrones[relationMethod]/asoiaf-book1-nodes.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network_of_Thrones/asoiaf-book2-edges.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Network_of_Thrones[relationMethod]/asoiaf-book2-edges.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network_of_Thrones/asoiaf-book2-nodes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Network_of_Thrones[relationMethod]/asoiaf-book2-nodes.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network_of_Thrones/asoiaf-book3-edges.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Network_of_Thrones[relationMethod]/asoiaf-book3-edges.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network_of_Thrones/asoiaf-book3-nodes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Network_of_Thrones[relationMethod]/asoiaf-book3-nodes.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network_of_Thrones/asoiaf-book4-edges.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Network_of_Thrones[relationMethod]/asoiaf-book4-edges.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network_of_Thrones/asoiaf-book4-nodes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Network_of_Thrones[relationMethod]/asoiaf-book4-nodes.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network_of_Thrones/asoiaf-book45-edges.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Network_of_Thrones[relationMethod]/asoiaf-book45-edges.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network_of_Thrones/asoiaf-book45-nodes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Network_of_Thrones[relationMethod]/asoiaf-book45-nodes.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network_of_Thrones/asoiaf-book5-edges.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Network_of_Thrones[relationMethod]/asoiaf-book5-edges.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network_of_Thrones/asoiaf-book5-nodes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Network_of_Thrones[relationMethod]/asoiaf-book5-nodes.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network_of_Thrones/edges_subset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Network_of_Thrones[relationMethod]/edges_subset.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Network_of_Thrones/nodes_subset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Network_of_Thrones[relationMethod]/nodes_subset.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queries4Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Queries4Text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StoryKG_gen_reborn.py" beforeDir="false" afterPath="$PROJECT_DIR$/StoryKG_gen_reborn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StoryKG_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/StoryKG_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTING.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/TESTING.ttl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Useful_turtles/Event_ontology.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/Useful_turtles/Event_ontology_OUTDATED.ttl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Useful_turtles/Event_ontology_reborn.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/Useful_turtles/Event_ontology_6events.ttl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Useful_turtles/Queries 2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Useful_turtles/ontology_event1.ttl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Useful_turtles/ontology_event1and2.ttl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Useful_turtles/ontology_one_all.ttl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/createDataset_sketch.py" beforeDir="false" afterPath="$PROJECT_DIR$/CreateDataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/createDataset_sketch_terri.py" beforeDir="false" afterPath="$PROJECT_DIR$/createDataset_sketch_terri.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/OUTDATED/create_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated_output/reborn_events_community/community_try.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/OUTDATED/generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/just a try .ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/non si butta niente ma anche si/COPY_QUERYOMG.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/non si butta niente ma anche si/Queries4Text[OUTDATED].py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/non si butta niente ma anche si/TESTING.ttl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/query-result.csv" beforeDir="false" afterPath="$PROJECT_DIR$/CommunityMethodBackbone/query-result.csv" afterDir="false" />
-    </list>
+    <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="come good cleaning" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -290,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673429257135</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="come good cleaning">
+      <created>1673432088970</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1673432088970</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -317,6 +284,7 @@
     <MESSAGE value="smol" />
     <MESSAGE value="deleting" />
     <MESSAGE value="ntg" />
-    <option name="LAST_COMMIT_MESSAGE" value="ntg" />
+    <MESSAGE value="come good cleaning" />
+    <option name="LAST_COMMIT_MESSAGE" value="come good cleaning" />
   </component>
 </project>
