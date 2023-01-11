@@ -473,7 +473,7 @@ def textGeneration_Event6_3(story):
 	?Loc12 rdfs:label ?LocLabel6.
 
 
-     BIND(CONCAT('This is how ', ?HeroName, ' managed to save the beloved ',?savedobjLabel,'. In ', ?LocLabel6, ' celebrated with  ',?friendLabel , ' by ' ,?celLabel, ' .'  ) as ?Event_06).
+     BIND(CONCAT('This is how ', ?HeroName, ' managed to save the beloved ',?savedobjLabel,'. In ', ?LocLabel6, ' celebrated with ',?friendLabel , ' by ' ,?celLabel, ' .'  ) as ?Event_06).
 
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})

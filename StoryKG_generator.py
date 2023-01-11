@@ -22,7 +22,7 @@ def random_pick(ist_class):
         return (random.choice([Literal("true", datatype=XSD.boolean), Literal("false", datatype=XSD.boolean)]))
 
     g = Graph()
-    g.parse("./Useful_turtles/Event_ontology.ttl")
+    g.parse("./Useful_turtles/Event_ontology_OUTDATED.ttl")
     #g.parse("./Useful_turtles/ontology_event1and2.ttl")
     g.parse("./Useful_turtles/got_instances.ttl")
 
@@ -159,8 +159,8 @@ def comm_based_pick(ist_class, communities=None, hero=None, char_type=None, vill
 
 
 def read_network_data():
-    edges = pd.read_csv("Network_of_Thrones/edges_subset.csv")
-    nodes = pd.read_csv("Network_of_Thrones/nodes_subset.csv")
+    edges = pd.read_csv("Network_of_Thrones[relationMethod]/edges_subset.csv")
+    nodes = pd.read_csv("Network_of_Thrones[relationMethod]/nodes_subset.csv")
     return nodes, edges
 
 
@@ -178,7 +178,7 @@ def relation_based_pick(edges, related_to_char, n):
 
 def gen_story(method):
     g = Graph(base="http://test.com/ns#")
-    g.parse("./Useful_turtles/Event_ontology.ttl")
+    g.parse("./Useful_turtles/Event_ontology_OUTDATED.ttl")
     #g.parse("./Useful_turtles/ontology_event1and2.ttl")
     g.parse("./Useful_turtles/got_instances.ttl")
 

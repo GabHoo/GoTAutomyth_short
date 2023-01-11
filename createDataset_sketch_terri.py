@@ -37,7 +37,6 @@ def random_formulation(story):
             raise "Excpetion event story text failed check testin.ttl"
 
         texto += result
-
     return texto
 
 

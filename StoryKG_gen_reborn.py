@@ -22,7 +22,7 @@ def random_pick(ist_class,g):
         return (random.choice([Literal("true", datatype=XSD.boolean), Literal("false", datatype=XSD.boolean)]))
 
     """g = Graph()
-    g.parse("./Useful_turtles/Event_ontology.ttl")
+    g.parse("./Useful_turtles/Event_ontology_OUTDATED.ttl")
     #g.parse("./Useful_turtles/ontology_event1and2.ttl")
     g.parse("./Useful_turtles/got_instances.ttl")"""
 
@@ -112,20 +112,6 @@ def find_communities(weighted_input):
                 communities_dict[mc] = com_copy
     #print("\ncommunities dict", communities_dict)
     return communities_dict
-'''
-def instantiate_ordinary_world(g, fixed):
-    qres = g.query("""SELECT ?hero ?occupation ?house ?title WHERE {
-                                        ?hero a HERO:Main_Character;
-                                       
-                                                HERO:occupation ?occupation;
-                                                HERO:family ?house;
-                                                 HERO:title ?title}""",initNs={ 'HERO': 'http://hero_ontology/'})
-
-    #qres = g.query(ordinary_world_template.substitute({'hero': fixed["Hero"].split("/")[-1]}))
-    fixed["Occupation"] = random.choice([row.occupation for row in qres])
-    fixed["House"] = random.choice([row.house for row in qres])
-    fixed["Title"] = random.choice([row.title for row in qres])
-'''
 
 def instantiate_ordinary_world(g, fixed):
     ordinary_world_template = Template("""SELECT ?occupation ?house ?title WHERE {
@@ -162,8 +148,8 @@ def comm_based_pick(ist_class, communities=None, hero=None, char_type=None, vill
 
 
 def read_network_data():
-    edges = pd.read_csv("Network_of_Thrones/edges_subset.csv")
-    nodes = pd.read_csv("Network_of_Thrones/nodes_subset.csv")
+    edges = pd.read_csv("Network_of_Thrones[relationMethod]/edges_subset.csv")
+    nodes = pd.read_csv("Network_of_Thrones[relationMethod]/nodes_subset.csv")
     return nodes, edges
 
 
@@ -181,7 +167,7 @@ def relation_based_pick(edges, related_to_char, n):
 
 def gen_story(method):
     g = Graph(base="http://test.com/ns#")
-    g.parse("./Useful_turtles/Event_ontology_reborn.ttl")
+    g.parse("./Useful_turtles/Event_ontology_6events.ttl")
     #g.parse("./Useful_turtles/ontology_event1and2.ttl")
     g.parse("./Useful_turtles/got_instances.ttl")
 
@@ -190,7 +176,7 @@ def gen_story(method):
     DeductiveClosure(RDFS_Semantics).expand(g)
 
     if method == "community":
-        communities = find_communities("query-result.csv")
+        communities = find_communities("CommunityMethodBackbone/query-result.csv")
     elif method == "relation":
         nodes, edges = read_network_data()
         n = 3

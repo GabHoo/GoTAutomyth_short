@@ -18,7 +18,7 @@ def random_pick(ist_class):
         return(random.choice([Literal("true", datatype=XSD.boolean),Literal("false", datatype=XSD.boolean)]))
 
     g=Graph()
-    g.parse("./Event_ontology.ttl")
+    g.parse("./Event_ontology_OUTDATED.ttl")
     g.parse("./got_instances.ttl")
 
     list_e=[]
@@ -102,8 +102,8 @@ def comm_based_pick(ist_class, communities=None, hero=None, char_type=None, vill
     return random_pick(ist_class)
 
 def read_network_data():
-    edges = pd.read_csv("Network_of_Thrones/edges_subset.csv")
-    nodes = pd.read_csv("Network_of_Thrones/nodes_subset.csv")
+    edges = pd.read_csv("../Network_of_Thrones[relationMethod]/edges_subset.csv")
+    nodes = pd.read_csv("../Network_of_Thrones[relationMethod]/nodes_subset.csv")
     return nodes, edges
 
 def relation_based_pick(edges, related_to_char, n):
@@ -133,7 +133,7 @@ def main(argv, arc):
     method=argv[1]
     print(method)
     g = Graph(base="http://test.com/ns#")
-    g.parse("./Event_ontology.ttl")
+    g.parse("./Event_ontology_OUTDATED.ttl")
     g.parse("./got_instances.ttl")
 
     print(len(g))
