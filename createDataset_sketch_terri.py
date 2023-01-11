@@ -4,7 +4,7 @@ import StoryKG_generator
 from Queries4LinearizedGraph import *
 import Queries4Text
 # import SPARQLWrapper
-
+from collections import Counter
 def clear1(story):
     result = ""
     for i in story:
@@ -46,8 +46,8 @@ def random_formulation(story):
 
 
 def main(argv, arc):
-    if arc!=3:
-        raise ValueError("nr of Parameters is incorrect!")
+    if arc!=4:
+        raise ValueError("nr of Parameters is incorrect! NOTE FOR TERESA THERE IS ALSO NAME OF THE OUTPUT FOLDER TO ADD")
 
     if argv[1] not in ["community","relation","random"] :
         raise ValueError("Error! Please enter a (valid) charachter picking method. (community,relation,random)")
@@ -55,6 +55,7 @@ def main(argv, arc):
     method = argv[1]
     heros=[]
     what = argv[2]
+    outputfolder=argv[3]
 
     if what == 'train':
         n_kg_generated = 500
@@ -68,7 +69,7 @@ def main(argv, arc):
     if what =='try':
         n_kg_generated = 3
 
-    directory = f"reborn_events_new_ontology{method}"
+    directory = f"{outputfolder}_events_new_ontology{method}"
   
        # Parent Directory path
     parent_dir = "generated_output"
@@ -112,6 +113,13 @@ def main(argv, arc):
             if i != n_kg_generated-1:
                 f.write(',')
         f.write(']')
+
+    herostats = Counter(heros)
+    with open(f'generated_output/{directory}/herocounter_{what}.json', 'w', encoding='utf-8') as f:
+        f.write(str(herostats))
+
+
+    print(herostats)
 
 
 
