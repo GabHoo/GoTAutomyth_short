@@ -350,7 +350,7 @@ def textGeneration_Event2_3(story):
     ?villain rdfs:label ?VillainLabel.
 
 
-    BIND(CONCAT( '', ?HeroName,' was having an happy and peaceful life when ', ?VillainLabel, ' threatened  ',?ElementLabel, ' of ', ?HeroName,' . ') AS ?Event_02).
+    BIND(CONCAT( '', ?HeroName,' was having an happy and peaceful life when ', ?VillainLabel, ' threatened  ',?ElementLabel, ' of ', ?HeroName,'. ') AS ?Event_02).
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     return list(res)[0][0].toPython()
@@ -368,7 +368,7 @@ def textGeneration_Event2_4(story):
     ?villain rdfs:label ?VillainLabel.
 
 
-    BIND(CONCAT('',?HeroName,' realized that their beloved ', ?ElementLabel, ' was in danger of being taken away by ' , ?VillainLabel,' . ' ) AS ?Event_02).
+    BIND(CONCAT('',?HeroName,' realized that their beloved ', ?ElementLabel, ' was in danger of being taken away by ' , ?VillainLabel,'. ' ) AS ?Event_02).
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     return list(res)[0][0].toPython()
@@ -389,7 +389,7 @@ def textGeneration_Event3_3(story):
 
 
 
-    BIND(CONCAT('Our hero was not ready to fight for it, but with the help of  ', ?MentorLabel, ', ', ?HeroName,' learnt the power of ', ?HeroPowerLabel  ,'. ') AS ?Event_03).
+    BIND(CONCAT('Our hero was not ready to fight for it, but with the help of ', ?MentorLabel, ', ', ?HeroName,' learnt the power of ', ?HeroPowerLabel ,'. ') AS ?Event_03).
 
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
@@ -444,7 +444,7 @@ def textGeneration_Event5_3(story):
     ?Loc5 rdfs:label ?LocLabel5.
 
 
-    BIND(CONCAT( 'Finally in ', ?LocLabel5 ,' at ', ?TimeLabel5 ,' , ' , ?HeroName, ' faced ', ?VillainLabel ,' . With the help of ', ?AllyLabel,' and thanks to the learnt power of ', ?poHLabel,' , the alliance scared away  ', ?VillainLabel ,' . ') AS ?Event_05).
+    BIND(CONCAT( 'Finally in ', ?LocLabel5 ,' at ', ?TimeLabel5 ,', ' , ?HeroName, ' faced ', ?VillainLabel ,'. With the help of ', ?AllyLabel,' and thanks to the learnt power of ', ?poHLabel,' , the alliance scared away  ', ?VillainLabel ,'. ') AS ?Event_05).
 
 
 
@@ -473,7 +473,7 @@ def textGeneration_Event6_3(story):
 	?Loc12 rdfs:label ?LocLabel6.
 
 
-     BIND(CONCAT('This is how ', ?HeroName, ' managed to save the beloved ',?savedobjLabel,'. In ', ?LocLabel6, ' celebrated with ',?friendLabel , ' by ' ,?celLabel, ' .'  ) as ?Event_06).
+     BIND(CONCAT('This is how ', ?HeroName, ' managed to save the beloved ',?savedobjLabel,'. In ', ?LocLabel6, ' celebrated with ',?friendLabel , ' by ' ,?celLabel, '.'  ) as ?Event_06).
 
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})

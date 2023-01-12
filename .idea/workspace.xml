@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="come good cleaning">
+    <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="create new data with hero counters">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04-01-2023_19_44_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04-01-2023_19_44__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTING.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/TESTING.ttl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/createDataset_sketch_terri.py" beforeDir="false" afterPath="$PROJECT_DIR$/createDataset_sketch_terri.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated_output/reborn_events_new_ontologycommunity/community_try.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated_output/reborn_events_new_ontologycommunity/community_try.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated_output/reborn_events_new_ontologycommunity/community_try_choice.txt" beforeDir="false" afterPath="$PROJECT_DIR$/generated_output/reborn_events_new_ontologycommunity/community_try_choice.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queries4Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Queries4Text.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673432434227</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="create new data with hero counters">
+      <created>1673446669628</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1673446669628</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -298,6 +304,7 @@
     <MESSAGE value="deleting" />
     <MESSAGE value="ntg" />
     <MESSAGE value="come good cleaning" />
-    <option name="LAST_COMMIT_MESSAGE" value="come good cleaning" />
+    <MESSAGE value="create new data with hero counters" />
+    <option name="LAST_COMMIT_MESSAGE" value="create new data with hero counters" />
   </component>
 </project>
