@@ -639,8 +639,8 @@ HERO:gravityControl a HERO:Power.
 HERO:gravityControl rdfs:label "gravity Control".
 HERO:militaryStrategy a HERO:Power.
 HERO:militaryStrategy rdfs:label "military strategy".
-HERO:slowingTime a HERO:Power.
-HERO:slowingTime rdfs:label "slowing Time".
+#HERO:slowingTime a HERO:Power.
+#SHERO:slowingTime rdfs:label "slowing Time".
 
 
 #Threat Target
@@ -653,7 +653,7 @@ HERO:peace rdfs:label "the peace".
 #HERO:equality a HERO:ThreatTarget.
 #HERO:equality rdfs:label "equality".
 HERO:freedom a HERO:ThreatTarget.
-HERO:freedom rdfs:label "the freedom".
+HERO:freedom rdfs:label "freedom".
 #HERO:happiness a HERO:ThreatTarget.
 #HERO:happiness rdfs:label "happiness".
 HERO:jewel a HERO:ThreatTarget.
