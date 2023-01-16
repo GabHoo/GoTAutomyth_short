@@ -326,7 +326,7 @@ def textGeneration_Event1_3(story):
     ?Family rdfs:label ?FamilyLabel.
 
 
-    BIND(CONCAT(  'A long time ago ', ?HeroName,', ', ?TitleLabel,' from the ', ?FamilyLabel,', was known to be very good as a ',?HeroJob,'. ' ) AS ?Event_01).
+    BIND(CONCAT(  'A long time ago ', ?HeroName,', ', ?TitleLabel,' from the ', ?FamilyLabel,', was known to be very good as ',?HeroJob,'. ' ) AS ?Event_01).
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     # SO THING IS: STORY.QUERY returns a sparqlRESULTObject.
     # If the query was with select, sparqlResultObject is an interables of resultRow object.
@@ -350,7 +350,7 @@ def textGeneration_Event2_3(story):
     ?villain rdfs:label ?VillainLabel.
 
 
-    BIND(CONCAT( '', ?HeroName,' was having an happy and peaceful life when ', ?VillainLabel, ' threatened  ',?ElementLabel, ' of ', ?HeroName,'. ') AS ?Event_02).
+    BIND(CONCAT( '', ?HeroName,' was having an happy and peaceful life when ', ?VillainLabel, ' threatened ',?ElementLabel, ' of ', ?HeroName,'. ') AS ?Event_02).
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     return list(res)[0][0].toPython()
@@ -414,7 +414,7 @@ def textGeneration_Event4_3(story):
 
 
 
-    BIND(CONCAT(    'In ', ?LocLabel4 ,' at ',?TimeLabel4,' ,',?HeroName,' met ',?AllyLabel,' and they formed an alliance. ') AS ?Event_04).
+    BIND(CONCAT(    'In ', ?LocLabel4 ,' at ',?TimeLabel4,', ',?HeroName,' met ',?AllyLabel,' and they formed an alliance. ') AS ?Event_04).
 
 
 
@@ -430,7 +430,7 @@ def textGeneration_Event5_3(story):
 	?Hero  rdfs:label ?HeroName.
 
 	ns2:Event_05 ns2:helpedBy ?ally.
-	?ally rdfs:label ?AllyLabel.
+ 	?ally rdfs:label ?AllyLabel.
 
 	ns2:Event_05 ns2:herofights ?villain .
 	?villain rdfs:label ?VillainLabel.
@@ -444,7 +444,7 @@ def textGeneration_Event5_3(story):
     ?Loc5 rdfs:label ?LocLabel5.
 
 
-    BIND(CONCAT( 'Finally in ', ?LocLabel5 ,' at ', ?TimeLabel5 ,', ' , ?HeroName, ' faced ', ?VillainLabel ,'. With the help of ', ?AllyLabel,' and thanks to the learnt power of ', ?poHLabel,' , the alliance scared away  ', ?VillainLabel ,'. ') AS ?Event_05).
+    BIND(CONCAT( 'Finally in ', ?LocLabel5 ,' at ', ?TimeLabel5 ,', ' , ?HeroName, ' faced ', ?VillainLabel ,'. With the help of ', ?AllyLabel,' and thanks to the learnt power of ', ?poHLabel,' , the alliance scared away ', ?VillainLabel ,'. ') AS ?Event_05).
 
 
 

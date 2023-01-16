@@ -668,7 +668,7 @@ HERO:House rdfs:label "The House".
 
 #Celebration
 HERO:feast a HERO:Celebration .
-HERO:feast rdfs:label " having a feast".
+HERO:feast rdfs:label "having a feast".
 HERO:play a HERO:Celebration .
 HERO:play rdfs:label "watching a play".
 
