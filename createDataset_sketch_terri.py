@@ -46,11 +46,11 @@ def random_formulation(story):
 
 
 def main(argv, arc):
-    if arc!=4:
-        raise ValueError("nr of Parameters is incorrect! NOTE FOR TERESA THERE IS ALSO NAME OF THE OUTPUT FOLDER TO ADD")
+    #if arc!=3:
+    #    raise ValueError("nr of Parameters is incorrect! NOTE FOR TERESA THERE IS ALSO NAME OF THE OUTPUT FOLDER TO ADD")
 
-    if argv[1] not in ["community","relation","random"] :
-        raise ValueError("Error! Please enter a (valid) charachter picking method. (community,relation,random)")
+    #if argv[1] not in ["community","relation","random"] :
+    #    raise ValueError("Error! Please enter a (valid) charachter picking method. (community,relation,random)")
 
     method = argv[1]
     heros=[]
@@ -67,7 +67,7 @@ def main(argv, arc):
         n_kg_generated = 50
 
     if what =='try':
-        n_kg_generated = 3
+        n_kg_generated = 20
 
     directory = f"{outputfolder}_events_new_ontology{method}"
   
