@@ -1,5 +1,4 @@
-from StoryKG_gen_reborn import *
-import StoryKG_generator
+from StoryKG_generator import *
 #from Queries4Text import *
 from Queries4LinearizedGraph import *
 import Queries4Text
@@ -38,9 +37,9 @@ def random_formulation(story,tokenizer,model):
         combination = str(e)+str(r)
         choice.append(combination)
         result = f(story)
-        print(result)
+        #print(result)
         paraphrased_result=rephrase(result,tokenizer,model)
-        print(paraphrased_result)
+        #print(paraphrased_result)
         if result == "":
             raise "Excpetion event story text failed check testin.ttl"
 
@@ -73,7 +72,7 @@ def main(argv, arc):
         n_kg_generated = 50
 
     if what =='try':
-        n_kg_generated = 3
+        n_kg_generated = 1
 
     directory = f"{outputfolder}_events_new_ontology{method}"
   
@@ -85,10 +84,8 @@ def main(argv, arc):
 
     heros = []
     choices = []
-    print("warning here")
     tokenizer = AutoTokenizer.from_pretrained("./models/tokenizer/")
     model = AutoModelForSeq2SeqLM.from_pretrained("./models/T5_Paraphrase_Paws")
-    print("Was it")
 
 
     with open(f'generated_output/{directory}/{method}_{what}.json', 'w', encoding='utf-8') as f:

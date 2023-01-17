@@ -1,22 +1,7 @@
-from ast import arg
-from rdflib import Graph, RDFS, RDF, URIRef, Namespace, Literal, XSD
-from owlrl import DeductiveClosure, RDFS_Semantics
-import random, sys
-import sys
-import os
-import pandas as pd
-from string import Template
-import networkx as nx
-import networkx.algorithms.community as nxcom
-import re
-import json
-from StoryKG_generator import *
-import StoryKG_generator
+from OUTDATED.StoryKG_generator import *
 from Queries4Text import *
 import Queries4Text
 # import SPARQLWrapper
-
-from scipy import rand
 
 def clean_triples(s,p,o):
     triples_clean = ""
