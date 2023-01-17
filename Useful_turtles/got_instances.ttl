@@ -653,7 +653,7 @@ HERO:peace rdfs:label "the peace".
 #HERO:equality a HERO:ThreatTarget.
 #HERO:equality rdfs:label "equality".
 HERO:freedom a HERO:ThreatTarget.
-HERO:freedom rdfs:label "freedom".
+HERO:freedom rdfs:label "the freedom".
 #HERO:happiness a HERO:ThreatTarget.
 #HERO:happiness rdfs:label "happiness".
 HERO:jewel a HERO:ThreatTarget.

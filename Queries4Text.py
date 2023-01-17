@@ -26,7 +26,7 @@ def textGeneration_Event1_1(story):
     ?Family rdfs:label ?FamilyLabel.
     
  
-    BIND(CONCAT('Once upon a time, there was ',?HeroJob,' whose name was ', ?HeroName,'. ', ?HeroName, ' was a ', ?TitleLabel,' from the ', ?FamilyLabel,'. ' ) AS ?Event_01).
+    BIND(CONCAT('Once upon a time, there was ',?HeroJob,' whose name was ', ?HeroName,'. ', ?HeroName, ' was a ', ?TitleLabel,' from the ', ?FamilyLabel,'.' ) AS ?Event_01).
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     # SO THING IS: STORY.QUERY returns a sparqlRESULTObject.
     # If the query was with select, sparqlResultObject is an interables of resultRow object.
@@ -51,7 +51,7 @@ def textGeneration_Event2_1(story):
 
    
    
-    BIND(CONCAT('Everything was quiet when one day ', ?VillainLabel, ' threatened ',?ElementLabel, ' of ', ?HeroName,'. ' ) AS ?Event_02).
+    BIND(CONCAT('Everything was quiet when one day ', ?VillainLabel, ' threatened ',?ElementLabel, ' of ', ?HeroName,'.' ) AS ?Event_02).
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     return list(res)[0][0].toPython()
@@ -72,7 +72,7 @@ def textGeneration_Event3_1(story):
     
 
     
-    BIND(CONCAT('Initially ', ?HeroName,' was afraid, but with the help of ', ?MentorLabel, ' got stronger and learnt ', ?HeroPowerLabel  ,'. ') AS ?Event_04).
+    BIND(CONCAT('Initially ', ?HeroName,' was afraid, but with the help of ', ?MentorLabel, ' got stronger and learnt ', ?HeroPowerLabel  ,'.') AS ?Event_04).
 
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
@@ -98,7 +98,7 @@ def textGeneration_Event4_1(story):
 
     
     BIND(CONCAT('On the way to ', ?LocLabel4 ,' at ',?TimeLabel4,', ',?HeroName,' met ',
-     ?AllyLabel,' and they immediately became friends. ') AS ?Event_04).
+     ?AllyLabel,' and they immediately became friends.') AS ?Event_04).
 
 
 
@@ -130,7 +130,7 @@ def textGeneration_Event5_1(story):
     ?Loc5 rdfs:label ?LocLabel5.
 
      BIND(CONCAT('After travelling across all the kingdom, ', ?HeroName,' with the help of ', ?AllyLabel, ' finally found ', ?VillainLabel , ' in ', ?LocLabel5 , '. A bloody battle begun but ' , ?HeroName, ' thanks to ',
-     ?poHLabel , ' powers got the better of ', ?VillainLabel ,'. ') AS ?Event_05).
+     ?poHLabel , ' powers got the better of ', ?VillainLabel ,'.') AS ?Event_05).
 
    
 
@@ -181,7 +181,7 @@ def textGeneration_Event1_2(story):
     ?Family rdfs:label ?FamilyLabel.
 
 
-    BIND(CONCAT(?HeroName,' was ',?TitleLabel,' for the ', ?FamilyLabel ,' and was also known in the whole kingdom as ', ?HeroJob,'. ') AS ?Event_01).
+    BIND(CONCAT(?HeroName,' was ',?TitleLabel,' for the ', ?FamilyLabel ,' and was also known in the whole kingdom as ', ?HeroJob,'.') AS ?Event_01).
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     # SO THING IS: STORY.QUERY returns a sparqlRESULTObject.
     # If the query was with select, sparqlResultObject is an interables of resultRow object.
@@ -202,7 +202,7 @@ def textGeneration_Event2_2(story):
     ?villain rdfs:label ?VillainLabel.
 
 
-    BIND(CONCAT('The evil ', ?VillainLabel, ' one day posed a threat to ',?ElementLabel, ' of ', ?HeroName,'. ' ) AS ?Event_02).
+    BIND(CONCAT('The evil ', ?VillainLabel, ' one day posed a threat to ',?ElementLabel, ' of ', ?HeroName,'.' ) AS ?Event_02).
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     return list(res)[0][0].toPython()
@@ -223,7 +223,7 @@ def textGeneration_Event3_2(story):
 
 
 
-    BIND(CONCAT(?HeroName,' did not know what to do and went to ', ?MentorLabel, ' to seek help. ', ?MentorLabel ,' was a master of ',?HeroPowerLabel,' and taught the hero all its secrets. ' ) AS ?Event_03).
+    BIND(CONCAT(?HeroName,' did not know what to do and went to ', ?MentorLabel, ' to seek help. ', ?MentorLabel ,' was a master of ',?HeroPowerLabel,' and taught the hero all its secrets.' ) AS ?Event_03).
 
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
@@ -246,7 +246,7 @@ def textGeneration_Event4_2(story):
     ?Loc4 rdfs:label ?LocLabel4
 
 
-    BIND(CONCAT('During a long training session in ', ?LocLabel4,' at ', ?TimeLabel4,', ',?HeroName, ' met ',?AllyLabel,'. They immediately got along and decided to travel together. ') AS ?Event_04).
+    BIND(CONCAT('During a long training session in ', ?LocLabel4,' at ', ?TimeLabel4,', ',?HeroName, ' met ',?AllyLabel,'. They immediately got along and decided to travel together.') AS ?Event_04).
 
 
 
@@ -276,7 +276,7 @@ def textGeneration_Event5_2(story):
     ?Loc5 rdfs:label ?LocLabel5.
 
      BIND(CONCAT('At ',?TimeLabel5, ', ',?HeroName, ' and ',?AllyLabel, ' were almost in ' , ?LocLabel5 , ' when they realized ',
-     ?VillainLabel, ' was after them. The two friends nevertheless were ready and the battle begun. ', ?HeroName, ' used ' , ?poHLabel , ' forcing the enemy to retreat. ') AS ?Event_05).
+     ?VillainLabel, ' was after them. The two friends nevertheless were ready and the battle begun. ', ?HeroName, ' used ' , ?poHLabel , ' forcing the enemy to retreat.') AS ?Event_05).
 
 
 
@@ -326,7 +326,7 @@ def textGeneration_Event1_3(story):
     ?Family rdfs:label ?FamilyLabel.
 
 
-    BIND(CONCAT(  'A long time ago ', ?HeroName,', ', ?TitleLabel,' from the ', ?FamilyLabel,', was known to be very good as ',?HeroJob,'. ' ) AS ?Event_01).
+    BIND(CONCAT(  'A long time ago ', ?HeroName,', ', ?TitleLabel,' from the ', ?FamilyLabel,', was known to be very good as ',?HeroJob,'.' ) AS ?Event_01).
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     # SO THING IS: STORY.QUERY returns a sparqlRESULTObject.
     # If the query was with select, sparqlResultObject is an interables of resultRow object.
@@ -350,7 +350,7 @@ def textGeneration_Event2_3(story):
     ?villain rdfs:label ?VillainLabel.
 
 
-    BIND(CONCAT( '', ?HeroName,' was having an happy and peaceful life when ', ?VillainLabel, ' threatened ',?ElementLabel, ' of ', ?HeroName,'. ') AS ?Event_02).
+    BIND(CONCAT( '', ?HeroName,' was having an happy and peaceful life when ', ?VillainLabel, ' threatened ',?ElementLabel, ' of ', ?HeroName,'.') AS ?Event_02).
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     return list(res)[0][0].toPython()
@@ -368,7 +368,7 @@ def textGeneration_Event2_4(story):
     ?villain rdfs:label ?VillainLabel.
 
 
-    BIND(CONCAT('',?HeroName,' realized that their beloved ', ?ElementLabel, ' was in danger of being taken away by ' , ?VillainLabel,'. ' ) AS ?Event_02).
+    BIND(CONCAT('',?HeroName,' realized that their beloved ', ?ElementLabel, ' was in danger of being taken away by ' , ?VillainLabel,'.' ) AS ?Event_02).
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
     return list(res)[0][0].toPython()
@@ -389,7 +389,7 @@ def textGeneration_Event3_3(story):
 
 
 
-    BIND(CONCAT('Our hero was not ready to fight for it, but with the help of ', ?MentorLabel, ', ', ?HeroName,' learnt the power of ', ?HeroPowerLabel ,'. ') AS ?Event_03).
+    BIND(CONCAT('Our hero was not ready to fight for it, but with the help of ', ?MentorLabel, ', ', ?HeroName,' learnt the power of ', ?HeroPowerLabel ,'.') AS ?Event_03).
 
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
@@ -414,7 +414,7 @@ def textGeneration_Event4_3(story):
 
 
 
-    BIND(CONCAT(    'In ', ?LocLabel4 ,' at ',?TimeLabel4,', ',?HeroName,' met ',?AllyLabel,' and they formed an alliance. ') AS ?Event_04).
+    BIND(CONCAT(    'In ', ?LocLabel4 ,' at ',?TimeLabel4,', ',?HeroName,' met ',?AllyLabel,' and they formed an alliance.') AS ?Event_04).
 
 
 
@@ -444,7 +444,7 @@ def textGeneration_Event5_3(story):
     ?Loc5 rdfs:label ?LocLabel5.
 
 
-    BIND(CONCAT( 'Finally in ', ?LocLabel5 ,' at ', ?TimeLabel5 ,', ' , ?HeroName, ' faced ', ?VillainLabel ,'. With the help of ', ?AllyLabel,' and thanks to the learnt power of ', ?poHLabel,' , the alliance scared away ', ?VillainLabel ,'. ') AS ?Event_05).
+    BIND(CONCAT( 'Finally in ', ?LocLabel5 ,' at ', ?TimeLabel5 ,', ' , ?HeroName, ' faced ', ?VillainLabel ,'. With the help of ', ?AllyLabel,' and thanks to the learnt power of ', ?poHLabel,', the alliance scared away ', ?VillainLabel ,'.') AS ?Event_05).
 
 
 

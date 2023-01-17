@@ -14,21 +14,21 @@ HERO:Event_01 a HERO:OrdinaryWorld,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Ordinary World presentation" ;
-    HERO:hasHouse HERO:House_Targaryen ;
-    HERO:hasOccupation HERO:ruler ;
-    HERO:hasTitle HERO:Princess ;
+    HERO:hasHouse HERO:House_Lannister ;
+    HERO:hasOccupation HERO:advisor ;
+    HERO:hasTitle HERO:Lord ;
     HERO:journeyStage "1" ;
-    sem:hasActor HERO:Daenerys_Targaryen .
+    sem:hasActor HERO:Tyrion_Lannister .
 
 HERO:Event_02 a HERO:CallToAdventure,
         sem:Core,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Villain threatens the safety of somebody. This is the call for the hero" ;
-    HERO:Threatens HERO:jewel ;
+    HERO:Threatens HERO:treasure ;
     HERO:journeyStage "2" ;
-    HERO:villain HERO:Tyrion_Lannister ;
-    sem:hasActor HERO:Daenerys_Targaryen .
+    HERO:villain HERO:Robert_Baratheon ;
+    sem:hasActor HERO:Tyrion_Lannister .
 
 HERO:Event_03 a HERO:MeetingTheMentor,
         sem:Core,
@@ -36,9 +36,9 @@ HERO:Event_03 a HERO:MeetingTheMentor,
         rdfs:Resource ;
     rdfs:label "Meeting the Mentor" ;
     HERO:journeyStage "3" ;
-    HERO:meetsMentor HERO:Eddard_Stark ;
-    HERO:powerLearned HERO:teleportation ;
-    sem:hasActor HERO:Daenerys_Targaryen .
+    HERO:meetsMentor HERO:Daario_Naharis ;
+    HERO:powerLearned HERO:fireResistance ;
+    sem:hasActor HERO:Tyrion_Lannister .
 
 HERO:Event_04 a HERO:EncounterAlly,
         sem:Core,
@@ -46,22 +46,22 @@ HERO:Event_04 a HERO:EncounterAlly,
         rdfs:Resource ;
     rdfs:label "The hero meets ally" ;
     HERO:journeyStage "4" ;
-    HERO:meetsAlly HERO:Lyanna_Stark ;
-    sem:hasActor HERO:Daenerys_Targaryen ;
-    sem:hasPlace HERO:The_Trident ;
-    sem:hasTime HERO:the_Winter_Solstice .
+    HERO:meetsAlly HERO:Jaime_Lannister ;
+    sem:hasActor HERO:Tyrion_Lannister ;
+    sem:hasPlace HERO:Kings_Landing ;
+    sem:hasTime HERO:theMiddleOftheNight .
 
 HERO:Event_05 a HERO:FinalBattle,
         sem:Core,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Final confrontation between hero and villain" ;
-    HERO:helpedBy HERO:Lyanna_Stark ;
-    HERO:herofights HERO:Tyrion_Lannister ;
+    HERO:helpedBy HERO:Jaime_Lannister ;
+    HERO:herofights HERO:Robert_Baratheon ;
     HERO:journeyStage "5" ;
-    HERO:usepower HERO:teleportation ;
-    sem:hasActor HERO:Daenerys_Targaryen ;
-    sem:hasPlace HERO:Crossroads_Inn ;
+    HERO:usepower HERO:fireResistance ;
+    sem:hasActor HERO:Tyrion_Lannister ;
+    sem:hasPlace HERO:The_Twins ;
     sem:hasTime HERO:sunrise .
 
 HERO:Event_06 a HERO:Party,
@@ -69,11 +69,11 @@ HERO:Event_06 a HERO:Party,
         sem:Event,
         rdfs:Resource ;
     rdfs:label "Hero throws a party" ;
-    HERO:celebratesvictory HERO:storytelling ;
+    HERO:celebratesvictory HERO:play ;
     HERO:journeyStage "6" ;
-    HERO:partywith HERO:Lyanna_Stark ;
+    HERO:partywith HERO:Jaime_Lannister ;
     HERO:saves HERO:House ;
-    sem:hasActor HERO:Daenerys_Targaryen ;
+    sem:hasActor HERO:Tyrion_Lannister ;
     sem:hasPlace HERO:The_Ruby_Ford .
 
 HERO:Threatens rdfs:range HERO:ThreatTarget .
@@ -114,18 +114,23 @@ sem:hasTime rdfs:range sem:Time .
 
 HERO:CallToAdventure rdfs:subClassOf sem:Event .
 
-HERO:Crossroads_Inn a sem:Place ;
-    rdfs:label "Crossroads Inn" .
-
-HERO:Eddard_Stark a sem:Actor ;
-    rdfs:label "Eddard Stark" .
+HERO:Daario_Naharis a sem:Actor ;
+    rdfs:label "Daario Naharis" .
 
 HERO:EncounterAlly rdfs:subClassOf sem:Event .
 
 HERO:FinalBattle rdfs:subClassOf sem:Event .
 
-HERO:House_Targaryen a HERO:House ;
-    rdfs:label "House Targaryen" .
+HERO:House_Lannister a HERO:House ;
+    rdfs:label "House Lannister" .
+
+HERO:Kings_Landing a sem:Place ;
+    rdfs:label "Kings Landing" .
+
+HERO:Lord a HERO:Male,
+        HERO:Title,
+        sem:Actor ;
+    rdfs:label "Lord" .
 
 HERO:MeetingTheMentor rdfs:subClassOf sem:Event .
 
@@ -134,43 +139,40 @@ HERO:OrdinaryWorld rdfs:label "First stage of the story - Ordinary world present
 
 HERO:Party rdfs:subClassOf sem:Event .
 
-HERO:Princess a HERO:Title ;
-    rdfs:label "Princess" .
-
 HERO:The_Ruby_Ford a sem:Place ;
     rdfs:label "The Ruby Ford" .
 
-HERO:The_Trident a sem:Place ;
-    rdfs:label "The Trident" .
+HERO:The_Twins a sem:Place ;
+    rdfs:label "The Twins" .
 
-HERO:jewel a HERO:ThreatTarget ;
-    rdfs:label "the jewel" .
+HERO:advisor a HERO:Occupation ;
+    rdfs:label "an advisor" .
 
-HERO:ruler a HERO:Occupation ;
-    rdfs:label "a ruler" .
-
-HERO:storytelling a HERO:Celebration ;
-    rdfs:label "listening to a storytelling" .
+HERO:play a HERO:Celebration ;
+    rdfs:label "watching a play" .
 
 HERO:sunrise a sem:Time ;
     rdfs:label "sunrise" .
 
-HERO:the_Winter_Solstice a sem:Time ;
-    rdfs:label "the Winter Solstice" .
+HERO:theMiddleOftheNight a sem:Time ;
+    rdfs:label "Night" .
+
+HERO:treasure a HERO:ThreatTarget ;
+    rdfs:label "the treasure" .
+
+HERO:Robert_Baratheon a HERO:Main_Character,
+        sem:Actor ;
+    rdfs:label "Robert Baratheon" .
+
+HERO:fireResistance a HERO:Power ;
+    rdfs:label "fire sorcery" .
+
+HERO:Jaime_Lannister a sem:Actor ;
+    rdfs:label "Jaime Lannister" .
 
 HERO:Tyrion_Lannister a HERO:Main_Character,
         sem:Actor ;
     rdfs:label "Tyrion Lannister" .
-
-HERO:teleportation a HERO:Power ;
-    rdfs:label "teleportation" .
-
-HERO:Lyanna_Stark a sem:Actor ;
-    rdfs:label "Lyanna Stark" .
-
-HERO:Daenerys_Targaryen a HERO:Main_Character,
-        sem:Actor ;
-    rdfs:label "Daenerys Targaryen" .
 
 sem:Core a owl:Class ;
     rdfs:label "Core" .
