@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="instances we need to fix">
+    <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="small fix to quert and instances">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queries4Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Queries4Text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Useful_turtles/got_instances.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/Useful_turtles/got_instances.ttl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673822457510</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="small fix to quert and instances">
+      <created>1673867634527</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1673867634527</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -318,6 +323,7 @@
     <MESSAGE value="ntg" />
     <MESSAGE value="come good cleaning" />
     <MESSAGE value="create new data with hero counters" />
-    <option name="LAST_COMMIT_MESSAGE" value="create new data with hero counters" />
+    <MESSAGE value="small fix to quert and instances" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fix to quert and instances" />
   </component>
 </project>
