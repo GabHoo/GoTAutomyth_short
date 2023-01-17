@@ -663,7 +663,7 @@ HERO:treasure rdfs:label "the treasure".
 #HERO:Title a HERO:ThreatTarget.
 #HERO:Title rdfs:label "Title".
 HERO:House a HERO:ThreatTarget.
-HERO:House rdfs:label "The House".
+HERO:House rdfs:label "the House".
 
 
 #Celebration

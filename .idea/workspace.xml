@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="deleted some">
-      <change afterPath="$PROJECT_DIR$/rephrasingModule.py" afterDir="false" />
+    <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="t5Rephrase workin progress">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CreateDataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/CreateDataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queries4Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Queries4Text.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TESTING.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/TESTING.ttl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Useful_turtles/got_instances.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/Useful_turtles/got_instances.ttl" afterDir="false" />
     </list>
@@ -306,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673971546628</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="t5Rephrase workin progress">
+      <created>1673978932336</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1673978932336</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -337,6 +342,7 @@
     <MESSAGE value="create new data with hero counters" />
     <MESSAGE value="small fix to quert and instances" />
     <MESSAGE value="deleted some" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted some" />
+    <MESSAGE value="t5Rephrase workin progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="t5Rephrase workin progress" />
   </component>
 </project>

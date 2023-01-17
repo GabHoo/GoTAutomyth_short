@@ -73,7 +73,7 @@ def main(argv, arc):
         n_kg_generated = 50
 
     if what =='try':
-        n_kg_generated = 1
+        n_kg_generated = 3
 
     directory = f"{outputfolder}_events_new_ontology{method}"
   
@@ -86,8 +86,8 @@ def main(argv, arc):
     heros = []
     choices = []
     print("warning here")
-    tokenizer = AutoTokenizer.from_pretrained("t5-base")
-    model = AutoModelForSeq2SeqLM.from_pretrained("Vamsi/T5_Paraphrase_Paws")
+    tokenizer = AutoTokenizer.from_pretrained("./models/tokenizer/")
+    model = AutoModelForSeq2SeqLM.from_pretrained("./models/T5_Paraphrase_Paws")
     print("Was it")
 
 
