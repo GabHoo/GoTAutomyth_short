@@ -304,7 +304,7 @@ def textGeneration_Event6_2(story):
 	ns2:Event_06 ns1:hasPlace ?Loc12.
 	?Loc12 rdfs:label ?LocLabel6.
 
-BIND(CONCAT('After the victory, ' ,?savedobjLabel, ' was not under treat anymore. ' ,?HeroName, ' and ' ,?friendLabel,
+BIND(CONCAT('After the victory, ' ,?savedobjLabel, ' was not under threat anymore. ' ,?HeroName, ' and ' ,?friendLabel,
 ' celebrated in ', ?LocLabel6, ' by ',?celLabel, '.') as ?Event_6).
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
