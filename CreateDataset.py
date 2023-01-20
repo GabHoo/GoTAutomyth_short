@@ -63,13 +63,13 @@ def main(argv, arc):
     outputfolder=argv[3]
 
     if what == 'train':
-        n_kg_generated = 500
+        n_kg_generated = 1000
 
     if what =='test':
-        n_kg_generated = 50
+        n_kg_generated = 100
 
     if what =='val':
-        n_kg_generated = 50
+        n_kg_generated = 100
 
     if what =='try':
         n_kg_generated = 1
