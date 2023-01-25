@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83a7392c-09da-4bb9-b6c1-71213b41c276" name="Changes" comment="t5Rephrase workin progress">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-01-2023_10_11_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-01-2023_10_11__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CreateDataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/CreateDataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoTAutomythEnv.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OUTDATED/create_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/OUTDATED/create_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StoryKG_gen_reborn.py" beforeDir="false" afterPath="$PROJECT_DIR$/OUTDATED/StoryKG_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StoryKG_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/StoryKG_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTING.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/TESTING.ttl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -85,7 +85,7 @@ def main(argv, arc):
     heros = []
     choices = []
     tokenizer = AutoTokenizer.from_pretrained("./models/tokenizer/")
-    model = AutoModelForSeq2SeqLM.from_pretrained("./models/T5_Paraphrase_Paws")
+    model = AutoModelForSeq2SeqLM.from_pretrained("./models/Parahpraser")
 
 
     with open(f'generated_output/{directory}/{method}_{what}.json', 'w', encoding='utf-8') as f:
