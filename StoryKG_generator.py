@@ -224,6 +224,8 @@ def gen_story(method):
 
     #POWER IS A RECCURRET IMMUTABLE
     fixed["HeroPower"] = random_pick("http://hero_ontology/Power",g)
+    fixed["ThreatTarget"]= random_pick("http://hero_ontology/ThreatTarget",g)
+
 
     for i in subEvents:
         #print("Considering event", i)
