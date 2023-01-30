@@ -133,7 +133,22 @@ def comm_based_pick(ist_class, communities=None, hero=None, char_type=None, vill
 
         #print(communities[hero])
         if char_type == "Ally":
-            return URIRef('http://hero_ontology/' + random.choice(list(communities[hero])))
+            choice =random.choice(list(communities[hero]))
+            return URIRef('http://hero_ontology/' + choice)
+
+        elif char_type == "Mentor": #WE WANT TO MAKE SURE THAT THE MENTOR IS NOT THE SAME PERSON AS THE ALLY AND IS IN THE HERO COMMUNITY, villain in this case is the ally
+            choice =random.choice(list(communities[hero]))
+            #print(choice, villain.split("/")[-1])
+
+            while choice == villain.split("/")[-1]:
+                #print("!!!!!!!!")
+                choice = random.choice(list(communities[hero]))
+            #print("final chosen",choice)
+
+            return URIRef('http://hero_ontology/' + choice)
+
+
+
         elif char_type == "Villain":
             enemy_comms = {}
             for k in communities.keys():
@@ -208,6 +223,10 @@ def gen_story(method):
                                             "Ally")
         fixed["VillainAlly"] = comm_based_pick("http://semanticweb.cs.vu.nl/2009/11/sem/Actor", communities,
                                                fixed["Hero"], "Villain_Ally", fixed["Villain"])
+        fixed["Mentor"] = comm_based_pick("http://semanticweb.cs.vu.nl/2009/11/sem/Actor", communities, fixed["Hero"],
+                                            "Mentor",fixed["HeroAlly"])
+
+
         instantiate_ordinary_world(g, fixed)
     elif method == "relation":
         fixed["Villain"] = relation_based_pick(edges, fixed["Hero"], 10)
@@ -248,12 +267,12 @@ def gen_story(method):
 
         # THIS IS TO INSTANCIATE AND ADD TO STORY THE TRIPLES SPECIFIC OF THAT EVENT i
         for s, p, o in g.triples((None, RDFS.domain, i)):  # takiing all the specific event properties
-            # print("       considering", s)
+            #print("       considering", s)
             allranges = []  # THIS IS THO HANDLE MULTIPLE RANGES, SEE THRETENEDELEMENT (CALL TO ADVENTURE) EXAMPLE TO UNDERSTAND
             for s1, p1, o1 in g.triples((s, RDFS.range, None)):
-                # print("       range: ", o1)
+                #print("       range: ", o1)
                 allranges.append(o1)
-            rand_range = (random.choice(allranges))
+            rand_range = (random.choice(allranges))#most of the time there is only one
             range_str = rand_range.split('/')[-1]  # pick one from the possible ranges
             #print(range_str)
             if (range_str in fixed):
