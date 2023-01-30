@@ -1,0 +1,5 @@
+models/T5_Paraphrase_Paws/config.json
+models/T5_Paraphrase_Paws/pytorch_model.bin
+models/tokenizer/special_tokens_map.json
+models/tokenizer/tokenizer_config.json
+models/tokenizer/tokenizer.json
