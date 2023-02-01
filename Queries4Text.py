@@ -72,7 +72,7 @@ def textGeneration_Event3_1(story):
     
 
     
-    BIND(CONCAT('Initially ', ?HeroName,' was afraid, but with the help of ', ?MentorLabel, ' got stronger and learnt ', ?HeroPowerLabel  ,'.') AS ?Event_04).
+    BIND(CONCAT('Initially ', ?HeroName,' was afraid but with the help of ', ?MentorLabel, ', got stronger and learnt ', ?HeroPowerLabel  ,'.') AS ?Event_04).
 
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
@@ -275,7 +275,7 @@ def textGeneration_Event5_2(story):
     ns2:Event_05 ns1:hasPlace ?Loc5.
     ?Loc5 rdfs:label ?LocLabel5.
 
-     BIND(CONCAT('At ',?TimeLabel5, ', ',?HeroName, ' and ',?AllyLabel, ' were almost in ' , ?LocLabel5 , ' when they realized ',
+     BIND(CONCAT('At ',?TimeLabel5, ' ',?HeroName, ' and ',?AllyLabel, ' were almost in ' , ?LocLabel5 , ', when they realized ',
      ?VillainLabel, ' was after them. The two friends nevertheless were ready and the battle begun. ', ?HeroName, ' used ' , ?poHLabel , ' forcing the enemy to retreat.') AS ?Event_05).
 
 
@@ -389,7 +389,7 @@ def textGeneration_Event3_3(story):
 
 
 
-    BIND(CONCAT('Our hero was not ready to fight for it, but with the help of ', ?MentorLabel, ', ', ?HeroName,' learnt the power of ', ?HeroPowerLabel ,'.') AS ?Event_03).
+    BIND(CONCAT('Our hero was too weak, but with the help of ', ?MentorLabel, ', ', ?HeroName,' learnt the power of ', ?HeroPowerLabel ,'.') AS ?Event_03).
 
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})
@@ -473,7 +473,7 @@ def textGeneration_Event6_3(story):
 	?Loc12 rdfs:label ?LocLabel6.
 
 
-     BIND(CONCAT('This is how ', ?HeroName, ' managed to save the beloved ',?savedobjLabel,'. In ', ?LocLabel6, ' celebrated with ',?friendLabel , ' by ' ,?celLabel, '.'  ) as ?Event_06).
+     BIND(CONCAT('This is how ', ?HeroName, ' managed to save ',?savedobjLabel,' and in ', ?LocLabel6, ' celebrated with ',?friendLabel , ' by ' ,?celLabel, '.'  ) as ?Event_06).
 
 
     }""", initNs={'ns1': 'http://semanticweb.cs.vu.nl/2009/11/sem/', 'ns2': 'http://hero_ontology/'})

@@ -16,11 +16,13 @@ def rephrase(sentence,tokenizer,model):
         top_k=120,
         top_p=0.95,
         early_stopping=True,
-        num_return_sequences=1
+        num_return_sequences=2
     )
 
+    lines=[]
     for output in outputs:
         line = tokenizer.decode(output, skip_special_tokens=True, clean_up_tokenization_spaces=True)
+        lines.append(line)
 
-    return line
+    return lines
 

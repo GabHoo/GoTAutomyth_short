@@ -37,9 +37,9 @@ def random_formulation(story,tokenizer,model):
         combination = str(e)+str(r)
         choice.append(combination)
         result = f(story)
-        #print(result)
-        paraphrased_result=rephrase(result,tokenizer,model)
-        #print(paraphrased_result)
+        print(result)
+        paraphrased_result=random.choice(rephrase(result,tokenizer,model)) #PHARAPHRASING MDOEL MAKES 4 POSSIBLE SENTENCES, WE PICK 1
+        print(paraphrased_result)
         if result == "":
             raise "Excpetion event story text failed check testin.ttl"
 
