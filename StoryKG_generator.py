@@ -8,10 +8,8 @@ import pandas as pd
 from string import Template
 import networkx as nx
 import networkx.algorithms.community as nxcom
-#import remain_characters
 import json
 import Queries4Text
-# import SPARQLWrapper
 
 from scipy import rand
 
