@@ -8,7 +8,6 @@ import pandas as pd
 from string import Template
 import re
 import json
-from SPARQLWrapper import SPARQLWrapper, JSON
 
 
 def Graph_Generator_baseline_instances(story):

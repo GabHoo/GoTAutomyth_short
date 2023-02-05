@@ -6,6 +6,7 @@ import Queries4Text
 from collections import Counter
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from rephrasingModule import rephrase
+
 def clear1(story):
     result = ""
     for i in story:
@@ -38,7 +39,7 @@ def random_formulation(story,tokenizer,model):
         choice.append(combination)
         result = f(story)
         print(result)
-        paraphrased_result=random.choice(rephrase(result,tokenizer,model)) #PHARAPHRASING MDOEL MAKES 4 POSSIBLE SENTENCES, WE PICK 1
+        paraphrased_result=random.choice(rephrase(result,tokenizer,model)) #PHARAPHRASING MDOEL MAKES 2 POSSIBLE SENTENCES, WE PICK 1
         print(paraphrased_result)
         if result == "":
             raise "Excpetion event story text failed check testin.ttl"
