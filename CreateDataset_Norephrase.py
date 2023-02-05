@@ -28,7 +28,7 @@ def clear1(story):
 
 
 
-def random_formulation(story,tokenizer,model):
+def random_formulation(story):
     texto = ""
     choice = []
     for e in range(1, 7):
@@ -38,14 +38,13 @@ def random_formulation(story,tokenizer,model):
         choice.append(combination)
         result = f(story)
         #print(result)
-        paraphrased_result=random.choice(rephrase(result,tokenizer,model)) #PHARAPHRASING MDOEL MAKES 2 POSSIBLE SENTENCES, WE PICK 1
-        #print(paraphrased_result)
+        #paraphrased_result=random.choice(rephrase(result,tokenizer,model)) #PHARAPHRASING MDOEL MAKES 2 POSSIBLE SENTENCES, WE PICK 1
         if result == "":
             raise "Excpetion event story text failed check testin.ttl"
 
         if e<6:
-            paraphrased_result+=" "
-        texto += paraphrased_result
+            result+=" "
+        texto += result
   
     return texto,choice
 
@@ -84,8 +83,8 @@ def main(argv, arc):
 
     heros = []
     choices = []
-    tokenizer = AutoTokenizer.from_pretrained("./models/tokenizer/")
-    model = AutoModelForSeq2SeqLM.from_pretrained("./models/T5_Paraphrase_Paws")
+    #tokenizer = AutoTokenizer.from_pretrained("./models/tokenizer/")
+    #model = AutoModelForSeq2SeqLM.from_pretrained("./models/T5_Paraphrase_Paws")
 
 
     with open(f'generated_output/{directory}/{method}_{what}.json', 'w', encoding='utf-8') as f:
@@ -101,7 +100,7 @@ def main(argv, arc):
             story = story.serialize("./TESTING.ttl")
 
             #Generates the text
-            label,choice = random_formulation(story,tokenizer,model)
+            label,choice = random_formulation(story)
 
             choices.append(choice)
 
