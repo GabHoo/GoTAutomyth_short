@@ -635,8 +635,8 @@ HERO:teleportation a HERO:Power.
 HERO:teleportation rdfs:label "teleportation".
 HERO:mindReading a HERO:Power.
 HERO:mindReading rdfs:label "mind controlling".
-HERO:gravityControl a HERO:Power.
-HERO:gravityControl rdfs:label "gravity Control".
+#HERO:gravityControl a HERO:Power.
+#HERO:gravityControl rdfs:label "gravity Control".
 HERO:militaryStrategy a HERO:Power.
 HERO:militaryStrategy rdfs:label "military strategy".
 #HERO:slowingTime a HERO:Power.
