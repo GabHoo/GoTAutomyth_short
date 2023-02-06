@@ -56,8 +56,8 @@ print(dataset['test'][0][f'{how}Knowledge Graph'])
 #max_input = 1000 #number of tokens we expect -DEPENDS ON size of inputs (for the tensor) - sentence and then it pads the rest - 
 #such that tensors equal in shape (no pads when training bc we alreasy have same shape) - batches of same size
 
-max_input = np.max([len(nltk.word_tokenize(dataset['test'][i]['story'])) for i in range(50)])+50
-max_target = np.max([len(nltk.word_tokenize(dataset['test'][i][f'{how}Knowledge Graph'])) for i in range(50)])
+max_target = np.max([len(nltk.word_tokenize(dataset['test'][i]['story'])) for i in range(50)])+50
+max_input = np.max([len(nltk.word_tokenize(dataset['test'][i][f'{how}Knowledge Graph'])) for i in range(50)])
 tokenizer = AutoTokenizer.from_pretrained("allenai/led-base-16384")
 
 def process_data_to_model_inputs(data_to_process):
