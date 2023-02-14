@@ -162,7 +162,7 @@ def main(argv, arc):
         save_total_limit=2,
         num_train_epochs=3,
         predict_with_generate=True, #since we use validation (bc during validation we generate and compare to gold ) - backprpop error on rouge
-        generation_max_length = 800, #max number of tokens per generation 
+        generation_max_length = 200, #max number of tokens per generation 
         generation_num_beams=5, #decoding strategy! greedy search, beam search 
         eval_accumulation_steps=1, #backprop  
         fp16=True #memory management 
@@ -191,7 +191,7 @@ def main(argv, arc):
 
     ### let's have a look at the predictions
 
-    preds, labels, metrics = trainer.predict(tokenize_data['test'], num_beams=5, min_length=max_input, max_length=800, no_repeat_ngram_size=2, early_stopping=True)
+    preds, labels, metrics = trainer.predict(tokenize_data['test'], num_beams=5, min_length=max_input, max_length=200, no_repeat_ngram_size=2, early_stopping=True)
 
     pred = []
     lab = []
