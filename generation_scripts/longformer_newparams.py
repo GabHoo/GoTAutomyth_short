@@ -48,9 +48,9 @@ def main(argv, arc):
 
     print(how)
     print(experiment_name)
-    train_file = './generated_output/' + experiment_name + '/' + method +'_train.json'
-    dev_file = './generated_output/' +  experiment_name + '/' + method + '_val.json'
-    test_file = './generated_output/' + experiment_name + '/' + method + '_test.json'
+    train_file = 'generated_dataset/' + experiment_name + '/' + method +'_train.json'
+    dev_file = 'generated_dataset/' +  experiment_name + '/' + method + '_val.json'
+    test_file = 'generated_dataset/' + experiment_name + '/' + method + '_test.json'
 
     dataset = load_dataset('json', data_files={'train': train_file, 'valid': dev_file, 'test': test_file})
 
