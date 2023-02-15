@@ -1,0 +1,8 @@
+Test Results: dict_items([('test_loss', 0.07731743156909943), ('test_rouge1', 57.4757), ('test_rouge2', 34.3028), ('test_rougeL', 44.1553), ('test_rougeLsum', 44.1766), ('test_gen_len', 184.58), ('test_runtime', 305.1521), ('test_samples_per_second', 0.328), ('test_steps_per_second', 0.328)])
+
+Bleu Results: {'bleu': 0.3070871190266545, 'precisions': [0.5723029839326702, 0.3340605749486653, 0.242572978558512, 0.19175767030681226], 'brevity_penalty': 1.0, 'length_ratio': 1.0255001961553551, 'translation_length': 15684, 'reference_length': 15294}
+
+Google Bleu Results: {'google_bleu': 0.32690622261174407}
+
+Metrics: {'test_loss': 0.07731743156909943, 'test_rouge1': 57.4757, 'test_rouge2': 34.3028, 'test_rougeL': 44.1553, 'test_rougeLsum': 44.1766, 'test_gen_len': 184.58, 'test_runtime': 305.1521, 'test_samples_per_second': 0.328, 'test_steps_per_second': 0.328}
+
