@@ -50,7 +50,7 @@ def main():
     """
 
     directory = 'data/annos_with_content/'
-    with open('new_data.json', 'w') as f:
+    with open('test_DWIE.json', 'w') as f:
         f.write('[')
         for filename in os.listdir(directory):
             path = os.path.join(directory, filename)
@@ -60,15 +60,37 @@ def main():
             with open(path) as g:
                 try:
                     data = json.load(g) 
-                    new_KG = create_experiment_linearized(data)
-                    json.dump(new_KG, f, indent="") 
-                    f.write(',\n')
+                    if 'test' in data['tags']:
+                        new_KG = create_experiment_linearized(data)
+                        json.dump(new_KG, f, indent="") 
+                        f.write(',\n')
 
                 except BaseException as e:
                     print('The file contains invalid JSON')
                     print(path)
         f.write(']')
         f.close()
+
+    with open('train_DWIE.json', 'w') as f:
+        f.write('[')
+        for filename in os.listdir(directory):
+            path = os.path.join(directory, filename)
+
+
+
+            with open(path) as g:
+                try:
+                    data = json.load(g) 
+                    if 'train' in data['tags']:
+                        new_KG = create_experiment_linearized(data)
+                        json.dump(new_KG, f, indent="") 
+                        f.write(',\n')
+
+                except BaseException as e:
+                    print('The file contains invalid JSON')
+                    print(path)
+        f.write(']')
+        f.close()    
 
 if __name__ == "__main__":
     main()
