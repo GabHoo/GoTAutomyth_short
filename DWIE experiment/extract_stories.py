@@ -15,6 +15,7 @@ def create_linearized_KG(data):
             concept_text[data['concepts'][i]['concept']] = data['concepts'][i]['link']
         else:    #if the concept is not a link and it doesn't have text we map it to an empty string
             concept_text[data['concepts'][i]['concept']] = ''
+            print(data['concepts'][i]['concept'])
             
     for i,j in zip(range(len(data['relations'])),range(len(concept_text))):
         str += concept_text[data['relations'][i]['s']]+' - '+data['relations'][i]['p']+' - '+concept_text[data['relations'][i]['o']]+' | '
@@ -28,7 +29,7 @@ def create_experiment_linearized(data):
     This function creates a dictionary that contains the story and the linearized KG
     """
     dict = {}
-    dict['story'] = data['content'] 
+    dict['story'] = data['content'].replace('\n', ' ')
     dict['Instances Knowledge Graph'] = create_linearized_KG(data)
     return dict
 
@@ -50,7 +51,7 @@ def main():
     """
 
     directory = 'data/annos_with_content/'
-    with open('test_DWIE.json', 'w') as f:
+    with open('DWIE_test.json', 'w') as f:
         f.write('[')
         for filename in os.listdir(directory):
             path = os.path.join(directory, filename)
@@ -68,10 +69,11 @@ def main():
                 except BaseException as e:
                     print('The file contains invalid JSON')
                     print(path)
+        f.write('{}')            
         f.write(']')
         f.close()
 
-    with open('train_DWIE.json', 'w') as f:
+    with open('DWIE_train_val.json', 'w') as f:
         f.write('[')
         for filename in os.listdir(directory):
             path = os.path.join(directory, filename)
@@ -89,8 +91,27 @@ def main():
                 except BaseException as e:
                     print('The file contains invalid JSON')
                     print(path)
+        f.write('{}')            
         f.write(']')
         f.close()    
 
+
+    with open('generated_dataset/Instances/DWIE_validation.json', 'w') as f:
+        with open('DWIE_train_val.json') as g:
+            data = json.load(g)
+            data = data[:100]
+            json.dump(data, f,indent="")  
+
+    with open('generated_dataset/Instances/DWIE_train.json', 'w') as f:
+        with open('DWIE_train_val.json') as g:
+            data = json.load(g)
+            data = data[100:-1]
+            json.dump(data, f,indent="")  
+
+    with open('generated_dataset/Instances/DWIE_test.json', 'w') as f:
+        with open('DWIE_test.json') as g:
+            data = json.load(g)
+            data = data[:-1]
+            json.dump(data, f,indent="")          
 if __name__ == "__main__":
     main()
