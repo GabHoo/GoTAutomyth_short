@@ -23,6 +23,27 @@ def create_linearized_KG(data):
 
     return str
 
+def create_types_KG(data):
+    concept_text = dict()
+    str = ''
+    for i in range(len(data['concepts'])):
+        if 'text' in data['concepts'][i]:
+            concept_text[data['concepts'][i]['concept']] = data['concepts'][i]['text']
+        elif 'link' in data['concepts'][i]:
+            concept_text[data['concepts'][i]['concept']] = data['concepts'][i]['link']
+        else:    
+            #print('no text for concept: ', data['concepts'][i]['concept'])
+            concept_text[data['concepts'][i]['concept']] = ''
+            
+    for i in range(len(concept_text)):
+
+        types = [j for j in data['concepts'][i]['tags'] if 'type' in j]
+        types = [i.split("::") for i in types]
+
+        for g in types:
+            str += concept_text[i] +' - ' + g[0] + ' - ' + g[1] + ' | '
+    return str
+
 
 def create_experiment_linearized(data): 
     """
@@ -31,6 +52,7 @@ def create_experiment_linearized(data):
     dict = {}
     dict['story'] = data['content'].replace('\n', ' ')
     dict['Instances Knowledge Graph'] = create_linearized_KG(data)
+    dict['Types Knowledge Graph'] = create_types_KG(data)
     return dict
 
 
