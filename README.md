@@ -6,6 +6,6 @@ Story structure is inspired from the Hero Journey (https://skift.com/2016/10/28/
 To generate a story, run the generator.py file. 
 Script takes three possible heuristics ["community", "relation","random"], which represent three way of picking instances of the main charachters from a Game Of Thrones ontology. 
 
-Detailed Paper is hereby attatched.
+Detailed Paper is hereby attatched. (https://github.com/GabHoo/GoTAutomyth_short/blob/main/The%20Game%20of%20Thrones%20Automyth.pdf)
 
 For the visualization, this Dashbord was used: https://datastudio.google.com/reporting/3e1887bb-c02d-4c74-8d74-a14b7399c524
